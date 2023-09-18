@@ -1,0 +1,14 @@
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividad_Cuatro\Actividad_Cuatro\bin\Debug\net7.0\Actividad_Cuatro.exe
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividad_Cuatro\Actividad_Cuatro\bin\Debug\net7.0\Actividad_Cuatro.deps.json
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividad_Cuatro\Actividad_Cuatro\bin\Debug\net7.0\Actividad_Cuatro.runtimeconfig.json
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividad_Cuatro\Actividad_Cuatro\bin\Debug\net7.0\Actividad_Cuatro.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividad_Cuatro\Actividad_Cuatro\bin\Debug\net7.0\Actividad_Cuatro.pdb
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividad_Cuatro\Actividad_Cuatro\obj\Debug\net7.0\Actividad_Cuatro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividad_Cuatro\Actividad_Cuatro\obj\Debug\net7.0\Actividad_Cuatro.AssemblyInfoInputs.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividad_Cuatro\Actividad_Cuatro\obj\Debug\net7.0\Actividad_Cuatro.AssemblyInfo.cs
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividad_Cuatro\Actividad_Cuatro\obj\Debug\net7.0\Actividad_Cuatro.csproj.CoreCompileInputs.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividad_Cuatro\Actividad_Cuatro\obj\Debug\net7.0\Actividad_Cuatro.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividad_Cuatro\Actividad_Cuatro\obj\Debug\net7.0\refint\Actividad_Cuatro.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividad_Cuatro\Actividad_Cuatro\obj\Debug\net7.0\Actividad_Cuatro.pdb
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividad_Cuatro\Actividad_Cuatro\obj\Debug\net7.0\Actividad_Cuatro.genruntimeconfig.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividad_Cuatro\Actividad_Cuatro\obj\Debug\net7.0\ref\Actividad_Cuatro.dll
