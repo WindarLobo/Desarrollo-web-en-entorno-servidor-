@@ -1,0 +1,7 @@
+C:\Datos Windar\2_Daw\Ejemplos\Actividad_Uno\Actividad_Uno\bin\Debug\Actividad_Uno.exe.config
+C:\Datos Windar\2_Daw\Ejemplos\Actividad_Uno\Actividad_Uno\bin\Debug\Actividad_Uno.exe
+C:\Datos Windar\2_Daw\Ejemplos\Actividad_Uno\Actividad_Uno\bin\Debug\Actividad_Uno.pdb
+C:\Datos Windar\2_Daw\Ejemplos\Actividad_Uno\Actividad_Uno\obj\Debug\Actividad_Uno.csproj.AssemblyReference.cache
+C:\Datos Windar\2_Daw\Ejemplos\Actividad_Uno\Actividad_Uno\obj\Debug\Actividad_Uno.csproj.CoreCompileInputs.cache
+C:\Datos Windar\2_Daw\Ejemplos\Actividad_Uno\Actividad_Uno\obj\Debug\Actividad_Uno.exe
+C:\Datos Windar\2_Daw\Ejemplos\Actividad_Uno\Actividad_Uno\obj\Debug\Actividad_Uno.pdb

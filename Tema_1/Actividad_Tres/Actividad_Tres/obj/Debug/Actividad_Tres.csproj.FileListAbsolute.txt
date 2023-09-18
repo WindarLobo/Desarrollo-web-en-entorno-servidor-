@@ -1,0 +1,7 @@
+C:\Datos Windar\2_Daw\Ejemplos\Actividad_Tres\Actividad_Tres\bin\Debug\Actividad_Tres.exe.config
+C:\Datos Windar\2_Daw\Ejemplos\Actividad_Tres\Actividad_Tres\bin\Debug\Actividad_Tres.exe
+C:\Datos Windar\2_Daw\Ejemplos\Actividad_Tres\Actividad_Tres\bin\Debug\Actividad_Tres.pdb
+C:\Datos Windar\2_Daw\Ejemplos\Actividad_Tres\Actividad_Tres\obj\Debug\Actividad_Tres.csproj.AssemblyReference.cache
+C:\Datos Windar\2_Daw\Ejemplos\Actividad_Tres\Actividad_Tres\obj\Debug\Actividad_Tres.csproj.CoreCompileInputs.cache
+C:\Datos Windar\2_Daw\Ejemplos\Actividad_Tres\Actividad_Tres\obj\Debug\Actividad_Tres.exe
+C:\Datos Windar\2_Daw\Ejemplos\Actividad_Tres\Actividad_Tres\obj\Debug\Actividad_Tres.pdb
