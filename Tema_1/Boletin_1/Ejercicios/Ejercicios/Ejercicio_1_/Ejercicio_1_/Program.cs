@@ -7,6 +7,7 @@ internal class Program
     static void Main(string[] args)
 
     {
+      
 
         /*El programa debe solicitar al usuario que ingrese un número. Este número es recogido en una variable de tipo Double llamada radio.
          A continuación, se debe calcular en sendas variables, la longitud del círculo, 
@@ -34,6 +35,7 @@ internal class Program
             {
                 WriteLine("Error al introducir un nuemro");
             }
-        }while (true);
+        } while (true);
+
     }
 }

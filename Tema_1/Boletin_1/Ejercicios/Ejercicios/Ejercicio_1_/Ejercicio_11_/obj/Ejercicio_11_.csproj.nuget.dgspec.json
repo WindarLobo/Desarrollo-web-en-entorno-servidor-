@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Boletin_1\\Ejercicios\\Ejercicios\\Ejercicio_1_\\Ejercicio_11_\\Ejercicio_11_.csproj": {}
+  },
+  "projects": {
+    "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Boletin_1\\Ejercicios\\Ejercicios\\Ejercicio_1_\\Ejercicio_11_\\Ejercicio_11_.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Boletin_1\\Ejercicios\\Ejercicios\\Ejercicio_1_\\Ejercicio_11_\\Ejercicio_11_.csproj",
+        "projectName": "Ejercicio_11_",
+        "projectPath": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Boletin_1\\Ejercicios\\Ejercicios\\Ejercicio_1_\\Ejercicio_11_\\Ejercicio_11_.csproj",
+        "packagesPath": "C:\\Users\\Windar\\.nuget\\packages\\",
+        "outputPath": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Boletin_1\\Ejercicios\\Ejercicios\\Ejercicio_1_\\Ejercicio_11_\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Windar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
