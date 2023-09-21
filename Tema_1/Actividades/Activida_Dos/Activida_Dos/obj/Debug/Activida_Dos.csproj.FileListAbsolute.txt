@@ -1,7 +1,0 @@
-C:\Datos Windar\2_Daw\Ejemplos\Activida_Dos\Activida_Dos\bin\Debug\Activida_Dos.exe.config
-C:\Datos Windar\2_Daw\Ejemplos\Activida_Dos\Activida_Dos\bin\Debug\Activida_Dos.exe
-C:\Datos Windar\2_Daw\Ejemplos\Activida_Dos\Activida_Dos\bin\Debug\Activida_Dos.pdb
-C:\Datos Windar\2_Daw\Ejemplos\Activida_Dos\Activida_Dos\obj\Debug\Activida_Dos.csproj.AssemblyReference.cache
-C:\Datos Windar\2_Daw\Ejemplos\Activida_Dos\Activida_Dos\obj\Debug\Activida_Dos.csproj.CoreCompileInputs.cache
-C:\Datos Windar\2_Daw\Ejemplos\Activida_Dos\Activida_Dos\obj\Debug\Activida_Dos.exe
-C:\Datos Windar\2_Daw\Ejemplos\Activida_Dos\Activida_Dos\obj\Debug\Activida_Dos.pdb
