@@ -15,25 +15,37 @@ internal class Program
          El programa debe repetir esta acción hasta que el usuario ingrese un 0.*/
 
         int suma = 0;
+        int numero;
 
-        while (true)
+        do
         {
+
             WriteLine("Introduzca un numero ");
             string usuario = ReadLine();
-            if (int.TryParse(usuario, out int numero))
+            if (int.TryParse(usuario, out numero))
             {
-                if (numero == 0)
+                if (numero <= 0)
                 {
-                    WriteLine("Fin del programa");
                     break;
-
                 }
 
-                suma += numero;
+                int i = 1;
+                while (i <= numero)
+                {
+
+                    suma += i;
+                    i++;
+                }
+                WriteLine($"La suma total es : {suma}");
+                suma = 0;
+            }
+            else
+            {
+                WriteLine("Error al introducir un numero");
             }
 
-        }
-        WriteLine($"La suma total es : {suma}");
 
+
+        } while (true);
     }
 }

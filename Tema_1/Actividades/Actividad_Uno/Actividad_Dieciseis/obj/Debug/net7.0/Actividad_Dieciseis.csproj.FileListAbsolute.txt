@@ -1,0 +1,14 @@
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Dieciseis\bin\Debug\net7.0\Actividad_Dieciseis.exe
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Dieciseis\bin\Debug\net7.0\Actividad_Dieciseis.deps.json
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Dieciseis\bin\Debug\net7.0\Actividad_Dieciseis.runtimeconfig.json
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Dieciseis\bin\Debug\net7.0\Actividad_Dieciseis.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Dieciseis\bin\Debug\net7.0\Actividad_Dieciseis.pdb
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Dieciseis\obj\Debug\net7.0\Actividad_Dieciseis.GeneratedMSBuildEditorConfig.editorconfig
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Dieciseis\obj\Debug\net7.0\Actividad_Dieciseis.AssemblyInfoInputs.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Dieciseis\obj\Debug\net7.0\Actividad_Dieciseis.AssemblyInfo.cs
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Dieciseis\obj\Debug\net7.0\Actividad_Dieciseis.csproj.CoreCompileInputs.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Dieciseis\obj\Debug\net7.0\Actividad_Dieciseis.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Dieciseis\obj\Debug\net7.0\refint\Actividad_Dieciseis.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Dieciseis\obj\Debug\net7.0\Actividad_Dieciseis.pdb
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Dieciseis\obj\Debug\net7.0\Actividad_Dieciseis.genruntimeconfig.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Dieciseis\obj\Debug\net7.0\ref\Actividad_Dieciseis.dll

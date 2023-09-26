@@ -19,7 +19,7 @@ internal class Program
         do
         {
             WriteLine("Introduce un  numero");
-            string usuario = Console.ReadLine();
+            string usuario =ReadLine();
 
             if (float.TryParse(usuario, out numero))
             {

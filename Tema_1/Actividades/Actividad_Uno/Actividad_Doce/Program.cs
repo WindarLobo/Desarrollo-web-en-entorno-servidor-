@@ -14,7 +14,9 @@ internal class Program
            Por último, muestra los dos por pantalla*/
 
         float[] notasAlumnos = new float[] { 5, 8, 9, 4.6f, 7, 6, 2.9f, 10 };
-        float[] copiaNotas = new float[] { 5, 8, 9, 4.6f, 7, 6, 2.9f, 10 };
+        float[] copiaNotas = new float[notasAlumnos.Length];
+        Array.Copy(notasAlumnos, copiaNotas, notasAlumnos.Length);
+       
         long elementosDistintos = 0;
         //Comparamos elemento a elemento
         for (long i = 0; i < notasAlumnos.Length; i++)
@@ -25,6 +27,7 @@ internal class Program
 
                 break;
             }
+
         }
         if (elementosDistintos == 0)
         {
@@ -53,4 +56,7 @@ internal class Program
 
 
     }
+
+   
+
 }

@@ -1,0 +1,14 @@
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Cartoce\bin\Debug\net7.0\Actividad_Cartoce.exe
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Cartoce\bin\Debug\net7.0\Actividad_Cartoce.deps.json
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Cartoce\bin\Debug\net7.0\Actividad_Cartoce.runtimeconfig.json
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Cartoce\bin\Debug\net7.0\Actividad_Cartoce.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Cartoce\bin\Debug\net7.0\Actividad_Cartoce.pdb
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Cartoce\obj\Debug\net7.0\Actividad_Cartoce.GeneratedMSBuildEditorConfig.editorconfig
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Cartoce\obj\Debug\net7.0\Actividad_Cartoce.AssemblyInfoInputs.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Cartoce\obj\Debug\net7.0\Actividad_Cartoce.AssemblyInfo.cs
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Cartoce\obj\Debug\net7.0\Actividad_Cartoce.csproj.CoreCompileInputs.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Cartoce\obj\Debug\net7.0\Actividad_Cartoce.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Cartoce\obj\Debug\net7.0\refint\Actividad_Cartoce.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Cartoce\obj\Debug\net7.0\Actividad_Cartoce.pdb
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Cartoce\obj\Debug\net7.0\Actividad_Cartoce.genruntimeconfig.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Cartoce\obj\Debug\net7.0\ref\Actividad_Cartoce.dll

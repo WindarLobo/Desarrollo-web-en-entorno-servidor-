@@ -1,0 +1,14 @@
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Trece\obj\Debug\net7.0\Actividad_Trece.GeneratedMSBuildEditorConfig.editorconfig
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Trece\obj\Debug\net7.0\Actividad_Trece.AssemblyInfoInputs.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Trece\obj\Debug\net7.0\Actividad_Trece.AssemblyInfo.cs
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Trece\obj\Debug\net7.0\Actividad_Trece.csproj.CoreCompileInputs.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Trece\bin\Debug\net7.0\Actividad_Trece.exe
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Trece\bin\Debug\net7.0\Actividad_Trece.deps.json
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Trece\bin\Debug\net7.0\Actividad_Trece.runtimeconfig.json
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Trece\bin\Debug\net7.0\Actividad_Trece.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Trece\bin\Debug\net7.0\Actividad_Trece.pdb
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Trece\obj\Debug\net7.0\Actividad_Trece.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Trece\obj\Debug\net7.0\refint\Actividad_Trece.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Trece\obj\Debug\net7.0\Actividad_Trece.pdb
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Trece\obj\Debug\net7.0\Actividad_Trece.genruntimeconfig.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Actividades\Actividad_Uno\Actividad_Trece\obj\Debug\net7.0\ref\Actividad_Trece.dll

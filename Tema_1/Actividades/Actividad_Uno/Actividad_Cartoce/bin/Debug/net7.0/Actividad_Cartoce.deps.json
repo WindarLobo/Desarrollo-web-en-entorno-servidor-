@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Actividad_Cartoce/1.0.0": {
+        "runtime": {
+          "Actividad_Cartoce.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Actividad_Cartoce/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

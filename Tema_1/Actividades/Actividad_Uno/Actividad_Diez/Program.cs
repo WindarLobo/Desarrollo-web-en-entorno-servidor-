@@ -9,28 +9,19 @@ internal class Program
          Debemos usar la instrucción Console.Write() y Console.WriteLine()
          La salida debería ser la siguiente:*/
        
-        int numero =9;
+        int numero =10;
 
         for (int i = 1; i <= numero; i++)
         {
 
-            for (int k = 1; k <= i; k++)
+            for (int j = 1; j <= i; j++)
             {
-              Write(k);
+              Write(j);
             }
-            if (i < numero)
-            {
-             Write(" ");
-            }
-            else
-            {
-                
-                Write("0");
-            }
-
+           
             WriteLine();
         }
        
-    }
+    }  
 
-}
+} 
