@@ -1,0 +1,7 @@
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Tarea_Tema_1\EjemploWeb\Ejercicio_3\bin\Debug\Ejercicio_3.exe.config
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Tarea_Tema_1\EjemploWeb\Ejercicio_3\bin\Debug\Ejercicio_3.exe
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Tarea_Tema_1\EjemploWeb\Ejercicio_3\bin\Debug\Ejercicio_3.pdb
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Tarea_Tema_1\EjemploWeb\Ejercicio_3\obj\Debug\Ejercicio_3.csproj.AssemblyReference.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Tarea_Tema_1\EjemploWeb\Ejercicio_3\obj\Debug\Ejercicio_3.csproj.CoreCompileInputs.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Tarea_Tema_1\EjemploWeb\Ejercicio_3\obj\Debug\Ejercicio_3.exe
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Tarea_Tema_1\EjemploWeb\Ejercicio_3\obj\Debug\Ejercicio_3.pdb
