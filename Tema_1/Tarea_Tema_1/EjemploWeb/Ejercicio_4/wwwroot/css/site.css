@@ -1,0 +1,29 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.tabla-cartas {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10 columnas */
+    gap: 10px; /* Espacio entre las cartas */
+}
+
+.carta img {
+    width: 100%; /* Ajusta el tamaño de las imágenes al 100% del contenedor */
+    height: auto;
+}
