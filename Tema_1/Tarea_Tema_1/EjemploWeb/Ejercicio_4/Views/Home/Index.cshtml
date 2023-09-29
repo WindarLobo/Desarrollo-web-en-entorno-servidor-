@@ -1,38 +1,45 @@
-﻿<!DOCTYPE html>
+﻿@using System.Data;
+<!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
 
-    <div class="tabla-cartas">
+    <div>
 
         @{
+
             ViewData["Title"] = "Home Page";
             string[] palos = { "Oro", "Bastos", "Espadas", "Copas" };
             mostrarCartas(palos);
+
         }
     </div>
-    
+
 
     @{
-        <!-- Crea un método que te muestre todas las cartas de la baraja -->
-  
+
+        <!-- 1 Crea un método que te muestre todas las cartas de la baraja -->
         void mostrarCartas(string[] palos)
         {
-            @for (int numero = 1; numero <= 10; numero++)
-            {
-                <div class="fila">
-                    @foreach (var palo in palos)
-                    {
-                        var control = $"img\\{numero}{palo}.jpg";
-                        <div class="carta">
-                            <img src="@control" alt="Carta" />
-                        </div>
-                    }
-                </div>
-            }
+            <table>
+                @foreach (var palo in palos)
+                {
+                    <tr class="fila">
+                        <td class="nombre-palo">@palo</td>
+                        @foreach (var numero in Enumerable.Range(1, 10))
+                        {
+                            var control = $"img\\{numero}{palo}.jpg";
+                            <td class="carta">
+                                <img src="@control" alt="Carta" />
+                            </td>
+                        }
+                    </tr>
+                }
+            </table>
         }
     }
 
