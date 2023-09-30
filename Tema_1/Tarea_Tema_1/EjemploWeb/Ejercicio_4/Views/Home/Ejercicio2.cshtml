@@ -1,0 +1,53 @@
+﻿<div class="text-center">
+@{
+    Random random = new Random();
+    string[] cadena = new string[5];
+
+    for (int i = 0; i < cadena.Length; i++)
+    {
+        cadena[i] = cadenaAletoria(random.Next(1, 21), random);
+    }
+
+    string[] reversedArray = new string[cadena.Length];
+
+    for (int i = 0; i < cadena.Length; i++)
+    {
+        reversedArray[i] = cadena[cadena.Length - 1 - i];
+    }
+}
+
+
+    <h1>Array Original:</h1>
+   
+        @foreach (string origina in cadena)
+        {
+            <a>@origina</a><br />
+        }
+   
+
+    <h1>Array Inversa:</h1>
+   
+        @foreach (string reversa in reversedArray)
+        {
+    <a>@reversa</a>
+    <br />
+        }
+   
+
+
+@functions {
+    private string cadenaAletoria(int longitudPalabra, Random random)
+    {
+        string caracteres = "abcdefghijklmnopqrstuvwxyz";
+        char[] cadena = new char[longitudPalabra];
+
+        for (int i = 0; i < longitudPalabra; i++)
+        {
+            cadena[i] = caracteres[random.Next(caracteres.Length)];
+        }
+
+        return new string(cadena);
+    }
+}
+</div>
+</div>

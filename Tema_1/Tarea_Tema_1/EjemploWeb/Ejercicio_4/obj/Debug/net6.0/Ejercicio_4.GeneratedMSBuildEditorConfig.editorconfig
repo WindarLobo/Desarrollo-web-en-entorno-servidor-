@@ -16,12 +16,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Tarea_Tema_1\EjemploWeb\Ejercicio_4
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Datos Windar/2_Daw/Desarrollo web en entorno servidor/Tema_1/Tarea_Tema_1/EjemploWeb/Ejercicio_4/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Datos Windar/2_Daw/Desarrollo web en entorno servidor/Tema_1/Tarea_Tema_1/EjemploWeb/Ejercicio_4/Views/Home/Ejercicio1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFamVyY2ljaW8xLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Datos Windar/2_Daw/Desarrollo web en entorno servidor/Tema_1/Tarea_Tema_1/EjemploWeb/Ejercicio_4/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Datos Windar/2_Daw/Desarrollo web en entorno servidor/Tema_1/Tarea_Tema_1/EjemploWeb/Ejercicio_4/Views/Home/Ejercicio2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFamVyY2ljaW8yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Datos Windar/2_Daw/Desarrollo web en entorno servidor/Tema_1/Tarea_Tema_1/EjemploWeb/Ejercicio_4/Views/Home/Ejercicio3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFamVyY2ljaW8zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Datos Windar/2_Daw/Desarrollo web en entorno servidor/Tema_1/Tarea_Tema_1/EjemploWeb/Ejercicio_4/Views/Home/Ejercicio4.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFamVyY2ljaW80LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Datos Windar/2_Daw/Desarrollo web en entorno servidor/Tema_1/Tarea_Tema_1/EjemploWeb/Ejercicio_4/Views/Shared/Error.cshtml]

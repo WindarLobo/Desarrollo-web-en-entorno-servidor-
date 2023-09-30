@@ -28,7 +28,7 @@ namespace Ejercicio_4
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Ejercicio4}/{id?}");
 
             app.Run();
         }

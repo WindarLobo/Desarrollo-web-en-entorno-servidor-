@@ -13,12 +13,21 @@ namespace Ejercicio_4.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+      
+
+        public IActionResult Ejercicio1()
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        public IActionResult Ejercicio2()
+        {
+            return View();
+        }
+        public IActionResult Ejercicio3()
+        {
+            return View();
+        }
+        public IActionResult Ejercicio4()
         {
             return View();
         }
@@ -28,5 +37,6 @@ namespace Ejercicio_4.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+      
     }
 }
