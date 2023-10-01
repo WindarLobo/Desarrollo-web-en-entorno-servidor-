@@ -1,0 +1,80 @@
+﻿<div class="text-center">
+@using System.Data;
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+   <div>
+    @{
+        ViewData["Title"] = "Home Page";
+        string[] palos = { "Oro", "Bastos", "Espadas", "Copas" };
+        mostrarCartas(palos);
+    }
+
+            <div id="carta-container" style="display: flex; justify-content: center; align-items: center; background-color: green;">
+            <div id="carta"></div>
+        </div>
+    
+    <button onclick="obtenerCartaAleatoria()">Obtener Carta Aleatoria</button>
+</div>
+
+
+    @{
+
+        <!-- 1 Crea un método que te muestre todas las cartas de la baraja -->
+        void mostrarCartas(string[] palos)
+        {
+            <h1>Cartas Original</h1>
+            <table>
+                @foreach (var palo in palos)
+                {
+                    <tr class="fila">
+                        <td class="nombre-palo">@palo</td>
+                        @foreach (var numero in Enumerable.Range(1, 10))
+                        {
+                            var control = $"Img\\{numero}{palo}.jpg";
+                            <td class="carta">
+                                <img src="@control" alt="Carta" />
+                            </td>
+                        }
+                    </tr>
+                  
+                }
+            </table>
+            <br />
+        }
+
+    }
+    @{
+        <!--2Crea un método que te devuelva una carta aleatoria-->
+
+
+        <script>
+            function obtenerCartaAleatoria() {
+                var palos = ['Oro', 'Bastos', 'Espadas', 'Copas'];
+                var numeros = [...Array(10).keys()].map(num => num + 1); // Array de 1 a 10
+
+                var paloAleatorio = palos[Math.floor(Math.random() * palos.length)];
+                var numeroAleatorio = numeros[Math.floor(Math.random() * numeros.length)];
+
+                var cartaImagen = `Img/${numeroAleatorio}${paloAleatorio}.jpg`;
+                var cartaHTML = `<img src="${cartaImagen}" alt="Carta">`;
+
+                document.getElementById('carta').innerHTML = cartaHTML;
+
+            }
+        </script>
+        }
+    
+
+
+</body>
+</html>
+</div>
+
+
