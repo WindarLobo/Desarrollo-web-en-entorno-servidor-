@@ -23,11 +23,12 @@ internal class Program
     private static string GeneradorPassSuperSeguras()
     {
         Random random = new Random();
-        string letrasMayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        string letrasMinusculas = "abcdefghijklmnopqrstuvwxyz";
+        string letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+     
+     
         string simbolos = "!@#$%^&*()_+-=[]{}|;:,.<>?";
 
-        char letraMayuscula = letrasMayusculas[random.Next(letrasMayusculas.Length)];
+        char letraMayuscula = letras[random.Next(letras.Length)];
 
         string digitos = string.Empty;
         int longitudDigitos = random.Next(6, 9);
@@ -42,11 +43,11 @@ internal class Program
         string  letraMinuscula = string.Empty;
         for (int i = 0; i < 2; i++)
         {
-            letraMinuscula += letrasMinusculas[random.Next(letrasMinusculas.Length)];
+            letraMinuscula += letras[random.Next(letras.Length)];
 
         }
 
-        string password = letraMayuscula.ToString() + digitos.ToString() + simbolo.ToString() + letraMinuscula.ToString() ;
+        string password = letraMayuscula.ToString() + digitos.ToString() + simbolo.ToString() + letraMinuscula.ToString().ToLower() ;
 
         return password;
     }

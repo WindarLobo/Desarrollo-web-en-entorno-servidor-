@@ -5,22 +5,6 @@
       "PackagePath": "staticwebassets\\ConsolaWeb.bundle.scp.css"
     },
     {
-      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\10Bastos.jpg",
-      "PackagePath": "staticwebassets\\Img\\10Bastos.jpg"
-    },
-    {
-      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\10Copas.jpg",
-      "PackagePath": "staticwebassets\\Img\\10Copas.jpg"
-    },
-    {
-      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\10Espadas.jpg",
-      "PackagePath": "staticwebassets\\Img\\10Espadas.jpg"
-    },
-    {
-      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\10Oro.jpg",
-      "PackagePath": "staticwebassets\\Img\\10Oro.jpg"
-    },
-    {
       "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\1Bastos.jpg",
       "PackagePath": "staticwebassets\\Img\\1Bastos.jpg"
     },
@@ -133,36 +117,52 @@
       "PackagePath": "staticwebassets\\Img\\7Oro.jpg"
     },
     {
-      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\8Bastos.jpg",
-      "PackagePath": "staticwebassets\\Img\\8Bastos.jpg"
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\CaballoBastos.jpg",
+      "PackagePath": "staticwebassets\\Img\\CaballoBastos.jpg"
     },
     {
-      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\8Copas.jpg",
-      "PackagePath": "staticwebassets\\Img\\8Copas.jpg"
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\CaballoCopas.jpg",
+      "PackagePath": "staticwebassets\\Img\\CaballoCopas.jpg"
     },
     {
-      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\8Espadas.jpg",
-      "PackagePath": "staticwebassets\\Img\\8Espadas.jpg"
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\CaballoEspada.jpg",
+      "PackagePath": "staticwebassets\\Img\\CaballoEspada.jpg"
     },
     {
-      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\8Oro.jpg",
-      "PackagePath": "staticwebassets\\Img\\8Oro.jpg"
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\CaballoOros.jpg",
+      "PackagePath": "staticwebassets\\Img\\CaballoOros.jpg"
     },
     {
-      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\9Bastos.jpg",
-      "PackagePath": "staticwebassets\\Img\\9Bastos.jpg"
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\ReyBastos.jpg",
+      "PackagePath": "staticwebassets\\Img\\ReyBastos.jpg"
     },
     {
-      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\9Copas.jpg",
-      "PackagePath": "staticwebassets\\Img\\9Copas.jpg"
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\ReyCopas.jpg",
+      "PackagePath": "staticwebassets\\Img\\ReyCopas.jpg"
     },
     {
-      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\9Espadas.jpg",
-      "PackagePath": "staticwebassets\\Img\\9Espadas.jpg"
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\ReyEspadas.jpg",
+      "PackagePath": "staticwebassets\\Img\\ReyEspadas.jpg"
     },
     {
-      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\9Oro.jpg",
-      "PackagePath": "staticwebassets\\Img\\9Oro.jpg"
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\ReyOro.jpg",
+      "PackagePath": "staticwebassets\\Img\\ReyOro.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\SotaBastos.jpg",
+      "PackagePath": "staticwebassets\\Img\\SotaBastos.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\SotaCopas.jpg",
+      "PackagePath": "staticwebassets\\Img\\SotaCopas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\SotaEspadas.jpg",
+      "PackagePath": "staticwebassets\\Img\\SotaEspadas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\Img\\SotaOros.jpg",
+      "PackagePath": "staticwebassets\\Img\\SotaOros.jpg"
     },
     {
       "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\EjemploWeb\\ConsolaWeb\\wwwroot\\css\\site.css",

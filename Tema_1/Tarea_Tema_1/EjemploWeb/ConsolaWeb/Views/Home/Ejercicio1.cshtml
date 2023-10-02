@@ -5,7 +5,7 @@
         Random rando = new Random();
         int cantidaDeNota = rando.Next(0, 11);
         double[] notasAlumno = new double[cantidaDeNota];
-        <h3>Notas del Alumno:</h3>
+        <h5>Notas del Alumno:</h5>
 
         notasAletorio(cantidaDeNota, notasAlumno, rando);
 
@@ -19,14 +19,12 @@
 
         double promedio = Math.Round(sumaNota / cantidaDeNota, 1);
     }
-    <h3>Promedio de Notas:</h3>
-    <h5>@promedio</h5>
-    <h3> Nota Máxima: </h3>
-    <h5>@notasAlumno.Max().ToString("F2")</h5>
+    <h5>Promedio de Notas: @promedio </h5>
 
+    <h5> Nota Máxima: @notasAlumno.Max().ToString("F2")</h5>
 
-    <h3> Nota Mínima:</h3>
-    <h5>@notasAlumno.Min().ToString("F2")</h5>
+    <h5> Nota Mínima: @notasAlumno.Min().ToString("F2")</h5>
+ 
 
 
 
@@ -37,11 +35,14 @@
             for (int i = 0; i < cantidaDeNota; i++)
             {
                 notasAlumno[i] = rando.NextDouble() * 10;
+                
             }
-
+            int numero = 0;
             @foreach (double nota in notasAlumno)
             {
-                <h5>@nota.ToString("F2")</h5>
+                 numero++;
+                
+                <h5>Nota  @numero  : @nota.ToString("F2")</h5>
 
             }
 

@@ -12,6 +12,8 @@ namespace ConsolaWeb.Controllers
         {
             _logger = logger;
         }
+      
+
         public IActionResult Ejercicio1()
         {
             return View();
@@ -38,6 +40,7 @@ namespace ConsolaWeb.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
        
-            
+
     }
+
 }

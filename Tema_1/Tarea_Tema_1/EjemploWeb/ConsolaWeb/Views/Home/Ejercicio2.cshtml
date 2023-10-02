@@ -1,4 +1,4 @@
-﻿<div class="text-center">
+﻿
 @{
     Random random = new Random();
     string[] cadena = new string[5];
@@ -18,22 +18,23 @@
 
 
     <h1>Array Original:</h1>
-   
+
+   <ul >
         @foreach (string origina in cadena)
         {
-            <a>@origina</a><br />
+            <li>@origina</li>
         }
-   
+  
 
     <h1>Array Inversa:</h1>
    
         @foreach (string reversa in reversedArray)
         {
-    <a>@reversa</a>
-    <br />
+            <li>@reversa</li>
+  
         }
-   
 
+</ul>
 
 @functions {
     private string cadenaAletoria(int longitudPalabra, Random random)
@@ -49,5 +50,4 @@
         return new string(cadena);
     }
 }
-</div>
-</div>
+
