@@ -6,9 +6,6 @@ namespace ConsolaWeb.Models
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
-        public string Palo { get; set; }
-        public int Numero { get; set; }
-        public string ImagenUrl { get; set; }
 
     }
 }
