@@ -1,96 +1,81 @@
 ﻿<div class="text-center">
-    @using System.Data;
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <link rel="stylesheet" href="styles.css">
 
-    </head>
+    <link rel="stylesheet" href="styles.css">
 
-    <body>
+    @{
+        ViewData["Title"] = "Ejercicio4";
 
-   
-        @{
+        string[] palos = { "Oro", "Bastos", "Espadas", "Copas" };
+        mostrarTodasCartas(palos);
+
+        <h1>Mostrar cartas </h1>
+        <input type="text" id="nombreCarta" required />
+        <button onclick="mostrarCartas()" style=" background-color: #4CAF50;">Mostrar Carta</button>
+        <br />
+        <div id="carta-container">
+            <h3 id="formatoCartaResultado"></h3>
+            <img id="imagenCartaResultado" src="" alt="">
+        </div>
 
 
-            string[] palos = { "Oro", "Bastos", "Espadas", "Copas" };
-  
-            mostrarTodasCartas(palos);
-            void mostrarTodasCartas(string[] palos)
-            {
-                <h1>Cartas Original</h1>
-                <table>
-                    @foreach (var palo in palos)
-                    {
-                        <tr class="fila">
-                            <td class="nombre-palo">@palo</td>
-                            @foreach (var numero in Enumerable.Range(1, 10))
-                            {
-                                var control = $"Img\\{numero}{palo}.jpg";
-                                <td class="carta">
-                                    <img src="@control" alt="Carta" />
-                                </td>
-                            }
-                        </tr>
+        <h1>Cartas aletoria</h1>
+        <div id="carta-container" style="display: flex; justify-content: center;">
+            <div id="carta"></div>
+        </div>
+        <br />
+        <button onclick="obtenerCartaAleatoria()" style=" background-color: #4CAF50;">Obtener Carta Aleatoria</button>
 
-                    }
-                </table>
-                <br />
-            }
+    }
+    @{
 
-        }
-       
-          
-            @{
-            <h1>Mostrar cartas </h1>
-            <input type="text" id="nombreCarta" required />
-            <button onclick="mostrarCartas()" style=" background-color: #4CAF50;">Mostrar Carta</button>
-            <br />
-            <div id="carta-container">
-                <h3 id="formatoCartaResultado"></h3>
-                <img id="imagenCartaResultado" src="" alt="Carta">
-            </div>
 
-                <script>
-                    function mostrarCartas() {
-                        var nombreCarta = document.getElementById("nombreCarta").value.toLowerCase();
-
-                        var rutaImagen = "img/" + nombreCarta + ".jpg";
-
-                        document.getElementById("imagenCartaResultado").src = rutaImagen;
-                    }
-
-                </script>
-            }
-        @{
-            <h1>Cartas aletoria</h1>
-            <div id="carta-container" style="display: flex; justify-content: center;">
-                <div id="carta"></div>
-            </div>
-            <br />
-            <button onclick="obtenerCartaAleatoria()" style=" background-color: #4CAF50;">Obtener Carta Aleatoria</button>
-            <script>
-
-                  function obtenerCartaAleatoria() {
-                    var palos = ['Oro', 'Bastos', 'Espadas', 'Copas'];
-                    var numeros = [...Array(10).keys()].map(num => num + 1);
-
-                    var paloAleatorio = palos[Math.floor(Math.random() * palos.length)];
-                    var numeroAleatorio = numeros[Math.floor(Math.random() * numeros.length)];
-
-                    var cartaImagen = `Img/${numeroAleatorio}${paloAleatorio}.jpg`;
-                    var cartaHTML = `<img src="${cartaImagen}" alt="Carta">`;
-
-                    document.getElementById('carta').innerHTML = cartaHTML;
+        void mostrarTodasCartas(string[] palos)
+        {
+            <h1>Cartas Original</h1>
+            <table>
+                @foreach (var palo in palos)
+                {
+                    <tr class="fila">
+                        <td class="nombre-palo">@palo</td>
+                        @foreach (var numero in Enumerable.Range(1, 10))
+                        {
+                            var control = $"Img\\{numero}{palo}.jpg";
+                            <td class="carta">
+                                <img src="@control" alt="Carta" />
+                            </td>
+                        }
+                    </tr>
 
                 }
-            </script>
-
-
+            </table>
+            <br />
         }
 
-    </body>
-</html>
+    }
+
+    <script>
+        function mostrarCartas() {
+            var nombreCarta = document.getElementById("nombreCarta").value.toLowerCase();
+
+            var rutaImagen = "img/" + nombreCarta + ".jpg";
+
+            document.getElementById("imagenCartaResultado").src = rutaImagen;
+        }
+
+        function obtenerCartaAleatoria() {
+            var palos = ['Oro', 'Bastos', 'Espadas', 'Copas'];
+            var numeros = [...Array(10).keys()].map(num => num + 1);
+
+            var paloAleatorio = palos[Math.floor(Math.random() * palos.length)];
+            var numeroAleatorio = numeros[Math.floor(Math.random() * numeros.length)];
+
+            var cartaImagen = `Img/${numeroAleatorio}${paloAleatorio}.jpg`;
+            var cartaHTML = `<img src="${cartaImagen}" alt="Carta">`;
+
+            document.getElementById('carta').innerHTML = cartaHTML;
+
+        }
+    </script>
 </div>
 
 
