@@ -20,11 +20,27 @@
         double promedio = Math.Round(sumaNota / cantidaDeNota, 1);
     }
     <h5>Promedio de Notas: @promedio </h5>
+    @if (notasAlumno.Any())
+    {
+        <h5>Nota Máxima: @notasAlumno.Max().ToString("F2")</h5>
+    }
+    else
+    {
+        <h5>No hay notas disponibles.</h5>
+    }
+    @if (notasAlumno.Any())
+    {
+        <h5> Nota Mínima: @notasAlumno.Min().ToString("F2")</h5>
+    }
+    else
+    {
+        <h5> No hay notas disponibles.</h5>
+    }
 
-    <h5> Nota Máxima: @notasAlumno.Max().ToString("F2")</h5>
 
-    <h5> Nota Mínima: @notasAlumno.Min().ToString("F2")</h5>
- 
+
+
+
 
 
 
@@ -35,13 +51,13 @@
             for (int i = 0; i < cantidaDeNota; i++)
             {
                 notasAlumno[i] = rando.NextDouble() * 10;
-                
+
             }
             int numero = 0;
             @foreach (double nota in notasAlumno)
             {
-                 numero++;
-                
+                numero++;
+
                 <h5>Nota  @numero  : @nota.ToString("F2")</h5>
 
             }

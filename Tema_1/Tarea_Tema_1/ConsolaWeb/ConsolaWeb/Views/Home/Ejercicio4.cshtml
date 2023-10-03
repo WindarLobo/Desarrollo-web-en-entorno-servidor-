@@ -18,22 +18,6 @@
                 mostrarTodasCartas(palos);
             }
 
-            <h1>Mostrar cartas </h1>
-            <input type="text" id="nombreCarta" required />
-            <button onclick="mostrarCartas()" style=" background-color: #4CAF50;">Mostrar Carta</button><br />
-            <div id="carta-container">
-                <h3 id="formatoCartaResultado"></h3>
-                <img id="imagenCartaResultado" src="" alt="Carta">
-            </div>
-            <br />
-
-            <h1>Cartas aletoria</h1>
-            <div id="carta-container" style="display: flex; justify-content: center;">
-                <div id="carta"></div>
-            </div>
-            <br />
-            <button onclick="obtenerCartaAleatoria()" style=" background-color: #4CAF50;">Obtener Carta Aleatoria</button>
-            </div>
 
 
         @{
@@ -60,40 +44,59 @@
             }
 
         }
-        @{
+       
+            @{
+                <h1>Mostrar cartas </h1>
+                <input type="text" id="nombreCarta" required />
+                <button id="mostrarCartaBtn" style="background-color: #4CAF50;">Mostrar Carta</button>
 
+                <br />
+                <div id="carta-container">
+                    <h3 id="formatoCartaResultado"></h3>
+                    <img id="imagenCartaResultado" src="" alt="">
+                </div>
+            
             <script>
-
-                function obtenerCartaAleatoria() {
-                    var palos = ['Oro', 'Bastos', 'Espadas', 'Copas'];
-                    var numeros = [...Array(10).keys()].map(num => num + 1);
-
-                    var paloAleatorio = palos[Math.floor(Math.random() * palos.length)];
-                    var numeroAleatorio = numeros[Math.floor(Math.random() * numeros.length)];
-
-                    var cartaImagen = `Img/${numeroAleatorio}${paloAleatorio}.jpg`;
-                    var cartaHTML = `<img src="${cartaImagen}" alt="Carta">`;
-
-                    document.getElementById('carta').innerHTML = cartaHTML;
-
-                }
-            </script>
-
-
-        }
-        @{
-
-            <script>
-                function mostrarCartas() {
+                document.getElementById('mostrarCartaBtn').addEventListener('click', function () {
                     var nombreCarta = document.getElementById("nombreCarta").value.toLowerCase();
 
-                    var rutaImagen = "img/" + nombreCarta + ".jpg";
+                    // Hacer una solicitud al controlador para obtener la ruta de la imagen
+                    fetch(`/Home/ObtenerCartaPorNombre?nombreCarta=${nombreCarta}`)
+                        .then(response => response.json())
+                        .then(rutaImagen => {
+                            // Actualizar la imagen de la carta en el contenedor
+                            document.getElementById('imagenCartaResultado').src = rutaImagen;
 
-                    document.getElementById("imagenCartaResultado").src = rutaImagen;
-                }
-
+                           
+                        })
+                        .catch(error => console.error('Error:', error));
+                });
             </script>
-        }
+            }
+            @{
+                <h1>Mostrar cartas aletoria </h1>
+
+                <button id="ObtenerCartaAleatoria" style="background-color: #4CAF50;">Mostrar Carta</button>
+
+                <br />
+                <div id="carta-container">
+                    <h3 id="formatoCartaResultado"></h3>
+                    <img id="imagenCarta" src="" alt="">
+                </div>
+
+                <script>
+                    document.getElementById('ObtenerCartaAleatoria').addEventListener('click', function () {
+                        // Hacer una solicitud al controlador para obtener la carta aleatoria
+                        fetch('/Home/ObtenerCartaAleatoria')
+                            .then(response => response.text())
+                            .then(cartaImagen => {
+                                // Actualizar la imagen de la carta en el contenedor
+                                document.getElementById('imagenCarta').src = cartaImagen;
+                            })
+                            .catch(error => console.error('Error:', error));
+                    });
+                </script>
+            }
 
 
     </body>

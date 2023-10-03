@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CvMWVjGYV9TDpA4rTKlkJs8figdy354zfBBa6WaErNk=",
+  "Hash": "k6jo+qT3LcYxTmm3kyS5nxV2x0h62jX8gEQBkKKE9/0=",
   "Source": "ConsolaWeb",
   "BasePath": "_content/ConsolaWeb",
   "Mode": "Default",
@@ -646,12 +646,12 @@
       "OriginalItemSpec": "wwwroot\\Img\\ReyBastos.jpg"
     },
     {
-      "Identity": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\ConsolaWeb\\ConsolaWeb\\wwwroot\\Img\\ReyCopas.jpg",
+      "Identity": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\ConsolaWeb\\ConsolaWeb\\wwwroot\\Img\\ReyCopa.jpg",
       "SourceId": "ConsolaWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\ConsolaWeb\\ConsolaWeb\\wwwroot\\",
       "BasePath": "_content/ConsolaWeb",
-      "RelativePath": "Img/ReyCopas.jpg",
+      "RelativePath": "Img/ReyCopa.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -660,7 +660,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Img\\ReyCopas.jpg"
+      "OriginalItemSpec": "wwwroot\\Img\\ReyCopa.jpg"
     },
     {
       "Identity": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\ConsolaWeb\\ConsolaWeb\\wwwroot\\Img\\ReyEspadas.jpg",
