@@ -2,8 +2,95 @@
 
     <link rel="stylesheet" href="styles.css">
 
+
+    <h1 style="color:blue">Ejercicio4 normal</h1>
+
     @{
-        ViewData["Title"] = "Ejercicio4";
+        
+
+        string[] palos1 = { "Oro", "Bastos", "Espadas", "Copas" };
+        mostrarTodasCartas1(palos1);
+        <h1>Mostrar cartas </h1>
+        ObtenerCartaPorNombre("ReyCopa");
+        <br />
+        ObtenerCartaPorNombre("1Bastos");
+        <br />
+        ObtenerCartaPorNombre("ReyBastos");
+        <br />
+        ObtenerCartaPorNombre("ReyEspadas");
+        <br />
+
+
+
+        <h1>Mostrar cartas aletoria: </h1>
+        string rutaCarta = ObtenerCartaAleatoria();
+        <img src="@rutaCarta" alt="" />
+        <br />
+
+    }
+
+
+    @{
+
+
+        void mostrarTodasCartas1(string[] palos1)
+        {
+            <h1>Cartas Original</h1>
+            <table>
+                @foreach (var palo in palos1)
+                {
+                    <tr class="fila">
+                        <td class="nombre-palo">@palo</td>
+                        @foreach (var numero in Enumerable.Range(1, 10))
+                        {
+                            var control = $"Img\\{numero}{palo}.jpg";
+                            <td class="carta">
+                                <img src="@control" alt="Carta" />
+                            </td>
+                        }
+                    </tr>
+
+                }
+            </table>
+            <br />
+        }
+
+    }
+
+    @{
+
+        void ObtenerCartaPorNombre(string nombreCarta)
+        {
+            var control = $"Img\\{nombreCarta}.jpg";
+            <img src="@control" alt="" />
+
+        }
+
+    }
+    @{
+
+        string ObtenerCartaAleatoria()
+        {
+            string[] palos = { "Oro", "Bastos", "Espadas", "Copas" };
+            Random random = new Random();
+
+            int numeroAleatorio = random.Next(1, 11);
+            string paloAleatorio = palos[random.Next(palos.Length)];
+
+            string rutaCarta = $"img\\{numeroAleatorio}{paloAleatorio}.jpg";
+            return rutaCarta;
+
+        }
+
+
+    }
+
+
+    <br/>
+    <br />
+    @{
+       
+        <h1 style="color:red">Ejercicio4 con javascript</h1>
 
         string[] palos = { "Oro", "Bastos", "Espadas", "Copas" };
         mostrarTodasCartas(palos);
@@ -76,6 +163,6 @@
 
         }
     </script>
+
+
 </div>
-
-
