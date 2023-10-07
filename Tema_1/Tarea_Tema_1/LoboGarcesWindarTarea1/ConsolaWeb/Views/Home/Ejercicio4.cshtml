@@ -1,0 +1,174 @@
+﻿<div class="text-center">
+
+    <link rel="stylesheet" href="styles.css">
+
+
+    <h1 style="color:blue">Ejercicio4 normal</h1>
+
+    @{
+
+        //Declaro una matriz de tipo string
+        string[] palos1 = { "Oro", "Bastos", "Espadas", "Copas" };
+
+        //Lamadas a los metodos
+
+        mostrarTodasCartas1(palos1);
+
+        <h1>Mostrar cartas </h1>
+        ObtenerCartaPorNombre("ReyCopa");
+        <br />
+        ObtenerCartaPorNombre("1Bastos");
+        <br />
+        ObtenerCartaPorNombre("ReyBastos");
+        <br />
+        ObtenerCartaPorNombre("ReyEspadas");
+        <br />
+
+        <h1>Mostrar cartas aletoria: </h1>
+        string rutaCarta = ObtenerCartaAleatoria();
+        <img src="@rutaCarta" alt="" />
+        <br />
+
+    }
+
+
+    @{
+        //Creo un metodo mostrarTodasCartas1(), que genera una tabla en la página web con imágenes de las cartas.
+
+        void mostrarTodasCartas1(string[] palos1)
+        {
+            <h1>Cartas Original</h1>
+            <table>
+                @foreach (var palo in palos1)
+                {
+                    <tr class="fila">
+                        <td class="nombre-palo">@palo</td>
+                        @foreach (var numero in Enumerable.Range(1, 10))
+                        {
+                            var control = $"Img\\{numero}{palo}.jpg";
+                            <td class="carta">
+                                <img src="@control" alt="Carta" />
+                            </td>
+                        }
+                    </tr>
+
+                }
+            </table>
+            <br />
+        }
+
+    }
+
+    @{
+        //Creo un metodo ObtenerCartaPorNombre(), que recibe el nombre de la carta y la muestra.
+        void ObtenerCartaPorNombre(string nombreCarta)
+        {
+            var control = $"Img\\{nombreCarta}.jpg";
+            <img src="@control" alt="" />
+
+        }
+
+    }
+    @{
+        //Creo un metodo tipo string ObtenerCartaAleatoria(), donde retorno las imagenes de las  cartas aletoria del 1 al 10.
+        string ObtenerCartaAleatoria()
+        {
+            string[] palos = { "Oro", "Bastos", "Espadas", "Copas" };
+            Random random = new Random();
+
+            int numeroAleatorio = random.Next(1, 11);
+            string paloAleatorio = palos[random.Next(palos.Length)];
+
+            string rutaCarta = $"img\\{numeroAleatorio}{paloAleatorio}.jpg";
+            return rutaCarta;
+
+        }
+
+    }
+
+
+    <br />
+    <br />
+    @{
+
+        <h1 style="color:red">Ejercicio4 con javascript</h1>
+
+        //Declaro una matriz de tipo string
+        string[] palos = { "Oro", "Bastos", "Espadas", "Copas" };
+
+        //Llamadas a los metodos
+
+        mostrarTodasCartas(palos);
+
+        <h1>Mostrar cartas </h1>
+        <input type="text" id="nombreCarta" required />
+        <button onclick="mostrarCartas()" style=" background-color: #4CAF50;">Mostrar Carta</button>
+        <br />
+        <div id="carta-container">
+            <h3 id="formatoCartaResultado"></h3>
+            <img id="imagenCartaResultado" src="" alt="">
+        </div>
+
+
+        <h1>Cartas aletoria</h1>
+        <div id="carta-container" style="display: flex; justify-content: center;">
+            <div id="carta"></div>
+        </div>
+        <br />
+        <button onclick="obtenerCartaAleatoria()" style=" background-color: #4CAF50;">Obtener Carta Aleatoria</button>
+
+    }
+    @{
+        //Creo un metodo mostrarTodasCartas(), que genera una tabla en la página web con imágenes de las cartas.
+
+        void mostrarTodasCartas(string[] palos)
+        {
+            <h1>Cartas Original</h1>
+            <table>
+                @foreach (var palo in palos)
+                {
+                    <tr class="fila">
+                        <td class="nombre-palo">@palo</td>
+                        @foreach (var numero in Enumerable.Range(1, 10))
+                        {
+                            var control = $"Img\\{numero}{palo}.jpg";
+                            <td class="carta">
+                                <img src="@control" alt="Carta" />
+                            </td>
+                        }
+                    </tr>
+
+                }
+            </table>
+            <br />
+        }
+
+    }
+
+    <script>
+        //Creo una función mostrarCartas(), cuando el usuario ingresa el nombre de una carta se activa la función y muestra la imagen de la carta.
+        function mostrarCartas() {
+            var nombreCarta = document.getElementById("nombreCarta").value.toLowerCase();
+
+            var rutaImagen = "img/" + nombreCarta + ".jpg";
+
+            document.getElementById("imagenCartaResultado").src = rutaImagen;
+        }
+        //Creo una función obtenerCartaAleatoria(). Es una función de JavaScript que se activa cuando se hace clic en un botón y se obtiene la carta aletoria.
+        function obtenerCartaAleatoria() {
+            var palos = ['Oro', 'Bastos', 'Espadas', 'Copas'];
+            var numeros = [...Array(10).keys()].map(num => num + 1);
+
+            var paloAleatorio = palos[Math.floor(Math.random() * palos.length)];
+            var numeroAleatorio = numeros[Math.floor(Math.random() * numeros.length)];
+
+            var cartaImagen = `Img/${numeroAleatorio}${paloAleatorio}.jpg`;
+            var cartaHTML = `<img src="${cartaImagen}" alt="Carta">`;
+
+            document.getElementById('carta').innerHTML = cartaHTML;
+
+        }
+    </script>
+
+
+</div>

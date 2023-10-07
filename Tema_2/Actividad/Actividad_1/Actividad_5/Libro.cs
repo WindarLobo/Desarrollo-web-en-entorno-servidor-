@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace Actividad_5
 {
-    protected class Libro : Articulo
+
+    public class Libro : Articulo
     {
         private string autor;
-
-        public Libro(string autor)
+        public Libro(string titulo, string precio,string autor) : base(titulo, precio)
         {
-            this.autor = autor;
+            this.Autor = autor;
         }
+
         public string Autor { get => autor; set => autor = value; }
-
-        public Articulo(string titulo, string precio) : base(titulo, precio)
-        {
-        }
     }
 
 }

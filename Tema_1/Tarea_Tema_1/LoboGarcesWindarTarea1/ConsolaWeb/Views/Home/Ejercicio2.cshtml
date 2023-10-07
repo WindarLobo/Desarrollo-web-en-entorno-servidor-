@@ -1,0 +1,61 @@
+﻿@{
+
+    Random random = new Random();
+
+    // Declaro variables
+    string[] cadenas = new string[5];
+
+    //Se inicia un bucle que itera sobre el arreglo cadenas y llamo al metodo cadenaAletoria() que recibe parametros en donde genera cadenas aleatoria entre 1 y 20.
+    for (int i = 0; i < cadenas.Length; i++)
+    {
+        cadenas[i] = cadenaAletoria(random.Next(1, 21), random);
+    }
+
+
+    string[] reversedArray = new string[cadenas.Length];
+
+    //Se inicia un bucle que itera sobre el arreglo cadenas  pero en orden inverso.
+    for (int i = 0; i < cadenas.Length; i++)
+    {
+
+        reversedArray[i] = cadenas[cadenas.Length - 1 - i];
+    }
+}
+@{
+    //Creo un metodo de tipo string cadenaAletoria() recibe parametro y retorna la cadena  caracteres.
+    string cadenaAletoria(int longitudPalabra, Random random)
+    {
+        string caracteres = "abcdefghijklmnopqrstuvwxyz";
+
+        char[] cadena = new char[longitudPalabra];
+
+        for (int i = 0; i < longitudPalabra; i++)
+        {
+            cadena[i] = caracteres[random.Next(caracteres.Length)];
+        }
+
+        return new string(cadena);
+    }
+
+}
+
+<h1>Array Original:</h1>
+
+<ul>
+    @foreach (string origina in cadenas)
+    {
+        <li>@origina</li>
+    }
+
+
+    <h1>Array Inversa:</h1>
+
+    @foreach (string reversa in reversedArray)
+    {
+        <li>@reversa</li>
+
+    }
+
+</ul>
+
+

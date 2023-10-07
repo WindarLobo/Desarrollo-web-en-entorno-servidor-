@@ -1,0 +1,58 @@
+﻿<div class="text-center">
+    @{
+        Random rando = new Random();
+
+        // Declaro variables
+        double sumaNota = 0;
+
+        int cantidaDeNota = rando.Next(5, 11);
+
+        double[] notasAlumno = new double[cantidaDeNota];
+
+        <h5>Notas del Alumno:</h5>
+
+        // Llamo al metodo notasAletorio() que recibe parametros.
+        notasAletorio(cantidaDeNota, notasAlumno, rando);
+
+
+        //Se inicia un bucle que itera sobre el arreglo notasAlumno y sumo todas las notas alamacenas en el arreglo.
+        foreach (double nota in notasAlumno)
+        {
+            sumaNota += nota;
+        }
+
+        double promedio = Math.Round(sumaNota / cantidaDeNota, 1);
+    }
+    @{
+        //Creo un metodo notasAletorio(), que obtendra las notas aletoria y muestro mendiante un foreach las notas.
+        void notasAletorio(int cantidaDeNota, double[] notasAlumno, Random rando)
+        {
+            for (int i = 0; i < cantidaDeNota; i++)
+            {
+                notasAlumno[i] = rando.NextDouble() * 10;
+
+            }
+            int numero = 0;
+
+            foreach (double nota in notasAlumno)
+            {
+                numero++;
+
+                <h5>Nota @numero  : @nota.ToString("F2")</h5>
+
+            }
+        }
+
+        //Obtengo el promedio de notas
+        <h5>Promedio de Notas: @promedio </h5>
+
+        //Obtengo las notas maxima
+        <h5>Nota Máxima: @notasAlumno.Max().ToString("F2")</h5>
+
+        //Obtengo las notas minima
+        <h5> Nota Mínima: @notasAlumno.Min().ToString("F2")</h5>
+
+    }
+</div>
+
+

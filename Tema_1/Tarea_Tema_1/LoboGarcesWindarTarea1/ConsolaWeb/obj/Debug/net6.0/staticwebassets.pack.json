@@ -1,0 +1,425 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ConsolaWeb.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ConsolaWeb.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\1Bastos.jpg",
+      "PackagePath": "staticwebassets\\Img\\1Bastos.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\1Copas.jpg",
+      "PackagePath": "staticwebassets\\Img\\1Copas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\1Espadas.jpg",
+      "PackagePath": "staticwebassets\\Img\\1Espadas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\1Oro.jpg",
+      "PackagePath": "staticwebassets\\Img\\1Oro.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\2Bastos.jpg",
+      "PackagePath": "staticwebassets\\Img\\2Bastos.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\2Copas.jpg",
+      "PackagePath": "staticwebassets\\Img\\2Copas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\2Espadas.jpg",
+      "PackagePath": "staticwebassets\\Img\\2Espadas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\2Oro.jpg",
+      "PackagePath": "staticwebassets\\Img\\2Oro.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\3Bastos.jpg",
+      "PackagePath": "staticwebassets\\Img\\3Bastos.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\3Copas.jpg",
+      "PackagePath": "staticwebassets\\Img\\3Copas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\3Espadas.jpg",
+      "PackagePath": "staticwebassets\\Img\\3Espadas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\3Oro.jpg",
+      "PackagePath": "staticwebassets\\Img\\3Oro.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\4Bastos.jpg",
+      "PackagePath": "staticwebassets\\Img\\4Bastos.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\4Copas.jpg",
+      "PackagePath": "staticwebassets\\Img\\4Copas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\4Espadas.jpg",
+      "PackagePath": "staticwebassets\\Img\\4Espadas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\4Oro.jpg",
+      "PackagePath": "staticwebassets\\Img\\4Oro.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\5Bastos.jpg",
+      "PackagePath": "staticwebassets\\Img\\5Bastos.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\5Copas.jpg",
+      "PackagePath": "staticwebassets\\Img\\5Copas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\5Espadas.jpg",
+      "PackagePath": "staticwebassets\\Img\\5Espadas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\5Oro.jpg",
+      "PackagePath": "staticwebassets\\Img\\5Oro.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\6Bastos.jpg",
+      "PackagePath": "staticwebassets\\Img\\6Bastos.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\6Copas.jpg",
+      "PackagePath": "staticwebassets\\Img\\6Copas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\6Espadas.jpg",
+      "PackagePath": "staticwebassets\\Img\\6Espadas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\6Oro.jpg",
+      "PackagePath": "staticwebassets\\Img\\6Oro.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\7Bastos.jpg",
+      "PackagePath": "staticwebassets\\Img\\7Bastos.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\7Copas.jpg",
+      "PackagePath": "staticwebassets\\Img\\7Copas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\7Espadas.jpg",
+      "PackagePath": "staticwebassets\\Img\\7Espadas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\7Oro.jpg",
+      "PackagePath": "staticwebassets\\Img\\7Oro.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\CaballoBastos.jpg",
+      "PackagePath": "staticwebassets\\Img\\CaballoBastos.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\CaballoCopas.jpg",
+      "PackagePath": "staticwebassets\\Img\\CaballoCopas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\CaballoEspada.jpg",
+      "PackagePath": "staticwebassets\\Img\\CaballoEspada.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\CaballoOros.jpg",
+      "PackagePath": "staticwebassets\\Img\\CaballoOros.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\ReyBastos.jpg",
+      "PackagePath": "staticwebassets\\Img\\ReyBastos.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\ReyCopa.jpg",
+      "PackagePath": "staticwebassets\\Img\\ReyCopa.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\ReyEspadas.jpg",
+      "PackagePath": "staticwebassets\\Img\\ReyEspadas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\ReyOro.jpg",
+      "PackagePath": "staticwebassets\\Img\\ReyOro.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\SotaBastos.jpg",
+      "PackagePath": "staticwebassets\\Img\\SotaBastos.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\SotaCopas.jpg",
+      "PackagePath": "staticwebassets\\Img\\SotaCopas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\SotaEspadas.jpg",
+      "PackagePath": "staticwebassets\\Img\\SotaEspadas.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\Img\\SotaOros.jpg",
+      "PackagePath": "staticwebassets\\Img\\SotaOros.jpg"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_1\\Tarea_Tema_1\\LoboGarcesWindarTarea1\\ConsolaWeb\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ConsolaWeb.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.ConsolaWeb.props",
+      "PackagePath": "build\\ConsolaWeb.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.ConsolaWeb.props",
+      "PackagePath": "buildMultiTargeting\\ConsolaWeb.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.ConsolaWeb.props",
+      "PackagePath": "buildTransitive\\ConsolaWeb.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

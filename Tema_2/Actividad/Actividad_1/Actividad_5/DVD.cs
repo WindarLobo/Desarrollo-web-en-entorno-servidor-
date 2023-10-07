@@ -6,22 +6,17 @@ using System.Threading.Tasks;
 
 namespace Actividad_5
 {
-    protected class DVD : Articulo
+   public   class DVD : Articulo
     {
-      
-        private int  duracion;
-
-      
-        public string Duracion { get => duracion; set => duracion = value; }
-        public DVD(int duracion)
-        {
-            this.duracion = duracion;
-        }
 
 
-        public Libro(string titulo, string precio) : base(titulo, precio)
+        private int duracion; 
+
+        public DVD(string titulo, string precio,int duracion) : base(titulo, precio)
         {
         }
+
+        public int Duracion { get => duracion; set => duracion = value; }
     }
 
 

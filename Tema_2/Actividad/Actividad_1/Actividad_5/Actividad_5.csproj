@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Articulo.cs" />
+    <Compile Include="ArticuloBase.cs" />
     <Compile Include="DVD.cs" />
     <Compile Include="Libro.cs" />
     <Compile Include="Program.cs" />
