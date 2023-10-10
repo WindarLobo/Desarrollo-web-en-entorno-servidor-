@@ -1,0 +1,14 @@
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Boletin_1\Ejercicios\Ejercicios\Ejercicio_1_\Ejercicio_18\bin\Debug\net6.0\Ejercicio_18.exe
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Boletin_1\Ejercicios\Ejercicios\Ejercicio_1_\Ejercicio_18\bin\Debug\net6.0\Ejercicio_18.deps.json
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Boletin_1\Ejercicios\Ejercicios\Ejercicio_1_\Ejercicio_18\bin\Debug\net6.0\Ejercicio_18.runtimeconfig.json
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Boletin_1\Ejercicios\Ejercicios\Ejercicio_1_\Ejercicio_18\bin\Debug\net6.0\Ejercicio_18.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Boletin_1\Ejercicios\Ejercicios\Ejercicio_1_\Ejercicio_18\bin\Debug\net6.0\Ejercicio_18.pdb
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Boletin_1\Ejercicios\Ejercicios\Ejercicio_1_\Ejercicio_18\obj\Debug\net6.0\Ejercicio_18.GeneratedMSBuildEditorConfig.editorconfig
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Boletin_1\Ejercicios\Ejercicios\Ejercicio_1_\Ejercicio_18\obj\Debug\net6.0\Ejercicio_18.AssemblyInfoInputs.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Boletin_1\Ejercicios\Ejercicios\Ejercicio_1_\Ejercicio_18\obj\Debug\net6.0\Ejercicio_18.AssemblyInfo.cs
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Boletin_1\Ejercicios\Ejercicios\Ejercicio_1_\Ejercicio_18\obj\Debug\net6.0\Ejercicio_18.csproj.CoreCompileInputs.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Boletin_1\Ejercicios\Ejercicios\Ejercicio_1_\Ejercicio_18\obj\Debug\net6.0\Ejercicio_18.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Boletin_1\Ejercicios\Ejercicios\Ejercicio_1_\Ejercicio_18\obj\Debug\net6.0\refint\Ejercicio_18.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Boletin_1\Ejercicios\Ejercicios\Ejercicio_1_\Ejercicio_18\obj\Debug\net6.0\Ejercicio_18.pdb
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Boletin_1\Ejercicios\Ejercicios\Ejercicio_1_\Ejercicio_18\obj\Debug\net6.0\Ejercicio_18.genruntimeconfig.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_1\Boletin_1\Ejercicios\Ejercicios\Ejercicio_1_\Ejercicio_18\obj\Debug\net6.0\ref\Ejercicio_18.dll
