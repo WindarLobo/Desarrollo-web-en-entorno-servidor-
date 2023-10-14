@@ -43,8 +43,20 @@ public class Program
         //ejercicio20();
         //   ejercicio21();
         //  ejercicio22();
-     //   ejercicio23();
-        ejercicio24();
+        //   ejercicio23();
+        //ejercicio24();
+
+        //  CALCULO DE MINIMO
+        //ejercicio25();
+
+        //COMPARACION
+
+        // ejercicio26();
+        // ejercicio27();
+
+        //COPIA
+    ejercicio28();
+      //  ejercicio29();
         ReadLine();
 
     }
@@ -596,9 +608,127 @@ A continuación, guardar en él los nombres de los 5 mejores libros que hayas le
             WriteLine(item);
         }
     }
+    private static void ejercicio25()
+    {
+        /*Crea un array de 100 valores aleatorios entre -10 y 10 y calcula el valor más pequeño almacenado en una matriz.*/
+
+        int[] elemento = new int[100];
+        int valorMinimo = 0;
+        for (int i = 0; i < elemento.Length; i++)
+        {
+
+            elemento[i] = rnd.Next(-10, 11);
+            valorMinimo = elemento.Min();
+
+
+        }
+
+        WriteLine($"El valor mas pequeno almacenado en un array es : {valorMinimo}");
+
+
+    }
+
+    private static void ejercicio26()
+    {
+        /*Algoritmo que compara dos arrays y nos dice si son iguales o no.*/
+
+        int[] elemento1 = { 5, 7, 8, 9, 10, 11 };
+        int[] elemento2 = { 5, 7, 8, 9, 10, 11 };
+        int comparador = 0;
+        for (int i = 0; i < elemento1.Length; i++)
+        {
+            if (elemento1[i] != elemento2[i])
+            {
+                comparador++;
+                break;
+            }
+
+        }
+        if (comparador == 0)
+        {
+            WriteLine("Son iguales");
+        }
+
+        else
+        {
+            WriteLine("No son  iguales");
+        }
+
+
+
+
+    }
+    private static void ejercicio27()
+    {
+        /*1.	Repite el ejercicio anterior utilizando Array.Equals()*/
+        int[] elemento1 = { 5, 7, 8, 9, 10, 11 };
+        int[] elemento2 = { 5, 7, 8, 9, 10, 10 };
+
+        bool sonIguales = elemento1.SequenceEqual(elemento2);
+        if (sonIguales)
+        {
+            WriteLine("Son iguales");
+        }
+        else
+        {
+
+            WriteLine("No son  iguales");
+
+        }
+
+
+    }
+    private static void ejercicio28()
+    {
+        /*Algoritmo que crea una copia de un array.*/
+        int[] elemento1 = { 5, 7, 8, 9, 10, 11 };
+        int[] elemento2 = elemento1;
+     
+
+        WriteLine("Original Array:");
+        foreach (int i in elemento1)
+        {
+         Write("["+i +"]");
+        }
+       
+        WriteLine("\nCopia del Array:");
+        
+        foreach (int i in elemento2)
+        {
+            Write("[" + i + "]");
+
+        }
+
+    }
+
+    private static void ejercicio29()
+    {
+        /*29.	Repite el ejercicio anterior utilizando Array.Copy()*/
+
+        int[] elemento1 = { 5, 7, 8, 9, 10, 11 };
+        int[] elemento2 = new int[elemento1.Length];
+        Array.Copy(elemento1, elemento2, elemento1.Length);
+
+        WriteLine("Original Array:");
+        foreach (int i in elemento1)
+        {
+            Write("[" + i + "]");
+        }
+        elemento2[0] = 50;
+        WriteLine("\nCopia del Array:");
+
+        foreach (int i in elemento2)
+        {
+            Write("[" + i + "]");
+
+        }
+
+    }
+
 
 
 }
+
 
 
 

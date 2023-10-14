@@ -1,0 +1,14 @@
+﻿@model Ejercicio_1_.Models.ErrorViewModel
+
+@{
+    ViewBag.Title = "Lista de Países";
+}
+
+<h2>Lista de Países</h2>
+
+<ul>
+    @foreach (var pais in Model.NombresPaises)
+    {
+        <li>@pais</li>
+    }
+</ul>
