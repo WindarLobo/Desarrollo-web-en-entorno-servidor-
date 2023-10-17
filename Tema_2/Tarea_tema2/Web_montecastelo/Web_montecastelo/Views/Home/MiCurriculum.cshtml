@@ -1,0 +1,48 @@
+﻿@model  MiCurriculumViewModel
+
+@{
+    ViewData["Title"] = "Mi Curriculum";
+
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="@Model.UrlImagen" alt="Mi foto" class="img-fluid rounded-circle mb-2" />
+            <h2>Windar Sujey Lobo Garces</h2>
+            <h4>Desarrollador Web</h4><br />
+
+            <div class="col-md-13">
+                <h3>Sobre mí</h3>
+                <p>
+                    Graduada de ingeniera en gas natural. <br />
+                    Estudiante de FP, desarrollo de aplicaciones de web.<br />
+                    Alta experiencia como comercial con grandes dotes en cierre de ventas. <br />
+                    Cinco años de experiencia comercial, altamente cualificada para realizar todo tipo de labores relacionada con el puesto.<br />
+                    Capacitada para trabajar en entornos laborables bajo presión, resolutiva, responsable, trabajo en equipo, puntual, disciplinada.
+                </p>
+                <h3>Idiomas</h3>
+                <ul>
+                    @foreach (var idioma in Model.Idiomas)
+                {
+
+                        <li>@idioma.idioma</li>
+                   
+                }
+                </ul>
+                <h3>Intereses</h3>
+                <ul>
+                    @foreach (var interes in Model.Intereses)
+                    {
+                        <li>@interes.interes</li>
+                    }
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
