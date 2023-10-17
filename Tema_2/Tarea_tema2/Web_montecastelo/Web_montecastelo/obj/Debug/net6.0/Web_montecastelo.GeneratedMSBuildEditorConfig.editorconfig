@@ -16,16 +16,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_2\Tarea_tema2\Web_montecastelo\Web_montecastelo
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Datos Windar/2_Daw/Desarrollo web en entorno servidor/Tema_2/Tarea_tema2/Web_montecastelo/Web_montecastelo/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Datos Windar/2_Daw/Desarrollo web en entorno servidor/Tema_2/Tarea_tema2/Web_montecastelo/Web_montecastelo/Views/MiCurriculum/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlDdXJyaWN1bHVtXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Datos Windar/2_Daw/Desarrollo web en entorno servidor/Tema_2/Tarea_tema2/Web_montecastelo/Web_montecastelo/Views/Home/MiCurriculum.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNaUN1cnJpY3VsdW0uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Datos Windar/2_Daw/Desarrollo web en entorno servidor/Tema_2/Tarea_tema2/Web_montecastelo/Web_montecastelo/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Datos Windar/2_Daw/Desarrollo web en entorno servidor/Tema_2/Tarea_tema2/Web_montecastelo/Web_montecastelo/Views/MiCurriculum/MiCurriculum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlDdXJyaWN1bHVtXE1pQ3VycmljdWx1bS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Datos Windar/2_Daw/Desarrollo web en entorno servidor/Tema_2/Tarea_tema2/Web_montecastelo/Web_montecastelo/Views/Shared/Error.cshtml]

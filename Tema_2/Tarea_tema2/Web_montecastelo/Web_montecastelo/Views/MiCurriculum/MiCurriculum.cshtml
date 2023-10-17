@@ -1,4 +1,4 @@
-﻿@model  MiCurriculumViewModel
+﻿@model MiCurriculumViewModel 
 
 @{
     ViewData["Title"] = "Mi Curriculum";
@@ -21,27 +21,44 @@
                     Cinco años de experiencia comercial, altamente cualificada para realizar todo tipo de labores relacionada con el puesto.<br />
                     Capacitada para trabajar en entornos laborables bajo presión, resolutiva, responsable, trabajo en equipo, puntual, disciplinada.
                 </p>
+
                 <h3>Idiomas</h3>
                 <ul>
                     @foreach (var idioma in Model.Idiomas)
-                {
+                    {
 
-                        <li>@idioma.idioma</li>
-                   
-                }
+                        <li>@idioma</li>
+
+                    }
                 </ul>
+
                 <h3>Intereses</h3>
                 <ul>
                     @foreach (var interes in Model.Intereses)
                     {
-                        <li>@interes.interes</li>
+                        <li>@interes</li>
                     }
                 </ul>
 
-            </div>
+               
         </div>
+            
     </div>
-    </div>
+        <div class="col-md-8">
+            <h1>Experiencia</h1>
+            <ul>
+                @foreach (var experiencia in Model.Experiencias)
+                {
+
+                    <li>@experiencia.Titulo</li>
+
+                }
+               
+                
+            </ul>
+            
+            </ul>
+</div>
 
 
 

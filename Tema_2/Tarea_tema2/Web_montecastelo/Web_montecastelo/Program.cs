@@ -1,3 +1,5 @@
+using System;
+
 namespace Web_montecastelo
 {
     public class Program
@@ -14,7 +16,7 @@ namespace Web_montecastelo
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/MiCurriculum/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
@@ -27,9 +29,13 @@ namespace Web_montecastelo
 
             app.UseAuthorization();
 
+            app.MapControllerRoute(name: "MiCurriculum",
+                pattern: "MiCurriculum",
+                defaults: new { controller = "MiCurriculum", action = "MiCurriculum" });
+
             app.MapControllerRoute(
-                name: "micurriculum",
-                pattern: "{controller=MiCurriculum}/{action=MiCurriculum}/{MiCurriculum}");
+              name: "default",// ASP.NET Core, una "ruta" se refiere a la URL que se utiliza para acceder a una página o recurso específico en tu aplicación.
+                pattern: "{controller=MiCurriculum}/{action=Index}"); //enrutamiento controller=MiCurriculum  correctamente en tu aplicación ASP.NET Core.
 
             app.Run();
         }

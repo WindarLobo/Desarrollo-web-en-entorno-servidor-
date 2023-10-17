@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using Web_montecastelo.Models;
 using System;
+using System.Diagnostics.Metrics;
+
 namespace Web_montecastelo.Controllers
 {
     public class MiCurriculumController : Controller
@@ -13,60 +15,78 @@ namespace Web_montecastelo.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-        public IActionResult MiCurriculum()
+        public IActionResult MiCurriculum()// Esto devuelve el nombre de la vista ,ASP.NET Core buscará una vista con el mismo nombre ("MiCurriculum.cshtml") por convención.
         {
 
             var imagenRuta = "~/img/Windar.jpg";
             var urlImagen = Url.Content(imagenRuta);
-            var idiomas = ObtenerIdiomas();
-            var intereses = ObtenerInteres();
 
             var viewModel = new MiCurriculumViewModel
             {
-                Idiomas = idiomas,
-                Intereses = intereses,
+                Idiomas = ObtenerIdiomas(),
+                Intereses = ObtenerInteres(),
+                Experiencias = ObtenerExperiencia(),
                 UrlImagen = urlImagen
             };
 
             return View(viewModel);
         }
 
-        private List<MiCurriculumViewModel> ObtenerIdiomas()
+        private List<string> ObtenerIdiomas()
         {
-            var idiomas = new List<MiCurriculumViewModel>
-    {
-        new MiCurriculumViewModel { idioma = "Español-nativo"},
-        new MiCurriculumViewModel { idioma = "Gallego-medio" },
-        new MiCurriculumViewModel { idioma = "Ingles-medio"},
-    };
-            return idiomas;
+            return new List<string> { "Español-nativo", "Gallego-medio", "Ingles-medio" };
         }
 
-        private List<MiCurriculumViewModel> ObtenerInteres()
+        private List<string> ObtenerInteres()
         {
-            var interes = new List<MiCurriculumViewModel>
-    {
-        new MiCurriculumViewModel { interes = "Natacion"},
-        new MiCurriculumViewModel { interes = "Actividad al aire libre" },
-        new MiCurriculumViewModel { interes = "Correr"},
-         new MiCurriculumViewModel { interes = "Cine"},
-    };
-            return interes;
+            return new List<string> { "Natacion", "Actividad al aire libre", "Correr", "Cine" };
         }
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+
+        private List<ExperienciaViewModel> ObtenerExperiencia()
         {
-            return View(new MiCurriculumViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+
+
+            return new List<ExperienciaViewModel>
+            {
+               new ExperienciaViewModel 
+               {
+                       Titulo = "Represetante de ventas ",
+                       Descripciones =  new List<string> {"Representante de ventas"},
+                       Inicio = new DateTime(2020,11,5),
+                       Fin= new DateTime(2022,7,15)
+               },
+
+                new ExperienciaViewModel {
+                    Titulo = "Encargada de tienda ",
+                    Descripciones= new List<string> {"Control de cobros, pagos,Reporte de resultados." },
+                    Inicio = new DateTime(2019,11,25),
+                    Fin=new DateTime(2020,10,1)},
+
+               new ExperienciaViewModel {
+                   Titulo = "Atención al cliente",
+                   Descripciones= new List<string> {"Atención al cliente,Recepción y atención al cliente,Control de cobros." },
+                   Inicio = new DateTime(2016,7,30),
+                   Fin=new DateTime(2017,4,15)
+               },
+
+
+            };
+
         }
+
+          
+
+
+
+        
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+
+
     }
 }
 
