@@ -6,14 +6,21 @@ using System.Diagnostics.Metrics;
 
 namespace Web_montecastelo.Controllers
 {
+    //MiCurriculum hereda de Controller 
     public class MiCurriculumController : Controller
     {
+        //Variable privada del tipo ILogger<MiCurriculumController>
+
         private readonly ILogger<MiCurriculumController> _logger;
+
+
+        // Constructor del controlador que recibe una instancia del tipo ILogger<MiCurriculumController>
 
         public MiCurriculumController(ILogger<MiCurriculumController> logger)
         {
             _logger = logger;
         }
+        // Metodo de accion MiCurriculum(), que se  encarga de  manejar las solicitudes HTTP y devuelve  una viewModel  a la vista.
         public IActionResult MiCurriculum()
         {
 
@@ -25,7 +32,7 @@ namespace Web_montecastelo.Controllers
             {
                 Idiomas = ObtenerIdiomas(),
 
-                Intereses = ObtenerInteres(),
+                Intereses = ObtenerIntereses(),
 
                 Experiencias = ObtenerExperiencia(),
 
@@ -39,20 +46,21 @@ namespace Web_montecastelo.Controllers
             return View(viewModel);
         }
 
+        // Metodo ObtenerIdiomas(), que devuelve una lista de idioma.
         private List<string> ObtenerIdiomas()
         {
             return new List<string> { "Español-nativo", "Gallego-medio", "Ingles-medio" };
         }
 
-        private List<string> ObtenerInteres()
+        //Metodo ObtenerIntereses(), que devuelve una lista de instereses.
+        private List<string> ObtenerIntereses()
         {
             return new List<string> { "Natacion", "Actividad al aire libre", "Correr", "Cine" };
         }
 
+        //Metodo ObtenerExperiencia(),esta función crea y devuelve una lista de experiencias laborales con información específica sobre cada experiencia.
         private List<ExperienciaViewModel> ObtenerExperiencia()
         {
-
-
             return new List<ExperienciaViewModel>
             {
                new ExperienciaViewModel
@@ -91,6 +99,7 @@ namespace Web_montecastelo.Controllers
 
         }
 
+        //Metodo ObtenerFormacion(),crea y devuelve una lista de formaciones educativas.
         private List<FormacionViewModel> ObtenerFormacion()
         {
 
@@ -119,6 +128,8 @@ namespace Web_montecastelo.Controllers
                },
             };
         }
+
+        //Metodo ObtenerConocimiento(), crea y devuelve una lista los conocimientos. 
         private List<ConocimientoViewModel> ObtenerConocimiento()
         {
             return new List<ConocimientoViewModel>
@@ -151,19 +162,21 @@ namespace Web_montecastelo.Controllers
             };
         }
 
+
+        // Metodo de accion  Index(), que se  encarga de  manejar las solicitudes HTTP y devuelve  una viewModel a la vista.
         public IActionResult Index()
         {
             var imagenRuta2 = "~/img/justin-lim-tloFnD-7EpI-unsplash.jpg";
 
             var urlImagen2 = Url.Content(imagenRuta2);
 
-            var viewModel2 = new MiCurriculumViewModel
+            var viewModel = new MiCurriculumViewModel
 
             {
 
                 UrlImagenIndex = urlImagen2
             };
-            return View(viewModel2);
+            return View(viewModel);
         }
 
     }

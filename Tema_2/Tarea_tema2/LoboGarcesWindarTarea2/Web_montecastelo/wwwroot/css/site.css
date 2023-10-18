@@ -24,6 +24,7 @@ body {
 }
 .col-md-4 {
     background-color: #254942;
+
    
 }
 
@@ -47,13 +48,13 @@ body {
 .nombre, .Datos {
     font-family: 'Poltawski Nowy', serif;
     color: white;
+  
 }
-
 
 span {
     font-family: 'Varta', sans-serif;
     color: white;
-    font-size: 20px;
+    font-size: 23px;
 }
 .info {
     margin-top: 2rem;
@@ -64,7 +65,7 @@ span {
 p,li {
     font-family: 'Varta', sans-serif;
     color: white;
-    font-size:19px;
+    font-size:23px;
 }
 .interes {
     font-family: 'Poltawski Nowy', serif;
