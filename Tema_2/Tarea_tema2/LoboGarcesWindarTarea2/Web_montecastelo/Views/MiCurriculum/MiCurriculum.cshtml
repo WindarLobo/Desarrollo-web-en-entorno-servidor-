@@ -1,0 +1,125 @@
+﻿@model MiCurriculumViewModel
+
+@{
+    ViewData["Title"] = "Mi Curriculum";
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poltawski+Nowy:wght@700&family=Varta:wght@300&display=swap" rel="stylesheet">
+}
+
+<div class="container mt-5">
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <img src="@Model.UrlImagenCurriculum" alt="Mi foto" class="img-fluid rounded-circle mb-2" />
+
+            <h2 class="nombre">Windar  Lobo Garces</h2>
+
+            <h3 class="Datos">Ingeniera en Gas Natural</h3><br />
+
+            <i class="fa-sharp fa-solid fa-phone "> </i> <span> 777888999 </span><br />
+
+            <i class="fa-sharp fa-solid fa-envelope"> </i> <span>windar.lobo.garces@ciclosmontecastelo.com</span>
+
+            <div class="col-md-13">
+
+                <br>
+
+                <h3 class="Datos">Sobre mí</h3>
+
+                <p>
+                    Graduada de ingeniera en gas natural. <br />
+                    Estudiante de FP, desarrollo de aplicaciones de web.<br />
+                    Alta experiencia como comercial con grandes dotes en cierre de ventas. <br />
+                    Cinco años de experiencia comercial, altamente cualificada para realizar todo tipo de labores relacionada con el puesto.<br />
+                    Capacitada para trabajar en entornos laborables bajo presión, resolutiva, responsable, trabajo en equipo, puntual, disciplinada.
+                </p>
+
+                <h3 class="Datos">Idiomas</h3>
+
+                <ul>
+
+                    @foreach (var idioma in Model.Idiomas)
+                    {
+                        <li>@idioma</li>
+
+                    }
+
+                </ul>
+
+                <h3 class="Datos">Intereses</h3>
+                <ul>
+                    @foreach (var interes in Model.Intereses)
+                    {
+                        <li>@interes</li>
+                    }
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-8">
+
+            <h3 class="info">Experiencia Laboral</h3><br />
+
+
+            @foreach (var experiencia in Model.Experiencias)
+            {
+                @foreach (var descripcion in experiencia.Descripciones)
+                {
+                    <h3 class="interes">@experiencia.Titulo (@experiencia.Inicio.Year - @experiencia.Fin.Year) </h3>
+
+                    <h3 class="descripcion"> @Html.Raw(descripcion.Replace("\n", "<br />"))</h3>
+                    <br />
+
+                }
+
+            }
+            <h3 class="info">Formacion</h3>
+
+            @foreach (var formacion in Model.Formacion)
+
+            {
+                @if (formacion.Fin == new DateTime(2023, 10, 18))
+                {
+                    <h3 class="interes">
+                        @formacion.Inicio.Year - (Cursando) @formacion.Titulo
+                    </h3>
+
+                    <h3 class="descripcion">@formacion.NombreInstituto</h3>
+
+
+                }
+                else
+                {
+                    <h3 class="interes">
+                        ( @formacion.Inicio.Year - @formacion.Fin.Year ) @formacion.Titulo
+                    </h3>
+
+                    <h3 class="descripcion">@formacion.NombreInstituto</h3>
+
+                }
+            }
+
+            <br /> <h3 class="info">Conocimientos</h3><br />
+
+            @foreach (var conocimientos in Model.Conocimientos)
+            {
+                <h3 class="interes">@conocimientos.Nombre <br /> ★★★★★★★★★★</h3> <br />
+            }
+
+        </div>
+
+    </div>
+</div>
+
+
