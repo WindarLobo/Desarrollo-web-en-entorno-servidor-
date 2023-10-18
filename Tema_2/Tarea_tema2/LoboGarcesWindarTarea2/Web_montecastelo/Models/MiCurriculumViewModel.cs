@@ -21,7 +21,7 @@ namespace Web_montecastelo.Models
         public string Titulo { get; set; }
         public List<string> Descripciones { get; set; }
         public DateTime Inicio { get; set; }
-        public DateTime Fin { get; set; }
+        public DateTime? Fin { get; set; }
 
     }
 
@@ -31,7 +31,7 @@ namespace Web_montecastelo.Models
         public string Titulo { get; set; }
         public string NombreInstituto { get; set; }
         public DateTime Inicio { get; set; }
-        public DateTime Fin { get; set; }
+        public DateTime? Fin { get; set; }
 
     }
 

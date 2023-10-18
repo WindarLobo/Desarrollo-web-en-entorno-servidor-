@@ -21,7 +21,7 @@ namespace Web_montecastelo.Controllers
             _logger = logger;
         }
         // Metodo de accion MiCurriculum(), que se  encarga de  manejar las solicitudes HTTP y devuelve  una viewModel  a la vista.
-        public IActionResult MiCurriculum()
+        public IActionResult Index()
         {
 
             var imagenRuta = "~/img/Windar.jpg";
@@ -43,7 +43,7 @@ namespace Web_montecastelo.Controllers
                 UrlImagenCurriculum = urlImagen
             };
 
-            return View(viewModel);
+            return View("MiCurriculum", viewModel);
         }
 
         // Metodo ObtenerIdiomas(), que devuelve una lista de idioma.
@@ -71,14 +71,14 @@ namespace Web_montecastelo.Controllers
 
                        Inicio = new DateTime(2020,11,5),
 
-                       Fin= new DateTime(2023,7,15)
+                       Fin= null
                },
 
                 new ExperienciaViewModel {
 
-                    Titulo = "El Cortes Ingles",
+                    Titulo = "El Cortes Ingles (CH Carolina Herrera)",
 
-                    Descripciones= new List<string> {"Control de cobros.\n pagos.\nReporte de resultados." },
+                    Descripciones= new List<string> {"Control de cobros.\n Stock.\nReporte de resultados." },
 
                     Inicio = new DateTime(2019,11,25),
 
@@ -87,7 +87,7 @@ namespace Web_montecastelo.Controllers
                new ExperienciaViewModel {
                    Titulo = "Laboratorio Clínico (La Medalla Milagrosa)",
 
-                   Descripciones= new List<string> {"Atención al cliente.\nRecepción y atención al cliente. \nControl de cobros." },
+                   Descripciones= new List<string> {"Atención al cliente.\nControl de pagos. \nControl de cobros." },
 
                    Inicio = new DateTime(2016,7,30),
 
@@ -113,7 +113,7 @@ namespace Web_montecastelo.Controllers
 
                        Inicio = new DateTime(2022,11,5),
 
-                       Fin= new DateTime(2023,10,18)
+                       Fin=null
                },
 
                 new FormacionViewModel
@@ -163,21 +163,7 @@ namespace Web_montecastelo.Controllers
         }
 
 
-        // Metodo de accion  Index(), que se  encarga de  manejar las solicitudes HTTP y devuelve  una viewModel a la vista.
-        public IActionResult Index()
-        {
-            var imagenRuta2 = "~/img/justin-lim-tloFnD-7EpI-unsplash.jpg";
-
-            var urlImagen2 = Url.Content(imagenRuta2);
-
-            var viewModel = new MiCurriculumViewModel
-
-            {
-
-                UrlImagenIndex = urlImagen2
-            };
-            return View(viewModel);
-        }
+       
 
     }
 }

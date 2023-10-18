@@ -75,11 +75,21 @@
             {
                 @foreach (var descripcion in experiencia.Descripciones)
                 {
-                    <h3 class="interes">@experiencia.Titulo (@experiencia.Inicio.Year - @experiencia.Fin.Year) </h3>
+                    @if (experiencia.Fin == null)
+                    {
+                        <h3 class="interes">@experiencia.Titulo @experiencia.Inicio.Year  (Actual)</h3>
 
-                    <h3 class="descripcion"> @Html.Raw(descripcion.Replace("\n", "<br />"))</h3>
-                    <br />
+                        <h3 class="descripcion"> @Html.Raw(descripcion.Replace("\n", "<br />"))</h3>
+                        <br />
+                        
+                    }
+                    else
+                    {
+                        <h3 class="interes">@experiencia.Titulo (@experiencia.Inicio.Year - @experiencia.Fin.Value.Year) </h3>
 
+                        <h3 class="descripcion"> @Html.Raw(descripcion.Replace("\n", "<br />"))</h3>
+                        <br />
+                    }
                 }
 
             }
@@ -88,20 +98,20 @@
             @foreach (var formacion in Model.Formacion)
 
             {
-                @if (formacion.Fin == new DateTime(2023, 10, 18))
+                @if (formacion.Fin == null)
                 {
                     <h3 class="interes">
                         @formacion.Inicio.Year - (Cursando) @formacion.Titulo
                     </h3>
 
-                    <h3 class="descripcion">@formacion.NombreInstituto</h3>
+                    <h3 class="descripcion">@formacion.NombreInstituto</h3><br />
 
 
                 }
                 else
                 {
                     <h3 class="interes">
-                        ( @formacion.Inicio.Year - @formacion.Fin.Year ) @formacion.Titulo
+                        ( @formacion.Inicio.Year - @formacion.Fin.Value.Year ) @formacion.Titulo
                     </h3>
 
                     <h3 class="descripcion">@formacion.NombreInstituto</h3>

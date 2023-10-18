@@ -28,14 +28,10 @@ namespace Web_montecastelo
             app.UseRouting();
 
             app.UseAuthorization();
-
-            app.MapControllerRoute(name: "MiCurriculum",
-                pattern: "MiCurriculum",
-                defaults: new { controller = "MiCurriculum", action = "MiCurriculum" });
-
+  
             app.MapControllerRoute(
               name: "default",// ASP.NET Core, una "ruta" se refiere a la URL que se utiliza para acceder a una página o recurso específico en tu aplicación.
-                pattern: "{controller=MiCurriculum}/{action=Index}"); //enrutamiento controller=MiCurriculum  correctamente en tu aplicación ASP.NET Core.
+                pattern: "{controller=Home}/{action=Index}"); //enrutamiento controller=MiCurriculum  correctamente en tu aplicación ASP.NET Core.
 
             app.Run();
         }
