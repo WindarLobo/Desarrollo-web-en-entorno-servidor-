@@ -45,10 +45,9 @@ body {
     margin-top:15rem;
     font-size: 25px;
 }
-.nombre, .Datos {
+.Nombre, .Info1 {
     font-family: 'Poltawski Nowy', serif;
     color: white;
-  
 }
 
 span {
@@ -56,7 +55,7 @@ span {
     color: white;
     font-size: 23px;
 }
-.info {
+.Info2 {
     margin-top: 2rem;
     font-family: 'Poltawski Nowy', serif;
     color: black;
@@ -67,12 +66,12 @@ p,li {
     color: white;
     font-size:23px;
 }
-.interes {
+.detalle1 {
     font-family: 'Poltawski Nowy', serif;
     color: #3C3E3D;
     font-size: 23px;
 }
-.descripcion {
+.detalle2 {
     font-family: 'Varta', sans-serif;
     color: black;
     font-size: 23px;

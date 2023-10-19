@@ -20,10 +20,10 @@ namespace Web_montecastelo.Controllers
         {
             _logger = logger;
         }
-        // Metodo de accion MiCurriculum(), que se  encarga de  manejar las solicitudes HTTP y devuelve  una viewModel  a la vista.
+
+        // Metodo de accion Index(), prepara los datos necesarios para mostrar en la vista "MiCurriculum" y luego devuelve la vista junto con el modelo de vista correspondiente.
         public IActionResult Index()
         {
-
             var imagenRuta = "~/img/Windar.jpg";
 
             var urlImagen = Url.Content(imagenRuta);

@@ -28,10 +28,13 @@ namespace Web_montecastelo
             app.UseRouting();
 
             app.UseAuthorization();
-  
+
+            /*Este código configura una ruta predeterminada para los controladores.
+            Cuando se accede a la aplicación sin especificar un controlador o una acción en la URL, la aplicación dirigirá la solicitud al controlador "Home" y a la acción "Index" por defecto.*/
+
             app.MapControllerRoute(
-              name: "default",// ASP.NET Core, una "ruta" se refiere a la URL que se utiliza para acceder a una página o recurso específico en tu aplicación.
-                pattern: "{controller=Home}/{action=Index}"); //enrutamiento controller=MiCurriculum  correctamente en tu aplicación ASP.NET Core.
+              name: "default",
+                pattern: "{controller=Home}/{action=Index}"); 
 
             app.Run();
         }
