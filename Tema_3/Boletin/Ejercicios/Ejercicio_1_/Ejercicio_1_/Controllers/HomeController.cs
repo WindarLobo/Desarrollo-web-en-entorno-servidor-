@@ -32,27 +32,7 @@ namespace Ejercicio_1_.Controllers
 
            
         }
-        public IActionResult Ejercicio3()
-        {
-            var imagenRuta = "~/Img/Real_Madrid_CF.svg.png";
-
-            var futbolistas = new List<ErrorViewModel>
-            {
-                new ErrorViewModel { Nombre = "Thibaut", Apellido="Courtois", Edad = 29},
-                new ErrorViewModel { Nombre = "Karim",Apellido="Benzema" ,Edad = 36 },
-                new ErrorViewModel { Nombre = "Vinicius", Apellido="Junior",Edad = 36, },
-                
-            };
-            var urlImagen = Url.Content(imagenRuta);
-
-            // Pasa la URL de la imagen a la vista
-            ViewBag.UrlImagen = urlImagen;
-
-
-            return View(futbolistas);
-
-
-        }
+      
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

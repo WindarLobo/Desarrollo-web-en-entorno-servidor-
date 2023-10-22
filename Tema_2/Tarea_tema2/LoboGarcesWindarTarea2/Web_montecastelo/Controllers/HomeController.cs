@@ -5,6 +5,12 @@ namespace Web_montecastelo.Controllers
 {
     public class HomeController : Controller
     {
+       
+        [HttpGet]
+        [Route("")]
+        [Route("Home")]
+        [Route("Home/Index")]
+
         // Metodo de accion  Index(), que se  encarga de  manejar las solicitudes HTTP y devuelve  una viewModel a la vista.
         public IActionResult Index()
         {

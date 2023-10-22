@@ -7,6 +7,7 @@ using System.Diagnostics.Metrics;
 namespace Web_montecastelo.Controllers
 {
     //MiCurriculum hereda de Controller 
+
     public class MiCurriculumController : Controller
     {
         //Variable privada del tipo ILogger<MiCurriculumController>
@@ -21,8 +22,16 @@ namespace Web_montecastelo.Controllers
             _logger = logger;
         }
 
-        // Metodo de accion Index(), prepara los datos necesarios para mostrar en la vista "MiCurriculum" y luego devuelve la vista junto con el modelo de vista correspondiente.
-        public IActionResult Index()
+        //[HttpGet] Solicitud GET a la ruta "/MiCurriculum".
+
+        [HttpGet]
+
+        // [Route("/MiCurriculum")].Cuando un usuario realiza una solicitud GET a esta ruta,se ejecutara y respondera a la solicitud..
+
+        [Route("/MiCurriculum")]
+
+        // Metodo de accion MiCurriculum(), prepara los datos necesarios para mostrar en la vista.
+        public IActionResult MiCurriculum()
         {
             var imagenRuta = "~/img/Windar.jpg";
 
@@ -43,7 +52,7 @@ namespace Web_montecastelo.Controllers
                 UrlImagenCurriculum = urlImagen
             };
 
-            return View("MiCurriculum", viewModel);
+            return View(viewModel);
         }
 
         // Metodo ObtenerIdiomas(), que devuelve una lista de idioma.
@@ -163,7 +172,6 @@ namespace Web_montecastelo.Controllers
         }
 
 
-       
 
     }
 }
