@@ -1,0 +1,77 @@
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+   
+}
+
+body {
+  margin-bottom: 60px;
+}
+.img-fluid {
+    max-width: 60%;
+    height: auto;
+}
+.row {
+    width: 110%;
+    border: 3px solid #050404;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+}
+.col-md-4 {
+    background-color: #254942;
+   
+}
+
+.container {
+    max-width: 1100px;
+    
+}
+.img-fluid {
+    max-width: 60%;
+    margin-left:10%;
+}
+.fa-sharp {
+    color: white;
+}
+
+#radio1 {
+    display: inline;
+    margin-top:15rem;
+    font-size: 25px;
+}
+.Nombre, .Info1 {
+    font-family: 'Poltawski Nowy', serif;
+    color: white;
+}
+
+span {
+    font-family: 'Varta', sans-serif;
+    color: white;
+    font-size: 21px;
+}
+.Info2 {
+    margin-top: 2rem;
+    font-family: 'Poltawski Nowy', serif;
+    color: black;
+    font-size: 40px;
+}
+p,li {
+    font-family: 'Varta', sans-serif;
+    color: white;
+    font-size:23px;
+}
+.detalle1 {
+    font-family: 'Poltawski Nowy', serif;
+    color: #3C3E3D;
+    font-size: 23px;
+}
+.detalle2 {
+    font-family: 'Varta', sans-serif;
+    color: black;
+    font-size: 23px;
+}
