@@ -1,6 +1,6 @@
 namespace Boletin4.Models
 {
-    public class ErrorViewModel
+    public class ProductoViewModel
     {
         public string? RequestId { get; set; }
 

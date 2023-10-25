@@ -12,7 +12,7 @@ namespace LoboGarcesWindarTarea2
         [Route("Home/Index")]
 
         // Metodo de accion  Index(), que se  encarga de  manejar las solicitudes HTTP y devuelve  una viewModel a la vista.
-        public IActionResult Index()
+        public ActionResult Index()
         {
             var imagenRuta2 = "~/img/justin-lim-tloFnD-7EpI-unsplash.jpg";
 

@@ -31,7 +31,7 @@ namespace LoboGarcesWindarTarea2.Controllers
         [Route("/MiCurriculum")]
 
         // Metodo de accion MiCurriculum(), prepara los datos necesarios para mostrar en la vista.
-        public IActionResult MiCurriculum()
+        public ActionResult MiCurriculum()
         {
             var imagenRuta = "~/img/Windar.jpg";
 

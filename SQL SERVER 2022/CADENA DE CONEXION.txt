@@ -1,1 +1,19 @@
 Server=localhost\MSSQLSERVER01;Database=master;Trusted_Connection=True;
+
+
+Para conectarte a la base de d atos es Visual studio
+
+Scaffold-DbContext "Server=localhost\MSSQLSERVER01;Database=BD_Productos;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+
+Esto va en el program :
+
+          builder.Services.AddDbContext<BD_ProductosContext> (options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("CadenaDeConexion")));
+
+
+appsettings.json (Cadena d e conexion)  :
+
+ "ConnectionStrings": {
+   "CadenaDeConexion": "Server=localhost\\MSSQLSERVER01;Database=BD_Productos;Trusted_Connection=True;"
+ }

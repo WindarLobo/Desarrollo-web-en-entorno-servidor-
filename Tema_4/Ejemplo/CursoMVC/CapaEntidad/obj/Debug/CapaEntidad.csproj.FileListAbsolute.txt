@@ -1,0 +1,2 @@
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_4\Ejemplo\CursoMVC\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_4\Ejemplo\CursoMVC\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache

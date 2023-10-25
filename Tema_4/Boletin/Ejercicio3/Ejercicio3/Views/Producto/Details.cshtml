@@ -1,0 +1,38 @@
+﻿@model Ejercicio3.Models.Producto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div>
+    <h1> Detalle del Producto</h1>
+  
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+               
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+         <tr>
+                <td>
+                @Html.DisplayFor(model => model.Nombre)
+                </td>
+                <td>
+                @Html.DisplayFor(model => model.Precio)
+                </td>
+
+            </tr>
+        
+    </tbody>
+</table>
