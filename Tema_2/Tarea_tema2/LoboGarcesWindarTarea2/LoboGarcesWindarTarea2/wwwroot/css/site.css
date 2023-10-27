@@ -16,11 +16,14 @@ body {
 .img-fluid {
     max-width: 60%;
     height: auto;
+    margin-top:15px;
+
 }
 .row {
     width: 110%;
     border: 3px solid #050404;
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+    --bs-gutter-x: 2.7rem;
 }
 .col-md-4 {
     background-color: #254942;
@@ -33,7 +36,7 @@ body {
 }
 .img-fluid {
     max-width: 60%;
-    margin-left:10%;
+    margin-left:15%;
 }
 .fa-sharp {
     color: white;
@@ -47,12 +50,13 @@ body {
 .Nombre, .Info1 {
     font-family: 'Poltawski Nowy', serif;
     color: white;
+    margin-top:15px
 }
 
 span {
     font-family: 'Varta', sans-serif;
     color: white;
-    font-size: 21px;
+    font-size: 20px;
 }
 .Info2 {
     margin-top: 2rem;
