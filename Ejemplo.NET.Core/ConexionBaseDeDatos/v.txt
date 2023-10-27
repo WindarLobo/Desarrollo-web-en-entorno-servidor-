@@ -1,0 +1,29 @@
+CREATE TABLE Doctor(
+  IdDoctor int primary key  identity ,
+  Nombre varchar (100) ,
+ Apellidos varchar (100) ,  
+)
+go
+ create table Mascota(
+ IdMascota int primary key  identity ,
+
+ )
+ go
+Create table Veterinario(
+ IdVeterinario int primary key  identity ,
+  Telefono varchar (50) ,
+ NombreDelDoctor varchar (100) , 
+ IdMascota int,
+ FOREIGN KEY (IdMascota) REFERENCES Mascota(IdMascota)
+ )
+ create table Dueño(
+  IdDueño int primary key  identity ,
+  Nombre varchar (100) , 
+   Apellido varchar (100) , 
+   Telefono int ,
+   direccion varchar (100),
+   IdMascota int,
+ FOREIGN KEY (IdMascota) REFERENCES Mascota(IdMascota)
+   
+ )
+
