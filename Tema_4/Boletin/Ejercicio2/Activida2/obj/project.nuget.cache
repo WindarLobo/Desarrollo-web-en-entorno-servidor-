@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "69X6INdRkU9dqzz14gZ7iQC+5PvrzVq5W/0n9sO+Ct9o6y0Wbf51VHaziTwHkkRzXh/G8PNaeaQSG2F1oNoYJw==",
+  "dgSpecHash": "8xv7YMFTcL9tfS35FEzI8nHWYjWl1OMqXtKF5AGHlcs3FqRyJg2J/iE0XXmyEFaxWetIg0wSEu1nxuD/IZPqDg==",
   "success": true,
-  "projectFilePath": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_4\\Boletin\\Activida2\\Activida2\\Activida2.csproj",
+  "projectFilePath": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_4\\Boletin\\Ejercicio2\\Activida2\\Activida2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Windar\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Windar\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Ejemplo.Database.Models.Pokemon>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    foreach(var item in Model.Select(x => x))
+    {
+        <h5>@item.numero_pokedex --- @item.Nombre</h5>
+    }
+
+}
+
