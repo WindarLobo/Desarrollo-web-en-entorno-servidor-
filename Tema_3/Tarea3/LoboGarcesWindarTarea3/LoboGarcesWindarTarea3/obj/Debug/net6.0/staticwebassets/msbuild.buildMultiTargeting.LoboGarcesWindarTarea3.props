@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\LoboGarcesWindarTarea3.props" />
+</Project>

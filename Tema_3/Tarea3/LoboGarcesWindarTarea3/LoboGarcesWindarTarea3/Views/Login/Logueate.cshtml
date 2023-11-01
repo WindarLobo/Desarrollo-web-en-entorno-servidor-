@@ -1,0 +1,25 @@
+﻿@model LoboGarcesWindarTarea3.Database.Models.Login
+
+@{
+    ViewData["Title"] = "Logueate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Iniciar sesion</h1>
+
+<div>
+    <form asp-action="DoLogin" method="post">
+        <div class="form-group">
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" id="username" name="username" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+    </form>
+
+</div>
+

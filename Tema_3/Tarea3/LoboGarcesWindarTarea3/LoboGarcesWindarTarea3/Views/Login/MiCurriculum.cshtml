@@ -1,0 +1,155 @@
+﻿@model MiCurriculumViewModel
+
+@{
+    //Título de la página web como "Mi Curriculum"
+
+    ViewData["Title"] = "Mi Curriculum";
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poltawski+Nowy:wght@700&family=Varta:wght@300&display=swap" rel="stylesheet">
+}
+<!--Esto crea un contenedor con una clase  llamada "container", que centra el contenido en el medio de la página.-->
+
+<div class="container mt-5">
+
+    <!-- El contenido dentro de esta columna estará organizado en un diseño de 4 columnas.-->
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <!--Esta línea usa la URL de la imagen del modelo (@Model.UrlImagenCurriculum) para mostrar una imagen. -->
+
+            <img src="@Model.UrlImagenCurriculum" alt="Mi foto" class="img-fluid rounded-circle mb-2" />
+
+            <!--Muestro el nombre y profesión con una etiqueta h3 -->
+
+            <h2 class="Nombre">Windar  Lobo Garces</h2>
+
+            <h3 class="Info1">Ingeniera en Gas Natural</h3><br />
+
+            <!-- Utilizo clases de Bootstrap para el diseño responsive y Font Awesome para los iconos de teléfono y correo electrónico.-->
+            <i class="fa-sharp fa-solid fa-phone "> </i> <span> 777888999 </span><br />
+
+            <i class="fa-sharp fa-solid fa-envelope"> </i> <span>windar.lobo@ciclosmontecastelo.com</span>
+
+            <!--Creo una columna que ocupa 11 de las 12 columnas disponibles en dispositivos medianos y superiores.-->
+            <div class="col-md-11">
+
+                <br>
+
+                <h3 class="Info1">Sobre mí</h3>
+
+                <!-- Un Parrafo que contiene informacion sobre mi -->
+                <p>
+                    Graduada de ingeniera en gas natural. <br />
+                    Estudiante de FP, desarrollo de aplicaciones de web.<br />
+                    Altamente cualificada para realizar todo tipo de labores relacionada con el puesto.<br />
+                    Capacitada para trabajar en entornos laborables bajo presión, resolutiva, responsable, trabajo en equipo, puntual, disciplinada.
+                </p>
+
+                <!--Esta es una estructura de bucle que recorre la lista de idiomas proporcionada por el modelo (Model.Idiomas). -->
+
+                <h3 class="Info1">Idiomas</h3>
+
+                <ul>
+
+                    @foreach (var idioma in Model.Idiomas)
+                    {
+                        <li>@idioma</li>
+
+                    }
+
+                </ul>
+
+                <!--Esta es una estructura de bucle que recorre la lista de intereses proporcionada por el modelo (Model.Intereses). -->
+
+                <h3 class="Info1">Intereses</h3>
+                <ul>
+                    @foreach (var interes in Model.Intereses)
+                    {
+                        <li>@interes</li>
+                    }
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-8">
+
+
+            <h3 class="Info2">Experiencia Laboral</h3><br />
+
+            <!--Un bucle que recorre las experiencias laborales del modelo (Model.Experiencias) y para cada experiencia, muestra su título, año de inicio. -->
+            @foreach (var experiencia in Model.Experiencias)
+            {
+                @foreach (var descripcion in experiencia.Descripciones)
+                {
+                    @if (experiencia.Fin == null)
+                    {
+                        <h3 class="detalle1">@experiencia.Titulo @experiencia.Inicio.Year  (Actual)</h3>
+
+                        <h3 class="detalle2"> @Html.Raw(descripcion.Replace("\n", "<br />"))</h3>
+                        <br />
+
+                    }
+                    else
+                    {
+                        <h3 class="detalle1">@experiencia.Titulo (@experiencia.Inicio.Year - @experiencia.Fin.Value.Year) </h3>
+
+                        <h3 class="detalle2"> @Html.Raw(descripcion.Replace("\n", "<br />"))</h3>
+                        <br />
+                    }
+                }
+
+            }
+
+            <!--Un bucle que recorre la formación educativa, mostrando el año de inicio, el rango de años si la formación ha terminado, y el estado de "Cursando" si la formación está actualmente en curso. -->
+          
+            <h3 class="Info2">Formacion</h3><br />
+
+            @foreach (var formacion in Model.Formacion)
+
+            {
+                @if (formacion.Fin == null)
+                {
+                    <h3 class="detalle1">
+                        @formacion.Inicio.Year - (Cursando) @formacion.Titulo
+                    </h3>
+
+                    <h3 class="detalle2">@formacion.NombreInstituto</h3>
+
+                    <br />
+                }
+                else
+                {
+                    <h3 class="detalle1">
+                        ( @formacion.Inicio.Year - @formacion.Fin.Value.Year ) @formacion.Titulo
+                    </h3>
+
+                    <h3 class="detalle2">@formacion.NombreInstituto</h3>
+                }
+            }
+
+            <!--Un bucle que recorre los conocimientos y las muestro con una serie de estrellas para indicar el nivel de competencia.-->
+
+            <br /> <h3 class="Info2">Conocimientos</h3><br />
+
+            @foreach (var conocimientos in Model.Conocimientos)
+            {
+                <h3 class="detalle1">@conocimientos.Nombre <br /> ★★★★★★</h3> <br />
+            }
+
+        </div>
+
+    </div>
+</div>
+
+
