@@ -1,39 +1,38 @@
 ﻿@model IEnumerable<LoboGarcesWindarTarea3.Database.Models.Asignatura>
 
 @{
+    <link rel="stylesheet" href="~/css/view.css" asp-append-version="true" />
     ViewData["Title"] = "Lista";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+ 
 }
 
-<h1>Asignaturas</h1>
-<table class="table">
-    <thead>
+    <h1 class="mt-4">Asignaturas</h1>
+
+    <table class =" table table-striped">
+    <thead >
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-          
-            <th></th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Nombre)</th>
+            <th scope="col">Accion</th>
+         
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
+        @foreach (var item in Model) {
+            <tr>
+                <td scope="row">
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
-            <td>
+                <td scope="row">
                 @Html.DisplayFor(modelItem => item.Nombre)
             </td>
            
-            <td>
+            <td scope="row">
                     @Html.ActionLink("Detalles", "Detalles", new { id=item.Id  })
 
             </td>
-        </tr>
-}
+                
+            </tr>
+        }
     </tbody>
 </table>

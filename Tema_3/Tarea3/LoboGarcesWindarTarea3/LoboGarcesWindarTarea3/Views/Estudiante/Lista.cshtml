@@ -2,40 +2,38 @@
 
 @{
     ViewData["Title"] = "Lista";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="~/css/view.css" asp-append-version="true" />
+
 }
 
-<h1>Estudiantes</h1>
+<h1 class="mt-4">Estudiantes</h1>
 
-<table class="table">
+<table class=" table table-striped">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            
-            <th></th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Nombre)</th>
+            <th scope="col">Accion</th>
+
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-          
-            <td>
-            
-                    @Html.ActionLink("Detalles", "Detalles", new {  id=item.Id  })
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
 
-            </td>
-        </tr>
-}
+                <td scope="row">
+                    @Html.ActionLink("Detalles", "Detalles", new { id=item.Id  })
+
+                </td>
+
+            </tr>
+        }
     </tbody>
 </table>

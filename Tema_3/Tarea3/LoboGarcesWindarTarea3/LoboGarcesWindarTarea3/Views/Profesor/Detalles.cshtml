@@ -2,36 +2,40 @@
 
 @{
     ViewData["Title"] = "Detalles";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="~/css/view.css" asp-append-version="true" />
+
 }
 
-<h1>Detalles de asignatura </h1>
 
-<div>
-   
-    <dl class="row">
-       
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Edad)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Edad)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.materia)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.materia)
-        </dd>
-    </dl>
-</div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+<h1 class="mt-4"> Detalles de la asignatura</h1>
+
+
+
+<div class="Detalle">
+    <div class="nombre">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+
+            <p class=" mt mt-4">EDAD DEL PROFESOR : @Html.DisplayFor(model => model.Edad)</p>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <p class="mt2 mt-4">MATERIA QUE IMPARTE EL PROFESOR : @Html.DisplayFor(model => model.materia)</p>
+
+        </div>
+    </div>
+
+    <img src="/img/ciclos_formativos_montecastelo_logo.jpg" class=" img img-fluid" alt="...">
+
+
+    <div class="btn-group btn-group-joined d-grid gap-2">
+        <button type="button" class="btn btn-secondary  btn-block" onclick="window.location.href=#">¡Increible  profesores!</button>
+        <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='@Url.Action("Lista", "Profesor")'">Volver a la lista </button>
+    </div>
+
 </div>

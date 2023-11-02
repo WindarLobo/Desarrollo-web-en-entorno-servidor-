@@ -258,3 +258,4 @@ C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_3\Tarea3\LoboGarce
 C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_3\Tarea3\LoboGarcesWindarTarea3\LoboGarcesWindarTarea3\obj\Debug\net6.0\LoboGarcesWindarTarea3.pdb
 C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_3\Tarea3\LoboGarcesWindarTarea3\LoboGarcesWindarTarea3\obj\Debug\net6.0\LoboGarcesWindarTarea3.genruntimeconfig.cache
 C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_3\Tarea3\LoboGarcesWindarTarea3\LoboGarcesWindarTarea3\obj\Debug\net6.0\ref\LoboGarcesWindarTarea3.dll
+C:\Datos Windar\2_Daw\Desarrollo web en entorno servidor\Tema_3\Tarea3\LoboGarcesWindarTarea3\LoboGarcesWindarTarea3\bin\Debug\net6.0\libman.json

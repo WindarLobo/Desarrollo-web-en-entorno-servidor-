@@ -18,10 +18,10 @@ namespace LoboGarcesWindarTarea3.Controllers
         [Route("/Estudiante/Lista")]
         public IActionResult Lista()
         {
-            if (!Global.IsLogged)
-            {
-                return View(Global.LoginView);
-            }
+            //if (!Global.IsLogged)
+            //{
+            //    return View(Global.LoginView);
+            //}
 
             var estudiantes = _estudianteRepository.GetAllEstudiante().ToList();
             return View(estudiantes);
@@ -29,10 +29,10 @@ namespace LoboGarcesWindarTarea3.Controllers
         [Route("/Estudiante/Detalles/{id?}")]
         public IActionResult Detalles(int id)
         {
-            if (!Global.IsLogged)
-            {
-                return View(Global.LoginView);
-            }
+            //if (!Global.IsLogged)
+            //{
+            //    return View(Global.LoginView);
+            //}
 
             var estudiantes = _estudianteRepository.GetEstudianteByID(id);
 

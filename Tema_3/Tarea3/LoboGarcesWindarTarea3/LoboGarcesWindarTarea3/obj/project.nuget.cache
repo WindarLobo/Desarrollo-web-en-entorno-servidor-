@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "HVNosQTQoO4o06cGaq0w/DlKKhgmkCHxgXdBQAtDCtueDd93zHHmmeUdSTTg2RARTyeX5/jPXMtVNyKfXwdKnw==",
+  "dgSpecHash": "7JuITfx+Gw2C+ibREVn8HGAz8lg9Ve2QSiJitLLIXFD7Jx56SiCh6i3MghS9fkKtFrXzJU4TLeHUxZ7Y584tKw==",
   "success": true,
   "projectFilePath": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Windar\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Windar\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Windar\\.nuget\\packages\\bootstrap\\5.3.2\\bootstrap.5.3.2.nupkg.sha512",
+    "C:\\Users\\Windar\\.nuget\\packages\\font.awesome\\5.15.4\\font.awesome.5.15.4.nupkg.sha512",
     "C:\\Users\\Windar\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Windar\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Windar\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
