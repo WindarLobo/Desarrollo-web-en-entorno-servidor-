@@ -1,15 +1,4 @@
-﻿@charset "UTF-8";
-/*!
-* Start Bootstrap - SB Admin v7.0.7 (https://startbootstrap.com/template/sb-admin)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-sb-admin/blob/master/LICENSE)
-*/
-/*!
- * Bootstrap  v5.2.3 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
+﻿
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -12589,7 +12578,7 @@ body {
 
             .sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-heading {
                 padding: 1.75rem 1rem 0.75rem;
-                font-size: 0.75rem;
+                font-size: 1.25rem;
                 font-weight: bold;
                 text-transform: uppercase;
             }
@@ -12603,7 +12592,7 @@ body {
             }
 
                 .sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-nav-link-icon {
-                    font-size: 0.9rem;
+                    font-size: 0.rem;
                 }
 
                 .sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-sidenav-collapse-arrow {

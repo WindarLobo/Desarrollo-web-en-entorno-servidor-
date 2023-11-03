@@ -38,6 +38,14 @@ namespace LoboGarcesWindarTarea3.Controllers
 
             return View("/Views/Home/Index.cshtml");
         }
+        [Route("/Login/Cerrar")]
+        public IActionResult Cerrar()
+        {
+
+            Global.UsuarioLogeado = null;
+
+            return View("Logueate");
+        }
 
 
         [Route("/Login/MiCurriculum")]

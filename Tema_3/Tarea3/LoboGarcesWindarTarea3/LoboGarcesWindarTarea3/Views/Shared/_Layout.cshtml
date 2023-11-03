@@ -31,7 +31,7 @@
                   @*  <li><a class="dropdown-item" href="#!">Iniciar  seccion</a></li>*@
 
                     <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="#!" >Cerrar Sesion</a></li>
+                    <li><a class="dropdown-item" href="@Url.Action("Cerrar","Login")">Cerrar Sesion</a></li>
                 </ul>
             </li>
         </ul>
@@ -44,6 +44,10 @@
                       
 
                         <div class="sb-sidenav-menu-heading">Menu</div>
+                        <a class="nav-link" href=" @Url.Action("Index","Home")">
+                            <div class="sb-nav-link-icon"><i class="fa fa-id-card"></i></div>
+                            Home
+                        </a>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAsignatura" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
                             Asignaturas
@@ -105,9 +109,6 @@
     </div>
 
 
-
- 
- 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
       <script src="~/lib/bootstrap/dist/js/scripts.js"></script>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NL2wOvIx/kZi9fABgAQfNFRoYs3fIRbrc+6P1ANoMmw=",
+  "Hash": "tPGtyYvoZlZJGNwnmyd6X+6LP16QiXDoqPlhy48SiU0=",
   "Source": "LoboGarcesWindarTarea3",
   "BasePath": "_content/LoboGarcesWindarTarea3",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Layout.css"
+    },
+    {
+      "Identity": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\css\\login.css",
+      "SourceId": "LoboGarcesWindarTarea3",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\",
+      "BasePath": "_content/LoboGarcesWindarTarea3",
+      "RelativePath": "css/login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
       "Identity": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\css\\View.css",
@@ -848,6 +865,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\font-awesome\\webfonts\\fa-v4compatibility.woff2"
+    },
+    {
+      "Identity": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\img\\ciclos_formativos_montecastelo_logo.jpg",
+      "SourceId": "LoboGarcesWindarTarea3",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\",
+      "BasePath": "_content/LoboGarcesWindarTarea3",
+      "RelativePath": "img/ciclos_formativos_montecastelo_logo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\ciclos_formativos_montecastelo_logo.jpg"
     },
     {
       "Identity": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\img\\Windar.JPG",

@@ -1,26 +1,60 @@
-﻿@model LoboGarcesWindarTarea3.Database.Models.Login
-
+﻿
 @{
-    ViewData["Title"] = "Logueate";
-    <link rel="stylesheet" href="~/css/view.css" asp-append-version="true" />
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
 
 }
+<html>
+<body>
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
 
-<h1>Iniciar sesion</h1>
+        <div class="container">
 
-<div>
-    <form asp-action="DoLogin" method="post">
-        <div class="form-group">
-            <label for="username">Nombre de usuario:</label>
-            <input type="text" id="username" name="username" class="form-control" required />
+            <div class="row justify-content-center">
+                <div class="col col-lg-6 m-5">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                        <div class="card-header"><h2 class="text-center font-weight-light my-4">Login</h2></div>
+                        <div class="card-body">
+
+                            <form id="loginForm" asp-action="DoLogin" method="post">
+
+                                <div class="form-group  mb-3">
+                                    <label for="username">Nombre de usuario</label>
+                                    <input class="form-control" id="username" name="username" type="text" placeholder="Nombre de usuario" />
+
+                                </div>
+                                <div class="form-group  mb-3">
+                                    <label for="password">Contraseña</label>
+                                    <input class="form-control" id="password" name="password" type="password" placeholder="Contraseña" />
+
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+
+                                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-center py-3">
+                            <div class="small">¿No tienes cuenta? <a href="">Registrate</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" class="form-control" required />
-        </div>
 
-        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-    </form>
-
+    </div>
+    <script>
+    $(document).ready(function() {
+    $('#loginForm').submit(function(event) {
+    event.preventDefault(); // Prevenir el comportamiento de envío normal del formulario
+    // Tu lógica personalizada para manejar la sumisión del formulario aquí
+    });
+    });
+        </script>
 </div>
-
+</body>
+</html>

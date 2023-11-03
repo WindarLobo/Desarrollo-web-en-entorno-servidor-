@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\View.css"
     },
     {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
       "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -195,6 +199,10 @@
     {
       "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\img\\Windar.JPG",
       "PackagePath": "staticwebassets\\img\\Windar.JPG"
+    },
+    {
+      "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\img\\ciclos_formativos_montecastelo_logo.jpg",
+      "PackagePath": "staticwebassets\\img\\ciclos_formativos_montecastelo_logo.jpg"
     },
     {
       "Id": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\js\\site.js",

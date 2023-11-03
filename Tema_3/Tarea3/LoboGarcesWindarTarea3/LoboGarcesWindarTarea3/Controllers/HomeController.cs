@@ -17,10 +17,10 @@ namespace LoboGarcesWindarTarea3.Controllers
         [Route("/Home/Index")]
         public IActionResult Index()
         {
-            if (!Global.IsLogged)
-            {
-                return View(Global.LoginView);
-            }
+            //if (!Global.IsLogged)
+            //{
+            //    return View(Global.LoginView);
+            //}
 
             return View();
         }
