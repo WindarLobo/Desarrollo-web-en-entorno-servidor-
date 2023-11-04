@@ -15,15 +15,18 @@ namespace LoboGarcesWindarTarea3.Controllers
         }
 
         [Route("/")]
+
         [Route("/Login")]
+
         [Route("/Login/Logueate")]
         public IActionResult Logueate()
         {
-             return View();    
+            return View();
         }
 
 
         [HttpPost]
+
         [Route("/Login/DoLogin")]
         public IActionResult DoLogin(string Username, string Password)
         {
@@ -38,8 +41,8 @@ namespace LoboGarcesWindarTarea3.Controllers
 
             return View("/Views/Home/Index.cshtml");
         }
-        [Route("/Login/Cerrar")]
-        public IActionResult Cerrar()
+        [Route("/Login/OutLogin")]
+        public IActionResult OutLogin()
         {
 
             Global.UsuarioLogeado = null;
@@ -47,21 +50,20 @@ namespace LoboGarcesWindarTarea3.Controllers
             return View("Logueate");
         }
 
-
         [Route("/Login/MiCurriculum")]
 
         // Metodo de accion MiCurriculum(), prepara los datos necesarios para mostrar en la vista.
         public ActionResult MiCurriculum()
         {
-            //if (!Global.IsLogged)
-            //{
-            //     return View(Global.LoginView);
-            //}
+            if (Global.IsLogged)
+            {
+                return View(Global.LoginView);
+            }
 
             var imagenRuta = "~/img/Windar.jpg";
 
             var urlImagen = Url.Content(imagenRuta);
-        
+
 
             var viewModel = new MiCurriculumViewModel
             {
@@ -81,9 +83,7 @@ namespace LoboGarcesWindarTarea3.Controllers
             return View(viewModel);
         }
 
-      
-
     }
 }
 
-       
+

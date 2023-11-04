@@ -5,12 +5,24 @@
     width: 100%;
 }
 
-.table th, .table td {
-    text-align: center;
+    .table th, .table td {
+        text-align: center;
+        font-family: 'Varta', sans-serif;
+        font-size: 20px;
+    }
+.nav-link {
+    font-size: 20px;
 }
-
-
-
+h1 {
+    font-family: 'Poltawski Nowy', serif;
+    font-size: 45px;
+}
+@media (min-width: 1200px) {
+    .h3, h3 {
+        font-size: 1.85rem;
+        font-family: 'Varta', sans-serif;
+    }
+}
     .table th:last-child, .table td:last-child {
         text-align: center;
     }
@@ -18,8 +30,9 @@
 .nombre {
     background-color: dodgerblue;
     color: white;
-    font-size: 22px;
+    font-size: 32px;
     padding: 1%;
+    font-family: 'Poltawski Nowy', serif;
 }
 .Detalle {
     border: 1px solid #eef2f3;
@@ -39,13 +52,21 @@
     height: auto;
 
 }
-.mt{
-    font-size:15px;
-    margin-left:-55px;
-  
-    
+.mt {
+    font-family: 'Varta', sans-serif;
+    font-size: 17px;
+    margin-left: -55px;
 }
 .mt2 {
-    font-size: 15px;
-    margin-right:-75px;
+    font-family: 'Varta', sans-serif;
+    font-size: 17px;
+    margin-right: -75px;
+}
+p {
+    
+}
+.img2 {
+    width: 50%;
+    max-width: 60%;
+    height: auto;
 }

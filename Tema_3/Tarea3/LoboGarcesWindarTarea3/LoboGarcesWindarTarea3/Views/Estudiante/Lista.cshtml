@@ -7,14 +7,12 @@
 }
 
 <h1 class="mt-4">Estudiantes</h1>
-
 <table class=" table table-striped">
     <thead>
         <tr>
             <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
             <th scope="col">@Html.DisplayNameFor(model => model.Nombre)</th>
             <th scope="col">Accion</th>
-
         </tr>
     </thead>
     <tbody>
@@ -27,12 +25,13 @@
                 <td scope="row">
                     @Html.DisplayFor(modelItem => item.Nombre)
                 </td>
-
                 <td scope="row">
-                    @Html.ActionLink("Detalles", "Detalles", new { id=item.Id  })
 
+                    <form action="@Url.Action("Detalles", "Estudiante")" method="get">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <button type="submit" class="btn btn-secondary">Detalles</button>
+                    </form>
                 </td>
-
             </tr>
         }
     </tbody>

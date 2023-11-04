@@ -12,22 +12,23 @@ namespace LoboGarcesWindarTarea3.Controllers
         {
             _logger = logger;
         }
-    
+
         [Route("/Home")]
+
         [Route("/Home/Index")]
         public IActionResult Index()
         {
-            //if (!Global.IsLogged)
-            //{
-            //    return View(Global.LoginView);
-            //}
+            if (Global.IsLogged)
+            {
+                return View(Global.LoginView);
+            }
 
             return View();
         }
 
         public IActionResult Privacy()
         {
-            if (!Global.IsLogged)
+            if (Global.IsLogged)
             {
                 return View(Global.LoginView);
             }

@@ -1,77 +1,78 @@
-﻿
-body {
+﻿body {
     background-image: url('/img/ciclos_formativos_montecastelo_logo.jpg');
-    background-size: 90%;
+    background-size: 35%;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin: 0;
+    margin: 0 ;
+    color: #1e1515;
+}
+.text-center {
+    color: black;
+}
 
-    justify-content: center;
-    align-items: center;
-    text-align: center;
- 
+.row {
+  
+    --bs-gutter-y: 0;
+    max-width: 900%;
+   
+}
+
+.form-control::placeholder, .datatable-input::placeholder {
+    color: #6c757d;
+    opacity: 0;
+}
+label {
+    display: inline-block;
+    margin-left:25px;
+
 }
 .form-control {
    
     border: 1px solid #9fa8b1;
+    margin-left:8px;
     
 }
 .shadow-lg {
-    box-shadow: 0 3rem 5rem rgba(11, 9, 9, 0.18) !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.76) !important;
 }
-
 .mt-5 {
     margin-top: 15rem !important;
 }
-.col{
-  
-}
-.mb-3 {
-    margin-bottom: 2rem !important;
-}
-.h2, h2 {
-    
-    font-size: 3rem;
-    line-height: 1.2;
-}
-.row {
-    --bs-gutter-x: 2rem;
-    --bs-gutter-y: 2rem;
-}
-.card-header {
-    padding: 0.5rem 2rem;
-    margin-bottom: 4px;
-    background-color: rgba(0,0,0,.03);
-    border-bottom: 4px solid rgba(0,0,0,.125);
- 
-}
+
 .btn{
-    margin-left:220px;
+    margin-left:200px;
+    
 }
-.py-3 {
-    padding-top: 2rem !important;
-    padding-bottom: 1rem !important;
+
+.form-floating >.form-control::placeholder {
+    color: black;
 }
-.card-footer {
-    padding: .5rem 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    background-color: rgba(0,0,0,.03);
-    border-top: 4px solid rgba(0,0,0,.125);
+.form-floating > .form-control, .form-floating > .datatable-input, .form-floating > .form-control-plaintext {
+    height: calc(3.9rem + 3px);
+    line-height: 1.25;
 }
-label{
-    margin-left:-28rem;
+.card-header, .card-footer {
+    background-color: white;
 
 }
-.dos {
-    margin-left: -32rem;
+
+@media (min-width: 1200px) {
+    .h2, h2 {
+        font-size: 5rem;
+    }
 }
-.form-control {
-    display: block;
-    width: 100%;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 2.5;
-    border: 2px solid #9fa8b1;
+
+.card-header2 {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+
 }
+.card-header i {
+    margin-right: 25%;
+}
+.card-header3 {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+}
+

@@ -3,23 +3,16 @@
 @{
     <link rel="stylesheet" href="~/css/view.css" asp-append-version="true" />
     ViewData["Title"] = "Detalles";
-
 }
 <h1 class="mt-4"> Detalles  de la asignatura</h1>
-
-
 <div class="Detalle">
     <div class="nombre">
         @Html.DisplayFor(model => model.Nombre)
     </div>
-
     <div class="row">
            @Html.DisplayFor(model => model.Descripcion)
     </div>
-
     <img src="/img/ciclos_formativos_montecastelo_logo.jpg" class=" img img-fluid" alt="...">
-
-
     <div class="btn-group btn-group-joined d-grid gap-2">
         <button type="button" class="btn btn-secondary btn-block" onclick="window.location.href='https://learn.microsoft.com/es-es/dotnet/csharp/programming-guide/'">¡Aprende todo sobre la asignatura!</button>
         <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='@Url.Action("Lista", "Asignatura")'">Volver a la lista </button>

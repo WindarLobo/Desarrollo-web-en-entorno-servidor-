@@ -13,32 +13,37 @@ namespace LoboGarcesWindarTarea3.Controllers
         {
             _estudianteRepository = new EstudianteRepositorio(context);
         }
- 
+
         [Route("/Estudiante")]
+
         [Route("/Estudiante/Lista")]
         public IActionResult Lista()
         {
-            //if (!Global.IsLogged)
-            //{
-            //    return View(Global.LoginView);
-            //}
-
+            if (Global.IsLogged)
+            {
+                return View(Global.LoginView);
+            }
             var estudiantes = _estudianteRepository.GetAllEstudiante().ToList();
+
             return View(estudiantes);
         }
+
         [Route("/Estudiante/Detalles/{id?}")]
         public IActionResult Detalles(int id)
         {
-            //if (!Global.IsLogged)
-            //{
-            //    return View(Global.LoginView);
-            //}
+            if (Global.IsLogged)
+            {
+                return View(Global.LoginView);
+            }
 
             var estudiantes = _estudianteRepository.GetEstudianteByID(id);
 
             if (estudiantes == null)
+
                 return NotFound();
+
             else
+
                 return View(estudiantes);
         }
 

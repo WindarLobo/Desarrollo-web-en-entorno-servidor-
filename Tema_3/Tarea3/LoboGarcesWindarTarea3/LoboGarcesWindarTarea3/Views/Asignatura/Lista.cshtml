@@ -3,35 +3,34 @@
 @{
     <link rel="stylesheet" href="~/css/view.css" asp-append-version="true" />
     ViewData["Title"] = "Lista";
- 
+
 }
-
-    <h1 class="mt-4">Asignaturas</h1>
-
-    <table class =" table table-striped">
-    <thead >
+<h1 class="mt-4">Asignaturas</h1>
+<table class=" table table-striped">
+    <thead>
         <tr>
             <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
             <th scope="col">@Html.DisplayNameFor(model => model.Nombre)</th>
             <th scope="col">Accion</th>
-         
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model) {
+        @foreach (var item in Model)
+        {
             <tr>
                 <td scope="row">
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
                 <td scope="row">
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-           
-            <td scope="row">
-                    @Html.ActionLink("Detalles", "Detalles", new { id=item.Id  })
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
 
-            </td>
-                
+                <td scope="row">
+                    <form action="@Url.Action("Detalles", "Asignatura")" method="get">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <button type="submit" class="btn btn-secondary">Detalles</button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>
