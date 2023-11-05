@@ -1,29 +1,37 @@
 ﻿using LoboGarcesWindarTarea3.Database.Models;
 
-namespace LoboGarcesWindarTarea3.Database.Repositories
+namespace LoboGarcesWindarTarea3.Database.Repositories;
+
+
+//Implemento una interfaz IDisposable
+public class AsignaturaRepositorio : IDisposable
 {
-    public class AsignaturaRepositorio : IDisposable
+    //InstitutoMontecasteloContext _context esta variable se utiliza para acceder a la instancia del contexto de la base de datos.
+
+    private readonly InstitutoMontecasteloContext _context;
+
+    //AsignaturaRepositorio(InstitutoMontecasteloContext context) defino  un constructor   
+    public AsignaturaRepositorio(InstitutoMontecasteloContext context)
     {
-        private readonly InstitutoMontecasteloContext _context;
+        _context = context;
+    }
 
-        public AsignaturaRepositorio(InstitutoMontecasteloContext context)
-        {
-            _context = context;
-        }
+    // IQueryable<Asignatura> GetAllAsignatura() añado este método, que me devuelve  una consulta  de todas las asignaturas en la base de datos.
+    public IQueryable<Asignatura> GetAllAsignatura()
+    {
+        return _context.Asignaturas.AsQueryable();
+    }
 
-        public IQueryable<Asignatura> GetAllAsignatura()
-        {
-            return _context.Asignaturas.AsQueryable();
-        }
-        public Asignatura GetAsignaturaByID(int id)
-        {
-            return _context.Asignaturas.FirstOrDefault(asignatura => asignatura.Id == id);
-        }
+    // Asignatura GetAsignaturaByID(int id) añado este  método que recibe un parámetro id y devuelve la primera asignatura que tiene el mismo id.
+    public Asignatura GetAsignaturaByID(int id)
+    {
+        return _context.Asignaturas.FirstOrDefault(asignatura => asignatura.Id == id);
+    }
 
-        
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
+
+    // Metodo Dispose() es parte de la implementación de la interfaz IDisposable.
+    public void Dispose()
+    {
+        _context.Dispose();
     }
 }

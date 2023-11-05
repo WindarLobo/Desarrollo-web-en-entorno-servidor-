@@ -1,9 +1,11 @@
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+﻿@media (min-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
 }
-
+.nav-link {
+    font-size: 20px;
+}
 html {
     position: relative;
     min-height: 100%;

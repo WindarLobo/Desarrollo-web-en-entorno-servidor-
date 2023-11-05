@@ -2,25 +2,55 @@
 
 @{
     ViewData["Title"] = "Detalles";
+
+    // En la  etiqueta <link> lo utilizo para vincular un archivo de estilo CSS llamado "view.css" ubicado en la carpeta "css".
+
     <link rel="stylesheet" href="~/css/view.css" asp-append-version="true" />
 
 }
+
+<!-- Esto muestra un encabezado de nivel 1 en la página con el texto " Detalles de la  asignatura".-->
+
 <h1 class="mt-4"> Detalles de la asignatura</h1>
+
+<!-- Este bloque div contiene el contenido relacionado con los detalles .-->
+
 <div class="Detalle">
+
+    <!-- Muestra el nombre  utilizando el valor del modelo Nombre.-->
+
     <div class="nombre">
         @Html.DisplayFor(model => model.Nombre)
     </div>
     <div class="row">
         <div class="col-md-4">
+
+            <!-- Muestra la edad del profesor  utilizando el valor del modelo Edad.-->
+
             <p class=" mt mt-4">EDAD DEL PROFESOR : @Html.DisplayFor(model => model.Edad)</p>
         </div>
+
         <div class="col-md-6">
+
+            <!-- Muestra la materia   utilizando el valor del modelo Materia.-->
+
             <p class="mt2 mt-4">MATERIA QUE IMPARTE EL PROFESOR : @Html.DisplayFor(model => model.materia)</p>
         </div>
+
     </div>
+
+    <!--Muestra una imagen con la ruta "/img/ciclos_formativos_montecastelo_logo.jpg". La clase img-fluid se usa para que la imagen sea responsiva y se ajuste al tamaño del contenedor. -->
+
     <img src="/img/ciclos_formativos_montecastelo_logo.jpg" class="img img-fluid" alt="Logo  Montecastelo">
+
     <div class="btn-group btn-group-joined d-grid gap-2">
+
+
         <button type="button" class="btn btn-secondary  btn-block" onclick="window.location.href=#">¡Increible  profesores!</button>
+
+        <!-- Un botón secundario que, al hacer clic en él, redirige al usuario a la acción "Lista" del controlador "Profesor".-->
+
         <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='@Url.Action("Lista", "Profesor")'">Volver a la lista </button>
     </div>
 </div>
+

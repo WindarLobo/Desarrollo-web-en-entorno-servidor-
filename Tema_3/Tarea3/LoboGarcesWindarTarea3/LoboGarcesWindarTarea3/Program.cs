@@ -14,6 +14,8 @@ namespace LoboGarcesWindarTarea3
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            //Añado la cadena de conexión desde la configuración de la aplicación, esto permite que la aplicación interactúe con una base de datos SQL Server.
+
             builder.Services.AddDbContext<InstitutoMontecasteloContext>(options =>
               options.UseSqlServer(builder.Configuration.GetConnectionString("ConexionTarea3")));
 

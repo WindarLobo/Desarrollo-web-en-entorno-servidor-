@@ -1,30 +1,56 @@
 ﻿@model LoboGarcesWindarTarea3.Database.Models.Estudiante
 
 @{
-    ViewData["Title"] = "Detalles";
+
+    // En la  etiqueta <link> lo utilizo para vincular un archivo de estilo CSS llamado "view.css" ubicado en la carpeta "css".
+
     <link rel="stylesheet" href="~/css/view.css" asp-append-version="true" />
+
+    ViewData["Title"] = "Detalles";
 }
+
+<!-- Esto muestra un encabezado de nivel 1 en la página con el texto " Detalles del estudiante".-->
+
 <h1 class="mt-4"> Detalles del estudiante</h1>
 
-
+<!-- Este bloque div contiene el contenido relacionado con los detalles.-->
 
 <div class="Detalle">
+
+    <!-- Muestra el nombre  utilizando el valor del modelo Nombre.-->
+
     <div class="nombre">
         @Html.DisplayFor(model => model.Nombre)
     </div>
+
     <div class="row">
         <div class="col-md-4">
+
+            <!-- Muestra la edad, utilizando el valor del modelo Edad.-->
 
             <p class="mt mt-4">EDAD DEL ALUMNO: @Html.DisplayFor(model => model.Edad)</p>
         </div>
         <div class="col-md-6">
+
+            <!-- Muestra el curso, utilizando el valor del modelo Curso.-->
+
             <p class="mt2  mt-4">CURSO AL QUE PERTENECE: @Html.DisplayFor(model => model.Curso)</p>
+
         </div>
+
     </div>
+    <!--Muestra una imagen con la ruta "/img/ciclos_formativos_montecastelo_logo.jpg". La clase img-fluid se usa para que la imagen sea responsiva y se ajuste al tamaño del contenedor. -->
+
     <img src="/img/ciclos_formativos_montecastelo_logo.jpg" class=" img img-fluid" alt="Logo  Montecastelo">
+
     <div class="btn-group btn-group-joined d-grid gap-2">
+
         <button type="button" class="btn btn-secondary  btn-block" onclick="window.location.href=#">¡Los mejores estudiantes!</button>
+
+        <!-- Un botón secundario que, al hacer clic en él, redirige al usuario a la acción "Lista" del controlador "Estudiante".-->
+
         <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='@Url.Action("Lista", "Estudiante")'">Volver a la lista </button>
+
     </div>
 
 </div>

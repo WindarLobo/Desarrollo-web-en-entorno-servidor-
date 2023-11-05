@@ -1,19 +1,36 @@
 ﻿@model IEnumerable<LoboGarcesWindarTarea3.Database.Models.Asignatura>
 
 @{
+    // En la  etiqueta <link> lo utilizo para vincular un archivo de estilo CSS llamado "view.css" ubicado en la carpeta "css".
+
     <link rel="stylesheet" href="~/css/view.css" asp-append-version="true" />
+
     ViewData["Title"] = "Lista";
 
 }
+
+<!-- Esto muestra un encabezado de nivel 1 en la página con el texto "Asignaturas".-->
+
 <h1 class="mt-4">Asignaturas</h1>
+
+<!--Creo una tbala  con las clases de Bootstrap -->
+
 <table class=" table table-striped">
+
+    <!-- Esta sección define las filas de encabezado de la tabla.-->
+
     <thead>
+
+        <!-- Esta fila contiene las celdas de encabezado de la tabla.-->
+
         <tr>
             <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
             <th scope="col">@Html.DisplayNameFor(model => model.Nombre)</th>
             <th scope="col">Accion</th>
         </tr>
     </thead>
+
+    <!--Esta sección define las filas de datos de la tabla. Utilizando un bucle foreach -->
     <tbody>
         @foreach (var item in Model)
         {
@@ -26,6 +43,9 @@
                 </td>
 
                 <td scope="row">
+
+                    <!--Cuando se hace clic en el botón, se envía una solicitud GET a la acción Detalles del controlador Asignatura, pasando el Id de la asignatura como un parámetro oculto en el formulario.-->
+
                     <form action="@Url.Action("Detalles", "Asignatura")" method="get">
                         <input type="hidden" name="id" value="@item.Id" />
                         <button type="submit" class="btn   btn-outline-danger">Detalles</button>

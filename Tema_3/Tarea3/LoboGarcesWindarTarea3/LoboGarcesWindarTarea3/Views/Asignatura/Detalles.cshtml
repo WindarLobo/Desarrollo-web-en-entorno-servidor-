@@ -1,20 +1,45 @@
 ﻿@model LoboGarcesWindarTarea3.Database.Models.Asignatura
 
 @{
+    // En la  etiqueta <link> lo utilizo para vincular un archivo de estilo CSS llamado "view.css" ubicado en la carpeta "css".
+
     <link rel="stylesheet" href="~/css/view.css" asp-append-version="true" />
+
     ViewData["Title"] = "Detalles";
 }
+
+<!-- Esto muestra un encabezado de nivel 1 en la página con el texto "Asignaturas".-->
+
 <h1 class="mt-4"> Detalles  de la asignatura</h1>
+
+<!-- Este bloque div contiene el contenido relacionado con los detalles de la asignatura.-->
+
 <div class="Detalle">
+
+    <!-- Muestra el nombre de la asignatura utilizando el valor del modelo Nombre.-->
+
     <div class="nombre">
         @Html.DisplayFor(model => model.Nombre)
     </div>
+
+    <!-- Muestra la descripción de la asignatura utilizando el valor del modelo Descripcion.-->
     <div class="row">
            @Html.DisplayFor(model => model.Descripcion)
     </div>
+
+    <!--Muestra una imagen con la ruta "/img/ciclos_formativos_montecastelo_logo.jpg". La clase img-fluid se usa para que la imagen sea responsiva y se ajuste al tamaño del contenedor. -->
+
     <img src="/img/ciclos_formativos_montecastelo_logo.jpg" class=" img img-fluid" alt="Logo  Montecastelo">
+
     <div class="btn-group btn-group-joined d-grid gap-2">
+
+        <!-- Un botón secundario que, al hacer clic en él, redirige al usuario a la página de Microsoft Docs para aprender sobre el tema de la asignatura.-->
+
         <button type="button" class="btn btn-secondary btn-block" onclick="window.location.href='https://learn.microsoft.com/es-es/dotnet/csharp/programming-guide/'">¡Aprende todo sobre la asignatura!</button>
+
+
+        <!-- Un botón secundario que, al hacer clic en él, redirige al usuario a la acción "Lista" del controlador "Asignatura".-->
+
         <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='@Url.Action("Lista", "Asignatura")'">Volver a la lista </button>
     </div>
 
