@@ -18,7 +18,7 @@ namespace LoboGarcesWindarTarea3.Controllers
         [Route("/Home/Index")]
         public IActionResult Index()
         {
-            if (Global.IsLogged)
+            if (!Global.IsLogged)
             {
                 return View(Global.LoginView);
             }
@@ -28,7 +28,7 @@ namespace LoboGarcesWindarTarea3.Controllers
 
         public IActionResult Privacy()
         {
-            if (Global.IsLogged)
+            if (!Global.IsLogged)
             {
                 return View(Global.LoginView);
             }

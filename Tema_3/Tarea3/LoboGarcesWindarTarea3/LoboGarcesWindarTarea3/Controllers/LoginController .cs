@@ -55,7 +55,7 @@ namespace LoboGarcesWindarTarea3.Controllers
         // Metodo de accion MiCurriculum(), prepara los datos necesarios para mostrar en la vista.
         public ActionResult MiCurriculum()
         {
-            if (Global.IsLogged)
+            if (!Global.IsLogged)
             {
                 return View(Global.LoginView);
             }

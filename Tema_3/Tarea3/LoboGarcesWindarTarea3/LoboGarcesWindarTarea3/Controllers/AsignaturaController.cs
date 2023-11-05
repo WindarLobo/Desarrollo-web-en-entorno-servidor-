@@ -18,7 +18,7 @@ namespace LoboGarcesWindarTarea3.Controllers
         [Route("/Asignatura/Lista")]
         public IActionResult Lista()
         {
-            if (Global.IsLogged)
+            if (!Global.IsLogged)
             {
                 return View(Global.LoginView);
             }
@@ -31,7 +31,7 @@ namespace LoboGarcesWindarTarea3.Controllers
         [Route("/Asignatura/Detalles/{id?}")]
         public IActionResult Detalles(int id)
         {
-            if (Global.IsLogged)
+            if (!Global.IsLogged)
             {
                 return View(Global.LoginView);
             }

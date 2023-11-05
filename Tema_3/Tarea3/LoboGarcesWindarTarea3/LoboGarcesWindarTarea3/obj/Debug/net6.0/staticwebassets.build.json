@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7RGTIquqGDsr6cuE5KZl2BW0Y0SAUEQ3ms1sJAr+6H0=",
+  "Hash": "ciuCqm+VGHxM3bx6iqKsqyv6XK9aVbOzKOdCKoCkKvw=",
   "Source": "LoboGarcesWindarTarea3",
   "BasePath": "_content/LoboGarcesWindarTarea3",
   "Mode": "Default",
@@ -85,12 +85,12 @@
       "OriginalItemSpec": "wwwroot\\css\\Layout.css"
     },
     {
-      "Identity": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\css\\login.css",
+      "Identity": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\css\\Login.css",
       "SourceId": "LoboGarcesWindarTarea3",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\",
       "BasePath": "_content/LoboGarcesWindarTarea3",
-      "RelativePath": "css/login.css",
+      "RelativePath": "css/Login.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -99,7 +99,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\login.css"
+      "OriginalItemSpec": "wwwroot\\css\\Login.css"
     },
     {
       "Identity": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\css\\View.css",
@@ -899,6 +899,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Montecastelo.png"
+    },
+    {
+      "Identity": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\img\\user.jpg",
+      "SourceId": "LoboGarcesWindarTarea3",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\",
+      "BasePath": "_content/LoboGarcesWindarTarea3",
+      "RelativePath": "img/user.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\user.jpg"
     },
     {
       "Identity": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_3\\Tarea3\\LoboGarcesWindarTarea3\\LoboGarcesWindarTarea3\\wwwroot\\img\\Windar.JPG",
