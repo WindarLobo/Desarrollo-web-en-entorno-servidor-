@@ -35,13 +35,15 @@ public class LoginController : Controller
 
     [Route("/Login/DoLogin")]
 
-    //Metodo IActionResult DoLogin(string Username, string Password), Verifica en la base de datos si existe  y redirige al usuario a la página de inicio (/Views/Home/Index.cshtml). Si  no son válidas, redirige al usuario a una vista llamada "Logueate".
+    //Metodo IActionResult DoLogin(string Username, string Password), Verifica en la base de datos si existe  y redirige al usuario a la página de inicio (/Views/Home/Index.cshtml). Si  no son válidas, le muestra un mesaje de error y  redirige al usuario a una vista llamada "Logueate".
     public IActionResult DoLogin(string Username, string Password)
     {
         var login = _loginRepository.GetLoginUsernamePassword(Username, Password);
 
         if (login == null)
         {
+            ViewBag.ErrorMessage = "Error de clave. Por favor, verifica tu nombre de usuario y contraseña.";
+
             return View("Logueate");
         }
 

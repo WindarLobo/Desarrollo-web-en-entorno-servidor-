@@ -19,22 +19,28 @@
 
     <!-- Muestra el nombre  utilizando el valor del modelo Nombre.-->
 
-    <div class="nombre">
+    <div class="Datos">
+
         @Html.DisplayFor(model => model.Nombre)
+
     </div>
+
     <div class="row">
+
         <div class="col-md-4">
 
             <!-- Muestra la edad del profesor  utilizando el valor del modelo Edad.-->
 
             <p class=" mt mt-4">EDAD DEL PROFESOR : @Html.DisplayFor(model => model.Edad)</p>
+
         </div>
 
         <div class="col-md-6">
 
             <!-- Muestra la materia   utilizando el valor del modelo Materia.-->
 
-            <p class="mt2 mt-4">MATERIA QUE IMPARTE EL PROFESOR : @Html.DisplayFor(model => model.materia)</p>
+            <p class="mt2 mt-4">MATERIA QUE IMPARTE EL PROFESOR : @Html.DisplayFor(model => model.Materia)</p>
+
         </div>
 
     </div>
@@ -51,6 +57,8 @@
         <!-- Un botón secundario que, al hacer clic en él, redirige al usuario a la acción "Lista" del controlador "Profesor".-->
 
         <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='@Url.Action("Lista", "Profesor")'">Volver a la lista </button>
+
     </div>
+
 </div>
 

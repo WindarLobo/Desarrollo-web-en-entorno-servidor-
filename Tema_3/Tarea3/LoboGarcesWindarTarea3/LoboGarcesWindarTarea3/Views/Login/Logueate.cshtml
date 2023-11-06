@@ -1,52 +1,112 @@
 ﻿@{
-    ViewData["Title"] = "View";
+    // Establezco el título de la vista en el objeto ViewData. El título se utilizará para la pestaña del navegador cuando se muestre esta vista.
+
+    ViewData["Title"] = "Login";
+
+    //Defino el diseño (Layout2) que se utilizará para esta vista.
+
     Layout = "~/Views/Shared/_Layout2.cshtml";
+
+    // En la  etiqueta <link> lo utilizo para vincular un archivo de estilo CSS llamado "Login.css" ubicado en la carpeta "css".
+
+
     <link rel="stylesheet" href="~/css/Login.css" asp-append-version="true" />
 }
+
 <html>
+
 <body>
+    <!--Los campos de entrada están dentro de elementos <div> con clases específicas para aplicar estilos y diseño. -->
+
     <div id="layoutAuthentication">
+
         <div id="layoutAuthentication_content">
+
             <div class="container">
+
                 <div class="row justify-content-center">
+
                     <div class="col-lg-5">
+
                         <div class="card shadow-lg border-0 rounded-lg mt-5">
-                            <div class="card-header"><h2 class="text-center font-weight-light my-4"> <i class="fas fa-circle-user"></i></h2></div></i>
+
+                            <div class="card-header"><h2 class="text-center font-weight-light my-4"> <i class="fas fa-circle-user"></i></h2></div>
+
                             <div class=" card-body">
+
+                                <!--El formulario tiene un atributo action que apunta a una URL generada utilizando @Url.Action("DoLogin", "Login").-->
+                                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                                {
+                                    <p style="color: red;">@ViewBag.ErrorMessage</p>
+                                }
                                 <form id="loginForm" action="@Url.Action("DoLogin", "Login")" method="post">
 
                                     <div class="card-header2 form-floating  mb-3">
+
                                         <i class="fas fa-circle-user"></i>
+
                                         <input class="form-control" id="inputusername" name="username" type="username" placeholder="Nombre de usuario" />
+
                                         <label class="usuario" for="Nombre">Nombre de usuario</label>
+
                                     </div>
                                     <div class="card-header3 form-floating  mb-3">
+
                                         <i class="fa fa-lock"></i>
+
                                         <input class="form-control" id="inputpassword" name="password" type="password" placeholder="Contraseña" />
+
                                         <label class="usuario2" for="password">Contraseña</label>
+
                                     </div>
 
                                     <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+
+                                        <!-- Un botón secundario que, al hacer clic en él, redirige al usuario a la acción "DoLogin" del controlador "Login".-->
+
                                         <button type="submit" class="btn btn-primary mx-auto">Iniciar Sesión</button>
+
                                     </div>
+
                                 </form>
+
                             </div>
+
                             <div class="card-footer text-center py-3">
+
                                 <div class="">¿No tienes cuenta? <a href=" ">Registrate</a></div>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
         <script>
+
+            //Validaciones o acciones adicionales en el formulario antes de que los datos sean enviados al servidor.
+          
             $(document).ready(function () {
+
                 $('#loginForm').submit(function (event) {
-                    event.preventDefault(); // Prevenir el comportamiento de envío normal del formulario
-                    // Tu lógica personalizada para manejar la sumisión del formulario aquí
+
+                    event.preventDefault();
+
+
                 });
+
             });
+
         </script>
+
     </div>
+
 </body>
+
 </html>

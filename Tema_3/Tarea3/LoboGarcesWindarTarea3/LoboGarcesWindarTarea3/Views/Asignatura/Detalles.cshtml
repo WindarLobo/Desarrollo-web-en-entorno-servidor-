@@ -19,12 +19,17 @@
     <!-- Muestra el nombre de la asignatura utilizando el valor del modelo Nombre.-->
 
     <div class="nombre">
+
         @Html.DisplayFor(model => model.Nombre)
+
     </div>
 
     <!-- Muestra la descripción de la asignatura utilizando el valor del modelo Descripcion.-->
+
     <div class="row">
+
            @Html.DisplayFor(model => model.Descripcion)
+
     </div>
 
     <!--Muestra una imagen con la ruta "/img/ciclos_formativos_montecastelo_logo.jpg". La clase img-fluid se usa para que la imagen sea responsiva y se ajuste al tamaño del contenedor. -->
@@ -41,6 +46,7 @@
         <!-- Un botón secundario que, al hacer clic en él, redirige al usuario a la acción "Lista" del controlador "Asignatura".-->
 
         <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='@Url.Action("Lista", "Asignatura")'">Volver a la lista </button>
+
     </div>
 
 </div>

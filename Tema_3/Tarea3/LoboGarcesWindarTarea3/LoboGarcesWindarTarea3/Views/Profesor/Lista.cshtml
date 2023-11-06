@@ -24,10 +24,15 @@
 
         <tr>
             <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
+
             <th scope="col">@Html.DisplayNameFor(model => model.Nombre)</th>
-            <th scope="col">@Html.DisplayNameFor(model => model.materia)</th>
+
+            <th scope="col">@Html.DisplayNameFor(model => model.Materia)</th>
+
             <th scope="col">Accion</th>
+
         </tr>
+
     </thead>
 
     <!--Esta sección define las filas de datos de la tabla. Utilizando un bucle foreach -->
@@ -38,13 +43,21 @@
         {
             <tr>
                 <td scope="row">
+
                     @Html.DisplayFor(modelItem => item.Id)
+
                 </td>
+
                 <td scope="row">
+
                     @Html.DisplayFor(modelItem => item.Nombre)
+
                 </td>
+
                 <td scope="row">
-                    @Html.DisplayFor(modelItem => item.materia)
+
+                    @Html.DisplayFor(modelItem => item.Materia)
+
                 </td>
 
                 <td scope="row">
@@ -52,11 +65,17 @@
                     <!--Cuando se hace clic en el botón, se envía una solicitud GET a la acción Detalles del controlador Profesor, pasando el Id del profesor como un parámetro oculto en el formulario.-->
 
                     <form action="@Url.Action("Detalles","Profesor")" method="get">
+
                         <input type="hidden" name="id" value="@item.Id" />
+
                         <button type="submit" class="btn  btn-outline-danger">Detalles</button>
+
                     </form>
+
                 </td>
+
             </tr>
         }
     </tbody>
+
 </table>

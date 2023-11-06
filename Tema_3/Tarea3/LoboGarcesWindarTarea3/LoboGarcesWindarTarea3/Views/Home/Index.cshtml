@@ -1,29 +1,62 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
+    // En la  etiqueta <link> lo utilizo para vincular un archivo de estilo CSS llamado "view.css" ubicado en la carpeta "css".
+
     <link rel="stylesheet" href="~/css/view.css" asp-append-version="true" />
+
+    // En la  etiqueta <link> lo utilizo para vincular un archivo de estilo CSS llamado "bootstrap.css" ubicado en la carpeta "css".
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 }
 
+<!-- (text-center y mt-5), centro el contenido horizontalmente con un margen superior de tamaño 5 -->
+
 <div class="text-center mt-5">
+
+    <!--Container, lo  utilizo para envolver y centrar el contenido de la página dentro de un contenedor específico. -->
+
     <div class="container">
+
+        <!--Este es un encabezado de nivel 1, con un tamaño de fuente y marguenes de 4 -->
+
         <h1 class="display-4">Bienvenido al Instituto Montecastelo</h1>
+
+        <!--Utilizo un encabezado de nivel 3 -->
+
         <h3>Seleccione una opción:</h3>
+
+        <!-- Aplico un  estilos flexibles (d-flex) y centro el contenido horizontalmente (justify-content-center), con un margen superior de tamaño 3 -->
+
         <div class="d-flex justify-content-center m-3">
+
+            <!-- Aplico 3 formulario, cada formulario tiene un botón de envío (<button>) con diferentes atributos de asp-controller y asp-action.-->
+
             <form class="mx-3" asp-controller="Asignatura" asp-action="Lista" method="get">
+
                 <button type="submit" class="btn btn-outline-danger">Asignaturas</button>
+
             </form>
 
             <form class="mx-3" asp-controller="Estudiante" asp-action="Lista" method="get">
+
                 <button type="submit" class="btn btn-outline-danger">Estudiantes</button>
+
             </form>
 
             <form class="mx-3" asp-controller="Profesor" asp-action="Lista" method="get">
+
                 <button type="submit" class="btn btn-outline-danger">Profesores</button>
+
             </form>
         </div>
 
     </div>
+
+    <!--Muestro una imagen con la ruta "/img/Montecastelo.png". La clase img-fluid se usa para que la imagen sea responsiva y se ajuste al tamaño del contenedor. -->
+
     <img src="/img/Montecastelo.png" class="img2 img img-fluid" alt="Logo de Montecastelo">
+
 </div>
 
 
