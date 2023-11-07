@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QoEjouL+QFWlG9WScZszW2LFityGxeXfwJHIkqCdKOUdJ24PhDssDCSPYdxaLNa0TkUlU82btWpx/nkUg6r/gA==",
+  "dgSpecHash": "lqaSIqSQSdxGFhACyLhM9rNkBwrc7jhwsZE+mDPcLDReC/vGdgO4P5hm7gRY4tDqTda0/nemYoUtnKACFDUwpw==",
   "success": true,
-  "projectFilePath": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_4\\Actividad\\Actividad\\Actividad\\Ejercicio2\\Ejercicio2.csproj",
+  "projectFilePath": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_4\\Boletin\\Actividad\\Actividad\\Ejercicio2\\Ejercicio2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Windar\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Windar\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

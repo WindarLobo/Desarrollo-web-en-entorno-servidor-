@@ -3,14 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ejercicio2.DataBase.Models
 {
-    [Table("Productos")]
+    [Table("producto")]
     public class Producto
     {
         [Key]
 
-        public int Id { get; set; }
+        public int Codigo { get; set; }
         public string Nombre { get; set; }
-        public decimal Precio {get; set; }
+        public double Precio {get; set; }
+        public int codigo_fabricante { get; set; }
 
 
     }

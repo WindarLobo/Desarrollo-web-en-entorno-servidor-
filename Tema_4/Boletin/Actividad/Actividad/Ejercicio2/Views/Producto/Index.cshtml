@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Productos</h1>
+<h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -14,13 +14,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                @Html.DisplayNameFor(model => model.Codigo)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.codigo_fabricante)
             </th>
             <th></th>
         </tr>
@@ -29,7 +32,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
+                @Html.DisplayFor(modelItem => item.Codigo)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Nombre)
@@ -38,9 +41,12 @@
                 @Html.DisplayFor(modelItem => item.Precio)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {  item.Id  }) |
-                @Html.ActionLink("Details", "VerProductos", new {  item.Id  }) |
-                @Html.ActionLink("Delete", "Delete", new { item.Id  })
+                @Html.DisplayFor(modelItem => item.codigo_fabricante)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.Codigo  }) |
+                @Html.ActionLink("Detalle", "Detalle", new { id= item.Codigo }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Codigo })
             </td>
         </tr>
 }

@@ -9,7 +9,7 @@ namespace Ejercicio2.Controllers
     {
         private readonly ProductoRepositorio _productoRepositorio;
 
-        public ProductoController(ProductContext context)
+        public ProductoController(TiendaContext context)
         {
             _productoRepositorio = new ProductoRepositorio(context);
         }
@@ -24,7 +24,7 @@ namespace Ejercicio2.Controllers
             return View(productos);
 
         }
-        [Route("/Producto/Detalle/{id}")]
+        [Route("/Producto/Detalle/{id?}")]
         public IActionResult Detalle(int id)
         {
             var productos = _productoRepositorio.GetProductoByID(id);
@@ -42,10 +42,12 @@ namespace Ejercicio2.Controllers
         [Route("/Producto/create")]
         public IActionResult Create()
         {
-            var Id = int.Parse(HttpContext.Request.Form["Id"]);
+            var Id = int.Parse(HttpContext.Request.Form["Codigo"]);
             var nombre = HttpContext.Request.Form["Nombre"];
-            var precio = decimal.Parse(HttpContext.Request.Form["Precio"].ToString().Replace(".", ","));
-         
+            var precio = double.Parse(HttpContext.Request.Form["Precio"].ToString().Replace(".", ","));
+            var  fabricante =int.Parse(HttpContext.Request.Form["codigo_fabricante"]);
+
+
 
             var productos = _productoRepositorio.GetProductoByID(Id);
 
@@ -53,16 +55,18 @@ namespace Ejercicio2.Controllers
             {
                 _productoRepositorio.Save(new Producto
                 {
-                    Id = Id,
+                    Codigo = Id,
                     Nombre = nombre,
-                    Precio = precio,
-                 
+                    Precio = (double)precio,
+                    codigo_fabricante=fabricante,
+
                 }); ;
             }
             else
             {
                 productos.Nombre = nombre;
-                productos.Precio = precio;
+                productos.Precio = (double)precio;
+                productos.codigo_fabricante = fabricante;
                 _productoRepositorio.Update();
             }
 
@@ -89,6 +93,7 @@ namespace Ejercicio2.Controllers
 
             return View("Agregar", producto);
         }
-    
+
+    }
 }
-}
+

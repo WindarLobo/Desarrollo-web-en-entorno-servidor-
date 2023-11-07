@@ -24,21 +24,21 @@ namespace Ejemplo.Controllers
         }
  
 
-        [Route("/Pokemon/{id?}")]
-        public IActionResult GetPokemons(int id)
+        [Route("/Pokemon/info/{id}")]
+        public IActionResult Info(int id)
         {
             var pokemon = _pokemonRepository.GetpokemonByID(id);
 
             if (pokemon == null)
                 return NotFound();
             else
-                return View("Index", new List<Pokemon> { pokemon });
+                return View( new List<Pokemon> { pokemon });
         }
         [Route("/Pokemon/{peso}/{altura}")]
-        public IActionResult Info(double peso, double altura)
+        public IActionResult GetPokemons (double peso, double altura)
         {
             var pokemos = _pokemonRepository.GetPokemonPesoAltura(peso, altura);
-            return View("Index", pokemos);
+            return View( pokemos);
         }
     }
 }

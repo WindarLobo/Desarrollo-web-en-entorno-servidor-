@@ -13,7 +13,7 @@ namespace Ejercicio2
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddDbContext<ProductContext>(options =>
+            builder.Services.AddDbContext<TiendaContext>(options =>
            options.UseSqlServer(builder.Configuration.GetConnectionString("ConexionMontecastelo")));
 
             var app = builder.Build();

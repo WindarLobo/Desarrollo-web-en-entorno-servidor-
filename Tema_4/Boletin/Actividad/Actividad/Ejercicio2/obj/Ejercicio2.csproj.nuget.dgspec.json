@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_4\\Actividad\\Actividad\\Actividad\\Ejercicio2\\Ejercicio2.csproj": {}
+    "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_4\\Boletin\\Actividad\\Actividad\\Ejercicio2\\Ejercicio2.csproj": {}
   },
   "projects": {
-    "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_4\\Actividad\\Actividad\\Actividad\\Ejercicio2\\Ejercicio2.csproj": {
+    "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_4\\Boletin\\Actividad\\Actividad\\Ejercicio2\\Ejercicio2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_4\\Actividad\\Actividad\\Actividad\\Ejercicio2\\Ejercicio2.csproj",
+        "projectUniqueName": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_4\\Boletin\\Actividad\\Actividad\\Ejercicio2\\Ejercicio2.csproj",
         "projectName": "Ejercicio2",
-        "projectPath": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_4\\Actividad\\Actividad\\Actividad\\Ejercicio2\\Ejercicio2.csproj",
+        "projectPath": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_4\\Boletin\\Actividad\\Actividad\\Ejercicio2\\Ejercicio2.csproj",
         "packagesPath": "C:\\Users\\Windar\\.nuget\\packages\\",
-        "outputPath": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_4\\Actividad\\Actividad\\Actividad\\Ejercicio2\\obj\\",
+        "outputPath": "C:\\Datos Windar\\2_Daw\\Desarrollo web en entorno servidor\\Tema_4\\Boletin\\Actividad\\Actividad\\Ejercicio2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

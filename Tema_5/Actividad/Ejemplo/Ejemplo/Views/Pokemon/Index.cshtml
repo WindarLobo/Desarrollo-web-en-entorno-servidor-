@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Ejemplo.Database.Models.Pokemon>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Pokemon</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.numero_pokedex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.altura)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.numero_pokedex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.peso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.altura)
+            </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {  id=item.numero_pokedex }) |
+                    @Html.ActionLink("Detalle", "Info", new {id= item.numero_pokedex}) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.numero_pokedex })
+                </td>
+        </tr>
+
+}
+    </tbody>
+</table>

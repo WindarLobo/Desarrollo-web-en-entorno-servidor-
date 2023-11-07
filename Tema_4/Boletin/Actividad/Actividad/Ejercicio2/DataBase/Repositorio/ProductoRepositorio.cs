@@ -1,14 +1,12 @@
 ﻿using Ejercicio2.DataBase.Models;
-using System.Linq;
-
 namespace Ejercicio2.DataBase.Repositorio
 {
     public class ProductoRepositorio : IDisposable
     {
 
-        private readonly ProductContext _context;
+        private readonly TiendaContext _context;
 
-        public ProductoRepositorio(ProductContext context)
+        public ProductoRepositorio(TiendaContext context)
         {
             _context = context;
         }
@@ -17,10 +15,14 @@ namespace Ejercicio2.DataBase.Repositorio
         {
             return _context.Products.AsQueryable();
         }
+
+
         public Producto GetProductoByID(int id)
         {
-            return _context.Products.FirstOrDefault(producto => producto.Id == id);
+            return _context.Products.FirstOrDefault(producto => producto.Codigo == id);
         }
+
+
         public void Delete(int id)
         {
             var producto = GetProductoByID( id);
