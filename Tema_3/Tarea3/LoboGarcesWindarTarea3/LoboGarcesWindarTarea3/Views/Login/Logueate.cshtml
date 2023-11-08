@@ -33,12 +33,14 @@
                             <div class="card-header"><h2 class="text-center font-weight-light my-4"> <i class="fas fa-circle-user"></i></h2></div>
 
                             <div class=" card-body">
-
-                                <!--El formulario tiene un atributo action que apunta a una URL generada utilizando @Url.Action("DoLogin", "Login").-->
+                                <!--Mensaje de error -->
                                 @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
                                 {
                                     <p style="color: red;">@ViewBag.ErrorMessage</p>
+
                                 }
+                                <!--El formulario tiene un atributo action que apunta a una URL generada utilizando @Url.Action("DoLogin", "Login").-->
+
                                 <form id="loginForm" action="@Url.Action("DoLogin", "Login")" method="post">
 
                                     <div class="card-header2 form-floating  mb-3">
@@ -91,7 +93,7 @@
         <script>
 
             //Validaciones o acciones adicionales en el formulario antes de que los datos sean enviados al servidor.
-          
+
             $(document).ready(function () {
 
                 $('#loginForm').submit(function (event) {

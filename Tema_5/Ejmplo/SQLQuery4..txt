@@ -1,0 +1,48 @@
+-- Crear la tabla de productos
+CREATE TABLE Productos (
+    ProductoID INT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Precio DECIMAL(10, 2),
+    Stock INT
+);
+
+-- Crear la tabla de clientes
+CREATE TABLE Clientes (
+    ClienteID INT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Direccion NVARCHAR(255),
+    Email NVARCHAR(100)
+);
+
+-- Crear la tabla de ventas
+CREATE TABLE Ventas (
+    VentaID INT PRIMARY KEY,
+    ClienteID INT,
+    FechaVenta DATE,
+    TotalVenta DECIMAL(10, 2),
+    FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID)
+);
+
+-- Crear la tabla de detalles de ventas
+CREATE TABLE DetallesVenta (
+    DetalleID INT PRIMARY KEY,
+    VentaID INT,
+    ProductoID INT,
+    Cantidad INT,
+    PrecioUnitario DECIMAL(10, 2),
+    TotalLinea DECIMAL(10, 2),
+    FOREIGN KEY (VentaID) REFERENCES Ventas(VentaID),
+    FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID)
+);
+-- Crear la tabla de usuarios
+CREATE TABLE Usuarios (
+    UsuarioID INT PRIMARY KEY,
+    NombreUsuario VARCHAR(50),
+    Contrasena VARCHAR(255), -- Guardar contraseñas cifradas (por ejemplo, mediante hash)
+    Email VARCHAR(100)
+);
+INSERT INTO Usuarios (UsuarioID, NombreUsuario, Contrasena, Email)
+VALUES (1, 'usuario1', 'clave1','usuario1@gmail.com'),
+      (2, 'usuario2', 'clave2','usuario2@gmail.com');
+
+	  select * from usuarios
