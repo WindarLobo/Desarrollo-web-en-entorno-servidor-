@@ -13,6 +13,7 @@ namespace Amazon_Montecastelo.Controllers
         {
             _logger = logger;
         }
+
         [Route("/")]
         [Route("/Home")]
         [Route("/Home/Index")]

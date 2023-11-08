@@ -3,10 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Amazon_Montecastelo.Database
 {
-    public class AmazonContext : DbContext 
+    public class AmazonContext : DbContext
     {
-        public AmazonContext(DbContextOptions<AmazonContext>options):base(options) { }
+        public AmazonContext(DbContextOptions<AmazonContext> options) : base(options) { }
 
-        public DbSet<Usuario>Usuarios { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Producto> Productos { get; set; }
     }
 }

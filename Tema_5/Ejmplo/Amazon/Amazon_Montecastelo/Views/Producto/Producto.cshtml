@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Amazon_Montecastelo.Database.Models.Producto>
+
+@{
+    ViewData["Title"] = "Producto";
+
+    <link rel="stylesheet" href="site.css">
+
+
+}
+<div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+
+    <div class="row">
+        <div class="col-md-9 text-center">
+            <h1>Productos</h1>
+        </div>
+        <div class="col-md-3 ml-5 mt-3">
+            <form action="@Url.Action("Agregar", "Producto")" method="get">
+                <input type="hidden" name="id" />
+                <button type="submit" class="btn btn-primary">Agregar Producto</button>
+            </form>
+        </div>
+        <div class="col mt-5">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td scope="row">@item.ProductoID</td>
+                            <td scope="row">@item.Nombre</td>
+                            <td scope="row">@item.Descripcion</td>
+                            <td scope="row">@item.Precio</td>
+                            <td scope="row">
+                                <div class="button-container">
+                                    <form action="@Url.Action("Edit", "Producto", new { id = item.ProductoID })" method="get">
+                                        <input type="hidden" name="id" />
+                                        <button type="submit" class="btn btn-outline-primary btn-smaller">Editar</button>
+                                    </form>
+                                </div>
+                            </td>
+                            <td scope="row">
+                                <div class="button-container">
+                                    <form action="@Url.Action("Delete", "Producto", new { id = item.ProductoID })" method="get">
+                                        <input type="hidden" name="id" />
+                                        <button type="submit" class="btn btn-outline-primary btn-smaller">Eliminar</button>
+                                    </form>
+                                </div>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

@@ -46,3 +46,11 @@ VALUES (1, 'usuario1', 'clave1','usuario1@gmail.com'),
       (2, 'usuario2', 'clave2','usuario2@gmail.com');
 
 	  select * from usuarios
+
+
+
+UPDATE productos 
+    SET Descripcion = 'Display con alta resolucion 4G' where ProductoID='3'
+
+ALTER TABLE Productos
+DROP COLUMN Stock;
