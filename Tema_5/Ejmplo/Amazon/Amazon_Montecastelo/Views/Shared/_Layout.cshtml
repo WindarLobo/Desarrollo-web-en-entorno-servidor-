@@ -9,24 +9,25 @@
     <link rel="stylesheet" href="~/Amazon_Montecastelo.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-dark bg-dark ">
-
+    <header id="adminHeader">
+        <nav class="navbar navbar-dark bg-dark">
             <ul class="navbar">
                 <li class="nav-item">
-                    <a class="navbar-brand margen-derecha-pequeno" href="@Url.Action("Index","Home")">Home</a>
+                    <a class="navbar-brand" href="@Url.Action("Producto", "Administrador")">Producto</a>
                 </li>
-                <li class="nav-item">
-                    <a class="navbar-brand" href="@Url.Action("Producto","Producto")">Producto</a>
-                </li>
+              
+                    <li class="nav-item">
+                    <a class="navbar-brand" href="@Url.Action("Producto", "Usuario")">Producto</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="navbar-brand" href="@Url.Action("Carrito", "Usuario")">Carrito</a>
+                    </li>
+           
             </ul>
-
-
         </nav>
-
-
-
     </header>
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

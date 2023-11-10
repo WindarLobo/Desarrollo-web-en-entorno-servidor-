@@ -38,7 +38,7 @@ namespace Amazon_Montecastelo.Controllers
                 return View("Logueate");
             }
 
-            Global.UsuarioLogeado = login;
+            GlobalInfo.UsuarioLogeado = login;
 
             return View("/Views/Home/Index.cshtml");
         }
@@ -54,7 +54,7 @@ namespace Amazon_Montecastelo.Controllers
         [Route("/Login/Create")]
         public IActionResult Create()
         {
-         
+
             var Id = int.Parse(HttpContext.Request.Form["UsuarioID"]);
             var nombre = HttpContext.Request.Form["NombreUsuario"];
             var email = HttpContext.Request.Form["Email"];
@@ -70,7 +70,7 @@ namespace Amazon_Montecastelo.Controllers
                     UsuarioID = Id,
                     NombreUsuario = nombre,
                     Email = email,
-                    Contrasena=contrasena,
+                    Contrasena = contrasena,
 
                 }); ;
             }

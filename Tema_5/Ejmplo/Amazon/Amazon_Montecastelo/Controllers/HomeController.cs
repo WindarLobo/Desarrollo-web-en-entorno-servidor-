@@ -14,14 +14,14 @@ namespace Amazon_Montecastelo.Controllers
             _logger = logger;
         }
 
-        [Route("/")]
+       
         [Route("/Home")]
         [Route("/Home/Index")]
         public IActionResult Index()
         {
-            if (!Global.IsLogged)
+            if (!GlobalInfo.IsLogged)
             {
-                return View(Global.LoginView);
+                return View(GlobalInfo.LoginView);
             }
 
             return View();

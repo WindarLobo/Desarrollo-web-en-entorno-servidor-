@@ -38,10 +38,7 @@ namespace Amazon_Montecastelo.Database.Repositorios
                 _context.SaveChanges();
             }
         }
-
-
-
-
+     
         public void Dispose()
         {
             _context.Dispose();

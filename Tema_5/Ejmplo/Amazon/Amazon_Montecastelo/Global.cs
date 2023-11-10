@@ -1,7 +1,7 @@
 ﻿using Amazon_Montecastelo.Database.Models;
 namespace LoboGarcesWindarTarea3
 {
-    public static class Global
+    public static class GlobalInfo
     {
         public static Usuario UsuarioLogeado { get; set; }
 

@@ -30,7 +30,7 @@ CREATE TABLE DetallesVenta (
     ProductoID INT,
     Cantidad INT,
     PrecioUnitario DECIMAL(10, 2),
-    TotalLinea DECIMAL(10, 2),
+    PrecioTotal DECIMAL(10, 2),
     FOREIGN KEY (VentaID) REFERENCES Ventas(VentaID),
     FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID)
 );
@@ -54,3 +54,18 @@ UPDATE productos
 
 ALTER TABLE Productos
 DROP COLUMN Stock;
+
+ALTER TABLE nombre_de_la_tabla
+ADD PrecioTotal DECIMAL(10, 2);
+
+
+-- Primero, elimina la restricción de clave externa
+ALTER TABLE Ventas
+DROP CONSTRAINT FK_Ventas_ClienteID;
+
+-- Luego, cambia el nombre de la columna
+EXEC sp_rename 'Ventas.ClienteID', 'UsuarioID', 'COLUMN';
+
+-- Finalmente, vuelve a agregar la restricción de clave externa con el nuevo nombre de columna
+ALTER TABLE Ventas
+ADD FOREIGN KEY (UsuarioID) REFERENCES Clientes(ClienteID);

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Amazon_Montecastelo.Database.Models.Producto>
+
+@{
+   
+    ViewData["Title"] = "GetProducto";
+   
+}
+
+<h1>GetProducto</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductoID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                 
+                        <form action="@Url.Action("GetProducto", "Usuario", new { id = item.ProductoID })" method="get">                          
+                            <input type="hidden" name="id" />
+                            <button type="submit" class="btn btn-outline-primary btn-smaller">  Añadir al carrito</button>
+                        </form>                  
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
