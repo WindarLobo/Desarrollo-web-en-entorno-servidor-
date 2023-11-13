@@ -12,7 +12,7 @@ namespace Amazon_Montecastelo
 
             // Configurar servicios
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<VentasRepositorio>();
+            builder.Services.AddScoped<CarritoRepositorio>();
             builder.Services.AddScoped<ProductoReposiotiro>();
             builder.Services.AddDbContext<AmazonContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("ConexionMontecastelo")));

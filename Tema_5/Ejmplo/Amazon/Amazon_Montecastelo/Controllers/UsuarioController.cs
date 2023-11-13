@@ -7,15 +7,21 @@ namespace Amazon_Montecastelo.Controllers
 {
     public class UsuarioController : Controller
     {
-        private readonly VentasRepositorio _ventaRepositorio;
+       
+        private readonly CarritoRepositorio _carritoRepositorio;
         private readonly ProductoReposiotiro _productoRepositorio;
 
 
         public UsuarioController(AmazonContext context, ProductoReposiotiro productoRepositorio)
         {
-            _ventaRepositorio = new VentasRepositorio(context);
+            _carritoRepositorio = new CarritoRepositorio(context); 
+           
             _productoRepositorio = productoRepositorio;
+          
         }
+
+
+
         [Route("/Usuario")]
         [Route("/Usuario/Productos")]
         public IActionResult Producto()
@@ -25,34 +31,37 @@ namespace Amazon_Montecastelo.Controllers
         }
 
         [HttpPost]
-        [Route("/Usuario/AgregarAlCarrito/{productId?}")]
-        public IActionResult AgregarAlCarrito(int productoId)
+        [Route("/Usuario/AgregarAlCarrito/{productoId?}")]
+        public IActionResult AgregarAlCarrito(int productoId,int cantidad = 1)
         {
+       
             var userId = GlobalInfo.UsuarioLogeado.UsuarioID;
-            _ventaRepositorio.AgregarAlCarrito(userId, productoId);
+            _carritoRepositorio.AgregarAlCarrito(userId, productoId,cantidad);
             return RedirectToAction("Carrito", "Usuario", new { userId });
         }
-
+       
         [Route("/Usuario/Carrito")]
         public IActionResult Carrito()
         {
-            var carrito = _ventaRepositorio.ObtenerCarrito(GlobalInfo.UsuarioLogeado.UsuarioID);
+            var carrito = _carritoRepositorio.ObtenerCarrito(GlobalInfo.UsuarioLogeado.UsuarioID);
             return View(carrito);
         }
 
         [HttpPost]
-        public IActionResult EliminarDelCarrito(int usuarioId, int productoId)
+        [Route("/Usuario/EliminarDelCarrito/{productoId?}")]
+        public IActionResult EliminarDelCarrito(int productoId)
         {
-            _ventaRepositorio.EliminarDelCarrito(usuarioId, productoId);
-            return RedirectToAction("Carrito", "Usuario", new { usuarioId });
+            var userId = GlobalInfo.UsuarioLogeado.UsuarioID;
+            _carritoRepositorio.EliminarDelCarrito(userId, productoId);
+            return RedirectToAction("Carrito", "Usuario", new { userId });
         }
 
-        [HttpPost]
-        public IActionResult RealizarCompra(int usuarioId)
-        {
-            _ventaRepositorio.RealizarCompra(usuarioId);
-            return RedirectToAction("Carrito", "Usuario");
-        }
+        //[HttpPost]
+        //public IActionResult RealizarCompra(int usuarioId)
+        //{
+        //    _ventaRepositorio.RealizarCompra(usuarioId);
+        //    return RedirectToAction("Carrito", "Usuario");
+        //}
     }
 }
 

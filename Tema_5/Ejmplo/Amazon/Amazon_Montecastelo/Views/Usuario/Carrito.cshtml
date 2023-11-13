@@ -1,4 +1,4 @@
-﻿@model Amazon_Montecastelo.Database.Models.Venta
+﻿@model Amazon_Montecastelo.Database.Models.Carrito
 
 @{
     ViewData["Title"] = "Carrito";
@@ -6,42 +6,38 @@
 }
 
 <h1>Carrito</h1>
-@if (Model != null)
-{
-    <p>Cantidad de elementos en el carrito: @Model.Detalles.Count</p>
-}
+
 
 <table class="table">
     <thead>
         <tr>
-        <tr>
+      
             <th>Nombre</th>
             <th>Cantidad</th>
             <th>PrecioUnitario</th>
             <th>PrecioTotal</th>
-        </tr>
-
-    <th></th>
+            <th></th>
+      
     </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Detalles)
         {
             <tr>
-                <td>
-                    <p>Producto: @item.Producto.Nombre</p>
-                    <p>Cantidad: @item.Cantidad</p>
-                    <p>Precio Unitario: @item.PrecioUnitario</p>
-                    <p>Precio Total: @item.PrecioTotal</p>
+                <td scope="row">@item.Producto.Nombre</td>
+                <td scope="row"> @item.Cantidad</td>
+                <td scope="row">@item.PrecioUnitario</td>
+                <td scope="row">@item.PrecioTotal</td>
+
+                <td scope="row">
+                    <div class="button-container">
+                        <form action="@Url.Action("EliminarDelCarrito", "Usuario", new { productoId = item.ProductoID })" method="post">
+                            <input type="hidden" name="id" />
+                            <button type="submit" class="btn btn-outline-primary btn-smaller">Eliminar</button>
+                        </form>
+                    </div>
                 </td>
-
-
-
-                <td>
-                    <a class="btn btn-outline-danger" asp-action="Carrito" asp-controller="Usuario" asp-route-ProductoID="@item.ProductoID">
-                        Eliminar
-                    </a>
-                </td>
+               
             </tr>
         }
     </tbody>

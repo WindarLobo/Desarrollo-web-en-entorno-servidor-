@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Amazon_Montecastelo.Database.Repositorios
 {
-    public class VentasRepositorio : IDisposable
+    public class VentasRepositorio 
     {
         private readonly AmazonContext _context;
 
@@ -24,7 +24,7 @@ namespace Amazon_Montecastelo.Database.Repositorios
                     UsuarioID = usuarioId,
                     FechaVenta = DateTime.UtcNow,
                     Detalles = new List<DetalleVenta>()
-                    
+
                 };
             }
             else
@@ -52,58 +52,38 @@ namespace Amazon_Montecastelo.Database.Repositorios
             _context.SaveChanges();
         }
 
-        public Venta ObtenerCarrito(int usuarioId)
-        {
-            var venta = _context.Ventas.SingleOrDefault(v => v.UsuarioID == usuarioId);
+        //public Venta ObtenerCarrito(int usuarioId)
+        //{
+        //    var venta = _context.Ventas.SingleOrDefault(v => v.UsuarioID == usuarioId);
 
-            if(venta != null)
-            {
-                venta.Detalles = _context.DetalleVentas.Where(x => x.VentaID == venta.VentaId).ToList();
+        //    if(venta != null)
+        //    {
+        //        venta.Detalles = _context.DetalleVentas.Where(x => x.VentaID == venta.VentaId).ToList();
 
-                foreach(var detalle in venta.Detalles)
-                {
-                    detalle.Producto = _context.Productos.Single(x => x.ProductoID == detalle.ProductoID);
-                }
+        //        foreach(var detalle in venta.Detalles)
+        //        {
+        //            detalle.Producto = _context.Productos.Single(x => x.ProductoID == detalle.ProductoID);
+        //        }
 
-            }
+        //    }
 
-            return venta ?? new Venta();
-        }
+        //    return venta ?? new Venta();
+        //}
 
-        public void RealizarCompra(int usuarioId)
-        {
-            var carrito = _context.Ventas.SingleOrDefault(v => v.UsuarioID == usuarioId && v.FechaVenta == null);
+        //public void RealizarCompra(int usuarioId)
+        //{
+        //    var carrito = _context.Ventas.SingleOrDefault(v => v.UsuarioID == usuarioId && v.FechaVenta == null);
 
-            if (carrito != null)
-            {
-                carrito.FechaVenta = DateTime.Now;
-                _context.SaveChanges();
-            }
-        }
-        public void EliminarDelCarrito(int usuarioId, int productoId)
-        {
-            //var carrito = _context.Ventas.SingleOrDefault(v => v.UsuarioID == usuarioId && v.FechaVenta == null);
-
-            //if (carrito != null)
-            //{
-            //    //var detalleAEliminar = _context.DetalleVentas
-            //    //    .SingleOrDefault(d => d.VentaId == carrito.VentaId && d.ProductoID == productoId);
-
-            //    if (detalleAEliminar != null)
-            //    {
-            //        // Elimina el detalle de venta asociado al producto en el carrito
-            //        _context.DetalleVentas.Remove(detalleAEliminar);
-            //        _context.SaveChanges();
-
-            //        // Actualiza el total de la venta en el carrito
-            //        carrito.TotalVenta -= detalleAEliminar.PrecioTotal;
-            //        _context.SaveChanges();
-            //    }
-            //}
-        }
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
+        //    if (carrito != null)
+        //    {
+        //        carrito.FechaVenta = DateTime.Now;
+        //        _context.SaveChanges();
+        //    }
+        //}
+       
+    //    public void Dispose()
+    //    {
+    //        _context.Dispose();
+    //    }
     }
 }
