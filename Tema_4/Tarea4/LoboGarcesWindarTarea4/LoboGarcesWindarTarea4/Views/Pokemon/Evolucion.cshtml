@@ -1,0 +1,42 @@
+﻿@model IEnumerable<LoboGarcesWindarTarea4.DataBase.Modelo.Evolucion>
+
+@{
+    ViewData["Title"] = "Evolucion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Evoluciones</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pokemon_evolucionado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pokemon_origen)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pokemon_evolucionado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pokemon_origen)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

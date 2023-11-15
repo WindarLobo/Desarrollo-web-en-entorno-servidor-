@@ -1,0 +1,52 @@
+﻿@model IEnumerable<LoboGarcesWindarTarea4.DataBase.Modelo.Pokemon>
+
+@{
+    ViewData["Title"] = "ListaDePokemon";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ListaDePokemon</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.numero_Pokedex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Altura)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numero_Pokedex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Peso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Altura)
+                </td>
+                <td>
+                    @Html.ActionLink("Evolucion", "Evolucion", new { numero_Pokedex = item.numero_Pokedex  }) |
+                    @Html.ActionLink("Movimientos", "Movimiento", new {numero_Pokedex = item.numero_Pokedex})
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

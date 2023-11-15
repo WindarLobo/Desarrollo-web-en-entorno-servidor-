@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoboGarcesWindarTarea4", "LoboGarcesWindarTarea4\LoboGarcesWindarTarea4.csproj", "{D5D6B938-B9E1-4BE2-865C-C584B83A91D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5D6B938-B9E1-4BE2-865C-C584B83A91D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5D6B938-B9E1-4BE2-865C-C584B83A91D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5D6B938-B9E1-4BE2-865C-C584B83A91D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5D6B938-B9E1-4BE2-865C-C584B83A91D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC195B56-3B57-4481-8C65-F3A84E4F677F}
+	EndGlobalSection
+EndGlobal
