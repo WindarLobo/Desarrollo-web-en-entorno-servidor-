@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LoboGarcesWindarTarea4.DataBase.Modelo.Movimiento>
+﻿@model LoboGarcesWindarTarea4.DataBase.Modelo.Movimiento
 
 @{
     ViewData["Title"] = "Movimiento";
@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.id_movimiento)
+                @Html.DisplayNameFor(model => model.id_tipo)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.nombre)
@@ -40,17 +40,17 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.tipo)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.id_movimiento)
+                    @Html.DisplayFor(modelItem => item.id_tipo_ataque)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.nombre)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.potencia)
+                    @Html.DisplayFor(modelItem => item)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.precion_mov)

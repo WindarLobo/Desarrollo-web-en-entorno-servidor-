@@ -1,0 +1,48 @@
+﻿@model LoboGarcesWindarTarea4.DataBase.Modelo.Pokemon
+
+@{
+    ViewData["Title"] = "FiltrarPokemones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>FiltrarPokemones</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.numero_Pokedex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Altura)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.tipo) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_tipo_ataque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            
+            
+        </tr>
+}
+    </tbody>
+</table>

@@ -15,7 +15,7 @@ namespace LoboGarcesWindarTarea4.DataBase.Modelo
         public int pp { get; set; }
         public int id_tipo { get; set; }
         public int prioridad { get; set; }
-
+        public List<Tipo> tipo { get; set; }
 
 
     }

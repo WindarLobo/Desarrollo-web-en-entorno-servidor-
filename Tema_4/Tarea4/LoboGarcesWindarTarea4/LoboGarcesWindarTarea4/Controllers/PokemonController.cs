@@ -34,28 +34,32 @@ namespace LoboGarcesWindarTarea4.Controllers
         [Route("Pokemon/Evolucion")]
         public async Task<IActionResult> Evolucion(int numero_Pokedex)
         {
-
-
             var evoluciones = await _pokemonRepository.GetEvolucion(numero_Pokedex);
 
-            return View(evoluciones);
+            if (evoluciones == null || !evoluciones.Any())
+            {
+                return NotFound($"No se encontraron evoluciones para el Pokémon con el número de Pokédex {numero_Pokedex}.");
+            }
+          
 
+            return View(evoluciones);
         }
 
         [Route("/Pokemon/Movimiento")]
-        public async Task<IActionResult> Movimiento(int numero_pokedex)
+        public async Task<IActionResult> Movimiento()
         {
-            var movimientos = await _pokemonRepository.GetMovimientos(numero_pokedex);
+            var movimientos = await _pokemonRepository.GetMovimientos();
 
 
             return View( movimientos);
         }
-        [HttpPost]
+        [Route("/Pokemon/FiltrarPokemones/tipo/peso/altura")]
         public async Task<IActionResult> FiltrarPokemones(string tipo, double? peso, double? altura)
         {
             var pokemonesFiltrados = await _pokemonRepository.FilterPokemon(tipo, peso, altura);
             return View("ListaDePokemon", pokemonesFiltrados);
         }
+
 
     }
 }

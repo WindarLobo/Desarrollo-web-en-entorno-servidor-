@@ -1,42 +1,56 @@
-﻿@model IEnumerable<LoboGarcesWindarTarea4.DataBase.Modelo.Evolucion>
+﻿@model IEnumerable<LoboGarcesWindarTarea4.Models.EvolucionViewModel>
 
-@{
-    ViewData["Title"] = "Evolucion";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
 
-<h1>Evoluciones</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Pokemon_evolucionado)
+                Numero_Origen
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pokemon_origen)
+              Nombre_Origen
+            </th>
+            <th>
+           Numero_Destino
+            </th>
+            <th>
+               Nombre_Destino
+            </th>
+            <th>
+               Nivel_evolucion
+            </th>
+            <th>
+                Tipo_Evolucion
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pokemon_evolucionado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pokemon_origen)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero_Origen)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Origen)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero_Destino)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Destino)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nivel_evolucion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo_Evolucion)
+                </td>
+
+
+            </tr>
+        }
     </tbody>
 </table>
+
