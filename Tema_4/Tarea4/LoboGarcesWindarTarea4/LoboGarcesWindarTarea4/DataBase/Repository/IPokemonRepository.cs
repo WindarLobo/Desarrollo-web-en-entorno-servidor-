@@ -6,16 +6,14 @@ namespace LoboGarcesWindarTarea4.DataBase.Repository
 {
     public interface IPokemonRepository
     {
-        Task<IEnumerable<PokemonDbo>> GetAllPokemon(double? peso, double? altura, string? tipo);
+        Task<IEnumerable<PokemonDbo>> GetAllPokemon(double? peso, double? altura);
         Task <Pokemon> GetPokemonByID(int? numero_Pokedex);
 
         Task<IEnumerable<EvolucionDbo>> GetEvolucion(int numero_Pokedex);
        
         Task<IEnumerable<MoviminetoDbo>> GetMovimientos(int numero_Pokedex);
-       
-    
 
-
+        Task<IEnumerable<Tipo>> GetTipos();
 
     }
 }

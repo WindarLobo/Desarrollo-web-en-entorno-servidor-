@@ -1,4 +1,5 @@
 ﻿using LoboGarcesWindarTarea4.DataBase.Repository;
+using LoboGarcesWindarTarea4.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LoboGarcesWindarTarea4.Controllers
@@ -18,9 +19,16 @@ namespace LoboGarcesWindarTarea4.Controllers
         [Route("/Pokemon/ListaDePokemon")]
         public async Task<IActionResult> ListaDePokemon()
         {
-            var pokemons = await _pokemonRepository.GetAllPokemon(null, null, null);
+            var pokemons = await _pokemonRepository.GetAllPokemon(null, null);
+            var tipos = await _pokemonRepository.GetTipos();
 
-            return View(pokemons);
+            var viewModel = new ListaPokemonViewModel
+            {
+                Pokemons = pokemons,
+                //Tipos = tipos
+            };
+
+            return View(viewModel);
         }
 
         [Route("/Profesor/GetById/{id?}")]
@@ -55,7 +63,7 @@ namespace LoboGarcesWindarTarea4.Controllers
         [Route("/Pokemon/FiltrarPokemon")]
         public async Task<IActionResult> FiltrarPokemon(double? peso, double? altura)
         {
-            var pokemonesFiltrados = await _pokemonRepository.GetAllPokemon(peso, altura, null);
+            var pokemonesFiltrados = await _pokemonRepository.GetAllPokemon(peso, altura);
 
             return PartialView("ListaDePokemon", pokemonesFiltrados);
         }
