@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LoboGarcesWindarTarea4.DataBase.Modelo.Pokemon>
+﻿@model IEnumerable<LoboGarcesWindarTarea4.DataBase.Dbo.PokemonDbo>
 
 @{
     ViewData["Title"] = "ListaDePokemon";
@@ -7,6 +7,12 @@
 
 <h1>ListaDePokemon</h1>
 
+<form asp-controller="Pokemon" asp-action="FiltrarPokemones" method="get">
+    <p>
+        Tipo: <input type="text" name="SearchString" />
+        <input type="submit" value="buscar" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -16,12 +22,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Peso)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Altura)
-            </th>
+           
             <th></th>
         </tr>
     </thead>
@@ -35,13 +36,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Nombre)
                 </td>
+              
                 <td>
-                    @Html.DisplayFor(modelItem => item.Peso)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Altura)
-                </td>
-                <td>
+                    @Html.ActionLink("Detalle", "GetById", new { numero_Pokedex = item.numero_Pokedex  }) |
                     @Html.ActionLink("Evolucion", "Evolucion", new { numero_Pokedex = item.numero_Pokedex  }) |
                     @Html.ActionLink("Movimientos", "Movimiento", new {numero_Pokedex = item.numero_Pokedex})
                     
@@ -49,4 +46,13 @@
             </tr>
         }
     </tbody>
+
 </table>
+<script>
+    function FiltrarPokemones() {
+        var inputNombreTipo = document.getElementById('textNombreTipo').value.toLowerCase();
+
+        // Redirige a la acción del controlador con el parámetro tipo
+        window.location.href = '/Pokemon/FiltrarPokemones?tipo=' + inputNombreTipo;
+    }
+</script>

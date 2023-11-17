@@ -5,6 +5,7 @@ using System.Data;
 using NuGet.Protocol.Plugins;
 using System.Data.Common;
 using LoboGarcesWindarTarea4.Models;
+using LoboGarcesWindarTarea4.DataBase.Dbo;
 
 namespace LoboGarcesWindarTarea4.DataBase.Repository;
 
@@ -18,14 +19,12 @@ public class PokemonRepository : IPokemonRepository
         _conexion = conexion;
     }
 
-
-
-    public async Task<IEnumerable<Pokemon>> GetAllPokemon()
+    public async Task<IEnumerable<PokemonDbo>> GetAllPokemon()
     {
         var query = "Select * from Pokemon";
         using (var connection = _conexion.ObtenerConexion())
         {
-            var pokemon = await connection.QueryAsync<Pokemon>(query);
+            var pokemon = await connection.QueryAsync<PokemonDbo>(query);
             return pokemon.ToList();
         }
 
@@ -39,83 +38,80 @@ public class PokemonRepository : IPokemonRepository
             return pokemon;
         }
     }
-    public async Task<IEnumerable<Evolucion>> GetEvolucion(int numero_Pokedex)
+    public async Task<IEnumerable<EvolucionDbo>> GetEvolucion(int numero_Pokedex)
     {
 
         var query =
             @"SELECT
-            P1.numero_pokedex ,
-            P1.nombre ,
-            P2.numero_pokedex,
-            P2.nombre ,
-            NE.nivel ,TE.id_tipo_evolucion
-            FROM
-            dbo.pokemon AS P1
-            LEFT JOIN dbo.evoluciona_de AS E ON P1.numero_pokedex = E.pokemon_origen
-            LEFT JOIN dbo.pokemon AS P2 ON E.pokemon_evolucionado = P2.numero_pokedex
-            LEFT JOIN dbo.forma_evolucion AS FE ON P2.numero_pokedex = FE.id_forma_evolucion
-           LEFT JOIN dbo.nivel_evolucion AS NE ON FE.id_forma_evolucion = NE.id_forma_evolucion
-           LEFT JOIN dbo.tipo_evolucion AS TE ON FE.tipo_evolucion = TE.id_tipo_evolucion WHERE
-           P1.numero_pokedex = @numero_Pokedex OR P2.numero_pokedex =@numero_Pokedex";
+		pokemon.numero_pokedex		   AS PokemonId,
+		nombre						   AS PokemonNombre,
+		forma_evolucion.tipo_evolucion AS TipoEvolucion,
+		Nivel						   AS Nivel,
+		nombre_piedra				   AS Piedra
+        FROM pokemon
+	    LEFT JOIN pokemon_forma_evolucion ON pokemon.numero_pokedex = pokemon_forma_evolucion.numero_pokedex
+	    LEFT JOIN forma_evolucion ON forma_evolucion.id_forma_evolucion = pokemon_forma_evolucion.id_forma_evolucion
+	    LEFT JOIN tipo_evolucion ON tipo_evolucion.id_tipo_evolucion = forma_evolucion.tipo_evolucion
+	    LEFT JOIN nivel_evolucion ON forma_evolucion.id_forma_evolucion = nivel_evolucion.id_forma_evolucion
+	    LEFT JOIN Piedra ON Piedra.id_forma_evolucion = forma_evolucion.id_forma_evolucion
+	    LEFT JOIN tipo_piedra ON Piedra.id_tipo_piedra = tipo_piedra.id_tipo_piedra WHERE
+        pokemon.numero_pokedex = @numero_Pokedex";
 
 
         using (var connection = _conexion.ObtenerConexion())
         {
-            var evoluciones = await connection.QueryAsync<Evolucion>(query, new { numero_Pokedex });
+            var evoluciones = await connection.QueryAsync<EvolucionDbo>(query, new { numero_Pokedex });
 
             return evoluciones.ToList();
         }
     }
-    public async Task<IEnumerable<Movimiento>> GetMovimientos()
+    public async Task<IEnumerable<MoviminetoDbo>> GetMovimientos(int numero_Pokedex)
     {
-        var query = @"
-          SELECT
-		tipo.nombre		  AS TipoPokemon,
-		tipo			  AS TipoAtaque,
-		movimiento.nombre AS NombreAtaque,
-		Descripcion		  AS Descripcion,
-		Potencia		  AS Potencia,
-		precision_mov	  AS Precision,
-		pp,
-		prioridad
-         FROM
-		tipo
-	     INNER JOIN
-		movimiento
-		ON movimiento.id_tipo = tipo.id_tipo
-	     INNER JOIN
-		tipo_ataque
-	   ON tipo.id_tipo_ataque = tipo_ataque.id_tipo_ataque
-        ORDER BY
-		TipoPokemon";
-      
+        var query = @"SELECT
+	 tipo.nombre		  AS TipoPokemon,
+	 tipo			      AS TipoAtaque,
+	 movimiento.nombre    AS NombreAtaque,
+	 Descripcion		  AS Descripcion,
+	 Potencia		      AS Potencia,
+	 precision_mov	      AS Precision,
+	 pp,
+	 prioridad
+     FROM tipo
+     INNER JOIN movimiento ON movimiento.id_tipo = tipo.id_tipo
+     INNER JOIN tipo_ataque ON tipo.id_tipo_ataque = tipo_ataque.id_tipo_ataque
+     INNER JOIN pokemon_tipo ON tipo.id_tipo = pokemon_tipo.id_tipo
+     WHERE pokemon_tipo.numero_pokedex = @numero_Pokedex
+     ORDER BY
+	 TipoPokemon";
+
+
         using (var connection = _conexion.ObtenerConexion())
         {
-            var movimiento = await connection.QueryAsync<Movimiento>(query);
+            var movimiento = await connection.QueryAsync<MoviminetoDbo>(query, new { numero_Pokedex });
 
 
             return movimiento.ToList();
         }
     }
-    public async Task<IEnumerable<Pokemon>> FilterPokemon(string tipo, double? peso, double? altura)
+    public async Task<IEnumerable<TipoDbo>> FilterPokemonTipo(string tipo)
     {
 
-
-        var query = @"SELECT *
-       FROM pokemon p
-     JOIN tipo t ON pt.id_tipo = t.id_tipo
-      WHERE p.peso = @peso
-      AND p.altura = @altura and t.nombre = @tipo";
-
+        var query = @"SELECT
+		Pokemon.numero_pokedex AS PokemonId,
+		Pokemon.nombre AS NombrePokemon,
+		Tipo.nombre	   AS TipoPokemon
+        FROM Pokemon
+	    INNER JOIN pokemon_tipo ON Pokemon.numero_pokedex = pokemon_tipo.numero_pokedex
+	    INNER JOIN Tipo ON pokemon_tipo.id_tipo = Tipo.id_tipo  WHERE Tipo.nombre = @tipo";
 
         using (var connection = _conexion.ObtenerConexion())
         {
-            var pokemones = await connection.QueryAsync<Pokemon>(query, new { tipo, peso, altura });
+            var pokemones = await connection.QueryAsync<TipoDbo>(query, new { tipo });
             return pokemones.ToList();
         }
     }
 
-    
+
 
 
 }

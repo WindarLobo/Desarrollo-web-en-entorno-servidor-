@@ -1,74 +1,71 @@
-﻿@model LoboGarcesWindarTarea4.DataBase.Modelo.Movimiento
+﻿@model IEnumerable<LoboGarcesWindarTarea4.DataBase.Dbo.MoviminetoDbo>
 
 @{
     ViewData["Title"] = "Movimiento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>VerMovimiento</h1>
+<h1>Movimiento</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.id_tipo)
+                @Html.DisplayNameFor(model => model.TipoPokemon)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.nombre)
+                @Html.DisplayNameFor(model => model.TipoAtaque)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.potencia)
+                @Html.DisplayNameFor(model => model.NombreAtaque)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.precion_mov)
+                @Html.DisplayNameFor(model => model.Descripcion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.descripcion)
+                @Html.DisplayNameFor(model => model.Potencia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.pp)
+                @Html.DisplayNameFor(model => model.Precision)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.id_tipo)
+                @Html.DisplayNameFor(model => model.Pp)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.prioridad)
+                @Html.DisplayNameFor(model => model.Prioridad)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.tipo)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.id_tipo_ataque)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.precion_mov)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.descripcion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.pp)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.id_tipo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.prioridad)
-                </td>
-
-            </tr>
-        }
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoPokemon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoAtaque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreAtaque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Potencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prioridad)
+            </td>
+           
+        </tr>
+}
     </tbody>
 </table>

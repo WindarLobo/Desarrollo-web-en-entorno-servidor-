@@ -1,4 +1,4 @@
-﻿@model LoboGarcesWindarTarea4.DataBase.Modelo.Pokemon
+﻿@model IEnumerable<LoboGarcesWindarTarea4.DataBase.Dbo.TipoDbo>
 
 @{
     ViewData["Title"] = "FiltrarPokemones";
@@ -7,40 +7,34 @@
 
 <h1>FiltrarPokemones</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.numero_Pokedex)
+                @Html.DisplayNameFor(model => model.PokemonId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Nombre)
+                @Html.DisplayNameFor(model => model.NombrePokemon)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Peso)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Altura)
+                @Html.DisplayNameFor(model => model.TipoPokemon)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.tipo) {
+@foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.id_tipo_ataque)
+                @Html.DisplayFor(modelItem => item.PokemonId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.id_tipo)
+                @Html.DisplayFor(modelItem => item.NombrePokemon)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.nombre)
+                @Html.DisplayFor(modelItem => item.TipoPokemon)
             </td>
-            
             
         </tr>
 }

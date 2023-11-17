@@ -1,26 +1,28 @@
-﻿@model IEnumerable<LoboGarcesWindarTarea4.Models.EvolucionViewModel>
+﻿@model IEnumerable<LoboGarcesWindarTarea4.DataBase.Dbo.EvolucionDbo>
 
+@{
+    ViewData["Title"] = "Evolucion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
+<h1>Evolucion</h1>
 <table class="table">
     <thead>
         <tr>
             <th>
-                Numero_Origen
+                @Html.DisplayNameFor(model => model.PokemonId)
             </th>
             <th>
-              Nombre_Origen
+                @Html.DisplayNameFor(model => model.PokemonNombre)
             </th>
             <th>
-           Numero_Destino
+                @Html.DisplayNameFor(model => model.TipoEvolucion)
             </th>
             <th>
-               Nombre_Destino
+                @Html.DisplayNameFor(model => model.Nivel)
             </th>
             <th>
-               Nivel_evolucion
-            </th>
-            <th>
-                Tipo_Evolucion
+                @Html.DisplayNameFor(model => model.Piedra)
             </th>
             <th></th>
         </tr>
@@ -30,27 +32,42 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Numero_Origen)
+                    @Html.DisplayFor(modelItem => item.PokemonId)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Nombre_Origen)
+                    @Html.DisplayFor(modelItem => item.PokemonNombre)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Numero_Destino)
+                    @if (item.TipoEvolucion != null)
+                    {
+                        @Html.DisplayFor(modelItem => item.TipoEvolucion)
+                    }
+                    else
+                    {
+                        <p>No tiene tipo de evolución</p>
+                    }
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Nombre_Destino)
+                    @if (item.Nivel != null)
+                    {
+                        @Html.DisplayFor(modelItem => item.Nivel)
+                    }
+                    else
+                    {
+                        <p>No tiene nivel de evolución</p>
+                    }
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Nivel_evolucion)
+                    @if (item.Piedra != null && item.Piedra.Any())
+                    {
+                        @Html.DisplayFor(modelItem => item.Piedra)
+                    }
+                    else
+                    {
+                        <p>No tiene piedra</p>
+                    }
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tipo_Evolucion)
-                </td>
-
-
             </tr>
         }
     </tbody>
 </table>
-

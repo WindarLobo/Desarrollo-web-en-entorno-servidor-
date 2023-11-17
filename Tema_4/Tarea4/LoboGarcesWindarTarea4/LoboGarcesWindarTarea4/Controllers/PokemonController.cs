@@ -1,6 +1,7 @@
 ﻿using LoboGarcesWindarTarea4.DataBase.Repository;
 using Microsoft.AspNetCore.Mvc;
 using LoboGarcesWindarTarea4.DataBase.Modelo;
+using LoboGarcesWindarTarea4.DataBase.Dbo;
 
 namespace LoboGarcesWindarTarea4.Controllers
 {
@@ -21,7 +22,7 @@ namespace LoboGarcesWindarTarea4.Controllers
             var pokemons = await _pokemonRepository.GetAllPokemon();
             return View(pokemons);
         }
-        [HttpPost]
+    
         [Route("/Profesor/GetById/{id?}")]
 
         public async Task<IActionResult> GetById(int numero_Pokedex)
@@ -36,28 +37,26 @@ namespace LoboGarcesWindarTarea4.Controllers
         {
             var evoluciones = await _pokemonRepository.GetEvolucion(numero_Pokedex);
 
-            if (evoluciones == null || !evoluciones.Any())
-            {
-                return NotFound($"No se encontraron evoluciones para el Pokémon con el número de Pokédex {numero_Pokedex}.");
-            }
-          
-
+  
             return View(evoluciones);
         }
 
         [Route("/Pokemon/Movimiento")]
-        public async Task<IActionResult> Movimiento()
+        public async Task<IActionResult> Movimiento(int numero_Pokedex)
         {
-            var movimientos = await _pokemonRepository.GetMovimientos();
+            var movimientos = await _pokemonRepository.GetMovimientos(numero_Pokedex);
 
 
             return View( movimientos);
         }
-        [Route("/Pokemon/FiltrarPokemones/tipo/peso/altura")]
-        public async Task<IActionResult> FiltrarPokemones(string tipo, double? peso, double? altura)
+      
+        [Route("/Pokemon/FiltrarPokemones")]
+        public async Task<IActionResult> FiltrarPokemones(string TipoPokemon)
         {
-            var pokemonesFiltrados = await _pokemonRepository.FilterPokemon(tipo, peso, altura);
-            return View("ListaDePokemon", pokemonesFiltrados);
+            var pokemonesFiltrados = await _pokemonRepository.FilterPokemonTipo(TipoPokemon);
+
+            return View("FiltrarPokemones",pokemonesFiltrados);
+
         }
 
 
