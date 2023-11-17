@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LoboGarcesWindarTarea4.DataBase.Dbo.PokemonDbo>
+﻿@model LoboGarcesWindarTarea4.Models.ListaPokemonViewModel
 
 @{
     ViewData["Title"] = "ListaDePokemon";
@@ -7,55 +7,56 @@
 
 <h1>ListaDePokemon</h1>
 
-<form id="formFiltrarPorPeso" action="/Pokemon/FiltrarPokemon" method="get">
-    <div>
-        <label for="textPeso">Peso:</label>
-        <input type="text" id="textPeso" name="peso" />
-        <button type="submit">Buscar</button>
-    </div>
+
+
+<form id="FiltrarPokemon" action="@Url.Action("FiltrarPokemon", "Pokemon")" method="post">
+
+
+    <label for="textAltura">Altura:</label>
+    <input type="text" id="textAltura" name="Altura" />
+
+    <label for="textPeso">Peso:</label>
+    <input type="text" id="textPeso" name="Peso" />
+
+    <select class="form-select" aria-label="Tipo de Pokémon" id="tipoPokemon" name="tipo">
+        <option selected>Selecciona un tipo</option>
+        @foreach (var tipo in Model.Tipos)
+        {
+            <option value="@tipo.id_tipo">@tipo.nombre</option>
+        }
+    </select>
+
+    <button type="submit" class="btn btn-primary">Buscar</button>
+
 </form>
 
-<form id="formFiltrarPorAltura" action="/Pokemon/FiltrarPokemon" method="get">
-    <div>
-        <label for="textAltura">Altura:</label>
-        <input type="text" id="textAltura" name="Altura" />
-        <button type="submit">Buscar </button>
-    </div>
-</form>
-@* <select class="form-select" aria-label="Tipo de Pokémon" id="tipoPokemon">
-    <option selected>Selecciona un tipo</option>
-    @foreach (var tipo in ViewBag.Tipo)
-    {
-        <option value="@tipo.Id">@tipo.Nombre</option>
-    }
-</select> *@
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.PokemonId)
+                PokemonId
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NombrePokemon)
+                NombrePokemon
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TipoID)
+                TipoID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TipoPokemon)
+                TipoPokemon
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Peso)
+                Peso
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Altura)
+                Altura
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Pokemons)
         {
             <tr>
                 <td>
@@ -86,16 +87,4 @@
         }
     </tbody>
 </table>
-<script>
-    function FiltrarPokemon() {
-        var inputPeso = document.getElementById('textPeso').value;
-        document.getElementById('formFiltrarPorPeso').elements['peso'].value = inputPeso;
-        document.getElementById('formFiltrarPorPeso').submit();
-    }
 
-    function FiltrarAltura() {
-        var inputAltura = document.getElementById('textAltura').value;
-        document.getElementById('formFiltrarPorAltura').elements['Altura'].value = inputAltura;
-        document.getElementById('formFiltrarPorAltura').submit();
-    }
-</script>

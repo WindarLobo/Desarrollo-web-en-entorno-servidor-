@@ -1,6 +1,6 @@
-﻿namespace LoboGarcesWindarTarea4.DataBase.Dbo
+﻿namespace LoboGarcesWindarTarea4.DataBase.Modelo
 {
-    public class MoviminetoDbo
+    public class Ataque
     {
         public int ID_Tipo { get; set; }
         public string TipoPokemon { get; set; }

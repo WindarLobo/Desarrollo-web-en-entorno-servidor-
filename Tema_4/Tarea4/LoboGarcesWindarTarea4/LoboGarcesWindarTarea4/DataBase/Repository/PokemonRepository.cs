@@ -5,7 +5,6 @@ using System.Data;
 using NuGet.Protocol.Plugins;
 using System.Data.Common;
 using LoboGarcesWindarTarea4.Models;
-using LoboGarcesWindarTarea4.DataBase.Dbo;
 
 namespace LoboGarcesWindarTarea4.DataBase.Repository;
 
@@ -19,7 +18,7 @@ public class PokemonRepository : IPokemonRepository
         _conexion = conexion;
     }
 
-    public async Task<IEnumerable<PokemonDbo>> GetAllPokemon(double? peso,double? altura, string? tipo)
+    public async Task<IEnumerable<Pokemon>> GetAllPokemon(double? peso, double? altura,int? tipoIdPokemon)
     {
         var query = @"Select 
                    Pokemon.numero_pokedex AS PokemonId,
@@ -32,21 +31,22 @@ public class PokemonRepository : IPokemonRepository
                    INNER JOIN pokemon_tipo ON Pokemon.numero_pokedex = pokemon_tipo.numero_pokedex
 	               INNER JOIN Tipo ON pokemon_tipo.id_tipo = Tipo.id_tipo WHERE 1=1";
 
-        if(peso != null)
+        if (peso != null)
         {
-             query += "AND  peso=@peso";
+            query += " AND Pokemon.peso=@peso";
         }
         if (altura != null)
         {
-            query += "AND  altura=@altura";
+            query += " AND Pokemon.altura=@altura";
         }
-        if (tipo != null)
+        if(tipoIdPokemon != null)
         {
-            query += "AND  tipo=@tipo";
+            query += " AND  pokemon_tipo.id_tipo=@tipoIdPokemon";
         }
+
         using (var connection = _conexion.ObtenerConexion())
         {
-            var pokemon = await connection.QueryAsync<PokemonDbo>(query, new { peso,altura,tipo});
+            var pokemon = await connection.QueryAsync<Pokemon>(query, new { peso, altura, tipoIdPokemon });
             return pokemon.ToList();
         }
 
@@ -60,7 +60,7 @@ public class PokemonRepository : IPokemonRepository
             return pokemon;
         }
     }
-    public async Task<IEnumerable<EvolucionDbo>> GetEvolucion(int numero_Pokedex)
+    public async Task<IEnumerable<Evolucion>> GetEvolucion(int numero_Pokedex)
     {
         var query = @"SELECT
 		pokemon.numero_pokedex		   AS PokemonId,
@@ -80,12 +80,12 @@ public class PokemonRepository : IPokemonRepository
 
         using (var connection = _conexion.ObtenerConexion())
         {
-            var evoluciones = await connection.QueryAsync<EvolucionDbo>(query, new { numero_Pokedex });
+            var evoluciones = await connection.QueryAsync<Evolucion>(query, new { numero_Pokedex });
 
             return evoluciones.ToList();
         }
     }
-    public async Task<IEnumerable<MoviminetoDbo>> GetMovimientos(int numero_Pokedex)
+    public async Task<IEnumerable<Ataque>> GetMovimientos(int numero_Pokedex)
     {
         var query = @"SELECT
         tipo.id_tipo  AS ID_Tipo,
@@ -108,18 +108,26 @@ public class PokemonRepository : IPokemonRepository
 
         using (var connection = _conexion.ObtenerConexion())
         {
-            var movimiento = await connection.QueryAsync<MoviminetoDbo>(query, new { numero_Pokedex });
+            var movimiento = await connection.QueryAsync<Ataque>(query, new { numero_Pokedex });
 
 
             return movimiento.ToList();
         }
+
     }
-
-  
-
-
-
-
+    public async Task<IEnumerable<Tipo>> GetTipos()
+    {
+        var query = @"select id_tipo, nombre from tipo";
+        using var connection = _conexion.ObtenerConexion();
+        return await connection.QueryAsync<Tipo>(query);
+    }
 }
+
+
+
+
+
+
+
 
 

@@ -1,4 +1,5 @@
-﻿using LoboGarcesWindarTarea4.DataBase.Repository;
+﻿using LoboGarcesWindarTarea4.DataBase.Modelo;
+using LoboGarcesWindarTarea4.DataBase.Repository;
 using LoboGarcesWindarTarea4.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,8 +9,8 @@ namespace LoboGarcesWindarTarea4.Controllers
     public class PokemonController : Controller
     {
         private readonly IPokemonRepository _pokemonRepository;
-        public PokemonController(IPokemonRepository pokemonRepository)
 
+        public PokemonController(IPokemonRepository pokemonRepository)
         {
             _pokemonRepository = pokemonRepository;
         }
@@ -19,13 +20,13 @@ namespace LoboGarcesWindarTarea4.Controllers
         [Route("/Pokemon/ListaDePokemon")]
         public async Task<IActionResult> ListaDePokemon()
         {
-            var pokemons = await _pokemonRepository.GetAllPokemon(null, null);
+            var pokemons = await _pokemonRepository.GetAllPokemon(null, null, null);
             var tipos = await _pokemonRepository.GetTipos();
 
             var viewModel = new ListaPokemonViewModel
             {
                 Pokemons = pokemons,
-                //Tipos = tipos
+               Tipos = tipos
             };
 
             return View(viewModel);
@@ -58,14 +59,20 @@ namespace LoboGarcesWindarTarea4.Controllers
             return View(movimientos);
         }
 
-        [HttpGet]
-
+        [HttpPost]
         [Route("/Pokemon/FiltrarPokemon")]
-        public async Task<IActionResult> FiltrarPokemon(double? peso, double? altura)
+        public async Task<IActionResult> FiltrarPokemon(double? peso, double? altura, int? tipo)
         {
-            var pokemonesFiltrados = await _pokemonRepository.GetAllPokemon(peso, altura);
+            var pokemonesFiltrados = await _pokemonRepository.GetAllPokemon(peso, altura, tipo);
+            var tipos = await _pokemonRepository.GetTipos();
 
-            return PartialView("ListaDePokemon", pokemonesFiltrados);
+            var viewModel = new ListaPokemonViewModel
+            {
+                Pokemons = pokemonesFiltrados,
+                Tipos = tipos
+            };
+
+            return PartialView("ListaDePokemon", viewModel);
         }
 
     }
