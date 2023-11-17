@@ -1,43 +1,44 @@
 ﻿using LoboGarcesWindarTarea4.DataBase.Repository;
 using Microsoft.AspNetCore.Mvc;
-using LoboGarcesWindarTarea4.DataBase.Modelo;
-using LoboGarcesWindarTarea4.DataBase.Dbo;
 
 namespace LoboGarcesWindarTarea4.Controllers
 {
 
-  
-   
     public class PokemonController : Controller
     {
         private readonly IPokemonRepository _pokemonRepository;
         public PokemonController(IPokemonRepository pokemonRepository)
+
         {
             _pokemonRepository = pokemonRepository;
         }
+
         [Route("/Pokemon")]
+
         [Route("/Pokemon/ListaDePokemon")]
         public async Task<IActionResult> ListaDePokemon()
         {
-            var pokemons = await _pokemonRepository.GetAllPokemon();
+            var pokemons = await _pokemonRepository.GetAllPokemon(null, null, null);
+
             return View(pokemons);
         }
-    
+
         [Route("/Profesor/GetById/{id?}")]
 
         public async Task<IActionResult> GetById(int numero_Pokedex)
         {
             var pokemons = await _pokemonRepository.GetPokemonByID(numero_Pokedex);
-            return View("GetById", pokemons);
+
+            return View(pokemons);
         }
 
-    
+
         [Route("Pokemon/Evolucion")]
         public async Task<IActionResult> Evolucion(int numero_Pokedex)
         {
             var evoluciones = await _pokemonRepository.GetEvolucion(numero_Pokedex);
 
-  
+
             return View(evoluciones);
         }
 
@@ -46,19 +47,18 @@ namespace LoboGarcesWindarTarea4.Controllers
         {
             var movimientos = await _pokemonRepository.GetMovimientos(numero_Pokedex);
 
-
-            return View( movimientos);
+            return View(movimientos);
         }
-      
-        [Route("/Pokemon/FiltrarPokemones")]
-        public async Task<IActionResult> FiltrarPokemones(string TipoPokemon)
+
+        [HttpGet]
+
+        [Route("/Pokemon/FiltrarPokemon")]
+        public async Task<IActionResult> FiltrarPokemon(double? peso, double? altura)
         {
-            var pokemonesFiltrados = await _pokemonRepository.FilterPokemonTipo(TipoPokemon);
+            var pokemonesFiltrados = await _pokemonRepository.GetAllPokemon(peso, altura, null);
 
-            return View("FiltrarPokemones",pokemonesFiltrados);
-
+            return PartialView("ListaDePokemon", pokemonesFiltrados);
         }
-
 
     }
 }

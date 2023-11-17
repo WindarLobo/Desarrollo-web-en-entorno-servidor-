@@ -19,12 +19,34 @@ public class PokemonRepository : IPokemonRepository
         _conexion = conexion;
     }
 
-    public async Task<IEnumerable<PokemonDbo>> GetAllPokemon()
+    public async Task<IEnumerable<PokemonDbo>> GetAllPokemon(double? peso,double? altura, string? tipo)
     {
-        var query = "Select * from Pokemon";
+        var query = @"Select 
+                   Pokemon.numero_pokedex AS PokemonId,
+                   Pokemon.nombre AS NombrePokemon,
+                   Tipo.id_tipo AS TipoID,
+                   Tipo.nombre	 AS TipoPokemon,
+                   Pokemon.peso AS Peso,
+                   Pokemon.altura AS Altura
+                   from Pokemon
+                   INNER JOIN pokemon_tipo ON Pokemon.numero_pokedex = pokemon_tipo.numero_pokedex
+	               INNER JOIN Tipo ON pokemon_tipo.id_tipo = Tipo.id_tipo WHERE 1=1";
+
+        if(peso != null)
+        {
+             query += "AND  peso=@peso";
+        }
+        if (altura != null)
+        {
+            query += "AND  altura=@altura";
+        }
+        if (tipo != null)
+        {
+            query += "AND  tipo=@tipo";
+        }
         using (var connection = _conexion.ObtenerConexion())
         {
-            var pokemon = await connection.QueryAsync<PokemonDbo>(query);
+            var pokemon = await connection.QueryAsync<PokemonDbo>(query, new { peso,altura,tipo});
             return pokemon.ToList();
         }
 
@@ -40,9 +62,7 @@ public class PokemonRepository : IPokemonRepository
     }
     public async Task<IEnumerable<EvolucionDbo>> GetEvolucion(int numero_Pokedex)
     {
-
-        var query =
-            @"SELECT
+        var query = @"SELECT
 		pokemon.numero_pokedex		   AS PokemonId,
 		nombre						   AS PokemonNombre,
 		forma_evolucion.tipo_evolucion AS TipoEvolucion,
@@ -68,22 +88,23 @@ public class PokemonRepository : IPokemonRepository
     public async Task<IEnumerable<MoviminetoDbo>> GetMovimientos(int numero_Pokedex)
     {
         var query = @"SELECT
-	 tipo.nombre		  AS TipoPokemon,
-	 tipo			      AS TipoAtaque,
-	 movimiento.nombre    AS NombreAtaque,
-	 Descripcion		  AS Descripcion,
-	 Potencia		      AS Potencia,
-	 precision_mov	      AS Precision,
-	 pp,
-	 prioridad
-     FROM tipo
-     INNER JOIN movimiento ON movimiento.id_tipo = tipo.id_tipo
-     INNER JOIN tipo_ataque ON tipo.id_tipo_ataque = tipo_ataque.id_tipo_ataque
-     INNER JOIN pokemon_tipo ON tipo.id_tipo = pokemon_tipo.id_tipo
-     WHERE pokemon_tipo.numero_pokedex = @numero_Pokedex
-     ORDER BY
-	 TipoPokemon";
-
+        tipo.id_tipo  AS ID_Tipo,
+	    tipo.nombre		  AS TipoPokemon,
+        tipo.id_tipo_ataque AS ID_Tipo_Ataque,
+	    tipo			      AS TipoAtaque,
+	    movimiento.nombre    AS NombreAtaque,
+	    Descripcion		  AS Descripcion,
+	    Potencia		      AS Potencia,
+	    precision_mov	      AS Precision,
+	    pp,
+	    prioridad
+        FROM tipo
+        INNER JOIN movimiento ON movimiento.id_tipo = tipo.id_tipo
+        INNER JOIN tipo_ataque ON tipo.id_tipo_ataque = tipo_ataque.id_tipo_ataque
+        INNER JOIN pokemon_tipo ON tipo.id_tipo = pokemon_tipo.id_tipo
+        WHERE pokemon_tipo.numero_pokedex = @numero_Pokedex
+        ORDER BY
+	    TipoPokemon";
 
         using (var connection = _conexion.ObtenerConexion())
         {
@@ -93,23 +114,8 @@ public class PokemonRepository : IPokemonRepository
             return movimiento.ToList();
         }
     }
-    public async Task<IEnumerable<TipoDbo>> FilterPokemonTipo(string tipo)
-    {
 
-        var query = @"SELECT
-		Pokemon.numero_pokedex AS PokemonId,
-		Pokemon.nombre AS NombrePokemon,
-		Tipo.nombre	   AS TipoPokemon
-        FROM Pokemon
-	    INNER JOIN pokemon_tipo ON Pokemon.numero_pokedex = pokemon_tipo.numero_pokedex
-	    INNER JOIN Tipo ON pokemon_tipo.id_tipo = Tipo.id_tipo  WHERE Tipo.nombre = @tipo";
-
-        using (var connection = _conexion.ObtenerConexion())
-        {
-            var pokemones = await connection.QueryAsync<TipoDbo>(query, new { tipo });
-            return pokemones.ToList();
-        }
-    }
+  
 
 
 

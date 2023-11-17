@@ -11,7 +11,13 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.ID_Tipo)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.TipoPokemon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_Tipo_Ataque)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TipoAtaque)
@@ -38,34 +44,42 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoPokemon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoAtaque)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreAtaque)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Potencia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precision)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prioridad)
-            </td>
-           
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_Tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoPokemon)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_Tipo_Ataque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoAtaque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreAtaque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Potencia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precision)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prioridad)
+                </td>
+
+            </tr>
+        }
     </tbody>
 </table>

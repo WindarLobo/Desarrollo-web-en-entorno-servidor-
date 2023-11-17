@@ -7,22 +7,50 @@
 
 <h1>ListaDePokemon</h1>
 
-<form asp-controller="Pokemon" asp-action="FiltrarPokemones" method="get">
-    <p>
-        Tipo: <input type="text" name="SearchString" />
-        <input type="submit" value="buscar" />
-    </p>
+<form id="formFiltrarPorPeso" action="/Pokemon/FiltrarPokemon" method="get">
+    <div>
+        <label for="textPeso">Peso:</label>
+        <input type="text" id="textPeso" name="peso" />
+        <button type="submit">Buscar</button>
+    </div>
 </form>
+
+<form id="formFiltrarPorAltura" action="/Pokemon/FiltrarPokemon" method="get">
+    <div>
+        <label for="textAltura">Altura:</label>
+        <input type="text" id="textAltura" name="Altura" />
+        <button type="submit">Buscar </button>
+    </div>
+</form>
+@* <select class="form-select" aria-label="Tipo de Pokémon" id="tipoPokemon">
+    <option selected>Selecciona un tipo</option>
+    @foreach (var tipo in ViewBag.Tipo)
+    {
+        <option value="@tipo.Id">@tipo.Nombre</option>
+    }
+</select> *@
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.numero_Pokedex)
+                @Html.DisplayNameFor(model => model.PokemonId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Nombre)
+                @Html.DisplayNameFor(model => model.NombrePokemon)
             </th>
-           
+            <th>
+                @Html.DisplayNameFor(model => model.TipoID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoPokemon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Altura)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -31,28 +59,43 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.numero_Pokedex)
+                    @Html.DisplayFor(modelItem => item.PokemonId)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Nombre)
+                    @Html.DisplayFor(modelItem => item.NombrePokemon)
                 </td>
-              
                 <td>
-                    @Html.ActionLink("Detalle", "GetById", new { numero_Pokedex = item.numero_Pokedex  }) |
-                    @Html.ActionLink("Evolucion", "Evolucion", new { numero_Pokedex = item.numero_Pokedex  }) |
-                    @Html.ActionLink("Movimientos", "Movimiento", new {numero_Pokedex = item.numero_Pokedex})
-                    
+                    @Html.DisplayFor(modelItem => item.TipoID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoPokemon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Peso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Altura)
+                </td>
+                <td>
+                    @Html.ActionLink("Detalle", "GetById", new { numero_Pokedex = item.PokemonId  }) |
+                    @Html.ActionLink("Evolucion", "Evolucion", new { numero_Pokedex = item.PokemonId  }) |
+                    @Html.ActionLink("Movimientos", "Movimiento", new {numero_Pokedex = item.PokemonId})
+
                 </td>
             </tr>
         }
     </tbody>
-
 </table>
 <script>
-    function FiltrarPokemones() {
-        var inputNombreTipo = document.getElementById('textNombreTipo').value.toLowerCase();
+    function FiltrarPokemon() {
+        var inputPeso = document.getElementById('textPeso').value;
+        document.getElementById('formFiltrarPorPeso').elements['peso'].value = inputPeso;
+        document.getElementById('formFiltrarPorPeso').submit();
+    }
 
-        // Redirige a la acción del controlador con el parámetro tipo
-        window.location.href = '/Pokemon/FiltrarPokemones?tipo=' + inputNombreTipo;
+    function FiltrarAltura() {
+        var inputAltura = document.getElementById('textAltura').value;
+        document.getElementById('formFiltrarPorAltura').elements['Altura'].value = inputAltura;
+        document.getElementById('formFiltrarPorAltura').submit();
     }
 </script>
