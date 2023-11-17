@@ -20,6 +20,7 @@
     public class PokemonFull : Pokemon
     {
         public IEnumerable<Ataque> Ataques { get; set; }   
-        public IEnumerable<Evolucion> Evoluciones { get; set; }
+         public IEnumerable<Evolucion> Evoluciones { get; set; }
+        public IEnumerable<DetalleEvoluciones> detalleEvoluciones { get; set; }
     }
 }

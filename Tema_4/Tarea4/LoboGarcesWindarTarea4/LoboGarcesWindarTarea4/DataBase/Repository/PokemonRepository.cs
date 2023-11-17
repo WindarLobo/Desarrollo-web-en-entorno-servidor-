@@ -16,18 +16,19 @@ public class PokemonRepository : IPokemonRepository
 
     public async Task<IEnumerable<Pokemon>> GetAllPokemon(double? peso, double? altura,int? tipoIdPokemon)
     {
-        var query = @"
-SELECT 
-       Pokemon.numero_pokedex AS PokemonId,
-       Pokemon.nombre AS NombrePokemon,
-       Pokemon.peso AS Peso,
-       Pokemon.altura AS Altura,
-	   Tipo.id_tipo AS TipoId,
-       Tipo.nombre AS TipoNombre
-FROM Pokemon
-	INNER JOIN pokemon_tipo ON Pokemon.numero_pokedex = pokemon_tipo.numero_pokedex
-	INNER JOIN Tipo ON pokemon_tipo.id_tipo = Tipo.id_tipo
-WHERE 1=1";
+        var query = @"SELECT 
+                       Pokemon.numero_pokedex   AS PokemonId,
+                       Pokemon.nombre           AS NombrePokemon,
+                       Pokemon.peso             AS Peso,
+                       Pokemon.altura           AS Altura,
+	                   Tipo.id_tipo             AS TipoId,
+                       Tipo.nombre              AS TipoNombre
+                    FROM Pokemon
+	                   INNER JOIN pokemon_tipo
+                            ON Pokemon.numero_pokedex = pokemon_tipo.numero_pokedex
+	                   INNER JOIN Tipo 
+                            ON pokemon_tipo.id_tipo = Tipo.id_tipo
+                       WHERE 1=1";
 
         if (peso != null)
         {
@@ -73,6 +74,8 @@ WHERE 1=1";
 
             pokemon.Evoluciones = await GetEvolucion(numero_pokedex);
 
+            pokemon.detalleEvoluciones = await GetDetalleEvoluciones(numero_pokedex);
+
             return pokemon;
         }
     }
@@ -102,6 +105,29 @@ WHERE 1=1";
             var evoluciones = await connection.QueryAsync<Evolucion>(query, new { numero_Pokedex });
 
             return evoluciones.ToList();
+        }
+    }
+
+    public async Task<IEnumerable<DetalleEvoluciones>> GetDetalleEvoluciones(int numero_Pokedex)
+    {
+        var query = @"SELECT 
+                        pokemonOriginal.numero_pokedex      AS Numero_Pokemon_Original , 
+                        pokemonOriginal.nombre              AS Pokemon_Origen, 
+                        pokemonEvolucion.numero_pokedex     AS Numero_Pokemon_Evolucionado,
+                        pokemonEvolucion.nombre             AS Pokemon_Evolucionado
+                    FROM evoluciona_de 
+                       LEFT JOIN pokemon pokemonOriginal
+                          ON evoluciona_de.pokemon_origen = pokemonOriginal.numero_pokedex
+                       LEFT JOIN pokemon pokemonEvolucion
+                          ON evoluciona_de.pokemon_evolucionado = pokemonEvolucion.numero_pokedex 
+                    WHERE pokemonOriginal.numero_pokedex =@numero_Pokedex";
+
+        using (var connection = _conexion.ObtenerConexion())
+        {
+            var detalleEvoluciones = await connection.QueryAsync<DetalleEvoluciones>(query, new { numero_Pokedex });
+
+
+            return detalleEvoluciones.ToList();
         }
     }
     public async Task<IEnumerable<Ataque>> GetMovimientos(int numero_Pokedex)

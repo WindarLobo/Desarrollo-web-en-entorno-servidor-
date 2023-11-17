@@ -1,0 +1,50 @@
+﻿@model IEnumerable<LoboGarcesWindarTarea4.DataBase.Modelo.DetalleEvoluciones>
+
+@{
+    ViewData["Title"] = "GetDetalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GetDetalles</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero_Pokemon_Original)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pokemon_Origen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero_Pokemon_Evolucionado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pokemon_Evolucionado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numero_Pokemon_Original)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pokemon_Origen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numero_Pokemon_Evolucionado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pokemon_Evolucionado)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>

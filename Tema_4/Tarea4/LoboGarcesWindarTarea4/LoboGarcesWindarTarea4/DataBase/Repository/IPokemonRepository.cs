@@ -11,6 +11,7 @@ namespace LoboGarcesWindarTarea4.DataBase.Repository
         Task<IEnumerable<Evolucion>> GetEvolucion(int numero_Pokedex);
        
         Task<IEnumerable<Ataque>> GetMovimientos(int numero_Pokedex);
+       Task<IEnumerable<DetalleEvoluciones>> GetDetalleEvoluciones(int numero_Pokedex);
 
         Task<IEnumerable<Tipo>> GetTipos();
 

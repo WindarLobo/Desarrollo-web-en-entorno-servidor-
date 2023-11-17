@@ -32,7 +32,7 @@ namespace LoboGarcesWindarTarea4.Controllers
             return View(viewModel);
         }
 
-        [Route("/Profesor/GetById/{id?}")]
+        [Route("/Pokemon/GetById/{id?}")]
 
         public async Task<IActionResult> GetById(int numero_Pokedex)
         {
@@ -41,6 +41,14 @@ namespace LoboGarcesWindarTarea4.Controllers
             return View(pokemons);
         }
 
+        [Route("/Pokemon/GetDetalles/{id?}")]
+
+        public async Task<IActionResult> GetDetalles(int numero_Pokedex)
+        {
+            var evolucion = await _pokemonRepository.GetDetalleEvoluciones(numero_Pokedex);
+
+            return View(evolucion);
+        }
 
         [Route("Pokemon/Evolucion")]
         public async Task<IActionResult> Evolucion(int numero_Pokedex)
