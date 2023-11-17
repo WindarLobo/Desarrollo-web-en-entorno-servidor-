@@ -22,7 +22,7 @@
         <option selected>Selecciona un tipo</option>
         @foreach (var tipo in Model.Tipos)
         {
-            <option value="@tipo.id_tipo">@tipo.nombre</option>
+            <option value="@tipo.TipoId">@tipo.TipoNombre</option>
         }
     </select>
 
@@ -41,10 +41,7 @@
                 NombrePokemon
             </th>
             <th>
-                TipoID
-            </th>
-            <th>
-                TipoPokemon
+                Tipo
             </th>
             <th>
                 Peso
@@ -66,10 +63,7 @@
                     @Html.DisplayFor(modelItem => item.NombrePokemon)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.TipoID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TipoPokemon)
+                    @Html.DisplayFor(modelItem => item.AllTipos)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Peso)

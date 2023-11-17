@@ -11,15 +11,6 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ID_Tipo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TipoPokemon)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ID_Tipo_Ataque)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.TipoAtaque)
             </th>
             <th>
@@ -47,16 +38,6 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ID_Tipo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TipoPokemon)
-                </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.ID_Tipo_Ataque)
-                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.TipoAtaque)
                 </td>

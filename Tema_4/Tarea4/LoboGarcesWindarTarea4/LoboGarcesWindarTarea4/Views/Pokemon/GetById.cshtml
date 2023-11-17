@@ -1,4 +1,4 @@
-﻿@model LoboGarcesWindarTarea4.DataBase.Modelo.Pokemon
+﻿@model LoboGarcesWindarTarea4.DataBase.Modelo.PokemonFull
 
 @{
     ViewData["Title"] = "GetById";
@@ -41,3 +41,64 @@
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     <a asp-action="Index">Back to List</a>
 </div>
+
+
+<h1>Movimiento</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ataques.First().TipoAtaque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ataques.First().NombreAtaque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ataques.First().Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ataques.First().Potencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ataques.First().Precision)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ataques.First().Pp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ataques.First().Prioridad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Ataques)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoAtaque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreAtaque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Potencia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precision)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prioridad)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
