@@ -1,21 +1,12 @@
 ﻿using LoboGarcesWindarTarea4.DataBase.Modelo;
-using LoboGarcesWindarTarea4.Models;
 
 namespace LoboGarcesWindarTarea4.DataBase.Repository
 {
     public interface IPokemonRepository
     {
-        Task<IEnumerable<Pokemon>> GetAllPokemon(double? peso, double? altura,int? tipoIdPokemon);
-        Task <PokemonFull> GetPokemonByID(int numero_Pokedex);
-
-        Task<IEnumerable<Evolucion>> GetEvolucion(int numero_Pokedex);
-       
-        Task<IEnumerable<Ataque>> GetMovimientos(int numero_Pokedex);
-       Task<IEnumerable<DetalleEvoluciones>> GetDetalleEvoluciones(int numero_Pokedex);
-
+        Task<IEnumerable<Pokemon>> GetAllPokemon(double? peso, double? altura, int? tipoIdPokemon);
+        Task<PokemonFull> GetPokemonFull(int numero_Pokedex);
+        Task<Pokemon> GetPokemonBase(int numero_Pokedex);
         Task<IEnumerable<Tipo>> GetTipos();
-
-
-
     }
 }

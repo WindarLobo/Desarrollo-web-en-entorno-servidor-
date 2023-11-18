@@ -72,7 +72,7 @@
                     @Html.DisplayFor(modelItem => item.Altura)
                 </td>
                 <td>
-                    @Html.ActionLink("Detalle", "GetDetalles", new { numero_Pokedex = item.PokemonId  }) |
+                    @Html.ActionLink("Detalle", "Detalle", new { numero_Pokedex = item.PokemonId  }) |
                     @Html.ActionLink("Evolucion", "Evolucion", new { numero_Pokedex = item.PokemonId  }) |
                     @Html.ActionLink("Movimientos", "Movimiento", new {numero_Pokedex = item.PokemonId})
 
