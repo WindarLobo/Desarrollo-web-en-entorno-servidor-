@@ -11,38 +11,96 @@
     <h4>Pokemon</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.PokemonId)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.PokemonId)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.NombrePokemon)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.NombrePokemon)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Peso)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Peso)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Altura)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Altura)
+        </dd>
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Evoluciones.First().Nivel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Evoluciones.First().Nivel)
+
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Evoluciones.First().Piedra)
+
+        </dt>
+        <dd class="col-sm-10">
+        @if (Model.Evoluciones.First().Piedra != null && Model.Evoluciones.First().Piedra.Any())
+        {
+          
+                @Html.DisplayFor(model =>model.Evoluciones.First().Piedra)
+
+         
+        }
+        else
+            {
+                <p>No tiene </p>
+            }
         </dd>
     </dl>
 </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+
+<div class="col-sm-2">
+
+    <h1>@Html.DisplayNameFor(model => model.FlujoEvolucion)</h1>
+    @foreach (var item in Model.FlujoEvolucion)
+    {
+        @if (item.Pokemon != null)
+        {
+            @Html.DisplayFor(modelItem => item.Pokemon.NombrePokemon)
+            <br />
+        }
+
+
+    }
 </div>
+<div class="col-sm-2">
+    <h1>@Html.DisplayNameFor(model => model.FlujoInvolucion)</h1>
 
+    @foreach (var item in Model.FlujoInvolucion)
+    {
+        @if (Model.FlujoInvolucion != null && Model.FlujoInvolucion.Any())
+        {
+            @Html.DisplayFor(modelItem => item.Pokemon.NombrePokemon)
 
+            <br/>
+        }
+        else
+        {
+            <p>No tiene Involucion</p>
+        }
+
+    }
+   <h1>Tipo</h1>
+  
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.AllTipos)
+    </dd>
+
+</div>
 <h1>Movimiento</h1>
 
 <table class="table">
@@ -102,3 +160,4 @@
         }
     </tbody>
 </table>
+

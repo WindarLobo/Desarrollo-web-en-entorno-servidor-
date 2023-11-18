@@ -1,5 +1,5 @@
-﻿using LoboGarcesWindarTarea4.DataBase.Modelo;
-using Dapper;
+﻿using Dapper;
+using LoboGarcesWindarTarea4.DataBase.Modelo;
 using Microsoft.CodeAnalysis;
 
 namespace LoboGarcesWindarTarea4.DataBase.Repository;
@@ -141,6 +141,7 @@ public class PokemonRepository : IPokemonRepository
         pokemon.Evoluciones = await GetEvolucion(numero_pokedex);
 
         pokemon.FlujoEvolucion = await GetFlujoEvolucion(numero_pokedex);
+        pokemon.FlujoInvolucion = await GetFlujoInvolucion(numero_pokedex);
 
         return pokemon;
     }
@@ -185,9 +186,39 @@ public class PokemonRepository : IPokemonRepository
 
         var query = @"select pokemon_evolucion.numero_pokedex, pokemon_evolucion.nombre
                         from pokemon
-                         inner join evoluciona_de on pokemon.numero_pokedex =   evoluciona_de.pokemon_origen
-                         inner join pokemon as pokemon_evolucion on pokemon_evolucion.numero_pokedex = evoluciona_de.pokemon_evolucionado
+                         inner join evoluciona_de 
+                            on pokemon.numero_pokedex =   evoluciona_de.pokemon_origen
+                         inner join pokemon as pokemon_evolucion  
+                            on pokemon_evolucion.numero_pokedex = evoluciona_de.pokemon_evolucionado
                         where pokemon.numero_pokedex = @numero_Pokedex";
+
+        using var connection = _conexion.ObtenerConexion();
+
+        int pokemonId;
+
+        while ((pokemonId = await connection.QuerySingleOrDefaultAsync<int>(query, new { numero_Pokedex })) != 0)
+        {
+            detalles.Add(new DetalleEvoluciones
+            {
+                Pokemon = await GetPokemonBase(pokemonId)
+            });
+
+            numero_Pokedex = pokemonId;
+        }
+
+        return detalles.ToList();
+    }
+    private async Task<IEnumerable<DetalleEvoluciones>> GetFlujoInvolucion(int numero_Pokedex)
+    {
+        List<DetalleEvoluciones> detalles = new();
+
+        var query = @"select pokemon_evolucion.numero_pokedex,pokemon_evolucion.nombre
+                        from pokemon
+                     inner join evoluciona_de  
+                        on pokemon.numero_pokedex =   evoluciona_de.pokemon_evolucionado
+                     inner join pokemon as pokemon_evolucion
+                        on pokemon_evolucion.numero_pokedex = evoluciona_de.pokemon_origen
+                    where pokemon.numero_pokedex= @numero_Pokedex";
 
         using var connection = _conexion.ObtenerConexion();
 
