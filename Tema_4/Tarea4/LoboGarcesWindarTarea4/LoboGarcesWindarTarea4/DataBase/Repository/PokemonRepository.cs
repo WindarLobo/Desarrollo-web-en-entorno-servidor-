@@ -104,12 +104,12 @@ public class PokemonRepository : IPokemonRepository
     public async Task<PokemonFull> GetPokemonFull(int numero_pokedex)
     {
         var query = @"SELECT 
-                       Pokemon.numero_pokedex   AS PokemonId,
-                       Pokemon.nombre           AS NombrePokemon,
-                       Pokemon.peso             AS Peso,
-                       Pokemon.altura           AS Altura,
-	                   Tipo.id_tipo             AS TipoId,
-                       Tipo.nombre              AS TipoNombre
+                       Pokemon.numero_pokedex        AS PokemonId,
+                       Pokemon.nombre                AS NombrePokemon,
+                       Pokemon.peso                  AS Peso,
+                       Pokemon.altura                AS Altura,
+	                   Tipo.id_tipo                  AS TipoId,
+                       Tipo.nombre                   AS TipoNombre
                     FROM Pokemon
 	                   INNER JOIN pokemon_tipo
                             ON Pokemon.numero_pokedex = pokemon_tipo.numero_pokedex
@@ -141,7 +141,10 @@ public class PokemonRepository : IPokemonRepository
         pokemon.Evoluciones = await GetEvolucion(numero_pokedex);
 
         pokemon.FlujoEvolucion = await GetFlujoEvolucion(numero_pokedex);
+
         pokemon.FlujoInvolucion = await GetFlujoInvolucion(numero_pokedex);
+
+        pokemon.Estadisticas = await GetEstadistica(numero_pokedex);
 
         return pokemon;
     }
@@ -270,6 +273,29 @@ public class PokemonRepository : IPokemonRepository
         }
 
     }
+    private async Task<IEnumerable<Estadistica>> GetEstadistica(int numero_Pokedex)
+    {
+
+        var query = @"Select
+                        Estadisticas_base.ps           AS  Ps,
+                       Estadisticas_base.ataque        AS Ataque,
+                       Estadisticas_base.defensa       AS Defensa,
+                       Estadisticas_base.especial      AS Especial,
+                       Estadisticas_base.velocidad     AS Velocidad 
+                    FROM Pokemon
+                      INNER JOIN  Estadisticas_base  
+                            ON Pokemon.numero_pokedex = Estadisticas_base.numero_pokedex 
+                    where pokemon.numero_pokedex= @numero_Pokedex";
+
+        using (var connection = _conexion.ObtenerConexion())
+        {
+            var estadistica = await connection.QueryAsync<Estadistica>(query, new { numero_Pokedex });
+
+
+            return estadistica.ToList();
+        }
+    }
+
 }
 
 

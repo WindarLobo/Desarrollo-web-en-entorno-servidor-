@@ -30,6 +30,16 @@
 
 </form>
 
+@if (TempData["MensajeExito"] != null)
+{
+    <div id="mensaje-exito" class="alert alert-success">@TempData["MensajeExito"]</div>
+
+}
+
+@if (TempData["MensajeError"] != null)
+{
+    <div id="mensaje-error" class="alert alert-danger">@TempData["MensajeError"]</div>
+}
 
 <table class="table">
     <thead>
@@ -50,9 +60,13 @@
                 Altura
             </th>
             <th></th>
+            <th></th>
+
+
         </tr>
     </thead>
     <tbody>
+    
         @foreach (var item in Model.Pokemons)
         {
             <tr>
@@ -72,13 +86,36 @@
                     @Html.DisplayFor(modelItem => item.Altura)
                 </td>
                 <td>
-                    @Html.ActionLink("Detalle", "Detalle", new { numero_Pokedex = item.PokemonId  }) |
-                    @Html.ActionLink("Evolucion", "Evolucion", new { numero_Pokedex = item.PokemonId  }) |
-                    @Html.ActionLink("Movimientos", "Movimiento", new {numero_Pokedex = item.PokemonId})
-
+                    @Html.ActionLink("Detalle", "Detalle", new { numero_Pokedex = item.PokemonId  })
                 </td>
-            </tr>
-        }
-    </tbody>
-</table>
+               
 
+                <td>
+                    
+
+                            <form asp-action="AgregarAlEquipo" asp-route-numero_Pokedex="@item.PokemonId" method="post">
+
+
+                                <button type="submit">Añadir a Mi Equipo</button>
+                            </form>
+
+
+                      
+                    
+                        </td>
+
+
+
+
+                    </tr>
+                    }
+                        
+            </tbody>
+        </table>
+
+<script>
+    // Agrega un script para ocultar los mensajes después de un segundo
+    setTimeout(function () {
+        $("#mensaje-exito, #mensaje-error").fadeOut(1000);
+    }, 1000);
+</script>

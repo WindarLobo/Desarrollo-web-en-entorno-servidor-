@@ -1,5 +1,7 @@
-﻿using LoboGarcesWindarTarea4.DataBase.Repository;
+﻿using LoboGarcesWindarTarea4.DataBase.Modelo;
+using LoboGarcesWindarTarea4.DataBase.Repository;
 using LoboGarcesWindarTarea4.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LoboGarcesWindarTarea4.Controllers
@@ -25,7 +27,7 @@ namespace LoboGarcesWindarTarea4.Controllers
             var viewModel = new ListaPokemonViewModel
             {
                 Pokemons = pokemons,
-               Tipos = tipos
+                Tipos = tipos
             };
 
             return View(viewModel);
@@ -56,7 +58,46 @@ namespace LoboGarcesWindarTarea4.Controllers
             return PartialView("ListaDePokemon", viewModel);
         }
 
+        [HttpPost]
+        [Route("/Pokemon/AgregarAlEquipo/{numero_Pokedex}")]
+        public async Task<IActionResult> AgregarAlEquipo(int numero_Pokedex)
+        {
+            // Obtén el Pokémon completo usando el número de la Pokédex
+            var pokemon = await _pokemonRepository.GetPokemonFull(numero_Pokedex);
+
+            // Intenta añadir el Pokémon al equipo
+
+           var añadido = EquipoReposiotrio.AddPokemon(pokemon);
+
+            if (añadido.Añadido)
+            {
+                // Redirige de vuelta a la página de detalles del Pokémon
+                TempData["MensajeExito"] = añadido.Mensaje;
+                return RedirectToAction("ListaDePokemon", new { numero_Pokedex });
+            }
+            else
+            {
+                // Informa al usuario que ya ha alcanzado el límite de Pokémon en su equipo
+                TempData["MensajeError"] = añadido.Mensaje;
+                return RedirectToAction("ListaDePokemon", new { numero_Pokedex });
+            }
+        }
+        [Route("/Pokemon/ListaEquipo/")]
+        public IActionResult ListaEquipo()
+        {
+            // Obtén la lista de Pokémon en el equipo
+            var miEquipo = EquipoReposiotrio.MiEquipo?.Pokemons;
+
+            return View(miEquipo);
+        }
+
+
+
+
     }
+
 }
+
+
 
 
