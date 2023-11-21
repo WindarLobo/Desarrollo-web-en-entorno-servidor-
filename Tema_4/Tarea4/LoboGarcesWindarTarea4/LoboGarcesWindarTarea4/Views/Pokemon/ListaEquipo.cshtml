@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "ListaEquipo";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int cantidad = 0;
 }
 
 <h1>ListaEquipo</h1>
@@ -32,27 +34,47 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PokemonId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombrePokemon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Peso)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Altura)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AllTipos)
-            </td>
-            <td>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PokemonId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombrePokemon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Peso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Altura)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AllTipos)
+
+                </td>
+
+
+                <td>
+
                     @Html.ActionLink("Detalle", "Detalle", new { numero_Pokedex = item.PokemonId  })
-            </td>
-        </tr>
-}
+                </td>
+            </tr>
+
+
+        }
+
+
     </tbody>
+
+    <td colspan="6">
+
+        Cantidad de pokemons: @ViewBag.TotalCantidad <br />
+        Peso Promedio : @ViewBag.PesoPromedio<br />
+        Altura promedio : @ViewBag.MediaDeAltura<br />
+        Tipo predominante : @ViewBag.TipoPredominante
+    </td>
+
+
 </table>

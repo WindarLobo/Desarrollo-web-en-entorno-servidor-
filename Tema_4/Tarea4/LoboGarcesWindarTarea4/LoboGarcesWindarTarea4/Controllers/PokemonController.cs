@@ -3,6 +3,8 @@ using LoboGarcesWindarTarea4.DataBase.Repository;
 using LoboGarcesWindarTarea4.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Packaging;
+using System.Collections.Generic;
 
 namespace LoboGarcesWindarTarea4.Controllers
 {
@@ -24,10 +26,12 @@ namespace LoboGarcesWindarTarea4.Controllers
             var pokemons = await _pokemonRepository.GetAllPokemon(null, null, null);
             var tipos = await _pokemonRepository.GetTipos();
 
+
             var viewModel = new ListaPokemonViewModel
             {
                 Pokemons = pokemons,
-                Tipos = tipos
+                Tipos = tipos,
+
             };
 
             return View(viewModel);
@@ -62,12 +66,14 @@ namespace LoboGarcesWindarTarea4.Controllers
         [Route("/Pokemon/AgregarAlEquipo/{numero_Pokedex}")]
         public async Task<IActionResult> AgregarAlEquipo(int numero_Pokedex)
         {
+
             // Obtén el Pokémon completo usando el número de la Pokédex
             var pokemon = await _pokemonRepository.GetPokemonFull(numero_Pokedex);
 
             // Intenta añadir el Pokémon al equipo
 
-           var añadido = EquipoReposiotrio.AddPokemon(pokemon);
+            var añadido = EquipoReposiotrio.AddPokemon(pokemon);
+
 
             if (añadido.Añadido)
             {
@@ -82,21 +88,98 @@ namespace LoboGarcesWindarTarea4.Controllers
                 return RedirectToAction("ListaDePokemon", new { numero_Pokedex });
             }
         }
+
         [Route("/Pokemon/ListaEquipo/")]
         public IActionResult ListaEquipo()
         {
-            // Obtén la lista de Pokémon en el equipo
-            var miEquipo = EquipoReposiotrio.MiEquipo?.Pokemons;
+            List<PokemonFull> listaPokemon;
 
-            return View(miEquipo);
+            if (EquipoReposiotrio.MiEquipo != null && EquipoReposiotrio.MiEquipo.Pokemons.Any())
+            {
+                // Si el usuario tiene un equipo, muestra la lista de su equipo
+                listaPokemon = EquipoReposiotrio.MiEquipo.Pokemons;
+            }
+            else
+            {
+                listaPokemon = Equipo.PokemonAleatorio;
+                int totalCantidad = listaPokemon.Count();
+                double sumaDePesos = listaPokemon.Sum(pokemon => pokemon.Peso);
+                double pesoPromedio = sumaDePesos / totalCantidad;
+                double sumaAltura = listaPokemon.Sum(pokemon => pokemon.Altura);
+                double mediaDeAltura = sumaAltura / totalCantidad;
+
+
+                var tipoPredominante = listaPokemon
+
+                     .SelectMany(pokemon => pokemon.Tipos)
+                    .GroupBy(tipo => tipo)
+                    .OrderByDescending(grupo => grupo.Count())
+                    .Select(grupo => grupo.Key)
+                    .FirstOrDefault();
+
+                ViewBag.TipoPredominante = tipoPredominante;
+
+                ViewBag.TotalCantidad = totalCantidad;
+                ViewBag.PesoPromedio = pesoPromedio;
+                ViewBag.MediaDeAltura = mediaDeAltura;
+            }
+
+            return View(listaPokemon);
         }
 
+
+
+        [HttpPost]
+        [Route("/Pokemon/AgregarAlEquipoAleatorio/")]
+        public async Task<IActionResult> AgregarAlEquipoAleatorio()
+        {
+
+            const int _maxPokemon = 6;
+            Equipo.PokemonAleatorio.Clear();
+
+            // Obtén el Pokémon completo usando el número de la Pokédex
+            var pokemons = await _pokemonRepository.GetAllPokemon(null, null, null);
+
+            Random random = new Random();
+
+
+            for (int i = 0; i < _maxPokemon; i++)
+            {
+
+                int indiceAleatorio = random.Next(0, pokemons.Count());
+                var pokemonAleatorio = pokemons.ElementAt(indiceAleatorio);
+                var pokemonFull = new PokemonFull
+                {
+
+                    PokemonId = pokemonAleatorio.PokemonId,
+                    NombrePokemon = pokemonAleatorio.NombrePokemon,
+                    Peso = pokemonAleatorio.Peso,
+                    Altura = pokemonAleatorio.Altura,
+                    Tipos = pokemonAleatorio.Tipos,
+                    Estadisticas = null,
+                    Ataques = null,
+                    FlujoEvolucion = null,
+                    FlujoInvolucion = null
+                };
+
+
+                Equipo.PokemonAleatorio.Add(pokemonFull);
+
+            }
+
+
+            return RedirectToAction("ListaDePokemon");
+        }
 
 
 
     }
 
 }
+
+
+
+
 
 
 

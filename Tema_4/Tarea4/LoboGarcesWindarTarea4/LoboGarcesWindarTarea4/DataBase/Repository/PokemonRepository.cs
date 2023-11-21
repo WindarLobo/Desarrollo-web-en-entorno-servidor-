@@ -146,6 +146,9 @@ public class PokemonRepository : IPokemonRepository
 
         pokemon.Estadisticas = await GetEstadistica(numero_pokedex);
 
+       
+
+
         return pokemon;
     }
 
@@ -295,6 +298,7 @@ public class PokemonRepository : IPokemonRepository
             return estadistica.ToList();
         }
     }
+   
 
 }
 
