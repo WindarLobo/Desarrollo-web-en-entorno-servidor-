@@ -1,4 +1,4 @@
-﻿@model LoboGarcesWindarTarea4.Models.ListaPokemonViewModel
+﻿@model LoboGarcesWindarTarea4.Models.EquipoViewModel
 
 @{
     ViewData["Title"] = "ListaDePokemon";
@@ -40,8 +40,8 @@
 }
 <form asp-action="AgregarAlEquipoAleatorio" asp-route-numero_Pokedex="@Model.Pokemons.First().PokemonId" method="post">
 
-    
-        <button type="submit">Añadir  aletorio</button>
+
+    <button type="submit">Añadir  aletorio</button>
     </form>
 
 <table class="table">

@@ -1,10 +1,8 @@
 ﻿using LoboGarcesWindarTarea4.DataBase.Modelo;
 using LoboGarcesWindarTarea4.DataBase.Repository;
 using LoboGarcesWindarTarea4.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using NuGet.Packaging;
-using System.Collections.Generic;
+
 
 namespace LoboGarcesWindarTarea4.Controllers
 {
@@ -27,7 +25,7 @@ namespace LoboGarcesWindarTarea4.Controllers
             var tipos = await _pokemonRepository.GetTipos();
 
 
-            var viewModel = new ListaPokemonViewModel
+            var viewModel = new EquipoViewModel
             {
                 Pokemons = pokemons,
                 Tipos = tipos,
@@ -53,7 +51,7 @@ namespace LoboGarcesWindarTarea4.Controllers
             var pokemonesFiltrados = await _pokemonRepository.GetAllPokemon(peso, altura, tipo);
             var tipos = await _pokemonRepository.GetTipos();
 
-            var viewModel = new ListaPokemonViewModel
+            var viewModel = new EquipoViewModel
             {
                 Pokemons = pokemonesFiltrados,
                 Tipos = tipos
@@ -61,7 +59,6 @@ namespace LoboGarcesWindarTarea4.Controllers
 
             return PartialView("ListaDePokemon", viewModel);
         }
-
         [HttpPost]
         [Route("/Pokemon/AgregarAlEquipo/{numero_Pokedex}")]
         public async Task<IActionResult> AgregarAlEquipo(int numero_Pokedex)
@@ -88,94 +85,116 @@ namespace LoboGarcesWindarTarea4.Controllers
                 return RedirectToAction("ListaDePokemon", new { numero_Pokedex });
             }
         }
-
+     
         [Route("/Pokemon/ListaEquipo/")]
-        public IActionResult ListaEquipo()
+        public async Task<IActionResult> ListaEquipo(string type)
         {
-            List<PokemonFull> listaPokemon;
+            var equipo = new Equipo();
+          
 
-            if (EquipoReposiotrio.MiEquipo != null && EquipoReposiotrio.MiEquipo.Pokemons.Any())
+            if (type == "aleatorio")
             {
-                // Si el usuario tiene un equipo, muestra la lista de su equipo
-                listaPokemon = EquipoReposiotrio.MiEquipo.Pokemons;
+
+                var allPokemon = await _pokemonRepository.GetAllPokemon(null, null, null);
+
+                equipo = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+              
             }
             else
             {
-                listaPokemon = Equipo.PokemonAleatorio;
-                int totalCantidad = listaPokemon.Count();
-                double sumaDePesos = listaPokemon.Sum(pokemon => pokemon.Peso);
-                double pesoPromedio = sumaDePesos / totalCantidad;
-                double sumaAltura = listaPokemon.Sum(pokemon => pokemon.Altura);
-                double mediaDeAltura = sumaAltura / totalCantidad;
 
+                equipo = EquipoReposiotrio.MiEquipoTodo();
 
-                var tipoPredominante = listaPokemon
-
-                     .SelectMany(pokemon => pokemon.Tipos)
-                    .GroupBy(tipo => tipo)
-                    .OrderByDescending(grupo => grupo.Count())
-                    .Select(grupo => grupo.Key)
-                    .FirstOrDefault();
-
-                ViewBag.TipoPredominante = tipoPredominante;
-
-                ViewBag.TotalCantidad = totalCantidad;
-                ViewBag.PesoPromedio = pesoPromedio;
-                ViewBag.MediaDeAltura = mediaDeAltura;
             }
+            var tipoPredominante = equipo.Pokemons
+                     .SelectMany(pokemon => pokemon.Tipos)
+                     .GroupBy(tipo => tipo.TipoNombre)
+                     .OrderByDescending(grupo => grupo.Count())
+                     .Select(grupo => grupo.Key)
+                     .FirstOrDefault();
 
-            return View(listaPokemon);
+            var viewModel = new EquipoViewModel
+            {
+                Equipo = equipo,
+                Count = equipo.Pokemons.Count,
+                PesoPromedio = equipo.Pokemons.Sum(pokemon => pokemon.Peso) / equipo.Pokemons.Count,
+                AturaPromedio = equipo.Pokemons.Sum(Pokemon => Pokemon.Altura) / equipo.Pokemons.Count,
+                TipoPromedio = tipoPredominante,
+
+
+            };
+
+            return View(viewModel);
         }
-
-
 
         [HttpPost]
         [Route("/Pokemon/AgregarAlEquipoAleatorio/")]
         public async Task<IActionResult> AgregarAlEquipoAleatorio()
         {
 
-            const int _maxPokemon = 6;
-            Equipo.PokemonAleatorio.Clear();
 
-            // Obtén el Pokémon completo usando el número de la Pokédex
-            var pokemons = await _pokemonRepository.GetAllPokemon(null, null, null);
+            var allPokemon = await _pokemonRepository.GetAllPokemon(null, null, null);
+            var equipo = EquipoReposiotrio.MiEquipoTodo();
 
-            Random random = new Random();
-
-
-            for (int i = 0; i < _maxPokemon; i++)
-            {
-
-                int indiceAleatorio = random.Next(0, pokemons.Count());
-                var pokemonAleatorio = pokemons.ElementAt(indiceAleatorio);
-                var pokemonFull = new PokemonFull
-                {
-
-                    PokemonId = pokemonAleatorio.PokemonId,
-                    NombrePokemon = pokemonAleatorio.NombrePokemon,
-                    Peso = pokemonAleatorio.Peso,
-                    Altura = pokemonAleatorio.Altura,
-                    Tipos = pokemonAleatorio.Tipos,
-                    Estadisticas = null,
-                    Ataques = null,
-                    FlujoEvolucion = null,
-                    FlujoInvolucion = null
-                };
-
-
-                Equipo.PokemonAleatorio.Add(pokemonFull);
-
-            }
-
-
-            return RedirectToAction("ListaDePokemon");
+            // Agrega un equipo aleatorio
+            equipo = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+            return RedirectToAction("ListaEquipo", new { type = "aleatorio" });
         }
 
 
+            //[Route("/Pokemon/SimularCombate")]
+            //public IActionResult SimularCombate()
+            //{
+            //    // Generar dos equipos aleatorios
+            //    List<PokemonFull> equipoUsuario = GenerarEquipoAleatorioCombate(); 
+            //    List<PokemonFull> equipoEnemigo = GenerarEquipoAleatorioCombate(); 
+
+            //    // Realizar la simulación del combate
+            //    string resultadoCombate = SimularBatalla(equipoUsuario, equipoEnemigo);
+            //    var viewModel = new SimularCombateViewModel
+            //    {
+            //        EquipoUsuario = equipoUsuario,
+            //        EquipoEnemigo = equipoEnemigo,
+            //        ResultadoCombate = resultadoCombate
+            //    };
+
+            //    // Puedes hacer algo con el resultado, como mostrarlo en la vista
+            //    ViewBag.ResultadoCombate = resultadoCombate;
+
+            //    return View("SimularCombate", viewModel);
+            //}
+
+            //[HttpPost]
+            //[Route("/Pokemon/SimularBatalla/equipoUsuario/equipoEnemigo")]
+            //public string SimularBatalla(List<PokemonFull> equipoUsuario, List<PokemonFull> equipoEnemigo)
+            //{
+            //    double sumUsuario = equipoUsuario.Sum(pokemon => pokemon.Peso + pokemon.Altura); // Puedes ajustar esto según tus propias reglas
+            //    double sumEnemigo = equipoEnemigo.Sum(pokemon => pokemon.Peso + pokemon.Altura);
+            //    var tipoEnemigo = ObtenerTipoPredominante(equipoEnemigo);
+            //    var tipoUsuario = ObtenerTipoPredominante(equipoUsuario);
+
+
+            //    // Ejemplo simple: el equipo con más Pokémon gana
+            //    if (sumUsuario > sumEnemigo)
+            //    {
+            //        return "¡Has ganado la batalla!";
+            //    }
+            //    else if (sumEnemigo < sumEnemigo)
+            //    {
+            //        return "¡Has perdido la batalla!";
+            //    }
+            //    else
+            //    {
+
+            //        return "¡La batalla ha terminado en empate!";
+            //    }
+            //}
+
+
+
+        }
 
     }
-
-}
 
 
 

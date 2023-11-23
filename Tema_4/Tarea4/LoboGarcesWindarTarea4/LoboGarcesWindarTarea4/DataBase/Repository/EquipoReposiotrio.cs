@@ -1,4 +1,5 @@
 ﻿using LoboGarcesWindarTarea4.DataBase.Modelo;
+using System.Net.NetworkInformation;
 
 namespace LoboGarcesWindarTarea4.DataBase.Repository
 {
@@ -7,15 +8,16 @@ namespace LoboGarcesWindarTarea4.DataBase.Repository
         private const int _maxPokemon = 6;
 
         public static Equipo MiEquipo { get; set; }
+  
 
-        public static (bool Añadido, string Mensaje) AddPokemon(PokemonFull pokemon)
+        public static (bool Añadido, string Mensaje) AddPokemon(Pokemon pokemon)
         {
 
             if (MiEquipo == null)
             {
                 MiEquipo = new Equipo
                 {
-                    Pokemons = new List<PokemonFull>()
+                    Pokemons = new List<Pokemon>()
                 };
             }
 
@@ -33,9 +35,33 @@ namespace LoboGarcesWindarTarea4.DataBase.Repository
 
         }
 
+        public  static  Equipo MiEquipoTodo()
+        {
+            return MiEquipo;
+        }
 
         public static bool IsEquipo { get { return MiEquipo != null; } }
 
+        
+
+        public static Equipo GetRandomEquipo(List<Pokemon> allPokemons)
+        {
+            Equipo EquipoAleatorio = new()
+            {
+                Pokemons = new List<Pokemon>()
+            };
+
+            Random random = new();
+
+            for (int i = 0; i < _maxPokemon; i++)
+            {
+                var index = random.Next(allPokemons.Count);
+                EquipoAleatorio.Pokemons.Add(allPokemons[index]);
+            }
+
+            return EquipoAleatorio;
+        }
     }
+
 }
 

@@ -8,6 +8,6 @@ namespace LoboGarcesWindarTarea4.DataBase.Repository
         Task<PokemonFull> GetPokemonFull(int numero_Pokedex);
         Task<Pokemon> GetPokemonBase(int numero_Pokedex);
         Task<IEnumerable<Tipo>> GetTipos();
-       
+
     }
 }

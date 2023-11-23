@@ -1,10 +1,10 @@
-﻿@model IEnumerable<LoboGarcesWindarTarea4.DataBase.Modelo.PokemonFull>
+﻿@model LoboGarcesWindarTarea4.Models.EquipoViewModel
 
 @{
     ViewData["Title"] = "ListaEquipo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    int cantidad = 0;
+
 }
 
 <h1>ListaEquipo</h1>
@@ -16,25 +16,25 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.PokemonId)
+                PokemonId
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NombrePokemon)
+                NombrePokemon
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Peso)
+                Peso
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Altura)
+                Altura
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AllTipos)
+                AllTipos
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Equipo.Pokemons)
         {
 
             <tr>
@@ -67,14 +67,23 @@
 
 
     </tbody>
+ 
+        <tfoot>
+            <tr>
+                <td colspan="6">
+                    Cantidad de pokemons: @Model.Count <br />
+                    Peso Promedio : @Model.PesoPromedio<br />
+                    Altura promedio : @Model.AturaPromedio<br />
+                    <p>
+                        Tipos predominantes:
 
-    <td colspan="6">
+                        @Model.TipoPromedio
 
-        Cantidad de pokemons: @ViewBag.TotalCantidad <br />
-        Peso Promedio : @ViewBag.PesoPromedio<br />
-        Altura promedio : @ViewBag.MediaDeAltura<br />
-        Tipo predominante : @ViewBag.TipoPredominante
-    </td>
 
+                    </p>
+                </td>
+            </tr>
+        </tfoot>
+    
 
 </table>
