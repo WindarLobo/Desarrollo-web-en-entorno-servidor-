@@ -1,4 +1,4 @@
-﻿@model LoboGarcesWindarTarea4.Models.EquipoViewModel
+﻿@model LoboGarcesWindarTarea4.Models.PokemonViewModel
 
 @{
     ViewData["Title"] = "ListaDePokemon";
@@ -10,17 +10,27 @@
 <form asp-action="FiltrarPokemon" asp-route-numero_Pokedex="@Model.Pokemons.First().PokemonId" method="post">
 
 
-    <label for="textAltura">Altura:</label>
-    <input type="text" id="textAltura" name="Altura" />
-
-    <label for="textPeso">Peso:</label>
-    <input type="text" id="textPeso" name="Peso" />
-
     <select class="form-select" aria-label="Tipo de Pokémon" id="tipoPokemon" name="tipo">
         <option selected>Selecciona un tipo</option>
         @foreach (var tipo in Model.Tipos)
         {
             <option value="@tipo.TipoId">@tipo.TipoNombre</option>
+        }
+    </select>
+
+
+    <select class="form-select" aria-label="Peso de Pokémon" id="pesoPokemon" name="peso">
+        <option selected>Selecciona un peso</option>
+        @foreach (var peso in Model.Pokemons)
+        {
+            <option value="@peso.Peso">@peso.Peso</option>
+        }
+    </select>
+    <select class="form-select" aria-label="Altura de Pokémon" id="alturaPokemon" name="altura">
+        <option selected>Selecciona una altura</option>
+        @foreach (var altura in Model.Pokemons)
+        {
+            <option value="@altura.Altura">@altura.Altura</option>
         }
     </select>
 

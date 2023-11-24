@@ -25,7 +25,7 @@ namespace LoboGarcesWindarTarea4.Controllers
             var tipos = await _pokemonRepository.GetTipos();
 
 
-            var viewModel = new EquipoViewModel
+            var viewModel = new PokemonViewModel
             {
                 Pokemons = pokemons,
                 Tipos = tipos,
@@ -51,7 +51,7 @@ namespace LoboGarcesWindarTarea4.Controllers
             var pokemonesFiltrados = await _pokemonRepository.GetAllPokemon(peso, altura, tipo);
             var tipos = await _pokemonRepository.GetTipos();
 
-            var viewModel = new EquipoViewModel
+            var viewModel = new PokemonViewModel
             {
                 Pokemons = pokemonesFiltrados,
                 Tipos = tipos
@@ -113,7 +113,7 @@ namespace LoboGarcesWindarTarea4.Controllers
                      .Select(grupo => grupo.Key)
                      .FirstOrDefault();
 
-            var viewModel = new EquipoViewModel
+            var viewModel = new PokemonViewModel
             {
                 Equipo = equipo,
                 Count = equipo.Pokemons.Count,
@@ -131,68 +131,63 @@ namespace LoboGarcesWindarTarea4.Controllers
         [Route("/Pokemon/AgregarAlEquipoAleatorio/")]
         public async Task<IActionResult> AgregarAlEquipoAleatorio()
         {
+            EquipoReposiotrio.MiEquipoTodo();
 
-
-            var allPokemon = await _pokemonRepository.GetAllPokemon(null, null, null);
-            var equipo = EquipoReposiotrio.MiEquipoTodo();
-
-            // Agrega un equipo aleatorio
-            equipo = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
             return RedirectToAction("ListaEquipo", new { type = "aleatorio" });
         }
 
 
-            //[Route("/Pokemon/SimularCombate")]
-            //public IActionResult SimularCombate()
-            //{
-            //    // Generar dos equipos aleatorios
-            //    List<PokemonFull> equipoUsuario = GenerarEquipoAleatorioCombate(); 
-            //    List<PokemonFull> equipoEnemigo = GenerarEquipoAleatorioCombate(); 
+        //[Route("/Pokemon/SimularCombate")]
+        //public IActionResult SimularCombate()
+        //{
+        //    // Generar dos equipos aleatorios
+        //    List<PokemonFull> equipoUsuario = GenerarEquipoAleatorioCombate(); 
+        //    List<PokemonFull> equipoEnemigo = GenerarEquipoAleatorioCombate(); 
 
-            //    // Realizar la simulación del combate
-            //    string resultadoCombate = SimularBatalla(equipoUsuario, equipoEnemigo);
-            //    var viewModel = new SimularCombateViewModel
-            //    {
-            //        EquipoUsuario = equipoUsuario,
-            //        EquipoEnemigo = equipoEnemigo,
-            //        ResultadoCombate = resultadoCombate
-            //    };
+        //    // Realizar la simulación del combate
+        //    string resultadoCombate = SimularBatalla(equipoUsuario, equipoEnemigo);
+        //    var viewModel = new SimularCombateViewModel
+        //    {
+        //        EquipoUsuario = equipoUsuario,
+        //        EquipoEnemigo = equipoEnemigo,
+        //        ResultadoCombate = resultadoCombate
+        //    };
 
-            //    // Puedes hacer algo con el resultado, como mostrarlo en la vista
-            //    ViewBag.ResultadoCombate = resultadoCombate;
+        //    // Puedes hacer algo con el resultado, como mostrarlo en la vista
+        //    ViewBag.ResultadoCombate = resultadoCombate;
 
-            //    return View("SimularCombate", viewModel);
-            //}
+        //    return View("SimularCombate", viewModel);
+        //}
 
-            //[HttpPost]
-            //[Route("/Pokemon/SimularBatalla/equipoUsuario/equipoEnemigo")]
-            //public string SimularBatalla(List<PokemonFull> equipoUsuario, List<PokemonFull> equipoEnemigo)
-            //{
-            //    double sumUsuario = equipoUsuario.Sum(pokemon => pokemon.Peso + pokemon.Altura); // Puedes ajustar esto según tus propias reglas
-            //    double sumEnemigo = equipoEnemigo.Sum(pokemon => pokemon.Peso + pokemon.Altura);
-            //    var tipoEnemigo = ObtenerTipoPredominante(equipoEnemigo);
-            //    var tipoUsuario = ObtenerTipoPredominante(equipoUsuario);
-
-
-            //    // Ejemplo simple: el equipo con más Pokémon gana
-            //    if (sumUsuario > sumEnemigo)
-            //    {
-            //        return "¡Has ganado la batalla!";
-            //    }
-            //    else if (sumEnemigo < sumEnemigo)
-            //    {
-            //        return "¡Has perdido la batalla!";
-            //    }
-            //    else
-            //    {
-
-            //        return "¡La batalla ha terminado en empate!";
-            //    }
-            //}
+        //[HttpPost]
+        //[Route("/Pokemon/SimularBatalla/equipoUsuario/equipoEnemigo")]
+        //public string SimularBatalla(List<PokemonFull> equipoUsuario, List<PokemonFull> equipoEnemigo)
+        //{
+        //    double sumUsuario = equipoUsuario.Sum(pokemon => pokemon.Peso + pokemon.Altura); // Puedes ajustar esto según tus propias reglas
+        //    double sumEnemigo = equipoEnemigo.Sum(pokemon => pokemon.Peso + pokemon.Altura);
+        //    var tipoEnemigo = ObtenerTipoPredominante(equipoEnemigo);
+        //    var tipoUsuario = ObtenerTipoPredominante(equipoUsuario);
 
 
+        //    // Ejemplo simple: el equipo con más Pokémon gana
+        //    if (sumUsuario > sumEnemigo)
+        //    {
+        //        return "¡Has ganado la batalla!";
+        //    }
+        //    else if (sumEnemigo < sumEnemigo)
+        //    {
+        //        return "¡Has perdido la batalla!";
+        //    }
+        //    else
+        //    {
 
-        }
+        //        return "¡La batalla ha terminado en empate!";
+        //    }
+        //}
+
+
+
+    }
 
     }
 

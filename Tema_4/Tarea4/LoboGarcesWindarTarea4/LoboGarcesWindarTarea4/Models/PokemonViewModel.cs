@@ -2,7 +2,7 @@
 
 namespace LoboGarcesWindarTarea4.Models
 {
-    public class EquipoViewModel
+    public class PokemonViewModel
     {
         public IEnumerable<Pokemon> Pokemons { get; set; }
         public IEnumerable<Pokemon> PokemonsBase { get; set; }
