@@ -2,7 +2,7 @@
 using LoboGarcesWindarTarea4.DataBase.Repository;
 using LoboGarcesWindarTarea4.Models;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Text;
 
 namespace LoboGarcesWindarTarea4.Controllers
 {
@@ -80,7 +80,7 @@ namespace LoboGarcesWindarTarea4.Controllers
             if (añadido.Añadido)
             {
                 // Redirige de vuelta a la página de detalles del Pokémon
-
+               
                 TempData["MensajeExito"] = añadido.Mensaje;
 
                 return RedirectToAction("ListaDePokemon", new { numero_Pokedex });
@@ -90,6 +90,7 @@ namespace LoboGarcesWindarTarea4.Controllers
                 // Informa al usuario que ya ha alcanzado el límite de Pokémon en su equipo
 
                 TempData["MensajeError"] = añadido.Mensaje;
+
 
                 return RedirectToAction("ListaDePokemon", new { numero_Pokedex });
             }
@@ -140,12 +141,80 @@ namespace LoboGarcesWindarTarea4.Controllers
                 TipoPromedio = tipoPredominante,
 
             };
+
+          
+
             return View(viewModel);
         }
 
+        [Route("/Pokemon/LucharConMiEquipo/")]
+        public async Task<IActionResult> LucharConMiEquipo()
+        {
+            var allPokemon = await _pokemonRepository.GetAllPokemon(null, null, null);
+
+            // Obtener tu equipo actual
+            var miEquipo = EquipoReposiotrio.MiEquipoTodo();
+
+            // Generar un equipo aleatorio
+            var equipoAleatorio = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+            // Verificar si el equipo aleatorio ya tiene el tamaño deseado
+            while (miEquipo.Pokemons.Count < miEquipo.Pokemons.Count)
+            {
+                // Agregar más Pokémon aleatorios al equipo aleatorio
+                var pokemonAleatorio = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+                equipoAleatorio.Pokemons.Add(pokemonAleatorio.Pokemons.First());
+            }
+
+            // Realizar la batalla entre los dos equipos
+            var resultadoBatalla = CombateRepository.RealizarCombate(miEquipo, equipoAleatorio);
+
+            // Crear y retornar un modelo para la vista
+            var viewModel = new SimularCombateViewModel
+            {
+                EquipoRandom = equipoAleatorio,
+                MiEquipo = miEquipo,
+                ResultadoBatalla = resultadoBatalla
+            };
+
+            return View(viewModel);
+        }
+
+       
+        [Route("/Pokemon/CombateConEquipoAleatorio/")]
+        public async Task<IActionResult> CombateConEquipoAleatorio()
+        {
+            var allPokemon = await _pokemonRepository.GetAllPokemon(null, null, null);
+
+            // Lógica para obtener los equipos y el resultado de la batalla
+            var equipoRandom1 = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+            var equipoRandom2 = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+
+            var resultadoBatalla = CombateRepository.RealizarCombate(equipoRandom1, equipoRandom2);
+
+            // Crear y retornar un modelo para la vista
+            var viewModel = new SimularCombateViewModel
+            {
+                EquipoRandom1 = equipoRandom1,
+                EquipoRandom2 = equipoRandom2,
+                ResultadoBatalla = resultadoBatalla
+            };
+
+            return View(viewModel);
+        }
+
+
+     
+
+  
+
+        
     }
 
+
+
 }
+
+
 
 
 

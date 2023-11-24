@@ -7,6 +7,7 @@
         public string NombrePokemon { get; set; }
         public double Peso { get; set; }
         public double Altura { get; set; }
+        public bool Añadido { get; set; }
         public List<Tipo> Tipos { get; set; }
         public string AllTipos
         {

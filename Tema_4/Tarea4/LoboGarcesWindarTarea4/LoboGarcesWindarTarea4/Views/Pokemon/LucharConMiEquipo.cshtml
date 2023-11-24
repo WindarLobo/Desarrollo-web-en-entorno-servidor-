@@ -1,16 +1,17 @@
 ﻿@model LoboGarcesWindarTarea4.Models.SimularCombateViewModel
 
 @{
-    ViewData["Title"] = "CombateConEquipoAleatorio";
+    ViewData["Title"] = "LucharConMiEquipo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Simulación de Combate Pokémon Aleatorio</h2>
+<h1>LucharCon mi equipo</h1>
+
 
 <div>
-    <h3>Equipo 1</h3>
-    <!-- Mostrar detalles del Equipo 1 -->
-    @foreach (var pokemon in Model.EquipoRandom1.Pokemons)
+    <h3>Mi equipo</h3>
+    <!-- Mostrar detalles mi equipo -->
+    @foreach (var pokemon in Model.MiEquipo.Pokemons)
     {
         <div>
             <p>@pokemon.NombrePokemon</p>
@@ -20,9 +21,9 @@
 </div>
 
 <div>
-    <h3>Equipo 2</h3>
-    <!-- Mostrar detalles del Equipo 2 -->
-    @foreach (var pokemon in Model.EquipoRandom2.Pokemons)
+    <h3>Mi enemigo</h3>
+    <!-- Mostrar detalles del Equipo enemigo -->
+    @foreach (var pokemon in Model.EquipoRandom.Pokemons)
     {
         <div>
             <p>@pokemon.NombrePokemon</p>

@@ -15,7 +15,7 @@ namespace LoboGarcesWindarTarea4.DataBase.Repository
 
             if (MiEquipo.Pokemons.Count == _maxPokemon)
             {
-                return (false, "¡Tu equipo ya tiene 6 Pokémon!");
+                return (false, "¡Tu equipo ya tiene 6 Pokémon!" );
 
             }
 
@@ -48,6 +48,8 @@ namespace LoboGarcesWindarTarea4.DataBase.Repository
 
             return EquipoAleatorio;
         }
+
+    
     }
 
 }
