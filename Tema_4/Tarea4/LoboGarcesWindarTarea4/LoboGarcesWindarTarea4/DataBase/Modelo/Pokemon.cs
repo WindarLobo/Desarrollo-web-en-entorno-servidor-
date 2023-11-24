@@ -16,6 +16,8 @@
                 return string.Join(", ", Tipos);
             }
         }
+
+        public string Imagen { get { return "https://pokefanaticos.com/pokedex/assets/images/pokemon_iconos/" + PokemonId + ".png"; } }
     }
 
     public class PokemonFull : Pokemon

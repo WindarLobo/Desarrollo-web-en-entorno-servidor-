@@ -39,7 +39,7 @@ namespace LoboGarcesWindarTarea4.DataBase.Modelo
 
 
         private static  bool EsTipoFuerte(Tipo tipo1, Tipo tipo2)
-        {
+        { //linQ
             // Lógica para determinar si tipo1 es fuerte contra tipo2
             // Implementa según tus reglas específicas
             return tipo1.TipoNombre switch

@@ -54,6 +54,10 @@
     <thead>
         <tr>
             <th>
+                Imagen
+            </th>
+
+            <th>
                 PokemonId
             </th>
             <th>
@@ -75,10 +79,13 @@
         </tr>
     </thead>
     <tbody>
-    
+
         @foreach (var item in Model.Pokemons)
         {
             <tr>
+                <td>
+                    <img src="@item.Imagen" />
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.PokemonId)
                 </td>
@@ -97,23 +104,23 @@
                 <td>
                     @Html.ActionLink("Detalle", "Detalle", new { numero_Pokedex = item.PokemonId  })
                 </td>
-               
+
 
                 <td>
-                            <form asp-action="AgregarAlEquipo" asp-route-numero_Pokedex="@item.PokemonId" method="post">
+                    <form asp-action="AgregarAlEquipo" asp-route-numero_Pokedex="@item.PokemonId" method="post">
 
 
-                                <button type="submit">Añadir a Mi Equipo</button>
-                       
-                            </form>
+                        <button type="submit">Añadir a Mi Equipo</button>
 
-                        </td>
-                
-                    </tr>
-                    }
-                        
-            </tbody>
-        </table>
+                    </form>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
 
 <script>
     // Agrega un script para ocultar los mensajes después de un segundo
