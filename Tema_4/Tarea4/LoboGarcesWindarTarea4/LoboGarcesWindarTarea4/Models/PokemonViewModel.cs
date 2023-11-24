@@ -8,6 +8,7 @@ namespace LoboGarcesWindarTarea4.Models
         public IEnumerable<Pokemon> PokemonsBase { get; set; }
         public IEnumerable<Tipo> Tipos { get; set; }
         public Equipo Equipo { get; set; }
+        public Tipo Tipo { get; set; }
         public string TipoPromedio { get; set; }
         public int Count { get; set; }
         public double PesoPromedio { get; set; }

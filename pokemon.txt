@@ -1,0 +1,111 @@
+
+        //[Route("/Pokemon/CombateConEquipoAleatorio/")]
+        //public async Task<IActionResult> CombateConEquipoAleatorio()
+        //{
+        //    var allPokemon = await _pokemonRepository.GetAllPokemon(null, null, null);
+
+        //    // Lógica para obtener los equipos y el resultado de la batalla
+        //    var equipoRandom1 = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+        //    var equipoRandom2 = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+
+        //    var resultadoBatalla = RealizarCombate(equipoRandom1, equipoRandom2);
+
+        //    // Crear y retornar un modelo para la vista
+        //    var viewModel = new SimularCombateViewModel
+        //    {
+        //        EquipoRandom1 = equipoRandom1,
+        //        EquipoRandom2 = equipoRandom2,
+        //        ResultadoBatalla = resultadoBatalla
+        //    };
+
+        //    return View(viewModel);
+        //}
+      
+        
+
+        //private string RealizarCombate(Equipo equipo1, Equipo equipo2)
+        //{
+
+        //    var resultadoCombate = new StringBuilder();
+
+        //    int cantidadPokemons = Math.Min(equipo1.Pokemons.Count, equipo2.Pokemons.Count);
+
+        //    for (int i = 0; i < cantidadPokemons; i++)
+        //    {
+        //        var pokemon1 = equipo1.Pokemons[i];
+        //        var pokemon2 = equipo2.Pokemons[i];
+
+        //        resultadoCombate.AppendLine($"Combate {i + 1}: {pokemon1.NombrePokemon} VS {pokemon2.NombrePokemon}");
+
+        //        var ganador = DeterminarGanadorCombate(pokemon1, pokemon2);
+
+        //        resultadoCombate.AppendLine($"Ganador: {ganador}");
+        //        resultadoCombate.AppendLine();
+        //    }
+
+        //    return resultadoCombate.ToString();
+        //}
+
+
+
+        //private string DeterminarGanadorCombate(Pokemon pokemon1, Pokemon pokemon2)
+        //{
+        //    // Lógica de combate: Regla general - el tipo más fuerte gana
+        //    var tipoGanador = CompararTipos(pokemon1.Tipos, pokemon2.Tipos);
+
+        //    if (tipoGanador != null)
+        //        return $"{tipoGanador} es más fuerte";
+
+        //    // En caso de empate en tipos, se mide por orden de peso y altura
+        //    if (pokemon1.Peso > pokemon2.Peso)
+        //        return $"{pokemon1.NombrePokemon} gana por peso";
+
+        //    if (pokemon1.Peso < pokemon2.Peso)
+        //        return $"{pokemon2.NombrePokemon} gana por peso";
+
+        //    if (pokemon1.Altura > pokemon2.Altura)
+        //        return $"{pokemon1.NombrePokemon} gana por altura";
+
+        //    if (pokemon1.Altura < pokemon2.Altura)
+        //        return $"{pokemon2.NombrePokemon} gana por altura";
+
+        //    // Si todo falla, es un empate
+        //    return "Empate";
+        //}
+
+        //private string CompararTipos(List<Tipo> tipos1, List<Tipo> tipos2)
+        //{
+        //    foreach (var tipo1 in tipos1)
+        //    {
+        //        foreach (var tipo2 in tipos2)
+        //        {
+        //            // Lógica de comparación de tipos
+        //            // Implementa según tus reglas específicas
+
+        //            if (EsTipoFuerte(tipo1, tipo2))
+        //            {
+        //                return tipo1.TipoNombre;
+        //            }
+        //            else if (EsTipoFuerte(tipo2, tipo1))
+        //            {
+        //                return tipo2.TipoNombre;
+        //            }
+        //        }
+        //    }
+
+        //    return null; // En caso de empate o tipos no comparables
+        //}
+
+        //private bool EsTipoFuerte(Tipo tipo1, Tipo tipo2)
+        //{
+        //    // Lógica para determinar si tipo1 es fuerte contra tipo2
+        //    // Implementa según tus reglas específicas
+        //    return tipo1.TipoNombre switch
+        //    {
+        //        "Fuego" => tipo2.TipoNombre == "Planta",
+        //        "Agua" => tipo2.TipoNombre == "Fuego",
+        //        "Planta" => tipo2.TipoNombre == "Agua",
+        //        // Agrega más casos según tus reglas
+        //        _=> false,
+        //    };
+        //}

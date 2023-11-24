@@ -6,6 +6,9 @@ namespace LoboGarcesWindarTarea4.Models
     {
         public List<PokemonFull> EquipoUsuario { get; set; }
         public List<PokemonFull> EquipoEnemigo { get; set; }
-        public string ResultadoCombate { get; set; }
+       
+        public Equipo EquipoRandom1 { get; set; }
+        public Equipo EquipoRandom2 { get; set; }
+        public string  ResultadoBatalla { get; set; }
     }
 }

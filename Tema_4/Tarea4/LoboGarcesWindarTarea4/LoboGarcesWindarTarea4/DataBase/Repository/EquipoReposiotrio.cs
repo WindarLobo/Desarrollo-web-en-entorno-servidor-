@@ -7,20 +7,11 @@ namespace LoboGarcesWindarTarea4.DataBase.Repository
     {
         private const int _maxPokemon = 6;
 
-        public static Equipo MiEquipo { get; set; }
+        public static Equipo MiEquipo { get; set; } = new Equipo() { Pokemons = new List<Pokemon>()};
   
 
         public static (bool Añadido, string Mensaje) AddPokemon(Pokemon pokemon)
         {
-
-            if (MiEquipo == null)
-            {
-                MiEquipo = new Equipo
-                {
-                    Pokemons = new List<Pokemon>()
-                };
-            }
-
 
             if (MiEquipo.Pokemons.Count == _maxPokemon)
             {
@@ -39,10 +30,6 @@ namespace LoboGarcesWindarTarea4.DataBase.Repository
         {
             return MiEquipo;
         }
-
-        public static bool IsEquipo { get { return MiEquipo != null; } }
-
-        
 
         public static Equipo GetRandomEquipo(List<Pokemon> allPokemons)
         {
