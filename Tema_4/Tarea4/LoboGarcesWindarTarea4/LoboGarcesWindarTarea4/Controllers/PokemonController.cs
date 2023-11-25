@@ -156,7 +156,7 @@ namespace LoboGarcesWindarTarea4.Controllers
             var miEquipo = EquipoReposiotrio.MiEquipoTodo();
 
             // Generar un equipo aleatorio
-            var equipoAleatorio = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+            var equipoAleatorio = EquipoReposiotrio.GetRandomMiEquipo(allPokemon.ToList());
             // Verificar si el equipo aleatorio ya tiene el tamaño deseado
             while (miEquipo.Pokemons.Count < miEquipo.Pokemons.Count)
             {
@@ -202,12 +202,7 @@ namespace LoboGarcesWindarTarea4.Controllers
             return View(viewModel);
         }
 
-
-     
-
-  
-
-        
+ 
     }
 
 

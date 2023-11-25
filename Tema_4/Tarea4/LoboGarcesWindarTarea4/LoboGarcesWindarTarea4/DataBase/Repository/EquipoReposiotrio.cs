@@ -49,7 +49,25 @@ namespace LoboGarcesWindarTarea4.DataBase.Repository
             return EquipoAleatorio;
         }
 
-    
+        public static Equipo GetRandomMiEquipo(List<Pokemon> allPokemons)
+        {
+            Equipo EquipoAleatorio = new()
+            {
+                Pokemons = new List<Pokemon>()
+            };
+
+            Random random = new();
+
+            for (int i = 0; i < MiEquipo.Pokemons.Count; i++)
+            {
+                var index = random.Next(allPokemons.Count);
+                EquipoAleatorio.Pokemons.Add(allPokemons[index]);
+            }
+
+            return EquipoAleatorio;
+        }
+
+      
     }
 
 }

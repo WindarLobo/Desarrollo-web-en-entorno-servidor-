@@ -1,4 +1,9 @@
-﻿namespace LoboGarcesWindarTarea4.DataBase.Modelo
+﻿using System;
+using System.Drawing;
+using System.Net;
+using System.Security.Policy;
+
+namespace LoboGarcesWindarTarea4.DataBase.Modelo
 {
 
     public class Pokemon
@@ -9,6 +14,11 @@
         public double Altura { get; set; }
         public bool Añadido { get; set; }
         public List<Tipo> Tipos { get; set; }
+
+      
+
+
+
         public string AllTipos
         {
             get
@@ -17,9 +27,21 @@
             }
         }
 
-        public string Imagen { get { return "https://pokefanaticos.com/pokedex/assets/images/pokemon_iconos/" + PokemonId + ".png"; } }
+
+          public string img { get { return "https://pokefanaticos.com/pokedex/assets/images/pokemon_iconos/" + PokemonId + ".png"; } }
+
+       
+
+        public static void DescargarImagen(string img)
+        {
+            using (WebClient client = new WebClient())
+            {
+                client.DownloadFile(new Uri(img), @"C:\imagenesPokemon");
+            }
+        }
     }
 
+   
     public class PokemonFull : Pokemon
     {
 
@@ -29,4 +51,8 @@
         public IEnumerable<DetalleEvoluciones> FlujoEvolucion { get; set; }
         public IEnumerable<DetalleEvoluciones> FlujoInvolucion { get; set; }
     }
+
+    
+
+
 }

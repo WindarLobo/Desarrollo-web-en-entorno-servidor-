@@ -1,6 +1,8 @@
 
 using LoboGarcesWindarTarea4.DataBase;
+using LoboGarcesWindarTarea4.DataBase.Modelo;
 using LoboGarcesWindarTarea4.DataBase.Repository;
+using System.Drawing;
 
 namespace LoboGarcesWindarTarea4
 {
@@ -8,8 +10,9 @@ namespace LoboGarcesWindarTarea4
     {
         public static void Main(string[] args)
         {
-
-            var builder = WebApplication.CreateBuilder(args);
+           
+           
+          var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -41,4 +44,5 @@ namespace LoboGarcesWindarTarea4
             app.Run();
         }
     }
+
 }
