@@ -162,24 +162,26 @@ namespace LoboGarcesWindarTarea4.Controllers
             {
                 // Agregar más Pokémon aleatorios al equipo aleatorio
                 var pokemonAleatorio = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+
                 equipoAleatorio.Pokemons.Add(pokemonAleatorio.Pokemons.First());
             }
 
             // Realizar la batalla entre los dos equipos
-            var resultadoBatalla = CombateRepository.RealizarCombate(miEquipo, equipoAleatorio);
+            var resultadoBatalla = Combate.RealizarCombate(miEquipo, equipoAleatorio);
 
             // Crear y retornar un modelo para la vista
-            var viewModel = new SimularCombateViewModel
+            var combate = new SimularCombateViewModel
             {
-                EquipoRandom = equipoAleatorio,
-                MiEquipo = miEquipo,
+                Equipo1 = equipoAleatorio,
+
+                Equipo2 = miEquipo,
+
                 ResultadoBatalla = resultadoBatalla
             };
 
-            return View(viewModel);
+            return View(combate);
         }
 
-       
         [Route("/Pokemon/CombateConEquipoAleatorio/")]
         public async Task<IActionResult> CombateConEquipoAleatorio()
         {
@@ -187,19 +189,23 @@ namespace LoboGarcesWindarTarea4.Controllers
 
             // Lógica para obtener los equipos y el resultado de la batalla
             var equipoRandom1 = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+
             var equipoRandom2 = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
 
-            var resultadoBatalla = CombateRepository.RealizarCombate(equipoRandom1, equipoRandom2);
+            var resultadoBatalla = Combate.RealizarCombate(equipoRandom1, equipoRandom2);
 
             // Crear y retornar un modelo para la vista
-            var viewModel = new SimularCombateViewModel
+            var combate = new SimularCombateViewModel
             {
-                EquipoRandom1 = equipoRandom1,
-                EquipoRandom2 = equipoRandom2,
+                Equipo1 = equipoRandom1,
+
+                Equipo2 = equipoRandom2,
+
                 ResultadoBatalla = resultadoBatalla
+
             };
 
-            return View(viewModel);
+            return View(combate);
         }
 
  

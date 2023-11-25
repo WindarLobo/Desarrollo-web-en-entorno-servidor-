@@ -15,10 +15,6 @@ namespace LoboGarcesWindarTarea4.DataBase.Modelo
         public bool Añadido { get; set; }
         public List<Tipo> Tipos { get; set; }
 
-      
-
-
-
         public string AllTipos
         {
             get
@@ -27,10 +23,6 @@ namespace LoboGarcesWindarTarea4.DataBase.Modelo
             }
         }
 
-
-          public string img { get { return "https://pokefanaticos.com/pokedex/assets/images/pokemon_iconos/" + PokemonId + ".png"; } }
-
-       
 
         public static void DescargarImagen(string img)
         {

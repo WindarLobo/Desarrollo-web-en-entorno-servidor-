@@ -1,12 +1,12 @@
 ﻿using LoboGarcesWindarTarea4.DataBase.Modelo;
 using System.Text;
 
-namespace LoboGarcesWindarTarea4.DataBase.Repository
+namespace LoboGarcesWindarTarea4.Models
 {
-    public class CombateRepository
+    public class Combate
     {
 
-        public static  string RealizarCombate(Equipo equipo1, Equipo equipo2)
+        public static string RealizarCombate(Equipo equipo1, Equipo equipo2)
         {
 
             var resultadoCombate = new StringBuilder();
@@ -32,7 +32,7 @@ namespace LoboGarcesWindarTarea4.DataBase.Repository
         private static string DeterminarGanadorCombate(Pokemon pokemon1, Pokemon pokemon2)
         {
             // Lógica de combate: Regla general - el tipo más fuerte gana
-            var tipoGanador = Tipo.CompararTipos(pokemon1.Tipos, pokemon2.Tipos);
+            var tipoGanador =  CompararTipoFuerte.CompararTipos(pokemon1.Tipos, pokemon2.Tipos);
 
             if (tipoGanador != null)
                 return $"{pokemon1.NombrePokemon} {tipoGanador} es más fuerte";

@@ -11,7 +11,7 @@
 <div>
     <h3>Mi equipo</h3>
     <!-- Mostrar detalles mi equipo -->
-    @foreach (var pokemon in Model.MiEquipo.Pokemons)
+    @foreach (var pokemon in Model.Equipo1.Pokemons)
     {
         <div>
             <p>@pokemon.NombrePokemon</p>
@@ -23,7 +23,7 @@
 <div>
     <h3>Mi enemigo</h3>
     <!-- Mostrar detalles del Equipo enemigo -->
-    @foreach (var pokemon in Model.EquipoRandom.Pokemons)
+    @foreach (var pokemon in Model.Equipo2.Pokemons)
     {
         <div>
             <p>@pokemon.NombrePokemon</p>
