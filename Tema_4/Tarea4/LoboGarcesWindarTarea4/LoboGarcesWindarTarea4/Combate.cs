@@ -16,6 +16,7 @@ namespace LoboGarcesWindarTarea4.Models
             for (int i = 0; i < cantidadPokemons; i++)
             {
                 var pokemon1 = equipo1.Pokemons[i];
+
                 var pokemon2 = equipo2.Pokemons[i];
 
                 resultadoCombate.AppendLine($"Combate {i + 1}: {pokemon1.NombrePokemon} VS {pokemon2.NombrePokemon}");
@@ -23,6 +24,7 @@ namespace LoboGarcesWindarTarea4.Models
                 var ganador = DeterminarGanadorCombate(pokemon1, pokemon2);
 
                 resultadoCombate.AppendLine($"Ganador: {ganador}");
+
                 resultadoCombate.AppendLine();
             }
 

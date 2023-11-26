@@ -106,7 +106,7 @@ namespace LoboGarcesWindarTarea4.Controllers
 
                 var allPokemon = await _pokemonRepository.GetAllPokemon(null, null, null);
 
-                equipo = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+                equipo = EquipoReposiotrio.GetRandomMiEquipo(allPokemon.ToList());
 
             }
 
@@ -156,20 +156,23 @@ namespace LoboGarcesWindarTarea4.Controllers
             var miEquipo = EquipoReposiotrio.MiEquipoTodo();
 
             // Generar un equipo aleatorio
-            var equipoAleatorio = EquipoReposiotrio.GetRandomMiEquipo(allPokemon.ToList());
+            var equipoAleatorio = EquipoReposiotrio.GetRandomMiEquipo(allPokemon.ToList(), miEquipo.Pokemons.Count);
+
             // Verificar si el equipo aleatorio ya tiene el tamaño deseado
             while (miEquipo.Pokemons.Count < miEquipo.Pokemons.Count)
             {
                 // Agregar más Pokémon aleatorios al equipo aleatorio
-                var pokemonAleatorio = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+                var pokemonAleatorio = EquipoReposiotrio.GetRandomMiEquipo(allPokemon.ToList());
 
                 equipoAleatorio.Pokemons.Add(pokemonAleatorio.Pokemons.First());
             }
 
             // Realizar la batalla entre los dos equipos
+
             var resultadoBatalla = Combate.RealizarCombate(miEquipo, equipoAleatorio);
 
             // Crear y retornar un modelo para la vista
+
             var combate = new SimularCombateViewModel
             {
                 Equipo1 = equipoAleatorio,
@@ -188,9 +191,9 @@ namespace LoboGarcesWindarTarea4.Controllers
             var allPokemon = await _pokemonRepository.GetAllPokemon(null, null, null);
 
             // Lógica para obtener los equipos y el resultado de la batalla
-            var equipoRandom1 = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+            var equipoRandom1 = EquipoReposiotrio.GetRandomMiEquipo(allPokemon.ToList());
 
-            var equipoRandom2 = EquipoReposiotrio.GetRandomEquipo(allPokemon.ToList());
+            var equipoRandom2 = EquipoReposiotrio.GetRandomMiEquipo(allPokemon.ToList());
 
             var resultadoBatalla = Combate.RealizarCombate(equipoRandom1, equipoRandom2);
 

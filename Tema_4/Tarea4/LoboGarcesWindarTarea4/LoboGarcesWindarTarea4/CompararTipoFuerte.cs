@@ -38,18 +38,31 @@ namespace LoboGarcesWindarTarea4
             return tipo1.TipoNombre switch
             {
                 "Fuego" => tipo2.TipoNombre == "Planta",
+
                 "Agua" => tipo2.TipoNombre == "Fuego",
+
                 "Planta" => tipo2.TipoNombre == "Agua",
+
                 "Electrico" => tipo2.TipoNombre == "Agua" || tipo2.TipoNombre == "Volador",
+
                 "Hielo" => tipo2.TipoNombre == "Planta" || tipo2.TipoNombre == "Tierra",
+
                 "Volador" => tipo2.TipoNombre == "Planta" || tipo2.TipoNombre == "Lucha" || tipo2.TipoNombre == "Bicho",
+
                 "Tierra" => tipo2.TipoNombre == "Fuego" || tipo2.TipoNombre == "Eléctrico",
+
                 "Lucha" => tipo2.TipoNombre == "Normal" || tipo2.TipoNombre == "Hielo" || tipo2.TipoNombre == "Roca" || tipo2.TipoNombre == "Acero" || tipo2.TipoNombre == "Siniestro",
+
                 "Veneno" => tipo2.TipoNombre == "Planta",
+
                 "Roca" => tipo2.TipoNombre == "Fuego" || tipo2.TipoNombre == "Hielo" || tipo2.TipoNombre == "Volador" || tipo2.TipoNombre == "Bicho",
+
                 "Bicho" => tipo2.TipoNombre == "Psíquico" || tipo2.TipoNombre == "Siniestro" || tipo2.TipoNombre == "Planta",
+
                 "Fantasma" => tipo2.TipoNombre == "Psíquico" || tipo2.TipoNombre == "Fantasma",
+
                 "Acero" => tipo2.TipoNombre == "Hielo" || tipo2.TipoNombre == "Roca" || tipo2.TipoNombre == "Hada",
+
                 _ => false,
             };
         }

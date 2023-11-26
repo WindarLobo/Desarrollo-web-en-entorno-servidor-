@@ -31,7 +31,7 @@ namespace LoboGarcesWindarTarea4.DataBase.Repository
             return MiEquipo;
         }
 
-        public static Equipo GetRandomEquipo(List<Pokemon> allPokemons)
+        public static Equipo GetRandomMiEquipo(List<Pokemon> allPokemons, int? numeroPokemon = null)
         {
             Equipo EquipoAleatorio = new()
             {
@@ -40,27 +40,12 @@ namespace LoboGarcesWindarTarea4.DataBase.Repository
 
             Random random = new();
 
-            for (int i = 0; i < _maxPokemon; i++)
+            var maximo = numeroPokemon ?? _maxPokemon;
+
+            for (int i = 0; i < maximo; i++)
             {
                 var index = random.Next(allPokemons.Count);
-                EquipoAleatorio.Pokemons.Add(allPokemons[index]);
-            }
 
-            return EquipoAleatorio;
-        }
-
-        public static Equipo GetRandomMiEquipo(List<Pokemon> allPokemons)
-        {
-            Equipo EquipoAleatorio = new()
-            {
-                Pokemons = new List<Pokemon>()
-            };
-
-            Random random = new();
-
-            for (int i = 0; i < MiEquipo.Pokemons.Count; i++)
-            {
-                var index = random.Next(allPokemons.Count);
                 EquipoAleatorio.Pokemons.Add(allPokemons[index]);
             }
 
