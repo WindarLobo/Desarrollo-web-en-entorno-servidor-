@@ -14,7 +14,7 @@ namespace LoboGarcesWindarTarea4.DataBase.Modelo
         public double Altura { get; set; }
         public bool Añadido { get; set; }
         public List<Tipo> Tipos { get; set; }
-
+        public string Imagen { get; set; }
         public string AllTipos
         {
             get
@@ -23,14 +23,6 @@ namespace LoboGarcesWindarTarea4.DataBase.Modelo
             }
         }
 
-
-        public static void DescargarImagen(string img)
-        {
-            using (WebClient client = new WebClient())
-            {
-                client.DownloadFile(new Uri(img), @"C:\imagenesPokemon");
-            }
-        }
     }
 
    

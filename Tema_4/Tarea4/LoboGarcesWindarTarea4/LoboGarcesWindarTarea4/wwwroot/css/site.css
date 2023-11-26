@@ -1,16 +1,23 @@
-html {
-  font-size: 14px;
+span {
+    margin-right: 50px; /* Ajusta el margen según tus necesidades */
+   
+}
+.Text, .Text2 {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.pokemon-number {
+        display: inline-block;
+    }
 
+.table1 {
+    background-color: #E08F8F;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+.material-symbols-outlined {
+    margin-top: 100px;
+    align-self: flex-start;
 }
 

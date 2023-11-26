@@ -3,7 +3,12 @@
     width: 110%;
 }
 
-.imag2{
-    margin-top:-80px;
+.imag2 {
+    margin-top: -90px;
+    background-size: cover;
+
 }
 
+.container{
+    margin-top: 6rem !important;
+}
