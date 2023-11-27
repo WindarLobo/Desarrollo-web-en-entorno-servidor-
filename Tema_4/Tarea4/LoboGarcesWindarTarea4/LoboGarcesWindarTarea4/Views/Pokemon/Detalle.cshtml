@@ -11,12 +11,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 }
 <div class="container-fluid">
-
+   
+        <div class="col-md-2">
+            <form action="@Url.Action("ListaDePokemon","Pokemon")" method="get">
+            <button type="submit" class="btn btn-outline-primary">Ir a la lista</button>
+            </form>
+      
+        </div>
     <div class="container text-center mt-5">
-        <span>
-
+           
+                <span>
+               
             @Html.DisplayFor(model => model.NombrePokemon)
-
+            
         </span>
 
         <span class="pokemon-number">N.º&nbsp; @Html.DisplayFor(model => model.PokemonId)</span>
@@ -34,7 +41,7 @@
             <img src="@rutaImagen" style="width: 70%" />
         </div>
         <div class="col-md-3 mt-5">
-            <table class="table1 table table-borderless  text-center  ms-8  ">
+            <table class="ColorTablaDetalle table table-borderless  text-center  ms-8  ">
                 <thead>
                     <tr>
                         <th>
@@ -48,10 +55,24 @@
                 <tbody>
                     <tr>
                         <td>
-                            @Html.DisplayFor(model => model.Altura)
+
+                            <p>@Html.DisplayFor(model => model.Altura) m</p>
+
                         </td>
                         <td>
-                            @Html.DisplayFor(model => model.Evoluciones.First().Nivel)
+
+                            @if (Model.Evoluciones.First().Nivel != null && Model.Evoluciones.First().Nivel.Any())
+                            {
+
+                                @Html.DisplayFor(model =>model.Evoluciones.First().Nivel)
+
+
+                            }
+                            else
+                            {
+                                <p>No tiene Nivel </p>
+                            }
+                            
                         </td>
                     </tr>
                 </tbody>
@@ -68,7 +89,7 @@
                 <tbody>
                     <tr>
                         <td>
-                            @Html.DisplayFor(model => model.Peso)
+                            <p>@Html.DisplayFor(model => model.Peso) Kg</p>
                         </td>
                         <td>
                             @if (Model.Evoluciones.First().Piedra != null && Model.Evoluciones.First().Piedra.Any())
@@ -106,9 +127,7 @@
                 </tbody>
             </table>
 
-
-
-            <div class="row gx-5 text-center">
+            <div class="row gx-5 ">
                 <h3>Tipo</h3>
                 @foreach (var tipo in Model.Tipos)
                 {
@@ -127,7 +146,7 @@
 
     <div class="col-md-5 mt-5">
 
-        <table class="table1 table table-borderless text-center ms-8 rounded-3">
+        <table class="table table-borderless text-center ms-8 rounded-3">
 
             <thead>
                 <tr>
@@ -206,104 +225,135 @@
     </div>
 
 
-    <div class="col-md-5 mt-5">
-      
-        <table class="table1 table table-borderless text-center rounded-3">
-            <thead>
-                <tr>
-                    <td>
-                    <h1>Evoluciones</h1>
-                        <div style="display: flex;">
+
+    <div class="container ColorTable  text-center ms-8 rounded-3">
+
+        <h1>Evoluciones</h1>
+        <div class="d-inline p-2 d-flex justify-content-evenly">
+
+            @foreach (var involuciones in Model.FlujoInvolucion.OrderBy(i => i.Pokemon.PokemonId))
+            {
+                string rutaImagen3 = $"/img/{involuciones.Pokemon.PokemonId}.png";
+
+                @if (Model.FlujoInvolucion != null && Model.FlujoInvolucion.Any())
+                {
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="@rutaImagen3" alt="Imagen de la evolución" style="width:150px; margin-right: 55px;" />
+
+                        <div class="mt-2 text-center">
+                            <p>@Html.DisplayFor(modelItem => involuciones.Pokemon.NombrePokemon)
+                               N.º&nbsp;@Html.DisplayFor(modelItem => involuciones.Pokemon.PokemonId)
+                            </p>
+
+                        </div>
+
+                        <div class="row row-cols-auto">
+                            @foreach (var tipo in Model.Tipos)
+                            {
+                                <div class="col  d-inline-block mx-2 mb-3 rounded"
+                                     style="@(tipo.TipoNombre == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
+                      : (tipo.TipoNombre == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
+                      : (tipo.TipoNombre == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" : "background-color: " + (coloresPorTipo.ContainsKey(tipo.TipoNombre) ? coloresPorTipo[tipo.TipoNombre] : "#FFFFFF") + ";")))">
+                                    <div class="p-1 ">@Html.DisplayFor(modelItem => tipo.TipoNombre)</div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="ml-3">
+                        <span class="material material-symbols-outlined" style="font-size: 55px;">
+                            arrow_forward_ios
+                        </span>
+
+                    </div>
+
+                }
+                else
+                {
+                    <p>No tiene Involucion</p>
+                }
+
+
+            }
+
+            @{
+                string rutaImagen1 = $"/img/{Model.PokemonId}.png";
+            }
+            <div class="d-flex flex-column align-items-center">
+                <img src="@rutaImagen1" alt="Imagen de la evolución" style="width:150px; margin-right: 55px;" />
+                <div class="mt-2 text-center">
+                    <p>
+                        @Html.DisplayFor(modelItem => Model.NombrePokemon)
                    
-                            <div class="Text2">
-                                @{
-                                    string rutaImagen1 = $"/img/{Model.PokemonId}.png";
-
-                                    <img src="@rutaImagen1" alt="Imagen de la evolución" style="width:15rem; margin-right: 55px;" />
-
-                                }
-                            <span>
-
-                                @Html.DisplayFor(modelItem => Model.NombrePokemon)
-
-                            </span>
-
-                            <span>N.º&nbsp; @Html.DisplayFor(modelItem => Model.PokemonId)</span>
-                                @foreach (var tipo in Model.Tipos)
-                                {
-                                    <div class="col col-5 d-inline-block mx-2 mb-3 rounded"
-                                         style="@(tipo.TipoNombre == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
-                         : (tipo.TipoNombre == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
-                         : (tipo.TipoNombre == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" : "background-color: " + (coloresPorTipo.ContainsKey(tipo.TipoNombre) ? coloresPorTipo[tipo.TipoNombre] : "#FFFFFF") + ";")))">
-                                        <div class="p-1 ">@Html.DisplayFor(modelItem => tipo.TipoNombre)</div>
-                                    </div>
-                                }
-                            </div>
-                    @foreach (var item in Model.FlujoEvolucion)
+                        N.º&nbsp; @Html.DisplayFor(modelItem => Model.PokemonId)
+                     
+                    </p>
+                </div>
+                <div class="row row-cols-auto">
+                    @foreach (var tipo in Model.Tipos)
                     {
-                        @if (item.Pokemon != null)
-                        {
-                                   
-                                        <span class="material-symbols-outlined " style="font-size:55px;">
-                                            arrow_forward_ios
-                                        </span>
-                              
-                            string rutaImagen2 = $"/img/{item.Pokemon.PokemonId}.png";
-                            <!-- Asumiendo que el Pokemon tiene un PokemonId -->
-                            
-                            <div class="Text">
-                             <img src="@rutaImagen2" alt="Imagen de la evolución" style="width:15rem;margin-right: 55px; " />
-                             <span> @Html.DisplayFor(modelItem => item.Pokemon.NombrePokemon)</span>
-                             <span>N.º&nbsp; @Html.DisplayFor(modelItem => item.Pokemon.PokemonId)</span>
-                                        @foreach (var tipo in Model.Tipos)
-                                        {
-                                            <div class="col col-5 d-inline-block mx-2 mb-3 rounded"
-                                                 style="@(tipo.TipoNombre == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
-                         : (tipo.TipoNombre == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
-                         : (tipo.TipoNombre == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" : "background-color: " + (coloresPorTipo.ContainsKey(tipo.TipoNombre) ? coloresPorTipo[tipo.TipoNombre] : "#FFFFFF") + ";")))">
-                                                <div class="p-1 ">@Html.DisplayFor(modelItem => tipo.TipoNombre)</div>
-                                            </div>
-                                        }
-                           </div>
-                                }
-
+                        <div class="col d-inline-block mx-2 mb-3 rounded"
+                             style="@(tipo.TipoNombre == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
+                      : (tipo.TipoNombre == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
+                      : (tipo.TipoNombre == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" : "background-color: " + (coloresPorTipo.ContainsKey(tipo.TipoNombre) ? coloresPorTipo[tipo.TipoNombre] : "#FFFFFF") + ";")))">
+                            <div class="p-1 ">@Html.DisplayFor(modelItem => tipo.TipoNombre)</div>
+                        </div>
                     }
-                      </div>
-                    </td>
-                </tr>
+                </div>
+            </div>
 
-        </table>
+            <div class="ml-3">
+                <span class="material material-symbols-outlined" style="font-size: 55px;">
+                    arrow_forward_ios
+                </span>
 
-    </div>
-       
-    </div>
-    <div class="col-sm-2">
-        <h1>@Html.DisplayNameFor(model => model.FlujoInvolucion)</h1>
+            </div>
 
-        @foreach (var item in Model.FlujoInvolucion)
-        {
-            @if (Model.FlujoInvolucion != null && Model.FlujoInvolucion.Any())
+            @foreach (var evoluciones in Model.FlujoEvolucion)
             {
-                @Html.DisplayFor(modelItem => item.Pokemon.NombrePokemon)
 
-                <br />
+                @if (evoluciones.Pokemon != null)
+                {
+                    string rutaImagen2 = $"/img/{evoluciones.Pokemon.PokemonId}.png";
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="@rutaImagen2" alt="Imagen de la evolución" style="width:150px; margin-right: 55px;" />
+
+                        <div class="mt-2 text-center">
+                            <p>
+                                @Html.DisplayFor(modelItem => evoluciones.Pokemon.NombrePokemon)
+                            N.º&nbsp; @Html.DisplayFor(modelItem =>evoluciones.Pokemon.PokemonId)</p>
+
+                        </div>
+
+                        <div class="row row-cols-auto">
+                            @foreach (var tipo in Model.Tipos)
+                            {
+                                <div class="col d-inline-block mx-2 mb-3 rounded"
+                                     style="@(tipo.TipoNombre == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
+                      : (tipo.TipoNombre == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
+                      : (tipo.TipoNombre == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" : "background-color: " + (coloresPorTipo.ContainsKey(tipo.TipoNombre) ? coloresPorTipo[tipo.TipoNombre] : "#FFFFFF") + ";")))">
+                                    <div class="p-1">@Html.DisplayFor(modelItem =>tipo.TipoNombre)</div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="ml-3">
+                        <span class="material material-symbols-outlined" style="font-size: 55px;">
+                            arrow_forward_ios
+                        </span>
+
+                    </div>
+                }
+
             }
-            else
-            {
-                <p>No tiene Involucion</p>
-            }
 
-        }
-        <h1>Tipo</h1>
-
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.AllTipos)
-        </dd>
-
+        </div>
     </div>
-    <h1>Movimiento</h1>
+</div>
 
-    <table class="table">
+  <div class="d-flex mt-5">
+
+    <table class="ColorTable table   table-striped text-center ms-8 rounded-3">
+
         <thead>
             <tr>
                 <th>
@@ -327,8 +377,6 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Ataques.First().Prioridad)
                 </th>
-
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -361,5 +409,5 @@
             }
         </tbody>
     </table>
-
+   </div>
 </div>

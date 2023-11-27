@@ -11,17 +11,17 @@
 }
 
 <html>
+
 <body>
 
-    <div class="container-fluid " >
-
+    <div class="container table-responsive table-container">
         <form asp-action="FiltrarPokemon" asp-route-numero_Pokedex="@Model.Pokemons.First().PokemonId" method="post">
-
-            <div class="row ">
+            <div class="row">
 
                 <div class="col mt-3">
-
-                    <img src="/img/Pokemon-Logo.jpg" class="imag2" style="width:12rem" alt="Pokemon" />
+                    <a href="@Url.Action("ListaDePokemon", new { numero_Pokedex = Model.Pokemons.First().PokemonId })">
+                        <img src="/img/Pokemon-Logo.jpg" class="imag2" style="width:12rem" alt="Pokemon" />
+                    </a>
 
                 </div>
 
@@ -62,7 +62,7 @@
                     </select>
                 </div>
                 <div class="col">
-                    <button type="submit" class="btn btn-primary">Buscar</button>
+                    <button type="submit" class="btn " style="background-color:#CB4335;color: #fff;">Buscar</button>
                 </div>
             </div>
         </form>
@@ -86,8 +86,22 @@
         };
         }
 
-        <div class="col mt-3">
-            <table class="table table-striped table-hover">
+
+        @if (TempData["MensajeExito"] != null)
+        {
+            <div id="mensaje-exito" class="alert alert-success">@TempData["MensajeExito"]</div>
+
+        }
+
+        @if (TempData["MensajeError"] != null)
+        {
+            <div id="mensaje-error" class="alert alert-danger">@TempData["MensajeError"]</div>
+        }
+
+
+        
+
+            <table class="table table-striped  table-hover">
                 <thead>
                     <tr>
                         <th>
@@ -96,23 +110,23 @@
 
                         <th>
                             @Html.DisplayNameFor(model => model.Pokemons.First().PokemonId)
-                            
+
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Pokemons.First().NombrePokemon)
-                            
+
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Pokemons.First().Tipos)
-                          
+
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Pokemons.First().Peso)
-                            
+
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Pokemons.First().Altura)
-                            
+
                         </th>
 
                         <th></th>
@@ -130,13 +144,15 @@
 
                         <tr>
                             <td>
+                                <a href="@Url.Action("Detalle", new { numero_Pokedex = item.PokemonId })">
+                                    <img src="@rutaImagen" class="img-fluid" style="width:100px" />
+                                </a>
 
-                                <img src="@rutaImagen" style="width: 80px" />
 
                             </td>
 
                             <td>
-
+                               
                                 @Html.DisplayFor(modelItem => item.PokemonId)
 
                             </td>
@@ -178,17 +194,18 @@
 
                             <td>
 
-                                @Html.ActionLink("Detalle", "Detalle", new { numero_Pokedex = item.PokemonId  })
+                               
 
                             </td>
 
                             <td>
-
+                               
                                 <form asp-action="AgregarAlEquipo" asp-route-numero_Pokedex="@item.PokemonId" method="post">
-
-                                    <button type="submit" class="btn btn-primary">Añadir a Mi Equipo</button>
-
+                                   
+                                    <button type="submit" class="btn" style="background-color:#CB4335;color: #fff;">Añadir a Mi Equipo</button>
+                                  
                                 </form>
+                               
 
                             </td>
 
@@ -197,26 +214,13 @@
 
                 </tbody>
 
+
             </table>
+
 
         </div>
 
-    </div>
-
-
-
-
-    @if (TempData["MensajeExito"] != null)
-    {
-        <div id="mensaje-exito" class="alert alert-success">@TempData["MensajeExito"]</div>
-
-    }
-
-    @if (TempData["MensajeError"] != null)
-    {
-        <div id="mensaje-error" class="alert alert-danger">@TempData["MensajeError"]</div>
-    }
-
+    
 
     <script>
 

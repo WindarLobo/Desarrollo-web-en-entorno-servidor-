@@ -2,37 +2,94 @@
 
 @{
     ViewData["Title"] = "CombateConEquipoAleatorio";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="~/css/ombate.css" asp-append-version="true" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous" />
+
 }
 
-<h2>Simulación de Combate Pokémon Aleatorio</h2>
+@{
+    // Definir un diccionario de colores para los tipos de Pokémon
+    Dictionary<string, string> coloresPorTipo = new Dictionary<string, string>
+                        {
+                        { "Fuego", "#F28723" },
+                        { "Veneno", "#9B82AA" },
+                        { "Agua", "#72C1EB" },
+                        { "Planta", "#3AB27B" },
+                        { "Eléctrico", "#FFD700" },
+                        { "Roca", "#8E8651" },
+                        {"Normal","#999C9E"},
+                        {"Bicho","#66AD71"},
+                        {"Psíquico","#C462DE"},
+                        {"Lucha","#B66341"},
+                        {"Hielo","#B0FAF0"},
+                        {"Fantasma","#86578B"},
+                        };
+}
 
-<div>
-    <h3>Equipo 1</h3>
-    <!-- Mostrar detalles del Equipo 1 -->
-    @foreach (var pokemon in Model.Equipo1.Pokemons)
-    {
-        <div>
-            <p>@pokemon.NombrePokemon</p>
-            <!-- Mostrar más detalles del Pokémon si es necesario -->
-        </div>
-    }
+<h3 class="text-center">Combate Aleatorio</h3>
+
+<div class="container ColorTable rounded-3">
+    <h3 class="text-center mt-5">Equipo1</h3>
+
+    <div class="row flex-wrap mt-3">
+        @foreach (var equipo1 in Model.Equipo1.Pokemons)
+        {
+            string rutaImagenEquipo1 = $"/img/{equipo1.PokemonId}.png";
+
+            <!-- Ajusta el valor de mb-3 según sea necesario -->
+            <div class="col d-flex flex-column align-items-center">
+                <img src="@rutaImagenEquipo1" alt="Imagen de la evolución" class="img-fluid" style="width:150px;" />
+                <div class="mt-2 text-center">
+                    <p>
+                        @Html.DisplayFor(modelItem => equipo1.NombrePokemon)
+                        N.º&nbsp;@Html.DisplayFor(modelItem => equipo1.PokemonId)
+                    </p>
+
+                </div>
+            </div>
+
+        }
+    </div>
 </div>
 
-<div>
-    <h3>Equipo 2</h3>
-    <!-- Mostrar detalles del Equipo 2 -->
-    @foreach (var pokemon in Model.Equipo2.Pokemons)
-    {
-        <div>
-            <p>@pokemon.NombrePokemon</p>
-            <!-- Mostrar más detalles del Pokémon si es necesario -->
-        </div>
-    }
+
+<div class="container ColorTable rounded-3">
+    <h3 class="text-center mt-5">Equipo2</h3>
+
+    <div class="row flex-wrap mt-3">
+        @foreach (var equipo2 in Model.Equipo2.Pokemons)
+        {
+            string rutaImagenEquipo2 = $"/img/{equipo2.PokemonId}.png";
+
+            <!-- Ajusta el valor de mb-3 según sea necesario -->
+            <div class="col d-flex flex-column align-items-center">
+                <img src="@rutaImagenEquipo2" alt="Imagen de la evolución" class="img-fluid" style="width:150px;" />
+                <div class="mt-2 text-center">
+                    <p>
+                        @Html.DisplayFor(modelItem => equipo2.NombrePokemon)
+                        N.º&nbsp;@Html.DisplayFor(modelItem => equipo2.PokemonId)
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+        }
+    </div>
+
+
 </div>
 
-<div>
-    <h3>Resultados de la Batalla</h3>
-    <!-- Mostrar los resultados de la batalla -->
-    <pre>@Html.Raw(Model.ResultadoBatalla)</pre>
+<div class="mt-5 text-center  ">
+
+
+<form action="@Url.Action("ResultadosCombate","Pokemon")" method="get">
+    <button type="submit" class="btn btn-outline-primary">Ver resultado </button>
+</form>
 </div>
+

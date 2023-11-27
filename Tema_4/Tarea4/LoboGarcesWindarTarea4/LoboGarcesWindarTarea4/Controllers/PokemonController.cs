@@ -170,7 +170,7 @@ namespace LoboGarcesWindarTarea4.Controllers
             // Realizar la batalla entre los dos equipos
 
             var resultadoBatalla = Combate.RealizarCombate(miEquipo, equipoAleatorio);
-
+            TempData["ResultadoBatalla"] = resultadoBatalla;
             // Crear y retornar un modelo para la vista
 
             var combate = new SimularCombateViewModel
@@ -179,7 +179,9 @@ namespace LoboGarcesWindarTarea4.Controllers
 
                 Equipo2 = miEquipo,
 
-                ResultadoBatalla = resultadoBatalla
+                ResultadoBatalla = resultadoBatalla,
+
+                 MostrarResultados = true
             };
 
             return View(combate);
@@ -196,7 +198,8 @@ namespace LoboGarcesWindarTarea4.Controllers
             var equipoRandom2 = EquipoReposiotrio.GetRandomMiEquipo(allPokemon.ToList());
 
             var resultadoBatalla = Combate.RealizarCombate(equipoRandom1, equipoRandom2);
-
+            // Almacenar el resultado en TempData
+            TempData["ResultadoBatalla"] = resultadoBatalla;
             // Crear y retornar un modelo para la vista
             var combate = new SimularCombateViewModel
             {
@@ -204,14 +207,31 @@ namespace LoboGarcesWindarTarea4.Controllers
 
                 Equipo2 = equipoRandom2,
 
-                ResultadoBatalla = resultadoBatalla
+                ResultadoBatalla = resultadoBatalla,
+
+                MostrarResultados = true
 
             };
 
             return View(combate);
         }
+        [HttpGet]
+        [Route("/Pokemon/ResultadosCombate/")]
+        public async Task<IActionResult> ResultadosCombate()
+        {
+            // Recuperar el resultado de la batalla de TempData
+            var resultadoBatalla = TempData["ResultadoBatalla"] as string;
 
- 
+            var combate = new SimularCombateViewModel
+            {
+                ResultadoBatalla = resultadoBatalla,
+                MostrarResultados = true
+            };
+
+
+            return View(combate);
+        }
+
     }
 
 

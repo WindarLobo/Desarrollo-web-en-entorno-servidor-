@@ -8,8 +8,7 @@
 
     ViewData["Title"] = "Home Page";
 }
-<html>
-    <body>
+
     <div class="container ">
         <div class="moving-images mt-4">
           
@@ -21,35 +20,34 @@
         <div class="row justify-content-center mt-3">
             <div class="col-md-2">
                 <form action="@Url.Action("ListaDePokemon","Pokemon")" method="get">
-                    <button type="submit" class="btn btn-primary btn-block">Lista de pokemon</button>
+                    <button type="submit" class="btn  btn-block" style="background-color:#CB4335;color: #fff;">Lista de pokemon</button>
                 </form>
             </div>
 
             <div class="col-md-2">
                 <form action="@Url.Action("ListaEquipo","Pokemon")" method="get">
-                    <button type="submit" class="btn btn-primary btn-block">Ver Equipo</button>
+                    <button type="submit" class="btn btn-block" style="background-color:#CB4335;color: #fff;">Ver Equipo</button>
                 </form>
             </div>
 
             <div class="col-md-2">
                 <form action="/Pokemon/ListaEquipo" method="post">
                     <input type="hidden" name="type" value="aleatorio" />
-                    <button type="submit" class="btn btn-primary btn-block">Equipo Aleatorio</button>
+                    <button type="submit" class="btn  btn-block" style="background-color:#CB4335;color: #fff;">Equipo Aleatorio</button>
                 </form>
             </div>
             <div class="col-md-3">
                 <form action="@Url.Action("CombateConEquipoAleatorio","Pokemon")" method="get">
-                    <button type="submit" class="btn btn-primary btn-block">Combate aleatorio</button>
+                    <button type="submit" class="btn  btn-block" style="background-color:#CB4335;color: #fff";>Combate aleatorio</button>
                 </form>
             </div>
             <div class="col-md-3">
                 <form action="@Url.Action("LucharConMiEquipo","Pokemon")" method="get">
-                    <button type="submit" class="btn btn-primary btn-block">Combate con mi equipo</button>
+                    <button type="submit" class="btn btn-block" style="background-color:#CB4335;color: #fff;">Combate con mi equipo</button>
                 </form>
             </div>
         </div>
         
     </div>
-    </body>
-</html>
+  
 

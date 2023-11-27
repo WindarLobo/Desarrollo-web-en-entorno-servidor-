@@ -8,16 +8,22 @@ span {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
-.pokemon-number {
-        display: inline-block;
-    }
 
-.table1 {
-    background-color: #E08F8F;
+.pokemon-number {
+    display: inline-block;
+}
+
+.ColorTablaDetalle {
+    background-color: #FDEDEC;
 }
 
 .material-symbols-outlined {
-    margin-top: 100px;
+    margin-top: 50px;
     align-self: flex-start;
 }
+.ColorTable {
+    background-color: #ECF0F1;
+}
+
+
 
