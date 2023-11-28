@@ -3,21 +3,14 @@
 @{
     ViewData["Title"] = "ResultadosCombate";
     <link rel="stylesheet" href="~/css/ombate.css" asp-append-version="true" />
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-          crossorigin="anonymous" />
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+
 }
-<div class="mt-5 text-center  ">
 
-
-    <form action="@Url.Action("ListaDePokemon","Pokemon")" method="get">
-        <button type="submit" class="btn btn-outline-primary">Ir a la lista  </button>
-    </form>
-</div>
-<div class="container text-center rounded-3">
+<div class="container text-center rounded-3 mt-5">
     <div class="row flex-column mt-3">
-        <h3 class="text-center">Resultados de la Batalla</h3>
+        <h3 class="text-center" style="font-family: 'Cormorant', serif; font-size:40px">Resultados de la Batalla</h3>
 
         @if (Model.MostrarResultados)
         {

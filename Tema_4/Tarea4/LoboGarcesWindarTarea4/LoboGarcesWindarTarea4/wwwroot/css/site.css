@@ -1,5 +1,5 @@
 span {
-    margin-right: 50px; /* Ajusta el margen según tus necesidades */
+    margin-right: 50px; 
    
 }
 .Text, .Text2 {
@@ -23,6 +23,10 @@ span {
 }
 .ColorTable {
     background-color: #ECF0F1;
+}
+.imag2 {
+    margin-top: -90px;
+    background-size: cover;
 }
 
 

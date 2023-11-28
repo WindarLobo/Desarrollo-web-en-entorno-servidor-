@@ -216,15 +216,18 @@ namespace LoboGarcesWindarTarea4.Controllers
             return View(combate);
         }
         [HttpGet]
+
         [Route("/Pokemon/ResultadosCombate/")]
         public async Task<IActionResult> ResultadosCombate()
         {
             // Recuperar el resultado de la batalla de TempData
+
             var resultadoBatalla = TempData["ResultadoBatalla"] as string;
 
             var combate = new SimularCombateViewModel
             {
                 ResultadoBatalla = resultadoBatalla,
+
                 MostrarResultados = true
             };
 
@@ -233,8 +236,6 @@ namespace LoboGarcesWindarTarea4.Controllers
         }
 
     }
-
-
 
 }
 

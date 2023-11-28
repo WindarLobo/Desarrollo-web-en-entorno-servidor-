@@ -37,29 +37,37 @@ namespace LoboGarcesWindarTarea4
             // Implementa según tus reglas específicas
             return tipo1.TipoNombre switch
             {
-                "Fuego" => tipo2.TipoNombre == "Planta",
+                "Fuego" => tipo2.TipoNombre == "Planta"|| tipo2.TipoNombre == "Acero",
 
-                "Agua" => tipo2.TipoNombre == "Fuego",
+                "Agua" => tipo2.TipoNombre == "Fuego"|| tipo2.TipoNombre == "Roca" || tipo2.TipoNombre == "Tierra",
 
-                "Planta" => tipo2.TipoNombre == "Agua",
+                "Planta" => tipo2.TipoNombre == "Agua" || tipo2.TipoNombre == "Roca" || tipo2.TipoNombre == "Tierra",
 
-                "Electrico" => tipo2.TipoNombre == "Agua" || tipo2.TipoNombre == "Volador",
+                "Eléctrico" => tipo2.TipoNombre == "Agua" || tipo2.TipoNombre == "Volador",
 
-                "Hielo" => tipo2.TipoNombre == "Planta" || tipo2.TipoNombre == "Tierra",
+                "Psíquico" => tipo2.TipoNombre == "Agua" || tipo2.TipoNombre == "Volador",
+
+                "Hielo" => tipo2.TipoNombre == "Planta" || tipo2.TipoNombre == "Tierra" || tipo2.TipoNombre == "Volador"|| tipo2.TipoNombre == "Dragón",
 
                 "Volador" => tipo2.TipoNombre == "Planta" || tipo2.TipoNombre == "Lucha" || tipo2.TipoNombre == "Bicho",
 
-                "Tierra" => tipo2.TipoNombre == "Fuego" || tipo2.TipoNombre == "Eléctrico",
+                "Tierra" => tipo2.TipoNombre == "Fuego" || tipo2.TipoNombre == "Eléctrico"|| tipo2.TipoNombre == "Acero"||tipo2.TipoNombre == "Roca" || tipo2.TipoNombre == "Veneno",
 
-                "Lucha" => tipo2.TipoNombre == "Normal" || tipo2.TipoNombre == "Hielo" || tipo2.TipoNombre == "Roca" || tipo2.TipoNombre == "Acero" || tipo2.TipoNombre == "Siniestro",
+                "Lucha" => tipo2.TipoNombre == "Normal",
 
-                "Veneno" => tipo2.TipoNombre == "Planta",
+                "Dragón" => tipo2.TipoNombre == "Dragón",
+
+                "Veneno" => tipo2.TipoNombre == "Planta"|| tipo2.TipoNombre == "Hada",
 
                 "Roca" => tipo2.TipoNombre == "Fuego" || tipo2.TipoNombre == "Hielo" || tipo2.TipoNombre == "Volador" || tipo2.TipoNombre == "Bicho",
 
                 "Bicho" => tipo2.TipoNombre == "Psíquico" || tipo2.TipoNombre == "Siniestro" || tipo2.TipoNombre == "Planta",
 
                 "Fantasma" => tipo2.TipoNombre == "Psíquico" || tipo2.TipoNombre == "Fantasma",
+
+                "Siniestro" => tipo2.TipoNombre == "Psíquico" || tipo2.TipoNombre == "Fantasma",
+
+                "Hada" => tipo2.TipoNombre == "Lucha" || tipo2.TipoNombre == "Dragón" || tipo2.TipoNombre == "Siniestro",
 
                 "Acero" => tipo2.TipoNombre == "Hielo" || tipo2.TipoNombre == "Roca" || tipo2.TipoNombre == "Hada",
 

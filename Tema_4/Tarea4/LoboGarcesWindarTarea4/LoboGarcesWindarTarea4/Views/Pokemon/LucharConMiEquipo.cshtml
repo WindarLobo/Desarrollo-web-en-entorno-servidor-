@@ -3,10 +3,9 @@
 @{
     ViewData["Title"] = "LucharConMiEquipo";
     <link rel="stylesheet" href="~/css/ombate.css" asp-append-version="true" />
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-          crossorigin="anonymous" />
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@600&family=Fjalla+One&display=swap" rel="stylesheet">
 
 }
 
@@ -29,11 +28,11 @@
                         };
 }
 
-<h3 class="text-center">Combate con mi equipo</h3>
+<h3 class="text-center" style="font-family: 'Cormorant', serif; font-size:40px">Combate con mi equipo</h3>
 
 
 <div class="container ColorTable rounded-3">
-    <h3 class="text-center mt-5">Equipo1</h3>
+    <h3 class="text-center mt-5" style="font-family: 'EB Garamond', serif; font-size:30px">Equipo1</h3>
 
     <div class="row flex-wrap mt-3">
         @foreach (var equipo2 in Model.Equipo2.Pokemons)
@@ -60,7 +59,7 @@
     </div>
 
 <div class="container ColorTable rounded-3">
-    <h3 class="text-center mt-5">Equipo2</h3>
+    <h3 class="text-center mt-5" style="font-family: 'EB Garamond', serif; font-size:30px">Equipo2</h3>
 
     <div class="row flex-wrap mt-3">
         @foreach (var equipo1 in Model.Equipo1.Pokemons)

@@ -1,53 +1,45 @@
 ﻿@{
 
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-          crossorigin="anonymous" />
+   
     <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
     ViewData["Title"] = "Home Page";
 }
 
-    <div class="container ">
-        <div class="moving-images mt-4">
-          
-            <img src="/img/Pokemon-Duel_1246085554_195083_1440x810.jpg" class="img-fluid img" alt="Pokemon1"/>
-            <img src="/img/AAAABdJVIvPW8kVElLF6adcuMyLW22E0UXsmlfct286ylTk9_JAjy8aq8e-elWZRIuiFYmpAFcVWUEy8242zORMCeSBLvgkN3_Ax5Y-O.jpg" class="img-fluid img" alt="Pokemon2"/>
-            <img src="/img/maxresdefault.jpg" class="img-fluid img" alt="Pokemon3" />
-       </div>
+<div class="container-fluid mt-4">
+    <div class="moving-images ">
 
-        <div class="row justify-content-center mt-3">
-            <div class="col-md-2">
-                <form action="@Url.Action("ListaDePokemon","Pokemon")" method="get">
-                    <button type="submit" class="btn  btn-block" style="background-color:#CB4335;color: #fff;">Lista de pokemon</button>
-                </form>
-            </div>
-
-            <div class="col-md-2">
-                <form action="@Url.Action("ListaEquipo","Pokemon")" method="get">
-                    <button type="submit" class="btn btn-block" style="background-color:#CB4335;color: #fff;">Ver Equipo</button>
-                </form>
-            </div>
-
-            <div class="col-md-2">
-                <form action="/Pokemon/ListaEquipo" method="post">
-                    <input type="hidden" name="type" value="aleatorio" />
-                    <button type="submit" class="btn  btn-block" style="background-color:#CB4335;color: #fff;">Equipo Aleatorio</button>
-                </form>
-            </div>
-            <div class="col-md-3">
-                <form action="@Url.Action("CombateConEquipoAleatorio","Pokemon")" method="get">
-                    <button type="submit" class="btn  btn-block" style="background-color:#CB4335;color: #fff";>Combate aleatorio</button>
-                </form>
-            </div>
-            <div class="col-md-3">
-                <form action="@Url.Action("LucharConMiEquipo","Pokemon")" method="get">
-                    <button type="submit" class="btn btn-block" style="background-color:#CB4335;color: #fff;">Combate con mi equipo</button>
-                </form>
-            </div>
-        </div>
-        
+        <img src="/img/Pokemon-Duel_1246085554_195083_1440x810.jpg" class="img-fluid img" alt="Pokemon1" />
+        <img src="/img/AAAABdJVIvPW8kVElLF6adcuMyLW22E0UXsmlfct286ylTk9_JAjy8aq8e-elWZRIuiFYmpAFcVWUEy8242zORMCeSBLvgkN3_Ax5Y-O.jpg" class="img-fluid img" alt="Pokemon2" />
+        <img src="/img/maxresdefault.jpg" class="img-fluid img" alt="Pokemon3" />
     </div>
-  
+</div>
+<div class="container-fluid mt-5 text-center">
+
+    <form action="@Url.Action("ListaDePokemon","Pokemon")" method="get" class="d-inline-block">
+        <button type="submit" class="btn " style="background-color:#CB4335;color: #fff;font-size:20px">Lista de pokemon</button>
+    </form>
+
+
+    <form action="@Url.Action("ListaEquipo","Pokemon")" method="get" class="d-inline-block">
+        <button type="submit" class="btn" style="background-color:#CB4335;color: #fff;font-size:20px">Ver Equipo</button>
+    </form>
+
+    <form action="/Pokemon/ListaEquipo" method="post" class="d-inline-block">
+        <input type="hidden" name="type" value="aleatorio" />
+        <button type="submit" class="btn " style="background-color:#CB4335;color: #fff;font-size:20px">Equipo Aleatorio</button>
+    </form>
+
+
+    <form action="@Url.Action("CombateConEquipoAleatorio","Pokemon")" method="get" class="d-inline-block">
+        <button type="submit" class="btn " style="background-color:#CB4335;color: #fff;font-size:20px">Combate aleatorio</button>
+    </form>
+
+    <form action="@Url.Action("LucharConMiEquipo","Pokemon")" method="get" class="d-inline-block">
+        <button type="submit" class="btn " style="background-color:#CB4335;color: #fff;font-size:20px">Combate con mi equipo</button>
+    </form>
+
+
+</div>
 
