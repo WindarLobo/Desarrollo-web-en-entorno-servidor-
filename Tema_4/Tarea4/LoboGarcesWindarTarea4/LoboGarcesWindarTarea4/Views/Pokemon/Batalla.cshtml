@@ -105,45 +105,61 @@ else
 
 <div class="container ColorTable rounded-3 mt-5">
     <h3 class="text-center" style="font-family: 'Cormorant', serif; font-size:40px">Batalla</h3>
-    <div class="row flex-wrap mt-3">
-        @foreach (var combate in Model.Batalla.Combates)
-        {
 
-            <h3> Combate:  </h3>
-            string rutaImagenEquipo1 = $"/img/{combate.Pokemon1.PokemonId}.png";
-            string rutaImagenEquipo2 = $"/img/{combate.Pokemon2.PokemonId}.png";
-            <div class="col d-flex flex-column align-items-center">
+    @foreach (var combate in Model.Batalla.Combates)
+    {
 
-                <img src="@rutaImagenEquipo1" alt="Imagen batalla" class="img-fluid" style="width:150px;" />
+        <h3> Combate:  </h3>
 
-                <div class="mt-2 text-center">
+        string rutaImagenEquipo1 = $"/img/{combate.Pokemon1.PokemonId}.png";
+
+        string rutaImagenEquipo2 = $"/img/{combate.Pokemon2.PokemonId}.png";
+
+        <div class="col d-flex flex-column align-items-center">
+
+            <div class="row">
+
+                <div class="col">
+
+                    <img src="@rutaImagenEquipo1" alt="Imagen batalla" class="img-fluid" style="width:180px;" />
+
                     <p>
-                        @Html.DisplayFor(modelItem => combate.Pokemon1.NombrePokemon)
-                        N.º&nbsp;@Html.DisplayFor(modelItem => combate.Pokemon1.PokemonId)
-                    </p>
 
+                        @Html.DisplayFor(modelItem => combate.Pokemon1.NombrePokemon)
+
+                        N.º&nbsp;@Html.DisplayFor(modelItem => combate.Pokemon1.PokemonId)
+
+                    </p>
 
                 </div>
 
 
-                <h1>Vs</h1>
-                <img src="@rutaImagenEquipo2" alt="Imagen batalla" class="img-fluid" style="width:150px;" />
+                <div class="col text-center ">
+
+                    <h1>  Vs</h1>
+
+                </div>
+
+                <div class="col">
+
+                    <img src="@rutaImagenEquipo2" alt="Imagen batalla" class="img-fluid" style="width:180px;" />
 
 
-                <div class="mt-2 text-center">
+
                     <p>
                         @Html.DisplayFor(modelItem => combate.Pokemon2.NombrePokemon)
                         N.º&nbsp;@Html.DisplayFor(modelItem => combate.Pokemon2.PokemonId)
                     </p>
-
-
                 </div>
-                <h6> Ganador : @combate.Ganador.Pokemon.NombrePokemon - @combate.Ganador.Motivo  </h6>
-            </div>
 
-        }
-    </div>
+            </div>
+            <h6 class="mt-2 text-danger font-italic">Ganador: @combate.Ganador.Pokemon.NombrePokemon - @combate.Ganador.Motivo</h6>
+
+        </div>
+
+    }
 </div>
+
 
 
 
