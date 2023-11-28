@@ -1,5 +1,7 @@
 ﻿namespace LoboGarcesWindarTarea4.DataBase.Modelo
 {
+
+    //Ataque
     public class Ataque
     {
         public string TipoAtaque { get; set; }

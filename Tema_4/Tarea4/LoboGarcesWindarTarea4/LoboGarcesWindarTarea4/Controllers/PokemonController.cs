@@ -16,9 +16,13 @@ namespace LoboGarcesWindarTarea4.Controllers
             _pokemonRepository = pokemonRepository;
         }
 
+        //Ruta de Acción
+
         [Route("/Pokemon")]
 
         [Route("/Pokemon/ListaDePokemon")]
+
+        //ListaDePokemon obtiene todos los pokemons.
         public async Task<IActionResult> ListaDePokemon()
         {
             var pokemons = await _pokemonRepository.GetAllPokemon(null, null, null);
@@ -36,8 +40,11 @@ namespace LoboGarcesWindarTarea4.Controllers
             return View(viewModel);
         }
 
+        //Ruta de Acción
+
         [Route("/Pokemon/Detalle/{id?}")]
 
+        //Detalle se encarga de obtener y mostrar información detallada de un Pokémon específico en una vista.
         public async Task<IActionResult> Detalle(int numero_Pokedex)
         {
             var pokemons = await _pokemonRepository.GetPokemonFull(numero_Pokedex);
@@ -45,9 +52,15 @@ namespace LoboGarcesWindarTarea4.Controllers
             return View(pokemons);
         }
 
+        //Solicitudes HTTP POST.
+
         [HttpPost]
 
+        //Ruta de acceso para esta acción.
+
         [Route("/Pokemon/FiltrarPokemon")]
+
+        //FiltrarPokemon filtra un Pokémon según ciertos criterios (peso, altura, tipo) y devolver una vista parcial con la lista de Pokémon filtrados y la lista de tipos asociada.
         public async Task<IActionResult> FiltrarPokemon(double? peso, double? altura, int? tipo)
         {
             var pokemonesFiltrados = await _pokemonRepository.GetAllPokemon(peso, altura, tipo);
@@ -63,9 +76,16 @@ namespace LoboGarcesWindarTarea4.Controllers
 
             return PartialView("ListaDePokemon", viewModel);
         }
+       
+        //Solicitudes HTTP POST.
+
         [HttpPost]
 
+        //Ruta de acceso para esta acción.
+
         [Route("/Pokemon/AgregarAlEquipo/{numero_Pokedex}")]
+
+        //AgregarAlEquipo maneja la logica  de agregar un Pokémon al equipo
         public async Task<IActionResult> AgregarAlEquipo(int numero_Pokedex)
         {
             // Obtén el Pokémon completo usando el número de la Pokédex
@@ -87,7 +107,9 @@ namespace LoboGarcesWindarTarea4.Controllers
             }
             else
             {
-                // Informa al usuario que ya ha alcanzado el límite de Pokémon en su equipo
+                //TempData se utiliza para almacenar mensajes temporales que se mostrarán en la siguiente solicitud.
+
+                //Informa al usuario que ya ha alcanzado el límite de Pokémon en su equipo
 
                 TempData["MensajeError"] = añadido.Mensaje;
 
@@ -96,7 +118,11 @@ namespace LoboGarcesWindarTarea4.Controllers
             }
         }
 
+        //Ruta de acceso para esta acción.
+
         [Route("/Pokemon/ListaEquipo/")]
+
+        //ListaEquipo muestra  la lista del equipo de Pokémon, ya sea generando un equipo aleatorio o mostrando el equipo existente.
         public async Task<IActionResult> ListaEquipo(string type)
         {
             var equipo = new Equipo();
@@ -116,6 +142,8 @@ namespace LoboGarcesWindarTarea4.Controllers
 
             }
 
+            //Cálculo del tipoPredominante
+
             var tipoPredominante = equipo.Pokemons
 
                      .SelectMany(pokemon => pokemon.Tipos)
@@ -128,6 +156,9 @@ namespace LoboGarcesWindarTarea4.Controllers
 
                      .FirstOrDefault();
 
+
+            //Creo un objeto PokemonViewModel que contiene la información del equipo, el recuento de Pokémon, el peso y altura promedio, y el tipo predominante.
+            
             var viewModel = new PokemonViewModel
             {
                 Equipo = equipo,
@@ -142,12 +173,14 @@ namespace LoboGarcesWindarTarea4.Controllers
 
             };
 
-          
-
             return View(viewModel);
         }
 
+        //Ruta de acceso para esta acción.
+
         [Route("/Pokemon/LucharConMiEquipo/")]
+
+        //LucharConMiEquipo  maneja la lógica para simular una batalla entre mi equipo actual y un equipo aleatorio. 
         public async Task<IActionResult> LucharConMiEquipo()
         {
             var allPokemon = await _pokemonRepository.GetAllPokemon(null, null, null);
@@ -187,7 +220,11 @@ namespace LoboGarcesWindarTarea4.Controllers
             return View(combate);
         }
 
+        //Ruta de acceso para esta acción.
+
         [Route("/Pokemon/CombateConEquipoAleatorio/")]
+
+        //CombateConEquipoAleatorio maneja la logica para simular una batalla entre dos equipos aleatorios
         public async Task<IActionResult> CombateConEquipoAleatorio()
         {
             var allPokemon = await _pokemonRepository.GetAllPokemon(null, null, null);
@@ -198,9 +235,13 @@ namespace LoboGarcesWindarTarea4.Controllers
             var equipoRandom2 = EquipoReposiotrio.GetRandomMiEquipo(allPokemon.ToList());
 
             var resultadoBatalla = Combate.RealizarCombate(equipoRandom1, equipoRandom2);
+
             // Almacenar el resultado en TempData
+
             TempData["ResultadoBatalla"] = resultadoBatalla;
+
             // Crear y retornar un modelo para la vista
+
             var combate = new SimularCombateViewModel
             {
                 Equipo1 = equipoRandom1,
@@ -215,9 +256,15 @@ namespace LoboGarcesWindarTarea4.Controllers
 
             return View(combate);
         }
+
+        //Esta acción responde solo a solicitudes HTTP GET.
         [HttpGet]
 
+        //Ruta de acceso para esta acción.
+
         [Route("/Pokemon/ResultadosCombate/")]
+
+        //ResultadosCombate() maneja la lógica para mostrar los resultados de una batalla simulada entre equipos.
         public async Task<IActionResult> ResultadosCombate()
         {
             // Recuperar el resultado de la batalla de TempData

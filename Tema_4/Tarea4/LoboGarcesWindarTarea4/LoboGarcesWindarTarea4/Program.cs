@@ -17,8 +17,11 @@ namespace LoboGarcesWindarTarea4
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            //Cadena de conexion 
+
             builder.Services.AddSingleton(new Conexion(builder.Configuration.GetConnectionString("ConexionMontecastelo")));
 
+            //Registro de interfaz 
             builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
 
 
@@ -39,6 +42,7 @@ namespace LoboGarcesWindarTarea4
 
             app.UseAuthorization();
 
+            // Utilizo esta funcion app.MapControllers() para gestionar las ruta mediante atributos.
             app.MapControllers();
 
             app.Run();

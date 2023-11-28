@@ -5,7 +5,7 @@ namespace LoboGarcesWindarTarea4.Models
 {
     public class Combate
     {
-
+        //RealizarCombate() se encarga de la simulación de combates entre Pokémon de dos equipos y genera un mensaje HTML. 
         public static string RealizarCombate(Equipo equipo1, Equipo equipo2)
         {
 
@@ -20,6 +20,8 @@ namespace LoboGarcesWindarTarea4.Models
                 var pokemon2 = equipo2.Pokemons[i];
 
                 resultadoCombate.AppendLine($"<span style='font-size: 25px;'>Combate {i + 1}: <img src='/img/{pokemon1.PokemonId}.png' alt='{pokemon1.NombrePokemon}' style='width: 180px; height: 180px;'> {pokemon1.NombrePokemon}   VS   {pokemon2.NombrePokemon}<img src='/img/{pokemon2.PokemonId}.png' alt='{pokemon2.NombrePokemon}' style='width: 180px; height: 180px;'></span>");
+
+               //DeterminarGanadorCombate formato del mensaje HTML que incluye  imágenes de los Pokémon, sus nombres y el ganador de cada combate.
 
                 var ganador = DeterminarGanadorCombate(pokemon1, pokemon2);
 

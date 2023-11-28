@@ -4,16 +4,19 @@ using Microsoft.CodeAnalysis;
 
 namespace LoboGarcesWindarTarea4.DataBase.Repository;
 
+//PokemonRepository que implementa la interfaz IPokemonRepository
 public class PokemonRepository : IPokemonRepository
 
 {
     private readonly Conexion _conexion;
 
+    //Constructor PokemonRepository que toma un parámetro de tipo Conexion
     public PokemonRepository(Conexion conexion)
     {
         _conexion = conexion;
     }
 
+    //GetAllPokemon recupera Pokémon de la base de datos con opciones de filtrado y devuelve una lista de objetos Pokemon, cada uno con sus respectivos tipos.
     public async Task<IEnumerable<Pokemon>> GetAllPokemon(double? peso, double? altura, int? tipoIdPokemon)
     {
         var query = @"SELECT 
@@ -65,6 +68,7 @@ public class PokemonRepository : IPokemonRepository
 
     }
 
+    //GetPokemonBase recupera la información base de un Pokémon específico de la base de datos y devuelve un objeto Pokemon.
     public async Task<Pokemon> GetPokemonBase(int numero_pokedex)
     {
         var query = @"SELECT 
@@ -101,6 +105,7 @@ public class PokemonRepository : IPokemonRepository
         }).First();
     }
 
+    //GetPokemonFull proporciona una vista "completa" de un Pokémon específico, información detallada sobre sus tipos, ataques, evoluciones y otras estadísticas. 
     public async Task<PokemonFull> GetPokemonFull(int numero_pokedex)
     {
         var query = @"SELECT 
@@ -146,12 +151,13 @@ public class PokemonRepository : IPokemonRepository
 
         pokemon.Estadisticas = await GetEstadistica(numero_pokedex);
 
-       
+
 
 
         return pokemon;
     }
 
+    //GetTipos obteniene la lista de tipos de Pokémon
     public async Task<IEnumerable<Tipo>> GetTipos()
     {
         var query = @"select id_tipo AS TipoId, nombre AS TipoNombre from tipo";
@@ -159,6 +165,7 @@ public class PokemonRepository : IPokemonRepository
         return await connection.QueryAsync<Tipo>(query);
     }
 
+    //GetEvolucion obtiene  información detallada sobre las evoluciones de un Pokémon específico.
     private async Task<IEnumerable<Evolucion>> GetEvolucion(int numero_Pokedex)
     {
         var query = @"SELECT
@@ -185,7 +192,8 @@ public class PokemonRepository : IPokemonRepository
 
         return evoluciones;
     }
-
+    
+    //GetFlujoEvolucion obtiene flujo de evolucion del Pokémon dado y crea objetos DetalleEvoluciones para cada uno de ellos.
     private async Task<IEnumerable<DetalleEvoluciones>> GetFlujoEvolucion(int numero_Pokedex)
     {
         List<DetalleEvoluciones> detalles = new();
@@ -214,6 +222,9 @@ public class PokemonRepository : IPokemonRepository
 
         return detalles.ToList();
     }
+
+    //GetFlujoInvolucion obtiene flujo de involucion del Pokémon.
+
     private async Task<IEnumerable<DetalleEvoluciones>> GetFlujoInvolucion(int numero_Pokedex)
     {
         List<DetalleEvoluciones> detalles = new();
@@ -243,6 +254,7 @@ public class PokemonRepository : IPokemonRepository
         return detalles.ToList();
     }
 
+    //GetMovimientos obtiene los movimientos del Pokémon.
     private async Task<IEnumerable<Ataque>> GetMovimientos(int numero_Pokedex)
     {
         var query = @"SELECT
@@ -276,6 +288,8 @@ public class PokemonRepository : IPokemonRepository
         }
 
     }
+
+    //GetEstadistica obtengo las Estadisticas_base 
     private async Task<IEnumerable<Estadistica>> GetEstadistica(int numero_Pokedex)
     {
 
@@ -298,7 +312,7 @@ public class PokemonRepository : IPokemonRepository
             return estadistica.ToList();
         }
     }
-   
+
 
 }
 

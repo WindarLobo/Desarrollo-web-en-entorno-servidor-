@@ -2,6 +2,7 @@
 
 namespace LoboGarcesWindarTarea4.DataBase.Repository
 {
+    //IPokemonRepository define la firma de métodos
     public interface IPokemonRepository
     {
         Task<IEnumerable<Pokemon>> GetAllPokemon(double? peso, double? altura, int? tipoIdPokemon);

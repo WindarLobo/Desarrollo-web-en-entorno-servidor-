@@ -8,36 +8,52 @@
 }
 
 <div class="container-fluid mt-4">
-    <div class="moving-images ">
 
+    <div class="moving-images ">
+ 
         <img src="/img/Pokemon-Duel_1246085554_195083_1440x810.jpg" class="img-fluid img" alt="Pokemon1" />
+        
         <img src="/img/AAAABdJVIvPW8kVElLF6adcuMyLW22E0UXsmlfct286ylTk9_JAjy8aq8e-elWZRIuiFYmpAFcVWUEy8242zORMCeSBLvgkN3_Ax5Y-O.jpg" class="img-fluid img" alt="Pokemon2" />
+       
         <img src="/img/maxresdefault.jpg" class="img-fluid img" alt="Pokemon3" />
+    
     </div>
+
 </div>
+
 <div class="container-fluid mt-5 text-center">
 
     <form action="@Url.Action("ListaDePokemon","Pokemon")" method="get" class="d-inline-block">
+       
         <button type="submit" class="btn " style="background-color:#CB4335;color: #fff;font-size:20px">Lista de pokemon</button>
+  
     </form>
 
-
     <form action="@Url.Action("ListaEquipo","Pokemon")" method="get" class="d-inline-block">
+        
         <button type="submit" class="btn" style="background-color:#CB4335;color: #fff;font-size:20px">Ver Equipo</button>
+   
     </form>
 
     <form action="/Pokemon/ListaEquipo" method="post" class="d-inline-block">
+       
         <input type="hidden" name="type" value="aleatorio" />
+       
         <button type="submit" class="btn " style="background-color:#CB4335;color: #fff;font-size:20px">Equipo Aleatorio</button>
+    
     </form>
 
 
     <form action="@Url.Action("CombateConEquipoAleatorio","Pokemon")" method="get" class="d-inline-block">
+      
         <button type="submit" class="btn " style="background-color:#CB4335;color: #fff;font-size:20px">Combate aleatorio</button>
+   
     </form>
 
     <form action="@Url.Action("LucharConMiEquipo","Pokemon")" method="get" class="d-inline-block">
+       
         <button type="submit" class="btn " style="background-color:#CB4335;color: #fff;font-size:20px">Combate con mi equipo</button>
+    
     </form>
 
 

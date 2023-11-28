@@ -3,6 +3,8 @@ using System.Net.NetworkInformation;
 
 namespace LoboGarcesWindarTarea4.DataBase.Repository
 {
+
+    // EquipoReposiotrio proporciona funcionalidades para gestionar equipos de Pokémon, permitiendo añadir Pokémon al equipo.
     public static class EquipoReposiotrio
     {
         private const int _maxPokemon = 6;
@@ -26,11 +28,13 @@ namespace LoboGarcesWindarTarea4.DataBase.Repository
 
         }
 
-        public  static  Equipo MiEquipoTodo()
+        //MiEquipoTodo obtengo el equipo actual .
+        public static  Equipo MiEquipoTodo()
         {
             return MiEquipo;
         }
 
+        //GetRandomMiEquipo genera  equipos aleatorio.
         public static Equipo GetRandomMiEquipo(List<Pokemon> allPokemons, int? numeroPokemon = null)
         {
             Equipo EquipoAleatorio = new()

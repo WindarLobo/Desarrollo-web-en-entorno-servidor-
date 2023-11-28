@@ -5,23 +5,26 @@ namespace LoboGarcesWindarTarea4
     public class CompararTipoFuerte
     {
 
-
+        // Lógica de comparación de tipos
+        // Implementa según tus reglas específicas
         public static string CompararTipos(List<Tipo> tipos1, List<Tipo> tipos2)
         {
             foreach (var tipo1 in tipos1)
             {
                 foreach (var tipo2 in tipos2)
                 {
-                    // Lógica de comparación de tipos
-                    // Implementa según tus reglas específicas
-
+                   
                     if (EsTipoFuerte(tipo1, tipo2))
+
                     {
                         return tipo1.TipoNombre;
+
                     }
                     else if (EsTipoFuerte(tipo2, tipo1))
+
                     {
                         return tipo2.TipoNombre;
+
                     }
                 }
             }
@@ -30,11 +33,12 @@ namespace LoboGarcesWindarTarea4
             return null; // En caso de empate o tipos no comparables
         }
 
-
+       
+        // Lógica para determinar si tipo1 es fuerte contra tipo2
+        // Implementa según tus reglas específicas
         private static bool EsTipoFuerte(Tipo tipo1, Tipo tipo2)
-        { //switch c# un switch nuevo 
-            // Lógica para determinar si tipo1 es fuerte contra tipo2
-            // Implementa según tus reglas específicas
+
+        {  //switch c# un switch nuevo 
             return tipo1.TipoNombre switch
             {
                 "Fuego" => tipo2.TipoNombre == "Planta"|| tipo2.TipoNombre == "Acero",

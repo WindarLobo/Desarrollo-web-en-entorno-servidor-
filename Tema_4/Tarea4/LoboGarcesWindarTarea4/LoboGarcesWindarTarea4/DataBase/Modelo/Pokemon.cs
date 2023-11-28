@@ -5,7 +5,7 @@ using System.Security.Policy;
 
 namespace LoboGarcesWindarTarea4.DataBase.Modelo
 {
-
+    //Pokemon representan objetos.
     public class Pokemon
     {
         public int PokemonId { get; set; }
@@ -21,10 +21,9 @@ namespace LoboGarcesWindarTarea4.DataBase.Modelo
                 return string.Join(", ", Tipos);
             }
         }
-
     }
 
-   
+    //PokemonFull extiende de Pokemon con detalles adicionales.
     public class PokemonFull : Pokemon
     {
 

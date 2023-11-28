@@ -1,5 +1,6 @@
 ﻿namespace LoboGarcesWindarTarea4.DataBase.Modelo
 {
+    //Estadistica
     public class Estadistica
     {
         public int Ps { get; set; }
