@@ -19,22 +19,18 @@ namespace LoboGarcesWindarTarea4.Controllers
         //Ruta de Acción
 
         [Route("/Pokemon")]
-
         [Route("/Pokemon/ListaDePokemon")]
 
         //ListaDePokemon obtiene todos los pokemons.
         public async Task<IActionResult> ListaDePokemon()
         {
             var pokemons = await _pokemonRepository.GetAllPokemon(null, null, null);
-
             var tipos = await _pokemonRepository.GetTipos();
-
 
             var viewModel = new PokemonViewModel
             {
                 Pokemons = pokemons,
                 Tipos = tipos,
-
             };
 
             return View(viewModel);
@@ -178,7 +174,7 @@ namespace LoboGarcesWindarTarea4.Controllers
 
         //Ruta de acceso para esta acción.
 
-        [Route("/Pokemon/LucharConMiEquipo/")]
+        [Route("/Pokemon/LucharConMiEquipo")]
 
         //LucharConMiEquipo  maneja la lógica para simular una batalla entre mi equipo actual y un equipo aleatorio. 
         public async Task<IActionResult> LucharConMiEquipo()
@@ -191,38 +187,22 @@ namespace LoboGarcesWindarTarea4.Controllers
             // Generar un equipo aleatorio
             var equipoAleatorio = EquipoReposiotrio.GetRandomMiEquipo(allPokemon.ToList(), miEquipo.Pokemons.Count);
 
-            // Verificar si el equipo aleatorio ya tiene el tamaño deseado
-            while (miEquipo.Pokemons.Count < miEquipo.Pokemons.Count)
-            {
-                // Agregar más Pokémon aleatorios al equipo aleatorio
-                var pokemonAleatorio = EquipoReposiotrio.GetRandomMiEquipo(allPokemon.ToList());
-
-                equipoAleatorio.Pokemons.Add(pokemonAleatorio.Pokemons.First());
-            }
-
             // Realizar la batalla entre los dos equipos
+            var resultadoBatalla = SimuladorCombate.RealizarCombate(miEquipo, equipoAleatorio);
 
-            var resultadoBatalla = Combate.RealizarCombate(miEquipo, equipoAleatorio);
-            TempData["ResultadoBatalla"] = resultadoBatalla;
             // Crear y retornar un modelo para la vista
-
-            var combate = new SimularCombateViewModel
+            var batallaViewModel = new SimularCombateViewModel
             {
-                Equipo1 = equipoAleatorio,
-
-                Equipo2 = miEquipo,
-
-                ResultadoBatalla = resultadoBatalla,
-
-                 MostrarResultados = true
+               Batalla = resultadoBatalla,
+               ConMiEquipo = true
             };
 
-            return View(combate);
+            return View("Batalla", batallaViewModel);
         }
 
         //Ruta de acceso para esta acción.
 
-        [Route("/Pokemon/CombateConEquipoAleatorio/")]
+        [Route("/Pokemon/CombateConEquipoAleatorio")]
 
         //CombateConEquipoAleatorio maneja la logica para simular una batalla entre dos equipos aleatorios
         public async Task<IActionResult> CombateConEquipoAleatorio()
@@ -234,53 +214,18 @@ namespace LoboGarcesWindarTarea4.Controllers
 
             var equipoRandom2 = EquipoReposiotrio.GetRandomMiEquipo(allPokemon.ToList());
 
-            var resultadoBatalla = Combate.RealizarCombate(equipoRandom1, equipoRandom2);
-
-            // Almacenar el resultado en TempData
-
-            TempData["ResultadoBatalla"] = resultadoBatalla;
+            var resultadoBatalla = SimuladorCombate.RealizarCombate(equipoRandom1, equipoRandom2);
 
             // Crear y retornar un modelo para la vista
-
-            var combate = new SimularCombateViewModel
+            var batallaViewModel = new SimularCombateViewModel
             {
-                Equipo1 = equipoRandom1,
-
-                Equipo2 = equipoRandom2,
-
-                ResultadoBatalla = resultadoBatalla,
-
-                MostrarResultados = true
-
+               Batalla = resultadoBatalla,
+               ConMiEquipo = false
             };
 
-            return View(combate);
+            return View("Batalla", batallaViewModel);
         }
 
-        //Esta acción responde solo a solicitudes HTTP GET.
-        [HttpGet]
-
-        //Ruta de acceso para esta acción.
-
-        [Route("/Pokemon/ResultadosCombate/")]
-
-        //ResultadosCombate() maneja la lógica para mostrar los resultados de una batalla simulada entre equipos.
-        public async Task<IActionResult> ResultadosCombate()
-        {
-            // Recuperar el resultado de la batalla de TempData
-
-            var resultadoBatalla = TempData["ResultadoBatalla"] as string;
-
-            var combate = new SimularCombateViewModel
-            {
-                ResultadoBatalla = resultadoBatalla,
-
-                MostrarResultados = true
-            };
-
-
-            return View(combate);
-        }
 
     }
 

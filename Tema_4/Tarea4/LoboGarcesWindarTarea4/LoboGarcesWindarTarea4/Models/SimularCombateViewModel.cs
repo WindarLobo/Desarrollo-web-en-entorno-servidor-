@@ -4,10 +4,8 @@ namespace LoboGarcesWindarTarea4.Models
 {
     public class SimularCombateViewModel
     {
-       
-        public Equipo Equipo1 { get; set; }
-        public Equipo Equipo2 { get; set; }
-        public string  ResultadoBatalla { get; set; }
-        public bool MostrarResultados { get; set; }
+        public Batalla Batalla { get; set; }
+
+        public bool ConMiEquipo { get; set; }
     }
 }

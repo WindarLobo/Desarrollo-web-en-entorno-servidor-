@@ -28,14 +28,21 @@
                         };
 }
 
-<h3 class="text-center" style="font-family: 'Cormorant', serif; font-size:40px">Combate con mi equipo</h3>
+@if (Model.ConMiEquipo)
+{
+    <h3 class="text-center" style="font-family: 'Cormorant', serif; font-size:40px">Combate con mi equipo</h3>
+}
+else
+{
+    <h3 class="text-center" style="font-family: 'Cormorant', serif; font-size:40px">Combate aleatoria</h3>
+}
 
 
 <div class="container ColorTable rounded-3">
     <h3 class="text-center mt-5" style="font-family: 'EB Garamond', serif; font-size:30px">Equipo1</h3>
 
     <div class="row flex-wrap mt-3">
-        @foreach (var equipo2 in Model.Equipo2.Pokemons)
+        @foreach (var equipo2 in Model.Batalla.Equipo1.Pokemons)
         {
             string rutaImagenEquipo2 = $"/img/{equipo2.PokemonId}.png";
 
@@ -44,8 +51,7 @@
                 <a href="@Url.Action("Detalle", new { numero_Pokedex = equipo2.PokemonId})">
                     <img src="@rutaImagenEquipo2" alt="Imagen de la evolución" class="img-fluid" style="width:150px;" />
                 </a>
-               
-               
+                      
                 <div class="mt-2 text-center">
                     <p>
                         @Html.DisplayFor(modelItem => equipo2.NombrePokemon)
@@ -66,7 +72,7 @@
     <h3 class="text-center mt-5" style="font-family: 'EB Garamond', serif; font-size:30px">Equipo2</h3>
 
     <div class="row flex-wrap mt-3">
-        @foreach (var equipo1 in Model.Equipo1.Pokemons)
+        @foreach (var equipo1 in Model.Batalla.Equipo2.Pokemons)
         {
             string rutaImagenEquipo1 = $"/img/{equipo1.PokemonId}.png";
 
@@ -89,6 +95,13 @@
 
         }
     </div>
+</div>
+
+<div>
+    @foreach(var combate in Model.Batalla.Combates)
+    {
+        <h1> @combate.Ganador.Pokemon.NombrePokemon - @combate.Ganador.Motivo  </h1>
+    }
 </div>
 
 <div class="mt-5 text-center ">
