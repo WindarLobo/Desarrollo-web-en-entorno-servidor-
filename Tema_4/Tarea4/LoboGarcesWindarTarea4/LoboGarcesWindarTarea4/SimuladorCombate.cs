@@ -48,6 +48,7 @@ namespace LoboGarcesWindarTarea4.Models
                     if (EsTipoFuerte(tipo1, tipo2))
                     {
                         pokemon1Fuerte = true;
+                       
                         break;
                     }
                 }
@@ -65,33 +66,35 @@ namespace LoboGarcesWindarTarea4.Models
                 }
             }
 
-            if(pokemon1Fuerte && !pokemon2Fuerte)
+            if (pokemon1Fuerte && !pokemon2Fuerte)
             {
-                return new PokemonGanador { Pokemon = pokemon1, 
-                                            Motivo = "Es mas fuerte por tipo."};
+                return new PokemonGanador
+                {
+                    Pokemon = pokemon1,
+                    Motivo = "Es mas fuerte por tipo."
+                };
             }
             else if (pokemon2Fuerte && !pokemon1Fuerte)
             {
-                return new PokemonGanador { Pokemon = pokemon2, 
-                                            Motivo = "Es mas fuerte por tipo." };
+                return new PokemonGanador
+                {
+                    Pokemon = pokemon2,
+                    Motivo = "Es mas fuerte por tipo."
+                };
             }
             else
             {
                 // En caso de empate en tipos, se mide por orden de peso y altura
-                if (pokemon1.Peso > pokemon2.Peso)
-                    return new PokemonGanador { Pokemon = pokemon1, Motivo = "Por peso"};
+                if (pokemon1.Peso + pokemon1.Altura > pokemon2.Peso + pokemon2.Altura)
+                    return new PokemonGanador { Pokemon = pokemon1, Motivo = "Por volumen"};
 
-                //if (pokemon1.Peso < pokemon2.Peso)
-                //    return pokemon2;
+                else
+                {
+                    return new PokemonGanador { Pokemon = pokemon2, Motivo = "Por volumen" };
+                }
 
-                //if (pokemon1.Altura > pokemon2.Altura)
-                //    return pokemon1;
-
-                //if (pokemon1.Altura < pokemon2.Altura)
-                //    return pokemon2;
             }
-
-            return new PokemonGanador { Pokemon = pokemon1, Motivo = "Por peso" };
+           
         }
 
 

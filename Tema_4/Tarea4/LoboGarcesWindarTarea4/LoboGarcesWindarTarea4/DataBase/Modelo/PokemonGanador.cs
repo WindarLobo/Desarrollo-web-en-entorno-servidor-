@@ -4,5 +4,6 @@
     {
         public Pokemon Pokemon { get; set; }
         public string Motivo { get; set; }
+        
     }
 }

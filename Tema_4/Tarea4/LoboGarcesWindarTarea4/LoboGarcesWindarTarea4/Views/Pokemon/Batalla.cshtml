@@ -51,7 +51,7 @@ else
                 <a href="@Url.Action("Detalle", new { numero_Pokedex = equipo2.PokemonId})">
                     <img src="@rutaImagenEquipo2" alt="Imagen de la evolución" class="img-fluid" style="width:150px;" />
                 </a>
-                      
+
                 <div class="mt-2 text-center">
                     <p>
                         @Html.DisplayFor(modelItem => equipo2.NombrePokemon)
@@ -66,7 +66,7 @@ else
 
         }
     </div>
-    </div>
+</div>
 
 <div class="container ColorTable rounded-3">
     <h3 class="text-center mt-5" style="font-family: 'EB Garamond', serif; font-size:30px">Equipo2</h3>
@@ -97,17 +97,53 @@ else
     </div>
 </div>
 
-<div>
-    @foreach(var combate in Model.Batalla.Combates)
-    {
-        <h1> @combate.Ganador.Pokemon.NombrePokemon - @combate.Ganador.Motivo  </h1>
-    }
+
+
+<!-- Ajusta el valor de mb-3 según sea necesario -->
+
+
+
+<div class="container ColorTable rounded-3 mt-5">
+    <h3 class="text-center" style="font-family: 'Cormorant', serif; font-size:40px">Batalla</h3>
+    <div class="row flex-wrap mt-3">
+        @foreach (var combate in Model.Batalla.Combates)
+        {
+
+            <h3> Combate:  </h3>
+            string rutaImagenEquipo1 = $"/img/{combate.Pokemon1.PokemonId}.png";
+            string rutaImagenEquipo2 = $"/img/{combate.Pokemon2.PokemonId}.png";
+            <div class="col d-flex flex-column align-items-center">
+
+                <img src="@rutaImagenEquipo1" alt="Imagen batalla" class="img-fluid" style="width:150px;" />
+
+                <div class="mt-2 text-center">
+                    <p>
+                        @Html.DisplayFor(modelItem => combate.Pokemon1.NombrePokemon)
+                        N.º&nbsp;@Html.DisplayFor(modelItem => combate.Pokemon1.PokemonId)
+                    </p>
+
+
+                </div>
+
+
+                <h1>Vs</h1>
+                <img src="@rutaImagenEquipo2" alt="Imagen batalla" class="img-fluid" style="width:150px;" />
+
+
+                <div class="mt-2 text-center">
+                    <p>
+                        @Html.DisplayFor(modelItem => combate.Pokemon2.NombrePokemon)
+                        N.º&nbsp;@Html.DisplayFor(modelItem => combate.Pokemon2.PokemonId)
+                    </p>
+
+
+                </div>
+                <h6> Ganador : @combate.Ganador.Pokemon.NombrePokemon - @combate.Ganador.Motivo  </h6>
+            </div>
+
+        }
+    </div>
 </div>
 
-<div class="mt-5 text-center ">
 
 
-    <form action="@Url.Action("ResultadosCombate","Pokemon")" method="get">
-        <button type="submit" class="btn btn-outline-primary">Ver resultado </button>
-    </form>
-</div>
