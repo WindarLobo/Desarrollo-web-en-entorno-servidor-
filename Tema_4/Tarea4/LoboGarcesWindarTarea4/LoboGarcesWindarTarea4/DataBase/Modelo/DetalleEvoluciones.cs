@@ -1,8 +1,7 @@
-﻿namespace LoboGarcesWindarTarea4.DataBase.Modelo
+﻿namespace LoboGarcesWindarTarea4.DataBase.Modelo;
+
+//DetalleEvoluciones representa  un objecto de Pokemon
+public class DetalleEvoluciones
 {
-    //DetalleEvoluciones representa  un objecto de Pokemon
-    public class DetalleEvoluciones
-    {
-       public Pokemon Pokemon { get; set; }
-    }
+   public Pokemon Pokemon { get; set; }
 }

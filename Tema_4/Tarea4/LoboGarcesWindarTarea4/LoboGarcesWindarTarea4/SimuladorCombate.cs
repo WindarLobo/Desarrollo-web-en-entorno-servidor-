@@ -5,29 +5,37 @@ namespace LoboGarcesWindarTarea4.Models
 {
     public class SimuladorCombate
     {
-        //RealizarCombate() se encarga de la simulación de combates entre Pokémon de dos equipos y genera un mensaje HTML. 
+        //RealizarCombate() se encarga de la simulación de combates entre Pokémon de dos equipos. 
         public static Batalla RealizarCombate(Equipo equipo1, Equipo equipo2)
         {
+           
             var batalla = new Batalla()
             {
                 Equipo1 = equipo1,
+
                 Equipo2 = equipo2,
+
                 Combates = new List<Combate>()
             };
 
             for (int i = 0; i < equipo1.Pokemons.Count; i++)
             {
+                
                 var pokemon1 = equipo1.Pokemons[i];
+
                 var pokemon2 = equipo2.Pokemons[i];
 
                 var combate = new Combate
                 {
                     Pokemon1 = pokemon1,
+
                     Pokemon2 = pokemon2,
+
                     Ganador = DeterminarGanadorCombate(pokemon1, pokemon2)
                 };
 
                 batalla.Combates.Add(combate);
+                
             }
 
             return batalla;
@@ -35,10 +43,13 @@ namespace LoboGarcesWindarTarea4.Models
 
         private static PokemonGanador DeterminarGanadorCombate(Pokemon pokemon1, Pokemon pokemon2)
         {
+            
             // Lógica de comparación de tipos
+
             // Implementa según tus reglas específicas
 
             var pokemon1Fuerte = false;
+
             var pokemon2Fuerte = false;
 
             foreach (var tipo1 in pokemon1.Tipos)
@@ -71,7 +82,10 @@ namespace LoboGarcesWindarTarea4.Models
                 return new PokemonGanador
                 {
                     Pokemon = pokemon1,
-                    Motivo = "Es mas fuerte por tipo."
+
+                    Motivo = "Es mas fuerte por tipo. "
+
+                    
                 };
             }
             else if (pokemon2Fuerte && !pokemon1Fuerte)
@@ -79,18 +93,23 @@ namespace LoboGarcesWindarTarea4.Models
                 return new PokemonGanador
                 {
                     Pokemon = pokemon2,
-                    Motivo = "Es mas fuerte por tipo."
+
+                    Motivo = "Es mas fuerte por tipo.",
+
+                   
                 };
             }
             else
             {
-                // En caso de empate en tipos, se mide por orden de peso y altura
+                // En caso de empate en tipos, se suma   peso y altura para determinar la masa
+
                 if (pokemon1.Peso + pokemon1.Altura > pokemon2.Peso + pokemon2.Altura)
-                    return new PokemonGanador { Pokemon = pokemon1, Motivo = "Por volumen"};
+
+                    return new PokemonGanador { Pokemon = pokemon1, Motivo = "Por  volume de masa"};
 
                 else
                 {
-                    return new PokemonGanador { Pokemon = pokemon2, Motivo = "Por volumen" };
+                    return new PokemonGanador { Pokemon = pokemon2, Motivo = "Por volume de masa"};
                 }
 
             }
@@ -99,9 +118,12 @@ namespace LoboGarcesWindarTarea4.Models
 
 
         // Lógica para determinar si tipo1 es fuerte contra tipo2
+
         // Implementa según tus reglas específicas
         private static bool EsTipoFuerte(Tipo tipo1, Tipo tipo2)
+
         {  //switch c# un switch nuevo 
+
             return tipo1.TipoNombre switch
             {
                 "Fuego" => tipo2.TipoNombre == "Planta" || tipo2.TipoNombre == "Acero",

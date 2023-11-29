@@ -1,11 +1,12 @@
 ﻿using LoboGarcesWindarTarea4.DataBase.Modelo;
 
-namespace LoboGarcesWindarTarea4.Models
-{
-    public class SimularCombateViewModel
-    {
-        public Batalla Batalla { get; set; }
+namespace LoboGarcesWindarTarea4.Models;
 
-        public bool ConMiEquipo { get; set; }
-    }
+//SimularCombateViewModel contiene  un objecto y bool
+public class SimularCombateViewModel
+{
+    public Batalla Batalla { get; set; }
+
+    public bool ConMiEquipo { get; set; }
+   
 }
