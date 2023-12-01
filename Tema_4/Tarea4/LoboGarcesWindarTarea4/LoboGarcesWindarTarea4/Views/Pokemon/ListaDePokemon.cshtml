@@ -11,7 +11,7 @@
 
 
 <div class="container-fluid mt-5">
-    <form asp-action="FiltrarPokemon" asp-route-numero_Pokedex="@Model.Pokemons.First().PokemonId" method="post">
+    <form asp-action="FiltrarPokemon" method="post">
         <div class="row ">
 
             <div class="col-md-3 col-lg-2 mt-2">
@@ -43,7 +43,6 @@
                     <option selected>Selecciona un peso</option>
 
                     @foreach (var peso in Model.Pokemons.OrderBy(p => p.Peso).Select(p => p.Peso).Distinct())
-
                     {
                         <option value="@peso">@peso</option>
                     }
@@ -100,123 +99,130 @@
         <div id="mensaje-error" class="alert alert-danger">@TempData["MensajeError"]</div>
     }
 
+@if (Model.Pokemons.Any())
+{
+    <div class="container-fluid">
 
 
-<div class="container-fluid">
-
-
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr style="font-family: 'EB Garamond', serif; font-size:20px">
-                <th>
-                    @Html.DisplayNameFor(model => model.Pokemons.First().Imagen)
-                </th>
-
-                <th>
-                    @Html.DisplayNameFor(model => model.Pokemons.First().PokemonId)
-
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Pokemons.First().NombrePokemon)
-
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Pokemons.First().Tipos)
-
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Pokemons.First().Peso)
-
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Pokemons.First().Altura)
-
-                </th>
-
-                <th></th>
-                <th></th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-            @foreach (var item in Model.Pokemons)
-            {
-                string rutaImagen = $"/img/{item.PokemonId}.png";
-
+        <table class="table table-striped table-hover">
+            <thead>
                 <tr style="font-family: 'EB Garamond', serif; font-size:20px">
-                    <td>
-                        <a href="@Url.Action("Detalle", new { numero_Pokedex = item.PokemonId })">
-                            <img src="@rutaImagen" class="img-fluid" style="width:8rem" />
-                        </a>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Pokemons.First().Imagen)
+                    </th>
 
+                    <th>
+                        @Html.DisplayNameFor(model => model.Pokemons.First().PokemonId)
 
-                    </td>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Pokemons.First().NombrePokemon)
 
-                    <td>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Pokemons.First().Tipos)
 
-                        @Html.DisplayFor(modelItem => item.PokemonId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Pokemons.First().Peso)
 
-                    </td>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Pokemons.First().Altura)
 
-                    <td>
+                    </th>
 
-                        @Html.DisplayFor(modelItem => item.NombrePokemon)
-
-                    </td>
-                    <td>
-
-
-                        @foreach (var tipo in item.AllTipos.Split(','))
-
-                        {
-                            <div class="row  mt-3">
-                                <div class="col-md-8"
-                                     style="@(tipo.Trim() == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
-                                             : (tipo.Trim() == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
-                                     : (tipo.Trim() == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" :"background-color: " + (coloresPorTipo.ContainsKey(tipo.Trim()) ? coloresPorTipo[tipo.Trim()] : "#FFFFFF") + ";")))">
-                                    @tipo.Trim()
-                                </div>
-                            </div>
-                        }
-
-                    </td>
-
-                    <td>
-
-                        @Html.DisplayFor(modelItem => item.Peso)
-
-                    </td>
-
-                    <td>
-
-                        @Html.DisplayFor(modelItem => item.Altura)
-
-                    </td>
-
-
-                    <td>
-
-                        <form asp-action="AgregarAlEquipo" asp-route-numero_Pokedex="@item.PokemonId" method="post">
-
-                            <button type="submit" class="btn" style="background-color:#CB4335;color: #fff; font-size:18px;">Añadir a Mi Equipo</button>
-
-                        </form>
-
-
-                    </td>
+                    <th></th>
+                    <th></th>
 
                 </tr>
-            }
 
-        </tbody>
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in Model.Pokemons)
+                {
+                    string rutaImagen = $"/img/{item.PokemonId}.png";
+
+                    <tr style="font-family: 'EB Garamond', serif; font-size:20px">
+                        <td>
+                            <a href="@Url.Action("Detalle", new { numero_Pokedex = item.PokemonId })">
+                                <img src="@rutaImagen" class="img-fluid" style="width:8rem" />
+                            </a>
 
 
-    </table>
+                        </td>
 
-</div>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.PokemonId)
+
+                        </td>
+
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.NombrePokemon)
+
+                        </td>
+                        <td>
+
+
+                            @foreach (var tipo in item.AllTipos.Split(','))
+
+                            {
+                                <div class="row  mt-3">
+                                    <div class="col-md-8"
+                                         style="@(tipo.Trim() == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
+                                             : (tipo.Trim() == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
+                                     : (tipo.Trim() == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" :"background-color: " + (coloresPorTipo.ContainsKey(tipo.Trim()) ? coloresPorTipo[tipo.Trim()] : "#FFFFFF") + ";")))">
+                                        @tipo.Trim()
+                                    </div>
+                                </div>
+                            }
+
+                        </td>
+
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.Peso)
+
+                        </td>
+
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.Altura)
+
+                        </td>
+
+
+                        <td>
+
+                            <form asp-action="AgregarAlEquipo" asp-route-numero_Pokedex="@item.PokemonId" method="post">
+
+                                <button type="submit" class="btn" style="background-color:#CB4335;color: #fff; font-size:18px;">Añadir a Mi Equipo</button>
+
+                            </form>
+
+
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+
+        </table>
+
+    </div>
+}
+else
+{
+    TempData["MensajeError"] = "No existen pokemon con los filtros indicados.";
+    <div id="mensaje-error" class="alert alert-danger">@TempData["MensajeError"]</div>
+}
+
 
 
 
@@ -230,7 +236,7 @@
 
         $("#mensaje-exito, #mensaje-error").fadeOut(1000);
 
-    }, 1000);
+    }, 3000);
 
 </script>
 
