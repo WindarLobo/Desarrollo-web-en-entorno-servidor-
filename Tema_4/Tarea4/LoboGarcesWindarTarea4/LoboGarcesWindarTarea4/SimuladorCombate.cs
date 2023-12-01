@@ -111,7 +111,7 @@ public class SimuladorCombate
     }
 
 
-    // Lógica para determinar si tipo1 es fuerte contra tipo2
+    // Lógica para determinar si tipo1 es debil contra tipo2
 
     // Implementa según tus reglas específicas
     private static bool EsTipoDebil(Tipo tipo1, Tipo tipo2)
