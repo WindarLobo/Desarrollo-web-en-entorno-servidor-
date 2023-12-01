@@ -48,17 +48,17 @@ public class SimuladorCombate
 
         // Implementa según tus reglas específicas
 
-        var pokemon1Fuerte = false;
+        var pokemon1Debil = false;
 
-        var pokemon2Fuerte = false;
+        var pokemon2Debil = false;
 
         foreach (var tipo1 in pokemon1.Tipos)
         {
             foreach (var tipo2 in pokemon2.Tipos)
             {
-                if (EsTipoFuerte(tipo1, tipo2))
+                if (EsTipoDebil(tipo1, tipo2))
                 {
-                    pokemon1Fuerte = true;
+                    pokemon1Debil = true;
                    
                     break;
                 }
@@ -69,34 +69,28 @@ public class SimuladorCombate
         {
             foreach (var tipo1 in pokemon1.Tipos)
             {
-                if (EsTipoFuerte(tipo2, tipo1))
+                if (EsTipoDebil(tipo2, tipo1))
                 {
-                    pokemon2Fuerte = true;
+                    pokemon2Debil = true;
                     break;
                 }
             }
         }
 
-        if (pokemon1Fuerte && !pokemon2Fuerte)
-        {
-            return new PokemonGanador
-            {
-                Pokemon = pokemon1,
-
-                Motivo = "Es mas fuerte por tipo. "
-
-                
-            };
-        }
-        else if (pokemon2Fuerte && !pokemon1Fuerte)
+        if (pokemon1Debil && !pokemon2Debil)
         {
             return new PokemonGanador
             {
                 Pokemon = pokemon2,
-
-                Motivo = "Es mas fuerte por tipo.",
-
-               
+                Motivo = "Es mas fuerte por tipo. "            
+            };
+        }
+        else if (pokemon2Debil && !pokemon1Debil)
+        {
+            return new PokemonGanador
+            {
+                Pokemon = pokemon1,
+                Motivo = "Es mas fuerte por tipo.",             
             };
         }
         else
@@ -120,45 +114,45 @@ public class SimuladorCombate
     // Lógica para determinar si tipo1 es fuerte contra tipo2
 
     // Implementa según tus reglas específicas
-    private static bool EsTipoFuerte(Tipo tipo1, Tipo tipo2)
+    private static bool EsTipoDebil(Tipo tipo1, Tipo tipo2)
 
     {  //switch c# un switch nuevo 
 
         return tipo1.TipoNombre switch
         {
-            "Fuego" => tipo2.TipoNombre == "Planta" || tipo2.TipoNombre == "Acero",
+            "Acero" => tipo2.TipoNombre == "Lucha" || tipo2.TipoNombre == "Fuego" || tipo2.TipoNombre == "Tierra",
 
-            "Agua" => tipo2.TipoNombre == "Fuego" || tipo2.TipoNombre == "Roca" || tipo2.TipoNombre == "Tierra",
+            "Fuego" => tipo2.TipoNombre == "Tierra" || tipo2.TipoNombre == "Agua" || tipo2.TipoNombre == "Roca",
 
-            "Planta" => tipo2.TipoNombre == "Agua" || tipo2.TipoNombre == "Roca" || tipo2.TipoNombre == "Tierra",
+            "Agua" => tipo2.TipoNombre == "Planta" || tipo2.TipoNombre == "Eléctrico",
 
-            "Eléctrico" => tipo2.TipoNombre == "Agua" || tipo2.TipoNombre == "Volador",
+            "Planta" => tipo2.TipoNombre == "Voldador" || tipo2.TipoNombre == "Bicho" || tipo2.TipoNombre == "Veneno" || tipo2.TipoNombre == "Hielo" || tipo2.TipoNombre == "Fuego",
 
-            "Psíquico" => tipo2.TipoNombre == "Agua" || tipo2.TipoNombre == "Volador",
+            "Eléctrico" => tipo2.TipoNombre == "Tierra",
 
-            "Hielo" => tipo2.TipoNombre == "Planta" || tipo2.TipoNombre == "Tierra" || tipo2.TipoNombre == "Volador" || tipo2.TipoNombre == "Dragón",
+            "Psíquico" => tipo2.TipoNombre == "Bicho" || tipo2.TipoNombre == "Fantasma" || tipo2.TipoNombre == "Siniestro",
 
-            "Volador" => tipo2.TipoNombre == "Planta" || tipo2.TipoNombre == "Lucha" || tipo2.TipoNombre == "Bicho",
+            "Hielo" => tipo2.TipoNombre == "Lucha" || tipo2.TipoNombre == "Acero" || tipo2.TipoNombre == "Roca" || tipo2.TipoNombre == "Fuego",
 
-            "Tierra" => tipo2.TipoNombre == "Fuego" || tipo2.TipoNombre == "Eléctrico" || tipo2.TipoNombre == "Acero" || tipo2.TipoNombre == "Roca" || tipo2.TipoNombre == "Veneno",
+            "Volador" => tipo2.TipoNombre == "Roca" || tipo2.TipoNombre == "Hielo" || tipo2.TipoNombre == "Eléctrico",
 
-            "Lucha" => tipo2.TipoNombre == "Normal",
+            "Tierra" => tipo2.TipoNombre == "Agua" || tipo2.TipoNombre == "Planta" || tipo2.TipoNombre == "Hielo",
 
-            "Dragón" => tipo2.TipoNombre == "Dragón",
+            "Lucha" => tipo2.TipoNombre == "Psíquico" || tipo2.TipoNombre == "Volador" || tipo2.TipoNombre == "Hielo",
 
-            "Veneno" => tipo2.TipoNombre == "Planta" || tipo2.TipoNombre == "Hada",
+            "Dragón" => tipo2.TipoNombre == "Dragón"  || tipo2.TipoNombre == "Hada" || tipo2.TipoNombre == "Hielo",
 
-            "Roca" => tipo2.TipoNombre == "Fuego" || tipo2.TipoNombre == "Hielo" || tipo2.TipoNombre == "Volador" || tipo2.TipoNombre == "Bicho",
+            "Veneno" => tipo2.TipoNombre == "Psíquico" || tipo2.TipoNombre == "Tierra",
 
-            "Bicho" => tipo2.TipoNombre == "Psíquico" || tipo2.TipoNombre == "Siniestro" || tipo2.TipoNombre == "Planta",
+            "Roca" => tipo2.TipoNombre == "Lucha" || tipo2.TipoNombre == "Tierra" || tipo2.TipoNombre == "Acero" || tipo2.TipoNombre == "Agua" || tipo2.TipoNombre == "Planta",
 
-            "Fantasma" => tipo2.TipoNombre == "Psíquico" || tipo2.TipoNombre == "Fantasma",
+            "Bicho" => tipo2.TipoNombre == "Volador" || tipo2.TipoNombre == "Fuego" || tipo2.TipoNombre == "Roca",
 
-            "Siniestro" => tipo2.TipoNombre == "Psíquico" || tipo2.TipoNombre == "Fantasma",
+            "Fantasma" => tipo2.TipoNombre == "Siniestro" || tipo2.TipoNombre == "Fantasma",
 
-            "Hada" => tipo2.TipoNombre == "Lucha" || tipo2.TipoNombre == "Dragón" || tipo2.TipoNombre == "Siniestro",
+            "Siniestro" => tipo2.TipoNombre == "Lucha" || tipo2.TipoNombre == "Hada" || tipo2.TipoNombre == "Bicho",
 
-            "Acero" => tipo2.TipoNombre == "Hielo" || tipo2.TipoNombre == "Roca" || tipo2.TipoNombre == "Hada",
+            "Hada" => tipo2.TipoNombre == "Acero" || tipo2.TipoNombre == "Veneno",
 
             _ => false,
         };

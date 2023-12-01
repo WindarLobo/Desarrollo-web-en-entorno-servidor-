@@ -51,9 +51,9 @@ else
 
     <div class="row flex-wrap mt-3">
 
-        @foreach (var equipo1 in Model.Batalla.Equipo1.Pokemons)
+        @foreach (var pokemon in Model.Batalla.Equipo1.Pokemons)
         {
-            string rutaImagenEquipo1 = $"/img/{equipo1.PokemonId}.png";
+            string rutaImagenEquipo1 = $"/img/{pokemon.PokemonId}.png";
 
             <!-- Ajusta el valor de mb-3 según sea necesario -->
 
@@ -63,22 +63,25 @@ else
 
                 <div class="mt-2 text-center">
 
-                    @Html.DisplayFor(modelItem => equipo1.NombrePokemon)
+                    @Html.DisplayFor(modelItem => pokemon.NombrePokemon)
 
-                    N.º&nbsp;@Html.DisplayFor(modelItem => equipo1.PokemonId)
+                    N.º&nbsp;@Html.DisplayFor(modelItem => pokemon.PokemonId)
 
                     <div class="row">
- 
-                        <div class="col  d-inline-block mx-2 mb-5 rounded"
-                          
-                        style="@(equipo1.Tipos.FirstOrDefault()?.TipoNombre == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
-                        
-                             : (equipo1.Tipos.FirstOrDefault()?.TipoNombre == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
-                        
-                             : (equipo1.Tipos.FirstOrDefault()?.TipoNombre == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" : "background-color: " + (coloresPorTipo.ContainsKey(equipo1.Tipos.FirstOrDefault()?.TipoNombre) ? coloresPorTipo[equipo1.Tipos.FirstOrDefault()?.TipoNombre] : "#FFFFFF") + ";")))">
-                          
-                             <div class="p-1"> @equipo1.Tipos.FirstOrDefault()?.TipoNombre</div>
-                        </div>
+                        @foreach (var tipo in pokemon.Tipos)
+                        {
+                            <div class="col-md-8 rounded  mt-2"
+                                 style="@(tipo.TipoNombre == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
+
+                        : (tipo.TipoNombre == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
+
+                        : (tipo.TipoNombre == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" : "background-color: " + (coloresPorTipo.ContainsKey(tipo.TipoNombre) ? coloresPorTipo[tipo.TipoNombre] : "#FFFFFF") + ";")))">
+
+                                <div class="p-1"> @tipo.TipoNombre</div>
+
+                            </div>
+                        }
+
                     </div>
 
                 </div>
@@ -95,9 +98,9 @@ else
 
     <div class="row flex-wrap mt-3">
 
-        @foreach (var equipo2 in Model.Batalla.Equipo2.Pokemons)
+        @foreach (var pokemon in Model.Batalla.Equipo2.Pokemons)
         {
-            string rutaImagenEquipo2 = $"/img/{equipo2.PokemonId}.png";
+            string rutaImagenEquipo2 = $"/img/{pokemon.PokemonId}.png";
 
             <!-- Ajusta el valor de mb-3 según sea necesario -->
 
@@ -107,26 +110,27 @@ else
 
                 <div class="mt-2 text-center">
 
-                    @Html.DisplayFor(modelItem => equipo2.NombrePokemon)
+                    @Html.DisplayFor(modelItem => pokemon.NombrePokemon)
 
-                    N.º&nbsp;@Html.DisplayFor(modelItem => equipo2.PokemonId)
+                    N.º&nbsp;@Html.DisplayFor(modelItem => pokemon.PokemonId)
 
                     <div class="row">
+                        @foreach (var tipo in pokemon.Tipos)
+                        {
+                            <div class="col-md-8 rounded  mt-2"
+                                 style="@(tipo.TipoNombre == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
 
-                        <div class="col  d-inline-block mx-2 mb-5 rounded"
+                        : (tipo.TipoNombre == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
 
-                             
-                        style="@(equipo2.Tipos.FirstOrDefault()?.TipoNombre == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
-                         
-                        : (equipo2.Tipos.FirstOrDefault()?.TipoNombre == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
-                       
-                        : (equipo2.Tipos.FirstOrDefault()?.TipoNombre == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" : "background-color: " + (coloresPorTipo.ContainsKey(equipo2.Tipos.FirstOrDefault()?.TipoNombre) ? coloresPorTipo[equipo2.Tipos.FirstOrDefault()?.TipoNombre] : "#FFFFFF") + ";")))">
-                           
-                        <div class="p-1"> @equipo2.Tipos.FirstOrDefault()?.TipoNombre</div>
-                       
+                        : (tipo.TipoNombre == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" : "background-color: " + (coloresPorTipo.ContainsKey(tipo.TipoNombre) ? coloresPorTipo[tipo.TipoNombre] : "#FFFFFF") + ";")))">
+
+                                <div class="p-1"> @tipo.TipoNombre</div>
+
+                            </div>
+                        }
+
                     </div>
 
-                    </div>
 
                 </div>
             </div>
@@ -177,16 +181,22 @@ else
 
                     <div class="row justify-content-center">
 
-                        <div class="col-5  d-inline-block mx-2 mb-5 rounded"
-                             style="@(combate.Pokemon1.Tipos.FirstOrDefault()?.TipoNombre == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
+                        @foreach (var tipo in combate.Pokemon1.Tipos)
+                        {
+                            <div class="col-5 d-inline-block mx-2 mb-5 rounded"
+                                 style="@(tipo.TipoNombre == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
 
-                   : (combate.Pokemon1.Tipos.FirstOrDefault()?.TipoNombre == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
+                         : (tipo.TipoNombre == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
 
-                   : (combate.Pokemon1.Tipos.FirstOrDefault()?.TipoNombre == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" : "background-color: " + (coloresPorTipo.ContainsKey(combate.Pokemon1.Tipos.FirstOrDefault()?.TipoNombre) ? coloresPorTipo[combate.Pokemon1.Tipos.FirstOrDefault()?.TipoNombre] : "#FFFFFF") + ";")))">
+                         : (tipo.TipoNombre == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" :
+                         "background-color: " + (coloresPorTipo.ContainsKey(tipo.TipoNombre) ? coloresPorTipo[tipo.TipoNombre] : "#FFFFFF") + ";")))">
 
-                            <div class="p-1"> @combate.Pokemon1.Tipos.FirstOrDefault()?.TipoNombre</div>
+                                <div class="p-1"> @tipo.TipoNombre</div>
 
-                        </div>
+                            </div>
+
+
+                        }
                     </div>
 
                 </div>
@@ -206,20 +216,23 @@ else
 
                     N.º&nbsp;@Html.DisplayFor(modelItem => combate.Pokemon2.PokemonId)<br />
 
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center ">
 
 
+                        @foreach (var tipo in combate.Pokemon2.Tipos)
+                        {
+                            <div class="col-5 d-inline-block mx-2 mb-5  rounded"
+                                 style="@(tipo.TipoNombre == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
 
-                        <div class="col-5 d-inline-block mx-2 mb-5 rounded"
-                             style="@(combate.Pokemon2.Tipos.FirstOrDefault()?.TipoNombre == "Volador" ? "background: linear-gradient(to bottom, #87CEEB 60%, #B6B6B6 40%);"
+                         : (tipo.TipoNombre == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
 
-                         : (combate.Pokemon2.Tipos.FirstOrDefault()?.TipoNombre == "Tierra" ? "background: linear-gradient(to bottom, #CBBA0C 50%, #A39E6C 50%);"
+                         : (tipo.TipoNombre == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" :
+                         "background-color: " + (coloresPorTipo.ContainsKey(tipo.TipoNombre) ? coloresPorTipo[tipo.TipoNombre] : "#FFFFFF") + ";")))">
 
-                         : (combate.Pokemon2.Tipos.FirstOrDefault()?.TipoNombre == "Dragón" ? "background: linear-gradient(to bottom, #F63950 50%, #609FEA 50%);" : "background-color: " + (coloresPorTipo.ContainsKey(combate.Pokemon2.Tipos.FirstOrDefault()?.TipoNombre) ? coloresPorTipo[combate.Pokemon2.Tipos.FirstOrDefault()?.TipoNombre] : "#FFFFFF") + ";")))">
+                                <div class="p-1"> @tipo.TipoNombre</div>
 
-                            <div class="p-1"> @combate.Pokemon2.Tipos.FirstOrDefault()?.TipoNombre</div>
-
-                        </div>
+                            </div>
+                        }
 
                     </div>
                 </div>
