@@ -4,10 +4,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Amazon_Montecastelo.Database.Models
 {
 
-    [Table("Carrito")]
+
     public class Carrito
     {
-        [Key]
+      
 
         public int CarritoID { get; set; }
 
@@ -19,8 +19,9 @@ namespace Amazon_Montecastelo.Database.Models
 
         public decimal TotalVenta { get; set; }
 
-        public List<DetalleCarrito> Detalles{ get; set; }
+        public List<DetalleCarrito> Detalles{ get; set; }= default!;
 
+       
     }
 }
 

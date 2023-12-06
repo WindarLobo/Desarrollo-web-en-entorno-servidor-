@@ -1,7 +1,7 @@
-﻿@model IEnumerable<Amazon_Montecastelo.Database.Models.Producto>
+﻿@model IEnumerable<Amazon_Montecastelo.Database.Models.Productos>
 
 @{
-    ViewData["Title"] = "Producto";
+    ViewData["Title"] = "Productos";
 
     <link rel="stylesheet" href="site.css">
 
@@ -40,6 +40,7 @@
                             <td scope="row">@item.Descripcion</td>
                             <td scope="row">@item.Precio</td>
                             <td scope="row">
+                            
                                 <div class="button-container">
                                     <form action="@Url.Action("Edit", "Administrador", new { id = item.ProductoID })" method="get">
                                         <input type="hidden" name="id" />

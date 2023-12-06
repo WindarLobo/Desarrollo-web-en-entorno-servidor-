@@ -1,6 +1,7 @@
 ﻿using Amazon_Montecastelo.Database;
 using Amazon_Montecastelo.Database.Models;
 using Amazon_Montecastelo.Database.Repositorios;
+using Amazon_Montecastelo.Models;
 using LoboGarcesWindarTarea3;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,11 +9,11 @@ namespace Amazon_Montecastelo.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly UsuarioRepositorio _usuarioRepositorio;
+        private readonly AmazonRepository _usuarioRepositorio;
 
-        public LoginController(AmazonContext context)
+        public LoginController(Conexion context)
         {
-            _usuarioRepositorio = new UsuarioRepositorio(context);
+            _usuarioRepositorio = new AmazonRepository(context);
         }
 
         [Route("/Login")]
@@ -27,9 +28,15 @@ namespace Amazon_Montecastelo.Controllers
 
         [Route("/Login/DoLogin")]
 
-        public IActionResult DoLogin(string Email, string Password)
+        public async Task<IActionResult> DoLogin(UsuarioViewModel usuario)
         {
-            var login = _usuarioRepositorio.GetLoginUsernamePassword(Email, Password);
+            if (!ModelState.IsValid)
+            {
+                ViewBag.ErrorMessage = "Error de clave. Por favor, verifica tu correo  y contraseña.";
+                return View("Logueate");
+            }
+
+            var login = await _usuarioRepositorio.GetLoginUsernamePassword(usuario.Email, usuario.Password);
 
             if (login == null)
             {
@@ -43,7 +50,6 @@ namespace Amazon_Montecastelo.Controllers
             return View("/Views/Home/Index.cshtml");
         }
 
-
         [Route("/Login/agregar")]
         public IActionResult Agregar()
         {
@@ -52,40 +58,13 @@ namespace Amazon_Montecastelo.Controllers
 
         [HttpPost]
         [Route("/Login/Create")]
-        public IActionResult Create()
+        public async Task<IActionResult> Create(Usuario usuario)
         {
 
-            var Id = int.Parse(HttpContext.Request.Form["UsuarioID"]);
-            var nombre = HttpContext.Request.Form["NombreUsuario"];
-            var email = HttpContext.Request.Form["Email"];
-            var contrasena = HttpContext.Request.Form["Contrasena"];
+          await _usuarioRepositorio.CreateUsuarioo(usuario);
 
-
-            var usuario = _usuarioRepositorio.GetUsuarioByID(Id);
-
-            if (usuario == null)
-            {
-                _usuarioRepositorio.Save(new Usuario
-                {
-                    UsuarioID = Id,
-                    NombreUsuario = nombre,
-                    Email = email,
-                    Contrasena = contrasena,
-
-                }); ;
-            }
-            else
-            {
-                usuario.NombreUsuario = nombre;
-                usuario.Email = email;
-                usuario.Contrasena = contrasena;
-                _usuarioRepositorio.Update();
-            }
-
-            var usuarios = _usuarioRepositorio.GetAllUsuario();
-
-            return View("Logueate", usuarios);
+            return RedirectToAction("Logueate");
         }
-
+       
     }
 }

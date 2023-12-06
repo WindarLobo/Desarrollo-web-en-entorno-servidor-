@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Amazon_Montecastelo.Database.Models.Producto>
+﻿ @model IEnumerable<Amazon_Montecastelo.Database.Models.Productos>
 
 
 @{
@@ -42,10 +42,9 @@
        
        
                 <td>
-                    <form action="@Url.Action("AgregarAlCarrito", "Usuario", new { productoId = item.ProductoID })" method="post">
-                        <input type="hidden" name="id" value="@item.ProductoID" />
-
-                        <input type="number" name="cantidad" value="1" />
+                  
+                    <form action="@Url.Action("AgregarAlCarrito", "Amazon", new { productoId = item.ProductoID })" method="post">
+                        <input type="hidden" name="productoId" value="@item.ProductoID" />               
                         <button type="submit" class="btn btn-outline-primary btn-smaller">Añadir al carrito</button>
                     </form>
                     @*  <form action="@Url.Action("AgregarAlCarrito", "Usuario", new { id = item.ProductoID })" method="get">
@@ -61,3 +60,4 @@
     </tbody>
 
 </table>
+ 

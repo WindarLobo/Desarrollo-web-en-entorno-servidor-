@@ -1,6 +1,6 @@
 using Amazon_Montecastelo.Database;
 using Amazon_Montecastelo.Database.Repositorios;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace Amazon_Montecastelo
 {
@@ -11,19 +11,23 @@ namespace Amazon_Montecastelo
             var builder = WebApplication.CreateBuilder(args);
 
             // Configurar servicios
+
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<CarritoRepositorio>();
-            builder.Services.AddScoped<ProductoReposiotiro>();
-            builder.Services.AddDbContext<AmazonContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("ConexionMontecastelo")));
             builder.Services.AddSession();
+
+            //Cadena de conexion 
+
+            builder.Services.AddSingleton(new Conexion(builder.Configuration.GetConnectionString("ConexionMontecastelo")));
+
+            //Registro de interfaz 
+            builder.Services.AddScoped<IAmazonRespotiory, AmazonRepository>();
 
             var app = builder.Build();
 
             // Configurar el pipeline de solicitud HTTP
             if (!app.Environment.IsDevelopment())
             {
-                app.UseExceptionHandler("/Home/Error"); // Manejo de excepciones
+               
                 app.UseHsts();
             }
 
@@ -31,9 +35,10 @@ namespace Amazon_Montecastelo
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
             app.UseAuthorization();
 
-            app.UseSession(); // Middleware de sesión
+       
 
             app.MapControllers();
             
