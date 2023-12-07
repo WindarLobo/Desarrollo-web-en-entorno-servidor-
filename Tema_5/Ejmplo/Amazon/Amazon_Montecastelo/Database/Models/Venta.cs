@@ -4,10 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Amazon_Montecastelo.Database.Models
 {
-    [Table("Ventas")]
+  
     public class Venta
     {
-        [Key]
 
         public int VentaId { get; set; }
 

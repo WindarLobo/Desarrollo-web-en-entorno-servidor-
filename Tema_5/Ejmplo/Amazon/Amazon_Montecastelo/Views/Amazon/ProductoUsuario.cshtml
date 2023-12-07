@@ -40,24 +40,20 @@
                 </td>
        
        
-       
                 <td>
                   
                     <form action="@Url.Action("AgregarAlCarrito", "Amazon", new { productoId = item.ProductoID })" method="post">
-                        <input type="hidden" name="productoId" value="@item.ProductoID" />               
+                        <input type="hidden" name="productoId" value="@item.ProductoID" />
+                       
                         <button type="submit" class="btn btn-outline-primary btn-smaller">Añadir al carrito</button>
                     </form>
-                    @*  <form action="@Url.Action("AgregarAlCarrito", "Usuario", new { id = item.ProductoID })" method="get">
-                <input type="hidden" name="usuarioId" value="[usuarioId]" />
-                <input type="hidden" name="productoId" value="[productoId]" />
-                <input type="number" name="cantidad" value="1" />
+                   
 
-                <button type="submit" class="btn btn-outline-primary btn-smaller">Añadir al carrito</button>
-                </form> *@
                 </td>
             </tr>
         }
     </tbody>
 
 </table>
- 
+
+

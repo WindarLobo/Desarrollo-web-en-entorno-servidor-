@@ -7,26 +7,47 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Amazon_Montecastelo.styles.css" asp-append-version="true" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
 </head>
 <body>
     <header id="adminHeader">
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+  
+            <!-- Navbar-->
             <ul class="navbar">
                 <li class="nav-item">
-                    <a class="navbar-brand" href="@Url.Action("Producto", "Amazon")">Producto</a>
+                    <a class="navbar-brand" href="@Url.Action("Producto", "Amazon")"><i class="fa-solid fa-shop"></i></a>
                 </li>
-              
-                    <li class="nav-item">
-                    <a class="navbar-brand" href="@Url.Action("ProductoUsuario", "Amazon")">Producto</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="navbar-brand" href="@Url.Action("Carrito", "Amazon")">Carrito</a>
-                    </li>
+
                 <li class="nav-item">
-                    <a class="navbar-brand" href="@Url.Action("", "Usuario")">Venta</a>
+                    <a class="navbar-brand" href="@Url.Action("ProductoUsuario", "Amazon")"><i class="fa-solid fa-shop"></i></a>
                 </li>
-           
+                <li class="nav-item">
+                    <a class="navbar-brand" href="@Url.Action("Carrito", "Amazon")">
+                      
+                            <i class="fa fa-cart-shopping"></i>
+                       
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand" href="@Url.Action("Venta", "Amazon")"><i class="fa fa-light fa-bag-shopping"></i></a>
+                </li>
+
             </ul>
+            <ul class="navbar-nav ms-auto me-0 me-md-3 my-2 my-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-sign-in"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="@Url.Action("SignOff","Login")">Cerrar Sesion</a></li>
+                    </ul>
+                </li>
+            </ul>
+         
         </nav>
     </header>
 

@@ -1,0 +1,56 @@
+﻿@model Amazon_Montecastelo.Database.Models.Venta
+
+@{
+    ViewData["Title"] = "RealizarCompra";
+
+}
+
+
+
+<h1>Venta</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>PrecioUnitario</th>
+            <th>PrecioTotal</th>
+            <th></th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Detalles)
+        {
+
+            <tr>
+                <td scope="row">@item.Producto.Nombre</td>
+                <td>
+
+
+                    <span>@item.Cantidad</span>
+
+
+                </td>
+                <td scope="row">@item.PrecioUnitario</td>
+
+                <td scope="row">@item.PrecioTotal</td>
+
+                <td scope="row">
+
+                    <form action="@Url.Action("EliminarDelaVenta", "Amazon", new { productoId = item.ProductoID })" method="post">
+                        <input type="hidden" name="id" />
+
+                        <button type="submit" style="width:100px" class="btn btn-primary btn-smaller">Eliminar</button>
+                    </form>
+
+                </td>
+               
+            </tr>
+        }
+    </tbody>
+
+</table>

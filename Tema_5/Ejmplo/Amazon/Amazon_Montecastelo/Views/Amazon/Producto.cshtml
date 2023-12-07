@@ -14,7 +14,7 @@
             <h1>Productos</h1>
         </div>
         <div class="col-md-3 ml-5 mt-3">
-            <form action="@Url.Action("Agregar", "Administrador")" method="get">
+            <form action="@Url.Action("Agregar", "Amazon")" method="get">
                 <input type="hidden" name="id" />
                 <button type="submit" class="btn btn-primary">Agregar Producto</button>
             </form>
@@ -42,7 +42,7 @@
                             <td scope="row">
                             
                                 <div class="button-container">
-                                    <form action="@Url.Action("Edit", "Administrador", new { id = item.ProductoID })" method="get">
+                                    <form action="@Url.Action("Edit", "Amazon", new { id = item.ProductoID })" method="get">
                                         <input type="hidden" name="id" />
                                         <button type="submit" class="btn btn-outline-primary btn-smaller">Editar</button>
                                     </form>
@@ -50,7 +50,7 @@
                             </td>
                             <td scope="row">
                                 <div class="button-container">
-                                    <form action="@Url.Action("Delete", "Administrador", new { id = item.ProductoID })" method="get">
+                                    <form action="@Url.Action("Delete", "Amazon", new { id = item.ProductoID })" method="get">
                                         <input type="hidden" name="id" />
                                         <button type="submit" class="btn btn-outline-primary btn-smaller">Eliminar</button>
                                     </form>

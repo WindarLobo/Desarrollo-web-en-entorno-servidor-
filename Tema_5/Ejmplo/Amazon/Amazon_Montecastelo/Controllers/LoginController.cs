@@ -9,11 +9,11 @@ namespace Amazon_Montecastelo.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly AmazonRepository _usuarioRepositorio;
+        private readonly UsuarioRepository _usuarioRepositorio;
 
         public LoginController(Conexion context)
         {
-            _usuarioRepositorio = new AmazonRepository(context);
+            _usuarioRepositorio = new UsuarioRepository(context);
         }
 
         [Route("/Login")]
@@ -48,6 +48,14 @@ namespace Amazon_Montecastelo.Controllers
             GlobalInfo.UsuarioLogeado = login;
 
             return View("/Views/Home/Index.cshtml");
+        }
+        [Route("/Login/SignOff")]
+        public IActionResult SignOff()
+        {
+
+            GlobalInfo.UsuarioLogeado = null;
+
+            return RedirectToAction("Logueate");
         }
 
         [Route("/Login/agregar")]

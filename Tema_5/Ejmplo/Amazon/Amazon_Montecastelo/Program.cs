@@ -1,6 +1,6 @@
 using Amazon_Montecastelo.Database;
+using Amazon_Montecastelo.Database.Interface;
 using Amazon_Montecastelo.Database.Repositorios;
-
 
 namespace Amazon_Montecastelo
 {
@@ -20,7 +20,11 @@ namespace Amazon_Montecastelo
             builder.Services.AddSingleton(new Conexion(builder.Configuration.GetConnectionString("ConexionMontecastelo")));
 
             //Registro de interfaz 
-            builder.Services.AddScoped<IAmazonRespotiory, AmazonRepository>();
+            builder.Services.AddScoped<IProductoRepository, ProductoRepository>();
+            builder.Services.AddScoped<ICarritoRepository, CarritoRepository>();
+            builder.Services.AddScoped<IUsuarioRepository,UsuarioRepository>();
+            builder.Services.AddScoped<IVentaRepository, VentaRepository>();
+
 
             var app = builder.Build();
 
