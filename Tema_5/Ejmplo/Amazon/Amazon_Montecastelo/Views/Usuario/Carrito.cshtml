@@ -1,0 +1,108 @@
+﻿@model Amazon_Montecastelo.Database.Models.Carrito
+
+@{
+    ViewData["Title"] = "Carrito";
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+}
+
+
+<div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-md-9 text-center">
+            <h1>Carrito</h1>
+
+
+        </div>
+        <div class="col mt-5">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Detalles.First().Producto.Nombre)</th>
+                        <th>@Html.DisplayNameFor(model => model.Detalles.First().Cantidad)</th>
+                        <th>@Html.DisplayNameFor(model => model.Detalles.First().PrecioUnitario)</th>
+                        <th>@Html.DisplayNameFor(model => model.Detalles.First().PrecioTotal)</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Detalles)
+                    {
+
+                        <tr>
+
+
+                            <td>@Html.DisplayFor(modelItem => item.Producto.Nombre)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PrecioUnitario)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PrecioTotal)</td>
+
+
+
+                            <td>
+
+                                <form action="@Url.Action("EliminarProductodelCarrito", "Amazon", new { productoId = item.ProductoID })" method="post">
+                                    <input type="hidden" name="id" />
+                                    <button type="submit" style="width:100px" class="btn btn-outline-primary btn-smaller">Eliminar</button>
+                                </form>
+
+                            </td>
+                            <td>
+                                <form action="@Url.Action("AgregarAlCarrito", "Amazon", new { productoId = item.ProductoID })" method="post">
+                                    <button style="width:50px ;" type="submit" class="btn   btn-primary btn-smaller" name="accion" value="incrementar">+</button>
+                                    <button style="width:50px;" type="submit" class="btn  btn-primary  btn-smaller" name="accion" value="decrementar">-</button>
+                                </form>
+
+                            </td>
+
+                        </tr>
+
+                    }
+
+                </tbody>
+
+            </table>
+
+
+            <div class="row justify-content-center text-center ">
+
+                <h4>Subtotal: @Model.Subtotal €</h4>
+
+
+
+
+                @if (Model.Detalles.Any())
+                {
+                    <form action="@Url.Action("AgregarAlaVenta", "Amazon", new { productoId = Model.Detalles.First().ProductoID  })" method="post">
+                        <input type="hidden" name="productoId" value="@Model.Detalles.First().ProductoID" />
+                        <input type="hidden" name="accion" value="tramitarPedido" />
+                        <button type="submit" style="width:350px" class="btn btn-outline-primary btn-smaller">
+                            Tramitar pedido (@Model.CantidaProducto) producto
+                        </button>
+                    </form>
+                }
+                else
+                {
+                    <div class=" d-inline-block" style="font-size:20px ">
+
+                        <i class="fa-solid fa-basket-shopping"></i> Carrito Vacio
+                    </div>
+
+                }
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+

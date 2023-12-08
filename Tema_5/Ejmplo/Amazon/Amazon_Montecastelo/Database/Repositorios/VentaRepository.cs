@@ -72,27 +72,25 @@ namespace Amazon_Montecastelo.Database.Repositorios
         public async Task<Venta> ObtenerVenta(int UsuarioID)
         {
                 var queryVenta = @"SELECT
-                                  VentaID,
+                                   VentaID,
                                    FechaVenta,
-                                  totalVenta,
+                                   totalVenta,
+                                   UsuarioID
+                                FROM Ventas 
+                                   WHERE Ventas.UsuarioID = @UsuarioID";
 
-                                UsuarioID
-                                    FROM Ventas 
-                                WHERE Ventas.UsuarioID = @UsuarioID";
 
+                var queryDetalle = @"SELECT  
+                                       Cantidad ,
+                                       PrecioUnitario ,
+                                       PrecioTotal ,
+                                       ProductoId
+                                    FROM DetallesVenta 
+                                        WHERE VentaID = @VentaID";
 
-                var queryDetalle = @"select  
- 
-                            Cantidad ,
-                           PrecioUnitario ,
-                            PrecioTotal ,
-                          ProductoId
-
-                        FROM DetallesVenta 
-
-                        WHERE VentaID = @VentaID";
-
-                var queryProducto = @"select * from productos where ProductoID= @ProductoID ";
+                var queryProducto = @"SELECT * 
+                                          FROM productos
+                                            where ProductoID= @ProductoID ";
 
                 using var connection = _conexion.ObtenerConexion();
                 var venta = await connection.QueryFirstOrDefaultAsync<Venta>(queryVenta, new { UsuarioID });

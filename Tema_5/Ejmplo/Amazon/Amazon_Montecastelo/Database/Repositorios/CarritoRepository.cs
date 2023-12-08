@@ -108,7 +108,7 @@ namespace Amazon_Montecastelo.Database.Repositorios
             return carrito;
         }
 
-        public async Task EliminarProdcutoDelCarrito(int? ProductoID)
+        public async Task EliminarProdcutoDelCarrito( int? ProductoID)
         {
             var deleteCarrito = @"Delete from DetallesCarrito  WHERE ProductoID = @ProductoID ";
             using var connection = _conexion.ObtenerConexion();

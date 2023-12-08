@@ -1,4 +1,5 @@
-﻿ @model IEnumerable<Amazon_Montecastelo.Models.UsuarioViewModel>
+﻿@using LoboGarcesWindarTarea3;
+ @model IEnumerable<Amazon_Montecastelo.Models.UsuarioViewModel>
 
 @{
     ViewData["Title"] = "Logueate";
@@ -7,6 +8,8 @@
 
 
 }
+
+
 <html>
 <body>
     <div class="container">
@@ -37,8 +40,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="userType">Selecciona el tipo de cuenta : </label>
-                                <select class="custom-select" multipleid="userType" name="userType">
+                                <label for="userType ">Selecciona el tipo de cuenta : </label>
+                                <select class="custom-select" id="userType" name="userType">
                                     <option value="usuario">Usuario</option>
                                     <option value="administrador">Administrador</option>
                                 </select>
@@ -68,15 +71,24 @@
     </div>
 
 
-    <script type="text/javascript">
-        function redirectToAction(userType) {
-            if (userType === "administrador") {
-                window.location.href = "@Url.Action("Admnistrador", "producto")";
-            } else if (userType === "usuario") {
-                window.location.href = "@Url.Action("AccionUsuario", "Controlador")";
+    <script>
+        // Asegúrate de incluir jQuery en tu proyecto
+
+        // Evento de cambio en el select
+        $('#userType').change(function () {
+            var userType = $(this).val(); // Obtén el valor seleccionado
+
+            // Redirige según el tipo de usuario
+            if (userType === 'administrador') {
+                window.location.href = '@Url.Action("Producto", "Administrador")';
+            } else {
+                window.location.href = '@Url.Action("ProductoUsuario", "Usuario")';
             }
-        }
+        });
     </script>
+
+
+
 
 
 </body>

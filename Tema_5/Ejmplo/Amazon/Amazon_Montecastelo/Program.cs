@@ -21,8 +21,11 @@ namespace Amazon_Montecastelo
 
             //Registro de interfaz 
             builder.Services.AddScoped<IProductoRepository, ProductoRepository>();
+
             builder.Services.AddScoped<ICarritoRepository, CarritoRepository>();
+
             builder.Services.AddScoped<IUsuarioRepository,UsuarioRepository>();
+
             builder.Services.AddScoped<IVentaRepository, VentaRepository>();
 
 
@@ -39,8 +42,7 @@ namespace Amazon_Montecastelo
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseSession();
-            app.UseAuthorization();
+        
 
        
 

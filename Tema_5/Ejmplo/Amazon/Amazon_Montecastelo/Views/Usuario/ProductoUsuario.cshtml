@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Amazon_Montecastelo.Database.Models.Productos>
+
+
+@{
+    ViewData["Title"] = "Lista de Productos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+}
+<div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-md-9 text-center">
+            <h1>Productos</h1>
+        </div>
+
+        <div class="col mt-5">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.ProductoID)</th>
+                        <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                        <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
+                        <th>@Html.DisplayNameFor(model => model.Precio)</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.ProductoID)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Precio)</td>
+                            <td>
+
+                            <td>
+
+                                <form action="@Url.Action("AgregarAlCarrito", "Amazon", new { productoId = item.ProductoID })" method="post">
+                                    <input type="hidden" name="productoId" value="@item.ProductoID" />
+
+                                    <button type="submit" class="btn btn-outline-primary btn-smaller">Añadir al carrito</button>
+                                </form>
+
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+

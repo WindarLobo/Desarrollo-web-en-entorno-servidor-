@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Amazon_Montecastelo.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Amazon_Montecastelo.Database.Models
 {
 
-    public class Productos
+    public class Productos 
     {
         public int ProductoID { get; set; }
         public string Descripcion { get; set; }

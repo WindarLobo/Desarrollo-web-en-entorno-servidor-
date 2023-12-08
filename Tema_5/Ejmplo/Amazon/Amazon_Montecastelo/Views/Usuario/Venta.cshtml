@@ -1,0 +1,53 @@
+﻿@model Amazon_Montecastelo.Database.Models.Venta
+
+@{
+    ViewData["Title"] = "RealizarCompra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+}
+
+
+<div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-md-9 text-center">
+            <h1>Venta </h1>
+            <div class="row justify-content-center text-center ">
+                <h6>@Model.FechaVenta</h6>
+
+            </div>
+        </div>
+       
+        <div class="col mt-5">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Detalles.First().Producto.Nombre)</th>
+                        <th>@Html.DisplayNameFor(model => model.Detalles.First().Cantidad)</th>
+                        <th>@Html.DisplayNameFor(model => model.Detalles.First().PrecioUnitario)</th>
+                        <th>@Html.DisplayNameFor(model => model.Detalles.First().PrecioTotal)</th>
+
+                    </tr>
+
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Detalles)
+                    {
+
+                        <tr>
+
+                            <td>@Html.DisplayFor(modelItem => item.Producto.Nombre)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PrecioUnitario)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PrecioTotal)</td>
+                            
+
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
