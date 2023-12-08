@@ -2,55 +2,52 @@
 
 @{
     ViewData["Title"] = "RealizarCompra";
-
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 }
 
 
+<div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-md-9 text-center">
+            <h1>Venta </h1>
+            <div class="row justify-content-center text-center ">
+                <h6>@Model.FechaVenta</h6>
 
-<h1>Venta</h1>
+            </div>
+        </div>
+       
+        <div class="col mt-5">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
 
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Detalles.First().Producto.Nombre)</th>
+                        <th>@Html.DisplayNameFor(model => model.Detalles.First().Cantidad)</th>
+                        <th>@Html.DisplayNameFor(model => model.Detalles.First().PrecioUnitario)</th>
+                        <th>@Html.DisplayNameFor(model => model.Detalles.First().PrecioTotal)</th>
 
-<table class="table">
-    <thead>
-        <tr>
-
-            <th>Nombre</th>
-            <th>Cantidad</th>
-            <th>PrecioUnitario</th>
-            <th>PrecioTotal</th>
-            <th></th>
-           
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Detalles)
-        {
-
-            <tr>
-                <td scope="row">@item.Producto.Nombre</td>
-                <td>
+                    </tr>
 
 
-                    <span>@item.Cantidad</span>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Detalles)
+                    {
 
+                        <tr>
 
-                </td>
-                <td scope="row">@item.PrecioUnitario</td>
+                            <td>@Html.DisplayFor(modelItem => item.Producto.Nombre)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PrecioUnitario)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PrecioTotal)</td>
+                            
 
-                <td scope="row">@item.PrecioTotal</td>
+                        </tr>
+                    }
+                </tbody>
 
-                <td scope="row">
-
-                    <form action="@Url.Action("EliminarDelaVenta", "Amazon", new { productoId = item.ProductoID })" method="post">
-                        <input type="hidden" name="id" />
-
-                        <button type="submit" style="width:100px" class="btn btn-primary btn-smaller">Eliminar</button>
-                    </form>
-
-                </td>
-               
-            </tr>
-        }
-    </tbody>
-
-</table>
+            </table>
+        </div>
+    </div>
+</div>

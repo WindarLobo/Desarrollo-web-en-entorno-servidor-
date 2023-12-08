@@ -47,7 +47,7 @@ namespace Amazon_Montecastelo.Controllers
 
             GlobalInfo.UsuarioLogeado = login;
 
-            GlobalInfo.UsuarioLogeado.userType = usuario.usertype; 
+           
 
             return View("/Views/Home/Index.cshtml");
         }
@@ -71,7 +71,12 @@ namespace Amazon_Montecastelo.Controllers
         public async Task<IActionResult> Create(Usuario usuario)
         {
 
-          await _usuarioRepositorio.CreateUsuarioo(usuario);
+            if (!ModelState.IsValid)
+            {
+               
+                return RedirectToAction("Agregar"); 
+            }
+              await _usuarioRepositorio.CreateUsuarioo(usuario);
 
             return RedirectToAction("Logueate");
         }

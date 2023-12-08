@@ -9,5 +9,6 @@ namespace Amazon_Montecastelo.Models
 
         [Required, StringLength(50)]
         public string Password { get; set; }
+       
     }
 }

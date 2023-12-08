@@ -51,13 +51,14 @@ namespace Amazon_Montecastelo.Database.Repositorios
         public async Task CreateUsuarioo(Usuario usuario)
         {
 
-            var queryUsuario = @"Insert into Usuarios (NombreUsuario,Contrasena,Email) Values (@NombreUsuario,@Contrasena,@Email)";
+            var queryUsuario = @"Insert into Usuarios (NombreUsuario,Contrasena,Email,userType) Values (@NombreUsuario,@Contrasena,@Email,@userType)";
             using var connection = _conexion.ObtenerConexion();
             await connection.ExecuteAsync(queryUsuario, new
             {
                 NombreUsuario = usuario.NombreUsuario,
                 Contrasena = usuario.Contrasena,
-                Email = usuario.Email
+                Email = usuario.Email,
+                userType= usuario.userType
 
             });
 

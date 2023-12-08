@@ -27,22 +27,22 @@
                 @if (GlobalInfo.UsuarioLogeado.userType == "administrador")
                 {
                     <li class="nav-item">
-                        <a class="navbar-brand" href="@Url.Action("Producto", "Administrador")"><i class="fa-solid fa-shop"></i></a>
+                        <a class="navbar-brand" href="@Url.Action("Producto", "Amazon")"><i class="fa-solid fa-shop"></i></a>
                 </li>
             }
             else{
                 <li class="nav-item">
-                    <a class="navbar-brand" href="@Url.Action("ProductoUsuario", "Usuario")"><i class="fa-solid fa-shop"></i></a>
+                        <a class="navbar-brand" href="@Url.Action("ProductoUsuario", "Amazon")"><i class="fa-solid fa-shop"></i></a>
                 </li>
                 <li class="nav-item">
-                        <a class="navbar-brand" href="@Url.Action("Carrito", "Usuario")">
+                        <a class="navbar-brand" href="@Url.Action("Carrito", "Amazon")">
                       
                             <i class="fa fa-cart-shopping"></i>
                        
                     </a>
                 </li>
                 <li class="nav-item">
-                        <a class="navbar-brand" href="@Url.Action("Venta", "Usuario")"><i class="fa fa-light fa-bag-shopping"></i></a>
+                        <a class="navbar-brand" href="@Url.Action("Venta", "Amazon")"><i class="fa fa-light fa-bag-shopping"></i></a>
                 </li>
                 }
             </ul>
