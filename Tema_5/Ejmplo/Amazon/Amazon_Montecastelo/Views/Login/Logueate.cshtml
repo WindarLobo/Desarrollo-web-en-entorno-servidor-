@@ -23,7 +23,10 @@
                     <div class="card-header"><h2 class="text-center font-weight-light my-4"> Iniciar sesion</h2></div>
 
                     <div class=" card-body">
-                       
+                        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                        {
+                            <p style="color: red;">@ViewBag.ErrorMessage</p>
+                        }
                         <form id="loginForm" action="@Url.Action("DoLogin", "Login")" method="post">
 
                             <div class="card-header2 form-floating  mb-3">

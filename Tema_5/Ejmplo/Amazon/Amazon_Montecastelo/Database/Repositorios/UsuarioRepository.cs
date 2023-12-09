@@ -39,13 +39,8 @@ namespace Amazon_Montecastelo.Database.Repositorios
 
             using var connection = _conexion.ObtenerConexion();
 
-            var usuarioLogin = await connection.QueryFirstOrDefaultAsync<Usuario>(queryUsuario, new
-            {
-                Contrasena = Contrasena,
-                Email = Email
-
-            });
-            return usuarioLogin;
+            return await connection.QueryFirstOrDefaultAsync<Usuario>(queryUsuario, new {Contrasena,Email});
+           
         }
 
         public async Task CreateUsuarioo(Usuario usuario)
@@ -53,14 +48,7 @@ namespace Amazon_Montecastelo.Database.Repositorios
 
             var queryUsuario = @"Insert into Usuarios (NombreUsuario,Contrasena,Email,userType) Values (@NombreUsuario,@Contrasena,@Email,@userType)";
             using var connection = _conexion.ObtenerConexion();
-            await connection.ExecuteAsync(queryUsuario, new
-            {
-                NombreUsuario = usuario.NombreUsuario,
-                Contrasena = usuario.Contrasena,
-                Email = usuario.Email,
-                userType= usuario.userType
-
-            });
+            await connection.ExecuteAsync(queryUsuario, new {usuario.NombreUsuario,usuario.Contrasena,usuario.Email, usuario.userType});
 
         }
 

@@ -38,14 +38,7 @@ namespace Amazon_Montecastelo.Database.Repositorios
 
             var query = @"Insert into Productos (Precio,Descripcion,Nombre) Values (@Precio,@Descripcion,@Nombre)";
             using var connection = _conexion.ObtenerConexion();
-            await connection.ExecuteAsync(query, new
-            {
-                Nombre = producto.Nombre,
-                Descripcion = producto.Descripcion,
-                Precio = producto.Precio
-               
-              
-            });
+            await connection.ExecuteAsync(query, new { producto.Nombre, producto.Descripcion, producto.Precio  });
 
         }
 
@@ -60,13 +53,7 @@ namespace Amazon_Montecastelo.Database.Repositorios
          
             using var connection = _conexion.ObtenerConexion();
 
-           await connection.ExecuteAsync(queryProducto, new
-            {
-                Descripcion = producto.Descripcion,
-                Nombre = producto.Nombre,
-                Precio = producto.Precio,
-                ProductoID = producto.ProductoID 
-            });
+           await connection.ExecuteAsync(queryProducto, new { producto.Descripcion,producto.Nombre, producto.Precio,producto.ProductoID  });
         
     }
         public async Task DeleteProducto(int? ProductoID)
