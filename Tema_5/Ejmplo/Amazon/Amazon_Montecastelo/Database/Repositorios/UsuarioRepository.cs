@@ -1,10 +1,18 @@
-﻿using Amazon_Montecastelo.Database.Interface;
+﻿
 using Amazon_Montecastelo.Database.Models;
 using Dapper;
 using System.Data;
 
 namespace Amazon_Montecastelo.Database.Repositorios
 {
+
+    public interface IUsuarioRepository
+    {
+        Task<IEnumerable<Usuario>> GetAllUsuario();
+        Task<Usuario> GetUsuarioId(int? UsuarioID);
+        Task<Usuario> GetLoginUsernamePassword(string Email, string Contrasena);
+        Task CreateUsuarioo(Usuario usuario);
+    }
     public class UsuarioRepository : IUsuarioRepository
     {
 

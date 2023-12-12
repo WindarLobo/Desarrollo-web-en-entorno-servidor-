@@ -1,10 +1,22 @@
-﻿using Amazon_Montecastelo.Database.Interface;
+﻿
 using Amazon_Montecastelo.Database.Models;
 using Dapper;
 
 
 namespace Amazon_Montecastelo.Database.Repositorios
 {
+    public interface IProductoRepository
+    {
+
+        Task<IEnumerable<Productos>> GetAllProducto();
+        Task<Productos> GetProducto(int ProductoId);
+        Task CreateProducto(Productos producto);
+        Task UpdateProducto(Productos producto);
+        Task DeleteProducto(int? ProductoID);
+        Task<IEnumerable<Productos>> Filtrar(string? nombre, decimal? precioDesde, decimal? precioHasta);
+
+
+    }
     public class ProductoRepository : IProductoRepository
     {
 
@@ -61,6 +73,31 @@ namespace Amazon_Montecastelo.Database.Repositorios
             var query = @"Delete from Productos  WHERE ProductoID = @ProductoID ";
             using var connection = _conexion.ObtenerConexion();
             await connection.ExecuteAsync(query, new { ProductoID });
+        }
+
+        public async Task<IEnumerable<Productos>> Filtrar(string? nombre, decimal? precioDesde, decimal? precioHasta)
+        {
+            var sqlQuery = "SELECT * FROM Productos WHERE 1 = 1 ";
+
+            using var conexion = _conexion.ObtenerConexion();
+
+            if (nombre is not null)
+            {
+                sqlQuery += " AND Nombre LIKE @nombre";
+            }
+
+
+            if (precioDesde is not null)
+            {
+                sqlQuery += " AND Precio >= @precioDesde";
+            }
+
+            if (precioHasta is not null)
+            {
+                sqlQuery += " AND Precio <= @precioHasta";
+            }
+
+            return await conexion.QueryAsync<Productos>(sqlQuery,new {nombre,precioDesde,precioHasta});
         }
 
     }

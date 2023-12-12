@@ -1,0 +1,66 @@
+﻿@model practica1.Models.PokemonViewModel
+
+@{
+    ViewData["Title"] = "ListaEquipo";
+}
+
+<h1>ListaEquipo</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Pokemons.First().numero_pokedex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pokemons.First().nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AturaPromedio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PesoPromedio)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Equipo.Pokemons)
+        {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.numero_pokedex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.altura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.peso)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<h6 class="mt-3" style="font-family: 'EB Garamond', serif; font-size:20px">
+    Cantidad de pokemons: @Model.Count<br />
+    Peso Promedio : @Model.PesoPromedio<br />
+    Altura promedio : @Model.AturaPromedio<br />
+
+    
+
+
+</h6>

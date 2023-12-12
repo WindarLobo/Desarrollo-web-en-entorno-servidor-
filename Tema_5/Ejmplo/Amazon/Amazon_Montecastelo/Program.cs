@@ -1,5 +1,4 @@
 using Amazon_Montecastelo.Database;
-using Amazon_Montecastelo.Database.Interface;
 using Amazon_Montecastelo.Database.Repositorios;
 
 namespace Amazon_Montecastelo
@@ -42,9 +41,9 @@ namespace Amazon_Montecastelo
             app.UseStaticFiles();
 
             app.UseRouting();
-        
 
-       
+          app.UseAuthorization();
+
 
             app.MapControllers();
             

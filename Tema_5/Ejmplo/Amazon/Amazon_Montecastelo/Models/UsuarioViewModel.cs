@@ -1,9 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Amazon_Montecastelo.Database.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Amazon_Montecastelo.Models
 {
     public class UsuarioViewModel
     {
+
+       
         [Required, StringLength(50)]
         public string Email { get; set; }
 

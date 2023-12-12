@@ -1,9 +1,17 @@
-﻿using Amazon_Montecastelo.Database.Interface;
+﻿
 using Amazon_Montecastelo.Database.Models;
 using Dapper;
 
 namespace Amazon_Montecastelo.Database.Repositorios
 {
+    public interface ICarritoRepository
+    {
+
+        Task<Carrito> Guardar(Carrito carrito);
+        Task<Carrito> ObtenerCarrito(int UsuarioID);
+        Task EliminarProdcutoDelCarrito(int? ProductoID);
+        Task EliminarDelCarrito(int CarritoId);
+    }
     public  class CarritoRepository : ICarritoRepository
     {
         private readonly Conexion _conexion;
@@ -38,12 +46,17 @@ namespace Amazon_Montecastelo.Database.Repositorios
             }
             else
             {
+                var sqlUpdateCarrito = @"update carrito set totalVenta = @totalVenta where CarritoID = @CarritoID";
+
                 var deleteCarrito = @"Delete from DetallesCarrito  WHERE CarritoID = @CarritoID ";
 
                 var queryCarritoDetalle = @"INSERT INTO DetallesCarrito (CarritoID,ProductoID,Cantidad,PrecioUnitario,PrecioTotal) 
                                           VALUES (@CarritoID,@ProductoID,@Cantidad,@PrecioUnitario,@PrecioTotal)";
 
                 using var connection = _conexion.ObtenerConexion();
+
+                await connection.ExecuteAsync(sqlUpdateCarrito, carrito);
+
 
                 await connection.ExecuteAsync(deleteCarrito, new { carrito.CarritoID });
 

@@ -11,5 +11,8 @@ namespace LoboGarcesWindarTarea3
         public static Venta MiVenta { get; set; }
 
         public static string LoginView = "/Views/Login/Logueate.cshtml";
+
+
+       
     }
 }

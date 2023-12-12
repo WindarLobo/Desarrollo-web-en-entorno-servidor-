@@ -1,0 +1,91 @@
+﻿@model practica1.Models.PokemonViewModel
+
+@{
+    ViewData["Title"] = "ObtenerPokemon";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ObtenerPokemon</h1>
+
+<p>
+    <form action="@Url.Action("Agregar", "Pokemon")" method="get">
+        <input type="hidden" name="id" />
+        <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
+</p>
+
+<form asp-action="FiltrarPokemon" method="post">
+ 
+
+            <select class="form-select" aria-label="Peso de Pokémon" id="pesoPokemon" name="peso">
+
+                <option selected>Selecciona un peso</option>
+
+                @foreach (var peso in Model.Pokemons.OrderBy(p => p.peso).Select(p => p.peso).Distinct())
+                {
+                    <option value="@peso">@peso</option>
+                }
+            </select>
+       
+
+            <select class="form-select" aria-label="Altura de Pokémon" id="alturaPokemon" name="altura">
+                <option selected>Selecciona una altura</option>
+                @foreach (var altura in Model.Pokemons.OrderBy(a => a.altura).Select(a => a.altura).Distinct())
+                {
+                    <option value="@altura">@altura</option>
+                }
+            </select>
+        
+            <button type="submit" class="btn " style="background-color:#CB4335;color: #fff; font-size:18px">Buscar</button>
+        
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pokemons.First().numero_pokedex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pokemons.First().nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pokemons.First().peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pokemons.First().altura)
+            </th>
+              <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Pokemons) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.numero_pokedex)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.peso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.altura)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Detalle", new { id =item.numero_pokedex }) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.numero_pokedex  })
+            </td>
+            <td>
+                    <form asp-action="AgregarAlEquipo" asp-route-numero_Pokedex="@item.numero_pokedex" method="post">
+
+                        <button type="submit" class="btn" style="background-color:#CB4335;color: #fff; font-size:18px;">Añadir a Mi Equipo</button>
+
+                    </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

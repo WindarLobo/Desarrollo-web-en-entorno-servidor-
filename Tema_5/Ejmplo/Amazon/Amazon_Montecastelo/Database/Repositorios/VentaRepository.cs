@@ -1,9 +1,17 @@
-﻿using Amazon_Montecastelo.Database.Interface;
+﻿
 using Amazon_Montecastelo.Database.Models;
 using Dapper;
 
 namespace Amazon_Montecastelo.Database.Repositorios
 {
+
+    public interface IVentaRepository
+    {
+
+        Task<Venta> Guardar(Venta venta);
+        Task<Venta> ObtenerVenta(int UsuarioID);
+        Task EliminarDelaVenta(int? ProductoID);
+    }
     public class VentaRepository : IVentaRepository
     {
         private readonly Conexion _conexion;

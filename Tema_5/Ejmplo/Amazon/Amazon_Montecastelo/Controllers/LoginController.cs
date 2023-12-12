@@ -47,8 +47,6 @@ namespace Amazon_Montecastelo.Controllers
 
             GlobalInfo.UsuarioLogeado = login;
 
-           
-
             return View("/Views/Home/Index.cshtml");
         }
         [Route("/Login/SignOff")]
