@@ -1,0 +1,124 @@
+﻿@model Boletin_Ejercicio_5.Models.ProductoViewModel
+
+@{
+    ViewData["Title"] = "ListaProducto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+}
+
+<h1 class="text-center">ListaProducto</h1>
+
+  <div class="col-md-3 ml-5 mt-3">
+            <form action="@Url.Action("Agregar", "Fabricante")" method="get">
+                <input type="hidden" name="id" />
+                <button type="submit" class="btn btn-primary">Agregar Producto</button>
+            </form>
+        </div>
+
+<form asp-action="Filtrar" method="post" class="form-inline">
+    <div class="row mt-5">
+        <div class="col-md-3 col-lg-3">
+            <select class="form-select" id="nombre" name="nombre">
+                <option selected>Marcas</option>
+                @foreach (var nombre in Model.Productos.OrderBy(t => t.Nombre).Select(p => p.Nombre).Distinct())
+                {
+                    <option value="@nombre">@nombre</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-3 col-lg-3">
+       <select class="form-select" id="precioDesde" name="PrecioDesde">
+                <option selected>PrecioDesde</option>
+                @foreach (var PrecioDesde in Model.Productos.OrderBy(p => p.Precio).Select(p => p.Precio).Distinct())
+                {
+                    <option value="@PrecioDesde">@PrecioDesde</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-3 col-lg-3">
+            <select class="form-select" id="PrecioHasta " name="PrecioHasta ">
+                <option selected>PrecioHasta</option>
+                @foreach (var PrecioHasta in Model.Productos.OrderBy(p => p.Precio).Select(p => p.Precio).Distinct())
+                {
+                    <option value="@PrecioHasta ">@PrecioHasta </option>
+                }
+            </select>
+        </div>
+
+
+        <div class="col-md-3 col-lg-3">
+
+            <button type="submit" class="btn btn-outline-primary">Buscar</button>
+        </div>
+    </div>
+</form>
+
+
+<table class="table table-striped table-hover mt-5">
+    <thead class="table-dark">
+    
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Productos.First().Codigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Productos.First().Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Productos.First().Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Productos.First().Codigo_Fabricante)
+            </th>
+            <th></th>
+              <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Productos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Codigo_Fabricante)
+            </td>
+          
+                <td>
+
+                    <form action="@Url.Action("Edit", "Fabricante", new { id = item.Codigo })" method="get">
+                        <input type="hidden" name="codigo" value="@item.Codigo" />
+
+                        <button type="submit" class="btn btn-outline-primary btn-smaller">Editar </button>
+                    </form>
+
+                </td>
+                <td>
+
+                    <form action="@Url.Action("Detalle", "Fabricante", new { id = item.Codigo })" method="get">
+                        <input type="hidden" name="codigo" value="@item.Codigo" />
+
+                        <button type="submit" class="btn btn-outline-primary btn-smaller">Detalles </button>
+                    </form>
+
+                </td>
+                 <td>
+
+                    <form action="@Url.Action("Delete", "Fabricante", new { id = item.Codigo })" method="get">
+                        <input type="hidden" name="codigo" value="@item.Codigo" />
+
+                        <button type="submit" class="btn btn-outline-primary btn-smaller">Eliminar</button>
+                    </form>
+
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

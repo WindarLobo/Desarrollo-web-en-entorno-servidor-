@@ -137,8 +137,6 @@ namespace practica1.Controllers
 
             var pokemon = await _pokemonRepositorio.GetAllsPokemon(numero_Pokedex);
 
-         
-
             var añadido = EquipoRepository.AddPokemon(pokemon);
 
             if (añadido != null)
