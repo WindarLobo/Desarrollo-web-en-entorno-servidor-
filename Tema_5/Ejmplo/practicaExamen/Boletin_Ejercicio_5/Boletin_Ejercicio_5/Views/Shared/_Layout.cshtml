@@ -13,10 +13,21 @@
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 
             <ul class="navbar">
+                 @if (GlobalInfo.UsuarioLogeado.userType == "admin")
+                {
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="@Url.Action("ListaFabricante", "Fabricante")">ListaFabricante</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="navbar-brand" href="@Url.Action("ListaFabricante", "Fabricante")">ListaFabricante</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="@Url.Action("Index", "Fabricante")">Index</a>
+
+                    </li>
+                }
+
+               else {
+                
+                
                 <li class="nav-item">
                     <a class="navbar-brand" href="@Url.Action("ListaProducto", "Fabricante")">Lista Producto</a>
                 </li>
@@ -24,11 +35,9 @@
                 <li class="nav-item">
                     <a class="navbar-brand" href="@Url.Action("listaCarrito", "Fabricante")">Carrito</a>
                 </li>
-                      
-                        <li class="nav-item">
-                    <a class="navbar-brand" href="@Url.Action("Index", "Fabricante")">Index</a>
-                   
-                        </li>
+                    
+
+                }
                    
             </ul>
             <ul class="navbar-nav ms-auto me-0 me-md-3 my-2 my-md-0">

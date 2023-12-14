@@ -32,6 +32,14 @@ namespace Boletin_Ejercicio_5.Controllers
             {
                 return View(GlobalInfo.LoginView);
             }
+            if (GlobalInfo.UsuarioLogeado.userType != "admin")
+            {
+                // Redirige o muestra un mensaje de error porque el usuario no es un administrador
+                TempData["MensajeAccesoDenegado"] = "No tienes permisos para acceder a esta página.";
+                return RedirectToAction("AccesoDenegado");
+            }
+
+
             var fabricas = await _fabricaRepositorio.GetAllFabricante();
 
             return View(fabricas);
@@ -47,6 +55,12 @@ namespace Boletin_Ejercicio_5.Controllers
             {
                 return View(GlobalInfo.LoginView);
             }
+            if (GlobalInfo.UsuarioLogeado.userType != "admin")
+            {
+                // Redirige o muestra un mensaje de error porque el usuario no es un administrador
+                TempData["MensajeAccesoDenegado"] = "No tienes permisos para acceder a esta página.";
+                return RedirectToAction("AccesoDenegado");
+            }
             var fabricas = await _fabricaRepositorio.GetAllFabricante();
 
             return View(fabricas);
@@ -60,6 +74,12 @@ namespace Boletin_Ejercicio_5.Controllers
             if (!GlobalInfo.IsLogged)
             {
                 return View(GlobalInfo.LoginView);
+            }
+            if (GlobalInfo.UsuarioLogeado.userType != "usuario")
+            {
+                // Redirige o muestra un mensaje de error porque el usuario no es un administrador
+                TempData["MensajeAccesoDenegado"] = "No tienes permisos para acceder a esta página.";
+                return RedirectToAction("AccesoDenegado");
             }
             var productos = await _productoRepositorio.GetAllProducto();
 
@@ -81,6 +101,12 @@ namespace Boletin_Ejercicio_5.Controllers
             {
                 return View(GlobalInfo.LoginView);
             }
+            if (GlobalInfo.UsuarioLogeado.userType != "usuario")
+            {
+                // Redirige o muestra un mensaje de error porque el usuario no es un administrador
+                TempData["MensajeAccesoDenegado"] = "No tienes permisos para acceder a esta página.";
+                return RedirectToAction("AccesoDenegado");
+            }
 
             var detalle = await _productoRepositorio.GetProducto(id);
 
@@ -94,6 +120,12 @@ namespace Boletin_Ejercicio_5.Controllers
             if (!GlobalInfo.IsLogged)
             {
                 return View(GlobalInfo.LoginView);
+            }
+            if (GlobalInfo.UsuarioLogeado.userType != "usuario")
+            {
+                // Redirige o muestra un mensaje de error porque el usuario no es un administrador
+                TempData["MensajeAccesoDenegado"] = "No tienes permisos para acceder a esta página.";
+                return RedirectToAction("AccesoDenegado");
             }
             var filtrado = await _productoRepositorio.Filtrar(nombre, precioDesde, precioHasta);
 
@@ -124,6 +156,12 @@ namespace Boletin_Ejercicio_5.Controllers
             {
                 return View(GlobalInfo.LoginView);
             }
+            if (GlobalInfo.UsuarioLogeado.userType != "usuario")
+            {
+                // Redirige o muestra un mensaje de error porque el usuario no es un administrador
+                TempData["MensajeAccesoDenegado"] = "No tienes permisos para acceder a esta página.";
+                return RedirectToAction("AccesoDenegado");
+            }
 
             if (producto.Codigo > 0)
             {
@@ -149,6 +187,12 @@ namespace Boletin_Ejercicio_5.Controllers
             {
                 return View(GlobalInfo.LoginView);
             }
+            if (GlobalInfo.UsuarioLogeado.userType != "usuario")
+            {
+                // Redirige o muestra un mensaje de error porque el usuario no es un administrador
+                TempData["MensajeAccesoDenegado"] = "No tienes permisos para acceder a esta página.";
+                return RedirectToAction("AccesoDenegado");
+            }
 
             var producto = await _productoRepositorio.GetProducto(id);
 
@@ -159,6 +203,17 @@ namespace Boletin_Ejercicio_5.Controllers
         [Route("/Fabrica/Delete/{id?}")]
         public async Task<IActionResult> Delete(int? id)
         {
+            if (!GlobalInfo.IsLogged)
+            {
+                return View(GlobalInfo.LoginView);
+            }
+
+            if (GlobalInfo.UsuarioLogeado.userType != "usuario")
+            {
+                // Redirige o muestra un mensaje de error porque el usuario no es un administrador
+                TempData["MensajeAccesoDenegado"] = "No tienes permisos para acceder a esta página.";
+                return RedirectToAction("AccesoDenegado");
+            }
 
             await _productoRepositorio.DeleteProducto(id);
 
@@ -172,6 +227,12 @@ namespace Boletin_Ejercicio_5.Controllers
             if (!GlobalInfo.IsLogged)
             {
                 return View(GlobalInfo.LoginView);
+            }
+            if (GlobalInfo.UsuarioLogeado.userType != "usuario")
+            {
+                // Redirige o muestra un mensaje de error porque el usuario no es un administrador
+                TempData["MensajeAccesoDenegado"] = "No tienes permisos para acceder a esta página.";
+                return RedirectToAction("AccesoDenegado");
             }
             var carrito = new Carrito();
 
@@ -204,6 +265,12 @@ namespace Boletin_Ejercicio_5.Controllers
             {
                 return View(GlobalInfo.LoginView);
             }
+            if (GlobalInfo.UsuarioLogeado.userType != "usuario")
+            {
+                // Redirige o muestra un mensaje de error porque el usuario no es un administrador
+                TempData["MensajeAccesoDenegado"] = "No tienes permisos para acceder a esta página.";
+                return RedirectToAction("AccesoDenegado");
+            }
 
             var carrito = await _productoRepositorio.GetProducto(productoId);
 
@@ -221,6 +288,16 @@ namespace Boletin_Ejercicio_5.Controllers
                 return RedirectToAction("ListaProducto", new { productoId });
             }
 
+        }
+
+        [Route("/Fabrica/AccesoDenegado")]
+
+        public IActionResult AccesoDenegado()
+        {
+
+            var mensaje = TempData["MensajeAccesoDenegado"] as string;
+            ViewBag.MensajeAccesoDenegado = mensaje;
+            return View();
         }
     }
 

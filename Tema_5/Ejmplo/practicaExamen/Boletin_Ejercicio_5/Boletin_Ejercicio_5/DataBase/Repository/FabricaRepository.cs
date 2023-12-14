@@ -28,5 +28,7 @@ namespace Boletin_Ejercicio_5.DataBase.Repository
             using var connection = _conexion.ObtenerConexion();
             return await connection.QueryAsync<Fabricante>(queryFabricante);
         }
+
+
     }
 }

@@ -26,8 +26,8 @@ namespace Boletin_Ejercicio_5.Controllers
             // Simular la obtención de usuarios desde la base de datos o algún otro origen de datos
             List<Usuario> todosLosUsuarios = new List<Usuario>
                 {
-                    new Usuario { password = "123", Email = "john.doe@example.com",  },
-                    new Usuario { password = "123", Email = "jane.doe@example.com", }
+                    new Usuario { password = "123", Email = "john.doe@example.com",userType="admin", },
+                    new Usuario { password = "123", Email = "jane.doe@example.com",userType="usuario", }
                 };
 
             // Verificar si el usuario proporcionado en el inicio de sesión existe
@@ -53,26 +53,7 @@ namespace Boletin_Ejercicio_5.Controllers
 
             return RedirectToAction("Logueate");
         }
-
-        //[Route("/Login/agregar")]
-        //public IActionResult Agregar()
-        //{
-        //    return View(new Usuario());
-        //}
-
-        //[HttpPost]
-        //[Route("/Login/Create")]
-        //public async Task<IActionResult> Create(Usuario usuario)
-        //{
-
-        //    if (!ModelState.IsValid)
-        //    {
-
-        //        return RedirectToAction("Agregar");
-        //    }
-        //    await _usuarioRepositorio.CreateUsuarioo(usuario);
-
-        //    return RedirectToAction("Logueate");
+       
     }
 
 }
