@@ -1,0 +1,42 @@
+﻿@model Boletin_Ejercicio_5.Models.ProductoViewModel
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Productos.First().Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Productos.First().Precio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Carrito.Productos) {
+        <tr>
+           
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<h6 class="mt-3" style="font-family: 'EB Garamond', serif; font-size:20px">
+    Cantidad de productos: @Model.Count<br />
+   
+
+</h6>

@@ -1,0 +1,44 @@
+﻿
+
+body {
+    
+    height: 100vh;
+    width: 100%;
+    background: -moz-linear-gradient(top, gray, white);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(gray), to(white));
+}
+
+.row {
+    --bs-gutter-y: 0;
+    max-width: 900%;
+}
+
+.form-control::placeholder, .datatable-input::placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
+
+.mt-5 {
+    background-color: white;
+    margin-top: 18rem !important;
+}
+h2, .cuenta {
+    color: black;
+
+}
+
+.btn {
+ 
+    height: 80%;
+    width: 50%;
+    border: none;
+   background-color:dodgerblue;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  
+}
+.form-control {
+    border: 0.5px solid gray;
+}

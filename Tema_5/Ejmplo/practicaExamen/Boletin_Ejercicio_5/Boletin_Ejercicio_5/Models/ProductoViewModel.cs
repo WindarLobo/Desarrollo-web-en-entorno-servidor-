@@ -6,7 +6,9 @@ namespace Boletin_Ejercicio_5.Models
     public class ProductoViewModel
     {
         public IEnumerable<Producto> Productos { get; set; }
-
+        public Carrito Carrito { get; set; }
+        public int Count { get; set; }
+      
       
     }
 }
