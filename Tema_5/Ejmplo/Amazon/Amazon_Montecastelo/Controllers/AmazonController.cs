@@ -1,7 +1,7 @@
 ﻿using Amazon_Montecastelo.Database.Models;
 using Amazon_Montecastelo.Database.Repositorios;
 using Amazon_Montecastelo.Database;
-using LoboGarcesWindarTarea3;
+using Amazon_Montecastelo;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using Microsoft.AspNetCore.Authorization;
@@ -42,6 +42,8 @@ namespace Amazon_Montecastelo.Controllers
             }
 
             var productos = await _productoRepositorio.GetAllProducto();
+
+         
 
             return View(productos);
 
@@ -104,7 +106,7 @@ namespace Amazon_Montecastelo.Controllers
 
         [Route("/Amazon/Edit/{id}")]
         public async Task<IActionResult> Edit(int id)
-        {
+       {
             if (!GlobalInfo.IsLogged)
             {
                 return View(GlobalInfo.LoginView);
@@ -116,8 +118,16 @@ namespace Amazon_Montecastelo.Controllers
                 return RedirectToAction("AccesoDenegado");
             }
             var producto = await _productoRepositorio.GetProducto(id);
+            var productoViewModel = new ProductoCreateViewModel
+            {
+               ProductoID=producto.ProductoID,
+                Descripcion = producto.Descripcion,
+                Nombre = producto.Nombre,
+                Precio = producto.Precio.ToString() 
+                                                    
+            };
 
-            return View("Agregar", producto);
+            return View("Agregar", productoViewModel);
         }
 
 

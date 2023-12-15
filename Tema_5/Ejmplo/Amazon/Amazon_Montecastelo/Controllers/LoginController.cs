@@ -2,7 +2,7 @@
 using Amazon_Montecastelo.Database.Models;
 using Amazon_Montecastelo.Database.Repositorios;
 using Amazon_Montecastelo.Models;
-using LoboGarcesWindarTarea3;
+using Amazon_Montecastelo;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Amazon_Montecastelo.Controllers
@@ -74,7 +74,6 @@ namespace Amazon_Montecastelo.Controllers
 
             if (!ModelState.IsValid)
             {
-
 
                 return RedirectToAction("Agregar");
             }

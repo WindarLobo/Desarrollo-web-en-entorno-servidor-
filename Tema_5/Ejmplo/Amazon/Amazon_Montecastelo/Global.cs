@@ -1,5 +1,5 @@
 ﻿using Amazon_Montecastelo.Database.Models;
-namespace LoboGarcesWindarTarea3
+namespace Amazon_Montecastelo
 {
     public static class GlobalInfo
     {
