@@ -1,43 +1,37 @@
-﻿@model Amazon_Montecastelo.Database.Models.Usuario
+﻿@model Amazon_Montecastelo.Models.UsuarioViewModelCreate
 
 @{
     ViewData["Title"] = "Agregar";
     Layout = "~/Views/Shared/_Layout2.cshtml";
-   
 
     <link rel="stylesheet" href="site.css">
 }
 
 <html>
-    <body>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 mt-5">
+                <h1 class="text-center font-weight-light">Crear cuenta</h1>
 
- 
-<div class="container">
-    <div class="row justify-content-center">
-    <div class="col-lg-5 mt-5">
-            <h1 class="text-center font-weight-light">Crear cuenta</h1>
-                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
-                {
-                    <p style="color: red;">@ViewBag.ErrorMessage</p>
-                }
-        <form asp-action="Create" class="row g-3">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-          
-            <div class="form-group">
-                <label asp-for="NombreUsuario" class="control-label"></label>
+                <form asp-action="Create" class="row g-3">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="NombreUsuario" class="control-label"></label>
                         <input asp-for="NombreUsuario" class="form-control ">
-                <span asp-validation-for="NombreUsuario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contrasena" class="control-label"></label>
-                <input asp-for="Contrasena" class="form-control" />
-                <span asp-validation-for="Contrasena" class="text-danger"></span>
-            </div>
+                        <span asp-validation-for="NombreUsuario" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
 
                     <div class="form-group">
                         <label for="userType ">Selecciona el tipo de cuenta : </label>
@@ -46,20 +40,26 @@
                             <option value="administrador">Administrador</option>
                         </select>
                     </div>
-            <div class="form-group">
-                    <button type="submit" class="btn btn-primary mx-auto">Enviar formulario </button>
-            </div>
-                   
-        </form>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary mx-auto">Enviar formulario </button>
+                    </div>
 
-            <div>
-                <a asp-action="Logueate">Ir a iniciar sesion</a>
+                </form>
+
+                <div>
+                    <a asp-action="Logueate">Ir a iniciar sesion</a>
+                </div>
             </div>
+
+        </div>
+
+
     </div>
-        
-</div>
-
-
-</div>
 </body>
 </html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

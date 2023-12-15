@@ -32,7 +32,9 @@ namespace Amazon_Montecastelo.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.ErrorMessage = "Error de clave. Por favor, verifica tu correo  y contraseña.";
+                ViewBag.ErrorMessage = "Error. Por favor, verifica tu correo  y contraseña.";
+
+
                 return View("Logueate");
             }
 
@@ -40,7 +42,8 @@ namespace Amazon_Montecastelo.Controllers
 
             if (login == null)
             {
-                ViewBag.ErrorMessage = "Error de clave. Por favor, verifica tu correo  y contraseña.";
+
+                ViewBag.ErrorMessage = "Error . Por favor, verifica tu correo  y contraseña.";
 
                 return View("Logueate");
             }
@@ -61,23 +64,33 @@ namespace Amazon_Montecastelo.Controllers
         [Route("/Login/agregar")]
         public IActionResult Agregar()
         {
-            return View(new Usuario());
+            return View(new UsuarioViewModelCreate());
         }
 
         [HttpPost]
         [Route("/Login/Create")]
-        public async Task<IActionResult> Create(Usuario usuario)
+        public async Task<IActionResult> Create(UsuarioViewModelCreate usuarioCreate)
         {
 
             if (!ModelState.IsValid)
             {
-               
-                return RedirectToAction("Agregar"); 
+
+
+                return RedirectToAction("Agregar");
             }
-              await _usuarioRepositorio.CreateUsuarioo(usuario);
+            var usuario = new Usuario
+            {
+                UsuarioID = usuarioCreate.UsuarioID,
+                NombreUsuario = usuarioCreate.NombreUsuario,
+                userType = usuarioCreate.userType,
+                Email = usuarioCreate.Email,
+                Contrasena = usuarioCreate.Password
+            };
+
+            await _usuarioRepositorio.CreateUsuarioo(usuario);
 
             return RedirectToAction("Logueate");
         }
-       
+
     }
 }

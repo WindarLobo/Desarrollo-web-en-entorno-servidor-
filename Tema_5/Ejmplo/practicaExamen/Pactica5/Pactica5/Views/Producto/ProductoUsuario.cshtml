@@ -1,0 +1,100 @@
+﻿@model Pactica5.Models.ProductoViewModel
+
+
+@{
+    ViewData["Title"] = "Lista de Productos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+}
+
+<div class="container-fluid ">
+    <div class="text-center">
+        <h1>Productos</h1>
+    </div>
+
+
+    <form asp-action="Filtrar" method="post" class="form-inline">
+        <div class="row ">
+            <div class="col-md-3 col-lg-3">
+                <select class="form-select" id="nombre" name="nombre">
+                    <option selected>Marcas</option>
+                    @foreach (var nombre in Model.Productos.OrderBy(t => t.Nombre).Select(p => p.Nombre).Distinct())
+                    {
+                        <option value="@nombre">@nombre</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-3 col-lg-3">
+
+
+
+                <select class="form-select" id="precioDesde" name="precioDesde">
+                    <option selected>PrecioDesde</option>
+                    @foreach (var PrecioDesde in Model.Productos.OrderBy(p => p.Precio).Select(p => p.Precio).Distinct())
+                    {
+                        <option value="@PrecioDesde">@PrecioDesde</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-3 col-lg-3">
+
+                <select class="form-select" id="precioHasta" name="precioHasta">
+                    <option selected>PrecioHasta</option>
+                    @foreach (var PrecioHasta in Model.Productos.OrderBy(a => a.Precio).Select(a => a.Precio).Distinct())
+                    {
+                        <option value="@PrecioHasta">@PrecioHasta</option>
+                    }
+                </select>
+
+            </div>
+            <div class="col-md-3 col-lg-3">
+
+                <button type="submit" class="btn btn-outline-primary">Buscar</button>
+            </div>
+        </div>
+    </form>
+
+
+
+
+    <table class="table table-striped table-hover mt-5">
+        <thead class="table-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Productos.First().ProductoID)</th>
+                <th>@Html.DisplayNameFor(model => model.Productos.First().Nombre)</th>
+                <th>@Html.DisplayNameFor(model => model.Productos.First().Descripcion)</th>
+                <th>@Html.DisplayNameFor(model => model.Productos.First().Precio)</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Productos)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.ProductoID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Precio) €</td>
+                    <td>
+
+                    <td>
+
+                        <form action="@Url.Action("AgregarAlCarrito", "Producto", new { productoId = item.ProductoID })" method="post">
+                            <input type="hidden" name="productoId" value="@item.ProductoID" />
+
+                            <button type="submit" class="btn btn-outline-primary btn-smaller">Añadir al carrito</button>
+                        </form>
+
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>
+
+
+

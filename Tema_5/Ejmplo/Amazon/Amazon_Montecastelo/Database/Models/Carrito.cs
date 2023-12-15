@@ -18,9 +18,9 @@ namespace Amazon_Montecastelo.Database.Models
 
         public DateTime FechaCarrito { get; set; }
 
-        public decimal TotalVenta { get; set; }
+        public double TotalVenta { get; set; }
 
-        public decimal Subtotal { get; set; }
+        public double Subtotal { get; set; }
         public int CantidaProducto { get; set; }
         public List<DetalleCarrito> Detalles{ get; set; }= default!;
 

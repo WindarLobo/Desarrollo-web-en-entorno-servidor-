@@ -1,5 +1,6 @@
 using Amazon_Montecastelo.Database;
 using Amazon_Montecastelo.Database.Repositorios;
+using System.Globalization;
 
 namespace Amazon_Montecastelo
 {
@@ -23,7 +24,7 @@ namespace Amazon_Montecastelo
 
             builder.Services.AddScoped<ICarritoRepository, CarritoRepository>();
 
-            builder.Services.AddScoped<IUsuarioRepository,UsuarioRepository>();
+            builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
             builder.Services.AddScoped<IVentaRepository, VentaRepository>();
 
@@ -33,20 +34,20 @@ namespace Amazon_Montecastelo
             // Configurar el pipeline de solicitud HTTP
             if (!app.Environment.IsDevelopment())
             {
-               
+
                 app.UseHsts();
             }
+
+
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
-          app.UseAuthorization();
-
+            app.UseAuthorization();
 
             app.MapControllers();
-            
 
             app.Run();
         }

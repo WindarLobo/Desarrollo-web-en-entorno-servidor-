@@ -1,0 +1,15 @@
+﻿@{
+
+
+
+
+    var mensaje = ViewBag.MensajeAccesoDenegado as string;
+
+}
+
+<h2>Acceso Denegado</h2>
+@if (!string.IsNullOrEmpty(mensaje))
+{
+    <p>@mensaje</p>
+}
+

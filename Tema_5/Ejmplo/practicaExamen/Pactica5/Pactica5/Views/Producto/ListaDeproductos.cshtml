@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Pactica5.DataBase.Models.Producto>
+
+@{
+    ViewData["Title"] = "ListaDeproductos";
+}
+
+<h1>ListaDeproductos</h1>
+
+
+<div class="col-md-3 ml-5 mt-3">
+    <form action="@Url.Action("Agregar", "Producto")" method="get">
+        <input type="hidden" name="id" />
+        <button type="submit" class="btn btn-primary">Agregar Producto</button>
+    </form>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductoID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ProductoID  }) |
+                    @Html.ActionLink("Details", "Detalle", new {id=item.ProductoID  }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ProductoID  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

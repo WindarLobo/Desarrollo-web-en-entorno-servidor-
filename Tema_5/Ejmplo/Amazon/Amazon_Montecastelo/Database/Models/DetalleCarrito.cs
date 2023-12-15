@@ -13,8 +13,8 @@ namespace Amazon_Montecastelo.Database.Models
         public int ProductoID { get; set; }
         public Productos Producto { get; set; }
         public int Cantidad { get; set; }
-        public decimal PrecioUnitario { get; set; }
-        public decimal PrecioTotal { get; set; }
+        public double PrecioUnitario { get; set; }
+        public double PrecioTotal { get; set; }
 
 
 

@@ -299,6 +299,8 @@ namespace Boletin_Ejercicio_5.Controllers
             ViewBag.MensajeAccesoDenegado = mensaje;
             return View();
         }
+
+
     }
 
 }

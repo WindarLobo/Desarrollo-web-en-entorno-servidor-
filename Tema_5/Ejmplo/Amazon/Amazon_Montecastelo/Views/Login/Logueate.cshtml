@@ -37,6 +37,8 @@
                             <div class="card-header3 form-floating  mb-3">
                                 <input class="form-control" id="inputpassword" name="password" type="password" placeholder="Contraseña" />
                                 <label class="usuario2" for="password">Contraseña</label>
+
+                               
                             </div>
 
                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
@@ -62,22 +64,6 @@
 
     </div>
 
-
-    <script>
-        // Asegúrate de incluir jQuery en tu proyecto
-
-        // Evento de cambio en el select
-        $('#userType').change(function () {
-            var userType = $(this).val(); // Obtén el valor seleccionado
-
-            // Redirige según el tipo de usuario
-            if (userType === 'administrador') {
-                window.location.href = '@Url.Action("Producto", "Administrador")';
-            } else {
-                window.location.href = '@Url.Action("ProductoUsuario", "Usuario")';
-            }
-        });
-    </script>
 
 
 

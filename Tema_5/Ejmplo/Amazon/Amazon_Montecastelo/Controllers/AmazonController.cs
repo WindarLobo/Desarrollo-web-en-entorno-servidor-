@@ -60,22 +60,29 @@ namespace Amazon_Montecastelo.Controllers
                 TempData["MensajeAccesoDenegado"] = "No tienes permisos para acceder a esta página.";
                 return RedirectToAction("AccesoDenegado");
             }
-            return View(new Productos());
+            return View(new ProductoCreateViewModel());
         }
 
 
         [HttpPost]
         [Route("/Amazon/Create")]
-        public async Task<IActionResult> Create(Productos producto)
+        public async Task<IActionResult> Create(ProductoCreateViewModel productoCreate)
         {
             if (!GlobalInfo.IsLogged)
             {
                 return View(GlobalInfo.LoginView);
             }
 
+            var producto = new Productos
+            {
+                ProductoID = productoCreate.ProductoID,
+                Descripcion = productoCreate.Descripcion,
+                Nombre = productoCreate.Nombre,
+                Precio = double.Parse(productoCreate.Precio.Replace(".", ","))
+            };
+
             if (producto.ProductoID > 0)
             {
-
                 await _productoRepositorio.UpdateProducto(producto);
             }
             else

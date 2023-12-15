@@ -16,7 +16,7 @@ namespace Amazon_Montecastelo.Database.Models
 
         public DateTime FechaVenta { get; set; }
 
-        public decimal TotalVenta { get; set; }
+        public double TotalVenta { get; set; }
 
         public List<DetalleVenta> Detalles { get; set; }
 
